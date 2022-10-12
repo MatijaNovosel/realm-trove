@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.0.30",
+    "nuxt": "3.0.0-rc.6",
+    "nuxt-windicss": "^2.2.2",
+    "unplugin-icons": "^0.13.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^1.35.4",
+    "@vueuse/core": "^7.6.2",
+    "floating-vue": "^2.0.0-beta.19"
+  }
+}

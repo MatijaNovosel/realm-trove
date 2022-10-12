@@ -1,0 +1,92 @@
+:root {
+  --vue-green: #42b883;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#__nuxt {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.v-popper--theme-info-tooltip .v-popper__inner {
+  background: #2a2a2b;
+  color: white;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.v-popper--theme-info-tooltip .v-popper__arrow-inner {
+  visibility: hidden;
+}
+
+.v-popper--theme-info-tooltip .v-popper__arrow-outer {
+  visibility: hidden;
+}
+
+.page-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.page-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple:hover {
+  background: #dee2e519 radial-gradient(circle, transparent 1%, #dee2e519 1%)
+    center / 15000%;
+}
+
+.ripple:active {
+  background-color: #dee2e582;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.text-green-vue {
+  color: var(--vue-green);
+}
+
+.bg-green-vue {
+  background-color: var(--vue-green);
+}
+
+.offset {
+  padding-top: 60px;
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+.no-highlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
