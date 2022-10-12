@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/36193643/195388540-602d59d2-a30f-4756-ad1c-f4b8918c6347.png" />
+</div>
+
 <h1 align=center>Realm trove</h1>
 <p align=center>
   A web app for checking off Realm of the mad god loot items.
