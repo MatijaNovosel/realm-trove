@@ -1,11 +1,16 @@
 <template>
-  <nav class="flex z-3 mt-4 justify-start rounded-lg md:rounded-none bg-dark-400 md:bg-transparent fixed md:absolute">
-    <div class="nav-slider" :style="navSliderStyle" />
-    <NuxtLink :id="link.to" v-for="(link, i) in links" :key="i" active-class="active-tab" :to="link.to"
-      class="relative flex items-center text-base md:text-lg font-bold nav-tab" @mouseover="tabHover(link.to)">
-      {{ link.text }}
-    </NuxtLink>
-  </nav>
+  <header class="flex md:justify-between md:w-full items-center fixed md:absolute mt-4">
+    <span class="text-2xl hidden md:block">
+      Realm trove
+    </span>
+    <nav class="flex z-3 items-center rounded-lg md:rounded-none bg-dark-400 md:bg-transparent">
+      <div class="nav-slider" :style="navSliderStyle" />
+      <NuxtLink :id="link.to" v-for="(link, i) in links" :key="i" active-class="active-tab" :to="link.to"
+        class="relative flex items-center text-base md:text-lg font-bold nav-tab" @mouseover="tabHover(link.to)">
+        {{ link.text }}
+      </NuxtLink>
+    </nav>
+  </header>
 </template>
 
 <script lang="ts" setup>
@@ -28,6 +33,14 @@ const links: LinkItem[] = [
   {
     to: "/",
     text: "Home"
+  },
+  {
+    to: "/items",
+    text: "Items"
+  },
+  {
+    to: "/login",
+    text: "Log in"
   }
 ];
 
