@@ -68,6 +68,6 @@ setMeta("Realm trove | Items");
 .item {
   width: 46px;
   height: 46px;
-  background-image: url("renders.png");
+  background-image: url("/renders.png");
 }
 </style>
