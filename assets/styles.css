@@ -7,13 +7,6 @@
   src: url("/pixSymbols.ttf");
 }
 
-.item {
-  display: inline-block;
-  position: relative;
-  width: 46px;
-  margin: -1px -3px -3px;
-}
-
 html {
   scroll-behavior: smooth;
 }
