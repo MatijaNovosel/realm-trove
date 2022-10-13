@@ -1,7 +1,7 @@
 <template>
   <div
     class="item p-3 text-center p-2 m-1 relative cursor-pointer"
-    v-for="({ pos, id, name }, i) in ITEMS[tab]"
+    v-for="({ pos, id, name }, i) in items[tab]"
     :key="i"
     :style="{
       backgroundPosition: `${pos.x}px ${pos.y}px`,
@@ -20,7 +20,9 @@
 
 <script lang="ts" setup>
 import { PlayerCollection } from "~/models";
-import { Tabs, ITEMS } from "~/utils/constants";
+import { Tabs } from "~/utils/constants";
+
+const { items } = useItems();
 
 defineProps<{
   collection: PlayerCollection;
