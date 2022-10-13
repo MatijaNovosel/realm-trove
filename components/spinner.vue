@@ -54,7 +54,7 @@
 }
 
 .diamond:after {
-  content: '';
+  content: "";
   position: absolute;
   left: -15px;
   top: 15px;

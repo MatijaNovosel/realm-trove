@@ -2,11 +2,14 @@
   <div
     class="offset w-full"
     :class="{
-      'h-full flex justify-center items-center': loading
+      'h-full flex justify-center items-center': pending
     }"
   >
     <transition name="bounce">
-      <spinner class="mt-4 mx-auto" v-if="loading" />
+      <spinner class="mt-4 mx-auto" v-if="pending" />
+      <div class="mt-4 mx-auto text-red text-2xl" v-else-if="error">
+        An error ocurred.
+      </div>
       <div class="display-contents" v-else>
         <div
           class="text-4xl font-bold mb-5 mt-6 flex items-center justify-center user-select-none"
@@ -32,9 +35,7 @@
           </div>
         </div>
         <div class="flex flex-wrap justify-center md:justify-start">
-          <items-grid
-            :coordinates="activeTab === Tabs.UT ? utCoordinates : stCoordinates"
-          />
+          <items-grid :collection="playerCollection" :tab="activeTab" />
         </div>
       </div>
     </transition>
@@ -42,22 +43,13 @@
 </template>
 
 <script setup lang="ts">
-import { ItemCoordinate } from "~/models";
-import { Tabs } from "~/utils/helpers";
+import { PlayerCollection } from "~/models";
+import { Tabs } from "~/utils/constants";
+import { doc, onSnapshot } from "firebase/firestore";
 
 const activeTab = ref(Tabs.UT);
-const loading = ref(true);
-const utCoordinates = ref<ItemCoordinate[]>([]);
-const stCoordinates = ref<ItemCoordinate[]>([]);
 
-const utItemData = [
-  {
-    id: 1,
-    name: "Helm of the juggernaut",
-    acquired: true,
-    event: true
-  }
-];
+const { data: playerCollection, pending, error } = useFetch("/api/items");
 
 const changeTab = (tab: Tabs) => {
   if (activeTab.value === tab) return;
@@ -65,23 +57,11 @@ const changeTab = (tab: Tabs) => {
 };
 
 onMounted(() => {
-  for (let i = 0; i < 50; i++) {
-    utCoordinates.value.push({
-      x: -13708 - i * 46,
-      y: -184
-    });
-  }
-
-  for (let i = 0; i < 50; i++) {
-    stCoordinates.value.push({
-      x: -12788 - i * 46,
-      y: -184
-    });
-  }
-
-  setTimeout(() => {
-    loading.value = false;
-  }, 750);
+  const { firestore } = useFirebase();
+  const docRef = doc(firestore, `animals`, "dog");
+  onSnapshot(docRef, (snap) => {
+    playerCollection.value = snap.data() as PlayerCollection;
+  });
 });
 
 const { setMeta } = useMetadata();

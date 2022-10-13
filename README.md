@@ -11,7 +11,7 @@
 
 - [Nuxt 3](https://v3.nuxtjs.org/)
 - [Vue 3](https://vuejs.org/)
-- [Supabase](https://supabase.com/)
+- [Firebase](https://firebase.com/)
 - [WindiCSS](https://windicss.org/)
 - [Vercel](https://vercel.com/)
 
