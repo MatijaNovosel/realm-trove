@@ -1,10 +1,9 @@
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import serviceAccountJson from "./serviceAccount.json";
 
 export const app = initializeApp({
   // @ts-ignore
-  credential: cert(serviceAccountJson)
+  credential: cert(JSON.parse(process.env.serviceAccount))
 });
 
 export const firestore = getFirestore();
