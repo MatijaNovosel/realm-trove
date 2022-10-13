@@ -2,12 +2,12 @@
   <div
     class="offset w-full"
     :class="{
-      'h-full flex justify-center items-center': pending
+      'h-full flex justify-center items-center': pending || error
     }"
   >
     <transition name="bounce">
       <spinner class="mt-4 mx-auto" v-if="pending" />
-      <div class="mt-4 mx-auto text-red text-2xl" v-else-if="error">
+      <div class="mt-4 mx-auto text-red-500 text-4xl" v-else-if="error">
         An error ocurred.
       </div>
       <div class="display-contents" v-else>
@@ -57,11 +57,15 @@ const changeTab = (tab: Tabs) => {
 };
 
 onMounted(() => {
-  const { firestore } = useFirebase();
-  const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
-  onSnapshot(docRef, (snap) => {
-    playerCollection.value = snap.data() as PlayerCollection;
-  });
+  try {
+    const { firestore } = useFirebase();
+    const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
+    onSnapshot(docRef, (snap) => {
+      playerCollection.value = snap.data() as PlayerCollection;
+    });
+  } catch (e) {
+    error.value = true;
+  }
 });
 
 const { setMeta } = useMetadata();

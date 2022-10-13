@@ -3,7 +3,7 @@ import { getFirestore } from "firebase-admin/firestore";
 
 export const app = initializeApp({
   // @ts-ignore
-  credential: cert(JSON.parse(process.env.serviceAccount))
+  credential: cert(JSON.parse(process.env.SERVICE_ACCOUNT))
 });
 
 export const firestore = getFirestore();
