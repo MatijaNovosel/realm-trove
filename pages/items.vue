@@ -58,7 +58,7 @@ const changeTab = (tab: Tabs) => {
 
 onMounted(() => {
   const { firestore } = useFirebase();
-  const docRef = doc(firestore, `animals`, "dog");
+  const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
   onSnapshot(docRef, (snap) => {
     playerCollection.value = snap.data() as PlayerCollection;
   });
