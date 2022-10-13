@@ -9,7 +9,7 @@
       <a class="text-white" href="https://github.com/realm-trove">
         <IconGithub :style="{ fontSize: '1.3em' }" />
       </a>
-      <a class="text-white pl-2" href="https://www.realmeye.com/player/Ormar">
+      <a class="text-white pl-2" href="https://www.realmeye.com/player/CrabFeeder">
         <IconEye :style="{ fontSize: '1.3em' }" />
       </a>
     </div>
