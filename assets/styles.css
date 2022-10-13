@@ -97,14 +97,14 @@ html {
 }
 
 .bounce-enter-active {
-  animation: bounce-in 0.5s;
+  animation: bounce 0.5s;
 }
 
 .bounce-leave-active {
   display: none;
 }
 
-@keyframes bounce-in {
+@keyframes bounce {
   0% {
     transform: scale(0);
   }

@@ -12,7 +12,7 @@
           class="text-4xl font-bold mb-5 mt-6 flex items-center justify-center user-select-none"
         >
           <div
-            @click="activeTab = Tabs.UT"
+            @click="changeTab(Tabs.UT)"
             class="ripple px-3 py-1 cursor-pointer rounded-lg"
             :class="{
               'text-green-vue': activeTab === Tabs.UT
@@ -22,7 +22,7 @@
           </div>
           <div class="mx-3">•</div>
           <div
-            @click="activeTab = Tabs.ST"
+            @click="changeTab(Tabs.ST)"
             class="ripple px-3 py-1 cursor-pointer rounded-lg"
             :class="{
               'text-green-vue': activeTab === Tabs.ST
@@ -58,6 +58,11 @@ const utItemData = [
     event: true
   }
 ];
+
+const changeTab = (tab: Tabs) => {
+  if (activeTab.value === tab) return;
+  activeTab.value = tab;
+};
 
 onMounted(() => {
   for (let i = 0; i < 50; i++) {
