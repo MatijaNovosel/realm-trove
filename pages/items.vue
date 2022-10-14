@@ -56,8 +56,8 @@
           :items="items"
           :collection="playerCollection"
           :tab="activeTab"
-          @increment="increment"
-          @decrement="decrement"
+          @increment="updateCollection"
+          @decrement="updateCollection($event, false)"
         />
       </div>
     </transition>
@@ -67,7 +67,7 @@
 <script setup lang="ts">
 import { PlayerCollection } from "~/models";
 import { Tabs } from "~/utils/constants";
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 
@@ -88,12 +88,29 @@ const itemsCollected = computed(() => {
   };
 });
 
-const increment = (id: number) => {
-  console.log(id);
-};
+const updateCollection = async (id: number, increment: boolean = true) => {
+  const { firestore } = useFirebase();
+  const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
 
-const decrement = (id: number) => {
-  console.log(id);
+  const newPlayerCollection = { ...playerCollection.value };
+
+  if (id in newPlayerCollection[activeTab.value]) {
+    if (increment) {
+      newPlayerCollection[activeTab.value][id]++;
+    } else {
+      if (newPlayerCollection[activeTab.value][id] - 1 <= 0) {
+        delete newPlayerCollection[activeTab.value][id];
+        return;
+      }
+      newPlayerCollection[activeTab.value][id]--;
+    }
+  } else {
+    if (increment) {
+      newPlayerCollection[activeTab.value][id] = 1;
+    }
+  }
+
+  await updateDoc(docRef, newPlayerCollection);
 };
 
 onMounted(() => {

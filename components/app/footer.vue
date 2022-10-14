@@ -1,15 +1,20 @@
 <template>
-  <footer class="w-full flex justify-between z-2 md:pb-5 pt-7 px-1 md:px-0 user-select-none">
+  <footer
+    class="w-full flex justify-between z-2 md:pb-5 pt-7 px-1 md:px-0 user-select-none"
+  >
     <div>
       <span class="text-sm md:text-base">
         &copy; Realm trove {{ new Date().getFullYear() }}
       </span>
     </div>
     <div>
-      <a class="text-white" href="https://github.com/realm-trove">
+      <a class="text-white" href="https://github.com/MatijaNovosel/realm-trove">
         <IconGithub :style="{ fontSize: '1.3em' }" />
       </a>
-      <a class="text-white pl-2" href="https://www.realmeye.com/player/CrabFeeder">
+      <a
+        class="text-white pl-2"
+        href="https://www.realmeye.com/player/CrabFeeder"
+      >
         <IconEye :style="{ fontSize: '1.3em' }" />
       </a>
     </div>

@@ -16,7 +16,7 @@
       @contextmenu.prevent="$emit('decrement', id)"
     >
       <div class="badge user-select-none">
-        {{ collection[tab][id] }}
+        {{ collection[tab][id] !== 0 ? collection[tab][id] : "" }}
       </div>
     </div>
   </div>
