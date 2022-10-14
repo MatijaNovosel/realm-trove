@@ -34,14 +34,16 @@
             ST
           </div>
         </div>
-        <div class="flex justify-between items-center my-5 px-8 md:px-3">
+        <div
+          class="flex flex-col md:flex-row justify-center md:justify-between items-center my-5 px-8 md:px-3"
+        >
           <div class="flex items-center">
             <MouseButtonLeftIcon class="mr-1" />
             <span class="mr-3"> Increase </span>
             <MouseButtonRightIcon class="mr-1" />
             <span> Decrease </span>
           </div>
-          <div>
+          <div class="mt-4 md:mt-0">
             <button
               :disabled="!pendingChanges"
               :class="{
