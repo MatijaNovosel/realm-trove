@@ -1,9 +1,9 @@
 <template>
-  <header class="flex md:justify-between md:w-full items-center fixed md:absolute mt-4">
+  <header class="flex md:justify-between md:w-full items-center fixed md:absolute mt-4 z-4">
     <span class="text-2xl hidden md:block">
       Realm trove
     </span>
-    <nav class="flex z-3 items-center rounded-lg md:rounded-none bg-dark-400 md:bg-transparent">
+    <nav class="flex items-center rounded-lg md:rounded-none bg-dark-400 md:bg-transparent">
       <div class="nav-slider" :style="navSliderStyle" />
       <NuxtLink :id="link.to" v-for="(link, i) in links" :key="i" active-class="active-tab" :to="link.to"
         class="relative flex items-center text-base md:text-lg font-bold nav-tab" @mouseover="tabHover(link.to)">
