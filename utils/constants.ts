@@ -184,5 +184,18 @@ export const ITEM_NAMES_UT = [
   "Cave Dweller Trap",
   "Cloak of Refraction",
   "Fractured Gemstone Wakizashi",
-  "Star of Enlightenment"
+  "Star of Enlightenment",
+  "Burial Blades",
+  "Fractal Blades",
+  "Perennial Cranium",
+  "Clover Bow",
+  "Sword of the Rainbow's End",
+  "Katana of Good Fortune",
+  "Clover Star",
+  "Evergreen Dagger",
+  "Sleigh Bell Staff",
+  "Brass Chamberstick",
+  "Cheerful Chipper",
+  "Candy Katana",
+  "Garland Bow"
 ];
