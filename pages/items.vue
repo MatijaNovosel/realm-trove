@@ -92,7 +92,9 @@ const updateCollection = async (id: number, increment: boolean = true) => {
   const { firestore } = useFirebase();
   const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
 
-  const newPlayerCollection = { ...playerCollection.value };
+  const newPlayerCollection = JSON.parse(
+    JSON.stringify(playerCollection.value)
+  );
 
   if (id in newPlayerCollection[activeTab.value]) {
     if (increment) {
@@ -100,9 +102,9 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     } else {
       if (newPlayerCollection[activeTab.value][id] - 1 <= 0) {
         delete newPlayerCollection[activeTab.value][id];
-        return;
+      } else {
+        newPlayerCollection[activeTab.value][id]--;
       }
-      newPlayerCollection[activeTab.value][id]--;
     }
   } else {
     if (increment) {
@@ -110,7 +112,12 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     }
   }
 
-  await updateDoc(docRef, newPlayerCollection);
+  if (
+    JSON.stringify(playerCollection.value) !==
+    JSON.stringify(newPlayerCollection)
+  ) {
+    await updateDoc(docRef, newPlayerCollection);
+  }
 };
 
 onMounted(() => {
