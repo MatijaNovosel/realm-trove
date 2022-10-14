@@ -64,6 +64,7 @@ onMounted(() => {
       playerCollection.value = snap.data() as PlayerCollection;
     });
   } catch (e) {
+    console.error(e);
     error.value = true;
   }
 });
