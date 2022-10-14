@@ -48,7 +48,10 @@
         >
           <span>
             {{ itemsCollected[activeTab] }} / {{ items[activeTab].length }} ({{
-              (itemsCollected[activeTab] / items[activeTab].length).toFixed(2)
+              (
+                (itemsCollected[activeTab] / items[activeTab].length) *
+                100
+              ).toFixed(2)
             }}%)
           </span>
         </items-progress-bar>
