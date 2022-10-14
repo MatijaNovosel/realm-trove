@@ -34,11 +34,37 @@
             ST
           </div>
         </div>
-        <div class="flex justify-center items-center my-5">
-          <MouseButtonLeftIcon class="mr-1" />
-          <span class="mr-3"> Increase </span>
-          <MouseButtonRightIcon class="mr-1" />
-          <span> Decrease </span>
+        <div class="flex justify-between items-center my-5 px-8 md:px-3">
+          <div class="flex items-center">
+            <MouseButtonLeftIcon class="mr-1" />
+            <span class="mr-3"> Increase </span>
+            <MouseButtonRightIcon class="mr-1" />
+            <span> Decrease </span>
+          </div>
+          <div>
+            <button
+              :disabled="!pendingChanges"
+              :class="{
+                'bg-dark-400 cursor-not-allowed': !pendingChanges,
+                'bg-red-500 ripple': pendingChanges
+              }"
+              class="rounded px-2"
+              @click="pendingChanges ? cancelChanges() : null"
+            >
+              Cancel
+            </button>
+            <button
+              :disabled="!pendingChanges"
+              :class="{
+                'bg-dark-400 cursor-not-allowed': !pendingChanges,
+                'bg-green-500 ripple': pendingChanges
+              }"
+              class="ml-2 rounded px-2"
+              @click="pendingChanges ? confirmChanges() : null"
+            >
+              Save
+            </button>
+          </div>
         </div>
         <div class="px-8 md:px-3">
           <items-progress-bar
@@ -71,9 +97,13 @@ import { Tabs } from "~/utils/constants";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
+import { POSITION, useToast } from "vue-toastification";
 
 const activeTab = ref(Tabs.UT);
+const initialCollection = ref<PlayerCollection>(undefined);
+
 const { items } = useItems();
+const toast = useToast();
 
 const { data: playerCollection, pending, error } = useFetch("/api/items");
 
@@ -93,35 +123,59 @@ const itemCollectionPercentage = computed(() => {
   return itemsCollected.value[activeTab.value] / items[activeTab.value].length;
 });
 
-const updateCollection = async (id: number, increment: boolean = true) => {
-  const { firestore } = useFirebase();
-  const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
-
-  const newPlayerCollection = JSON.parse(
-    JSON.stringify(playerCollection.value)
+const pendingChanges = computed(() => {
+  return (
+    initialCollection.value !== undefined &&
+    JSON.stringify(initialCollection.value) !==
+      JSON.stringify(playerCollection.value)
   );
+});
 
-  if (id in newPlayerCollection[activeTab.value]) {
+const updateCollection = async (id: number, increment: boolean = true) => {
+  if (!initialCollection.value) {
+    initialCollection.value = JSON.parse(
+      JSON.stringify(playerCollection.value)
+    );
+  }
+
+  if (id in playerCollection.value[activeTab.value]) {
     if (increment) {
-      newPlayerCollection[activeTab.value][id]++;
+      playerCollection.value[activeTab.value][id]++;
     } else {
-      if (newPlayerCollection[activeTab.value][id] - 1 <= 0) {
-        delete newPlayerCollection[activeTab.value][id];
+      if (playerCollection.value[activeTab.value][id] - 1 <= 0) {
+        delete playerCollection.value[activeTab.value][id];
       } else {
-        newPlayerCollection[activeTab.value][id]--;
+        playerCollection.value[activeTab.value][id]--;
       }
     }
   } else {
     if (increment) {
-      newPlayerCollection[activeTab.value][id] = 1;
+      playerCollection.value[activeTab.value][id] = 1;
     }
   }
+};
 
-  if (
-    JSON.stringify(playerCollection.value) !==
-    JSON.stringify(newPlayerCollection)
-  ) {
-    await updateDoc(docRef, newPlayerCollection);
+const cancelChanges = () => {
+  playerCollection.value = initialCollection.value;
+  initialCollection.value = undefined;
+};
+
+const confirmChanges = async () => {
+  try {
+    const { firestore } = useFirebase();
+    const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
+    await updateDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
+    toast.success("Saved!", {
+      timeout: 2000,
+      position: POSITION.BOTTOM_CENTER
+    });
+    initialCollection.value = undefined;
+  } catch (e) {
+    toast.error(e, {
+      timeout: 2000,
+      position: POSITION.BOTTOM_CENTER
+    });
+    error.value = true;
   }
 };
 
@@ -133,7 +187,10 @@ onMounted(() => {
       playerCollection.value = snap.data() as PlayerCollection;
     });
   } catch (e) {
-    console.error(e);
+    toast.error(e, {
+      timeout: 2000,
+      position: POSITION.BOTTOM_CENTER
+    });
     error.value = true;
   }
 });
