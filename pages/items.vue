@@ -40,21 +40,19 @@
           <MouseButtonRightIcon class="mr-1" />
           <span> Decrease </span>
         </div>
-        <items-progress-bar
-          :progress="
-            (itemsCollected[activeTab] / items[activeTab].length) * 100
-          "
-          class="mb-5 user-select-none"
-        >
-          <span>
-            {{ itemsCollected[activeTab] }} / {{ items[activeTab].length }} ({{
-              (
-                (itemsCollected[activeTab] / items[activeTab].length) *
-                100
-              ).toFixed(2)
-            }}%)
-          </span>
-        </items-progress-bar>
+        <div class="px-8 md:px-3">
+          <items-progress-bar
+            :progress="itemCollectionPercentage * 100"
+            class="mb-5 user-select-none"
+          >
+            <span>
+              {{ itemsCollected[activeTab] }} /
+              {{ items[activeTab].length }} ({{
+                (itemCollectionPercentage * 100).toFixed(2)
+              }}%)
+            </span>
+          </items-progress-bar>
+        </div>
         <items-grid
           :items="items"
           :collection="playerCollection"
@@ -89,6 +87,10 @@ const itemsCollected = computed(() => {
     [Tabs.UT]: Object.keys(playerCollection.value.ut).length,
     [Tabs.ST]: Object.keys(playerCollection.value.st).length
   };
+});
+
+const itemCollectionPercentage = computed(() => {
+  return itemsCollected.value[activeTab.value] / items[activeTab.value].length;
 });
 
 const updateCollection = async (id: number, increment: boolean = true) => {
