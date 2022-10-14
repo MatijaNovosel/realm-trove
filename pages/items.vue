@@ -34,6 +34,12 @@
             ST
           </div>
         </div>
+        <div class="flex justify-center items-center my-5">
+          <MouseButtonLeftIcon class="mr-1" />
+          <span class="mr-3"> Increase </span>
+          <MouseButtonRightIcon class="mr-1" />
+          <span> Decrease </span>
+        </div>
         <items-progress-bar
           :progress="
             (itemsCollected[activeTab] / items[activeTab].length) * 100
@@ -46,13 +52,13 @@
             }}%)
           </span>
         </items-progress-bar>
-        <div class="flex flex-wrap justify-center md:justify-start">
-          <items-grid
-            :items="items"
-            :collection="playerCollection"
-            :tab="activeTab"
-          />
-        </div>
+        <items-grid
+          :items="items"
+          :collection="playerCollection"
+          :tab="activeTab"
+          @increment="increment"
+          @decrement="decrement"
+        />
       </div>
     </transition>
   </div>
@@ -62,6 +68,8 @@
 import { PlayerCollection } from "~/models";
 import { Tabs } from "~/utils/constants";
 import { doc, onSnapshot } from "firebase/firestore";
+import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
+import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 
 const activeTab = ref(Tabs.UT);
 const { items } = useItems();
@@ -79,6 +87,14 @@ const itemsCollected = computed(() => {
     [Tabs.ST]: Object.keys(playerCollection.value.st).length
   };
 });
+
+const increment = (id: number) => {
+  console.log(id);
+};
+
+const decrement = (id: number) => {
+  console.log(id);
+};
 
 onMounted(() => {
   try {

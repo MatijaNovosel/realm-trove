@@ -1,19 +1,23 @@
 <template>
-  <div
-    class="item p-3 text-center p-2 m-1 relative cursor-pointer"
-    v-for="({ pos, id, name }, i) in items[tab]"
-    :key="i"
-    :style="{
-      backgroundPosition: `${pos.x}px ${pos.y}px`,
-      filter: `grayscale(${collection[tab][id] ? 0 : 100}%)`
-    }"
-    v-tooltip="{
-      content: name,
-      theme: 'info-tooltip'
-    }"
-  >
-    <div class="badge user-select-none">
-      {{ collection[tab][id] }}
+  <div class="flex flex-wrap justify-center md:justify-start">
+    <div
+      class="item p-3 text-center p-2 m-1 relative cursor-pointer"
+      v-for="({ pos, id, name }, i) in items[tab]"
+      :key="i"
+      :style="{
+        backgroundPosition: `${pos.x}px ${pos.y}px`,
+        filter: `grayscale(${collection[tab][id] ? 0 : 100}%)`
+      }"
+      v-tooltip="{
+        content: name,
+        theme: 'info-tooltip'
+      }"
+      @click="$emit('increment', id)"
+      @contextmenu.prevent="$emit('decrement', id)"
+    >
+      <div class="badge user-select-none">
+        {{ collection[tab][id] }}
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +31,8 @@ defineProps<{
   tab: Tabs;
   items: IDictionary<ItemInfo[]>;
 }>();
+
+defineEmits(["increment", "decrement"]);
 </script>
 
 <style scoped>

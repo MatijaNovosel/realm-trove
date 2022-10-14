@@ -7,6 +7,12 @@
   A web app for checking off Realm of the mad god loot items.
 </p>
 
+## Features
+
+- Loot tracking for both UT and ST items
+- Data sharing by export to JSON or CSV files
+- Share your loot profile with a unique link
+
 ## 🔨 Built With
 
 - [Nuxt 3](https://v3.nuxtjs.org/)
