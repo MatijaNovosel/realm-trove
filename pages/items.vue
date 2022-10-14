@@ -34,8 +34,24 @@
             ST
           </div>
         </div>
+        <items-progress-bar
+          :progress="
+            (itemsCollected[activeTab] / items[activeTab].length) * 100
+          "
+          class="mb-5 user-select-none"
+        >
+          <span>
+            {{ itemsCollected[activeTab] }} / {{ items[activeTab].length }} ({{
+              (itemsCollected[activeTab] / items[activeTab].length).toFixed(2)
+            }}%)
+          </span>
+        </items-progress-bar>
         <div class="flex flex-wrap justify-center md:justify-start">
-          <items-grid :collection="playerCollection" :tab="activeTab" />
+          <items-grid
+            :items="items"
+            :collection="playerCollection"
+            :tab="activeTab"
+          />
         </div>
       </div>
     </transition>
@@ -48,6 +64,7 @@ import { Tabs } from "~/utils/constants";
 import { doc, onSnapshot } from "firebase/firestore";
 
 const activeTab = ref(Tabs.UT);
+const { items } = useItems();
 
 const { data: playerCollection, pending, error } = useFetch("/api/items");
 
@@ -55,6 +72,13 @@ const changeTab = (tab: Tabs) => {
   if (activeTab.value === tab) return;
   activeTab.value = tab;
 };
+
+const itemsCollected = computed(() => {
+  return {
+    [Tabs.UT]: Object.keys(playerCollection.value.ut).length,
+    [Tabs.ST]: Object.keys(playerCollection.value.st).length
+  };
+});
 
 onMounted(() => {
   try {

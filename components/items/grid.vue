@@ -19,14 +19,13 @@
 </template>
 
 <script lang="ts" setup>
-import { PlayerCollection } from "~/models";
+import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
 import { Tabs } from "~/utils/constants";
-
-const { items } = useItems();
 
 defineProps<{
   collection: PlayerCollection;
   tab: Tabs;
+  items: IDictionary<ItemInfo[]>;
 }>();
 </script>
 
