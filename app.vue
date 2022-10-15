@@ -13,6 +13,10 @@
 </template>
 
 <script lang="ts" setup>
+onMounted(() => {
+  //
+});
+
 const { setMeta } = useMetadata();
 setMeta("Realm trove");
 </script>

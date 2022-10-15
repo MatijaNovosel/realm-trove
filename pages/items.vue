@@ -146,14 +146,16 @@ import { POSITION, useToast } from "vue-toastification";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
+const playerCollection = ref<PlayerCollection>();
 const searchText = ref("");
 const modalOpen = ref(false);
+const pending = ref(true);
+const error = ref(false);
 const selectedGroups = ref<number[]>([]);
 
+const { $firestore } = useNuxtApp();
 const { items } = useItems();
 const toast = useToast();
-
-const { data: playerCollection, pending, error } = useFetch("/api/items");
 
 const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
@@ -221,8 +223,7 @@ const cancelChanges = () => {
 
 const confirmChanges = async () => {
   try {
-    const { firestore } = useFirebase();
-    const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
+    const docRef = doc($firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
     await updateDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
     toast.success("Saved!", {
       timeout: 2000,
@@ -231,7 +232,7 @@ const confirmChanges = async () => {
     initialCollection.value = undefined;
   } catch (e) {
     toast.error(e, {
-      timeout: 2000,
+      timeout: 5000,
       position: POSITION.BOTTOM_CENTER
     });
     error.value = true;
@@ -240,14 +241,16 @@ const confirmChanges = async () => {
 
 onMounted(() => {
   try {
-    const { firestore } = useFirebase();
-    const docRef = doc(firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
+    const docRef = doc($firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
     onSnapshot(docRef, (snap) => {
       playerCollection.value = snap.data() as PlayerCollection;
+      if (pending.value) {
+        pending.value = false;
+      }
     });
   } catch (e) {
-    toast.error(e, {
-      timeout: 2000,
+    toast.error(e.message, {
+      timeout: 5000,
       position: POSITION.BOTTOM_CENTER
     });
     error.value = true;

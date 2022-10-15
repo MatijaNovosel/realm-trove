@@ -3,6 +3,9 @@ import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
   css: ["@/assets/styles.css"],
   modules: ["nuxt-windicss", "unplugin-icons/nuxt"],
+  experimental: {
+    viteNode: true
+  },
   runtimeConfig: {
     public: {
       API_KEY: process.env.API_KEY,
