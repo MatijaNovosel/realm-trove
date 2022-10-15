@@ -2,11 +2,13 @@
   <div class="mask">
     <div class="wrapper">
       <div class="container bg-dark-600 rounded-lg mx-auto" ref="modal">
-        <div class="px-4 pt-4 pb-3 text-sm">
-          {{ title }}
+        <div class="text-sm w-full">
+          <div class="p-4">
+            {{ title }}
+          </div>
+          <hr class="divider" />
         </div>
-        <hr class="divider" />
-        <div class="p-4">
+        <div class="px-4 py-2 inner overflow-auto">
           <slot />
         </div>
       </div>
@@ -53,9 +55,13 @@ onClickOutside(modal, () => {
 }
 
 .container {
-  width: 600px;
+  max-width: 600px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.186);
   transition: all 0.3s ease;
+}
+
+.inner {
+  max-height: 400px;
 }
 
 @media only screen and (max-width: 600px) {

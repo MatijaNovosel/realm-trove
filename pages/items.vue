@@ -6,7 +6,20 @@
         v-if="modalOpen"
         @close="modalOpen = false"
       >
-        <div class="flex flex-wrap">Hi</div>
+        <div class="flex flex-col">
+          <div
+            class="flex items-center my-2"
+            v-for="(s, i) in Object.entries(SOURCE)
+              .filter((value) => typeof value[1] === 'string')
+              .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))"
+            :key="i"
+          >
+            <input type="checkbox" class="mr-3" />
+            <span>
+              {{ s[1] }}
+            </span>
+          </div>
+        </div>
       </app-modal>
     </transition>
     <div
@@ -124,7 +137,7 @@
 
 <script setup lang="ts">
 import { PlayerCollection } from "~/models";
-import { TAB } from "~/utils/constants";
+import { TAB, SOURCE } from "~/utils/constants";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
@@ -135,6 +148,7 @@ const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
 const searchText = ref("");
 const modalOpen = ref(false);
+const selectedGroups = ref<number[]>([]);
 
 const { items } = useItems();
 const toast = useToast();
