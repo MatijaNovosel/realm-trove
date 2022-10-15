@@ -34,16 +34,25 @@
             ST
           </div>
         </div>
-        <div
-          class="flex flex-col md:flex-row justify-center md:justify-between items-center my-5 px-8 md:px-3"
-        >
-          <div class="flex items-center">
+        <div class="grid grid-cols-12 my-5 px-7 md:px-3">
+          <div
+            class="col-span-12 md:col-span-4 flex items-center justify-center md:justify-start"
+          >
             <MouseButtonLeftIcon class="mr-1" />
             <span class="mr-3"> Increase </span>
             <MouseButtonRightIcon class="mr-1" />
             <span> Decrease </span>
           </div>
-          <div class="mt-4 md:mt-0">
+          <div class="col-span-12 md:col-span-4 my-4 md:my-0">
+            <items-search-input
+              :loading="pending"
+              :error="error"
+              v-model="searchText"
+            />
+          </div>
+          <div
+            class="col-span-12 md:col-span-4 flex justify-center md:justify-end"
+          >
             <button
               :disabled="!pendingChanges"
               :class="{
@@ -68,7 +77,7 @@
             </button>
           </div>
         </div>
-        <div class="px-8 md:px-3">
+        <div class="px-7 md:px-3">
           <items-progress-bar
             :progress="itemCollectionPercentage * 100"
             class="mb-5 user-select-none"
@@ -82,7 +91,7 @@
           </items-progress-bar>
         </div>
         <items-grid
-          :items="items"
+          :items="filteredItems"
           :collection="playerCollection"
           :initial="initialCollection"
           :tab="activeTab"
@@ -104,6 +113,7 @@ import { POSITION, useToast } from "vue-toastification";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
+const searchText = ref("");
 
 const { items } = useItems();
 const toast = useToast();
@@ -114,6 +124,17 @@ const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
   activeTab.value = tab;
 };
+
+const filteredItems = computed(() => {
+  return {
+    [TAB.UT]: items[TAB.UT].filter((item) =>
+      item.name.toLowerCase().includes(searchText.value.toLowerCase())
+    ),
+    [TAB.ST]: items[TAB.ST].filter((item) =>
+      item.name.toLowerCase().includes(searchText.value.toLowerCase())
+    )
+  };
+});
 
 const itemsCollected = computed(() => {
   return {
