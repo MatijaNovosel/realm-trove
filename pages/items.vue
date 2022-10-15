@@ -15,20 +15,20 @@
           class="text-4xl font-bold mb-5 mt-6 flex items-center justify-center user-select-none"
         >
           <div
-            @click="changeTab(Tabs.UT)"
+            @click="changeTab(TAB.UT)"
             class="ripple px-3 py-1 cursor-pointer rounded-lg"
             :class="{
-              'text-green-vue': activeTab === Tabs.UT
+              'text-green-vue': activeTab === TAB.UT
             }"
           >
             UT
           </div>
           <div class="mx-3">•</div>
           <div
-            @click="changeTab(Tabs.ST)"
+            @click="changeTab(TAB.ST)"
             class="ripple px-3 py-1 cursor-pointer rounded-lg"
             :class="{
-              'text-green-vue': activeTab === Tabs.ST
+              'text-green-vue': activeTab === TAB.ST
             }"
           >
             ST
@@ -95,13 +95,13 @@
 
 <script setup lang="ts">
 import { PlayerCollection } from "~/models";
-import { Tabs } from "~/utils/constants";
+import { TAB } from "~/utils/constants";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import { POSITION, useToast } from "vue-toastification";
 
-const activeTab = ref(Tabs.UT);
+const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>(undefined);
 
 const { items } = useItems();
@@ -109,15 +109,15 @@ const toast = useToast();
 
 const { data: playerCollection, pending, error } = useFetch("/api/items");
 
-const changeTab = (tab: Tabs) => {
+const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
   activeTab.value = tab;
 };
 
 const itemsCollected = computed(() => {
   return {
-    [Tabs.UT]: Object.keys(playerCollection.value.ut).length,
-    [Tabs.ST]: Object.keys(playerCollection.value.st).length
+    [TAB.UT]: Object.keys(playerCollection.value.ut).length,
+    [TAB.ST]: Object.keys(playerCollection.value.st).length
   };
 });
 

@@ -24,11 +24,11 @@
 
 <script lang="ts" setup>
 import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
-import { Tabs } from "~/utils/constants";
+import { TAB } from "~/utils/constants";
 
 defineProps<{
   collection: PlayerCollection;
-  tab: Tabs;
+  tab: TAB;
   items: IDictionary<ItemInfo[]>;
 }>();
 
