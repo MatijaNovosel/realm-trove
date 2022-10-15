@@ -84,6 +84,7 @@
         <items-grid
           :items="items"
           :collection="playerCollection"
+          :initial="initialCollection"
           :tab="activeTab"
           @increment="updateCollection"
           @decrement="updateCollection($event, false)"
@@ -102,7 +103,7 @@ import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import { POSITION, useToast } from "vue-toastification";
 
 const activeTab = ref(TAB.UT);
-const initialCollection = ref<PlayerCollection>(undefined);
+const initialCollection = ref<PlayerCollection>();
 
 const { items } = useItems();
 const toast = useToast();

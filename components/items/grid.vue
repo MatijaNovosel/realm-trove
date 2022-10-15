@@ -15,7 +15,7 @@
       @click="$emit('increment', id)"
       @contextmenu.prevent="$emit('decrement', id)"
     >
-      <div class="badge user-select-none">
+      <div class="badge user-select-none" :class="badgeClass(id)">
         {{ collection[tab][id] !== 0 ? collection[tab][id] : "" }}
       </div>
     </div>
@@ -26,11 +26,25 @@
 import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
 import { TAB } from "~/utils/constants";
 
-defineProps<{
+const props = defineProps<{
   collection: PlayerCollection;
+  initial: PlayerCollection | undefined;
   tab: TAB;
   items: IDictionary<ItemInfo[]>;
 }>();
+
+const badgeClass = (id: number) => {
+  if (props.initial) {
+    const initialCollectionCount = props.initial[props.tab][id];
+    const currentCollectionCount = props.collection[props.tab][id];
+
+    if (initialCollectionCount > currentCollectionCount) {
+      return "text-red-500 font-bold";
+    } else if (initialCollectionCount < currentCollectionCount) {
+      return "text-green-500 font-bold";
+    }
+  }
+};
 
 defineEmits(["increment", "decrement"]);
 </script>
@@ -45,8 +59,11 @@ defineEmits(["increment", "decrement"]);
 
 .badge {
   position: absolute;
-  background-color: black;
-  bottom: 0px;
-  right: 0px;
+  font-size: 14px;
+  bottom: -6px;
+  right: -10px;
+  border-radius: 100%;
+  width: 22px;
+  height: 22px;
 }
 </style>
