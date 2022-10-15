@@ -35,7 +35,7 @@ const props = defineProps<{
 
 const badgeClass = (id: number) => {
   if (props.initial) {
-    const initialCollectionCount = props.initial[props.tab][id];
+    const initialCollectionCount = props.initial[props.tab][id] || 0;
     const currentCollectionCount = props.collection[props.tab][id];
 
     if (initialCollectionCount > currentCollectionCount) {
