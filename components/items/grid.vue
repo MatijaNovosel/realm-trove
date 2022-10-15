@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap justify-center md:justify-start">
+  <div class="flex flex-wrap justify-center md:justify-start no-highlight">
     <div
       class="item p-3 text-center p-2 m-1 relative cursor-pointer"
       v-for="({ pos, id, name }, i) in items[tab]"
