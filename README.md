@@ -36,26 +36,30 @@ npm install
 pnpm install --shamefully-hoist
 ```
 
-## Development Server
+1. Create a Firebase project: [console.firebase.google.com](https://console.firebase.google.com/)
+2. Register a new Web app
+3. Generate a new service account key
+4. Define a .env file with the following entries:
 
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
+```sh
+SERVICE_ACCOUNT=
+API_KEY=
+AUTH_DOMAIN=
+PROJECT_ID=
+STORAGE_BUCKET=
+MESSAGING_SENDER_ID=
+APP_ID=
+MEASUREMENT_ID=
 ```
 
-## Production
+**Note**: the service account entry must be a single line JSON string surrounded by single quotations (`'`)
 
-Build the application for production:
+5. Enable the Google provider under Authentication -> Sign-in method
+6. Add a new user
+7. Start the project with the following command:
 
-```bash
-npm run build
+```sh
+yarn dev
 ```
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+Check out the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
