@@ -39,7 +39,7 @@ pnpm install --shamefully-hoist
 1. Create a Firebase project: [console.firebase.google.com](https://console.firebase.google.com/)
 2. Register a new Web app
 3. Generate a new service account key
-4. Define a .env file with the following entries:
+4. Define a `.env` file with the following entries:
 
 ```sh
 SERVICE_ACCOUNT=
