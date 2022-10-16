@@ -154,7 +154,6 @@ const selectedGroups = ref<number[]>([]);
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
-const { $showToast } = useNuxtApp();
 
 const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
@@ -228,10 +227,10 @@ const confirmChanges = async () => {
       "UnvQmlkSkodFO6NTyv3mtY1bJyJ3"
     );
     await updateDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
-    $showToast("Saved!", "success");
+    // $showToast("Saved!", "success");
     initialCollection.value = undefined;
   } catch (e) {
-    $showToast(e.message, "error");
+    // $showToast(e.message, "error");
     error.value = true;
   }
 };
@@ -250,7 +249,7 @@ onMounted(() => {
       }
     });
   } catch (e) {
-    $showToast(e.message, "error");
+    // $showToast(e.message, "error");
     error.value = true;
   }
 });
