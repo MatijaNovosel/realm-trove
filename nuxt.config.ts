@@ -2,7 +2,16 @@ import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
   css: ["@/assets/styles.css"],
-  modules: ["nuxt-windicss", "unplugin-icons/nuxt"],
+  modules: [
+    "nuxt-windicss",
+    "unplugin-icons/nuxt",
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: ["defineStore", ["defineStore", "definePiniaStore"]]
+      }
+    ]
+  ],
   experimental: {
     viteNode: true
   },
