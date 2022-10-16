@@ -1,17 +1,6 @@
-import { defineNuxtConfig } from "nuxt";
-
 export default defineNuxtConfig({
   css: ["@/assets/styles.css"],
-  modules: [
-    "nuxt-windicss",
-    "unplugin-icons/nuxt",
-    [
-      "@pinia/nuxt",
-      {
-        autoImports: ["defineStore", ["defineStore", "definePiniaStore"]]
-      }
-    ]
-  ],
+  modules: ["nuxt-windicss", "unplugin-icons/nuxt"],
   experimental: {
     viteNode: true
   },
@@ -23,7 +12,15 @@ export default defineNuxtConfig({
       STORAGE_BUCKET: process.env.STORAGE_BUCKET,
       MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
       APP_ID: process.env.APP_ID,
-      MEASUREMENT_ID: process.env.MEASUREMENT_ID
+      MEASUREMENT_ID: process.env.MEASUREMENT_ID,
+      SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT,
+      firebaseAuthCookie: {
+        name: "fb",
+        lifetime: 60 * 60 * 8,
+        domain: "",
+        path: "/",
+        sameSite: "lax"
+      }
     }
   }
 });

@@ -153,7 +153,7 @@ const pending = ref(true);
 const error = ref(false);
 const selectedGroups = ref<number[]>([]);
 
-const { $firestore } = useNuxtApp();
+const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
 const toast = useToast();
 
@@ -223,7 +223,11 @@ const cancelChanges = () => {
 
 const confirmChanges = async () => {
   try {
-    const docRef = doc($firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
+    const docRef = doc(
+      $firebaseFirestore,
+      "items",
+      "UnvQmlkSkodFO6NTyv3mtY1bJyJ3"
+    );
     await updateDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
     toast.success("Saved!", {
       timeout: 2000,
@@ -241,7 +245,11 @@ const confirmChanges = async () => {
 
 onMounted(() => {
   try {
-    const docRef = doc($firestore, "items", "UnvQmlkSkodFO6NTyv3mtY1bJyJ3");
+    const docRef = doc(
+      $firebaseFirestore,
+      "items",
+      "UnvQmlkSkodFO6NTyv3mtY1bJyJ3"
+    );
     onSnapshot(docRef, (snap) => {
       playerCollection.value = snap.data() as PlayerCollection;
       if (pending.value) {

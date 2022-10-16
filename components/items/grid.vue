@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-wrap justify-center md:justify-start no-highlight">
+  <div
+    class="flex flex-wrap justify-center md:justify-start no-highlight"
+    v-if="items[tab].length > 0"
+  >
     <div
       class="item p-3 text-center p-2 m-1 relative cursor-pointer"
       v-for="({ pos, id, name }, i) in items[tab]"
@@ -19,6 +22,9 @@
         {{ collection[tab][id] !== 0 ? collection[tab][id] : "" }}
       </div>
     </div>
+  </div>
+  <div class="text-center pt-3" v-else>
+    <span class="text-2xl"> No items found 😢 </span>
   </div>
 </template>
 
