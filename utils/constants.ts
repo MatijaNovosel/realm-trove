@@ -2391,5 +2391,50 @@ export const ITEMS_UT: ItemInfo[] = [
       y: 0,
       x: -11868
     }
+  },
+  {
+    id: 259,
+    name: "Sakura Wakizashi",
+    source: SOURCE.EVENT,
+    pos: {
+      y: 0,
+      x: -11914
+    }
+  },
+  {
+    id: 260,
+    name: "Botany Book",
+    source: SOURCE.EVENT,
+    pos: {
+      y: 0,
+      x: -11960
+    }
+  },
+  {
+    id: 261,
+    name: "Ancient Stone Sword",
+    source: SOURCE.EVENT,
+    pos: {
+      y: 0,
+      x: -12006
+    }
+  },
+  {
+    id: 262,
+    name: "Cheater Light Armor",
+    source: SOURCE.THE_MACHINE,
+    pos: {
+      y: 0,
+      x: -12052
+    }
+  },
+  {
+    id: 263,
+    name: "Cheater Robe",
+    source: SOURCE.THE_MACHINE,
+    pos: {
+      y: 0,
+      x: -12098
+    }
   }
 ];
