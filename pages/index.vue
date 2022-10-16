@@ -15,11 +15,10 @@
 
 <script setup lang="ts">
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import * as toast from "vue-toastification";
 
-const { $firebaseAuth } = useNuxtApp();
 const router = useRouter();
-const t = toast.useToast();
+const { $firebaseAuth } = useNuxtApp();
+const { $showToast } = useNuxtApp();
 
 const disabled = ref(false);
 
@@ -31,9 +30,7 @@ const signIn = async () => {
     await signInWithPopup($firebaseAuth, provider);
     router.push("/items");
   } catch (e) {
-    t.error(e, {
-      timeout: 5000
-    });
+    $showToast(e.message, "error");
   }
 
   disabled.value = false;

@@ -142,7 +142,6 @@ import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
-import * as toast from "vue-toastification";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
@@ -155,7 +154,7 @@ const selectedGroups = ref<number[]>([]);
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
-const t = toast.useToast();
+const { $showToast } = useNuxtApp();
 
 const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
@@ -229,16 +228,10 @@ const confirmChanges = async () => {
       "UnvQmlkSkodFO6NTyv3mtY1bJyJ3"
     );
     await updateDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
-    t.success("Saved!", {
-      timeout: 2000,
-      position: toast.POSITION.BOTTOM_CENTER
-    });
+    $showToast("Saved!", "success");
     initialCollection.value = undefined;
   } catch (e) {
-    t.error(e, {
-      timeout: 5000,
-      position: toast.POSITION.BOTTOM_CENTER
-    });
+    $showToast(e.message, "error");
     error.value = true;
   }
 };
@@ -257,10 +250,7 @@ onMounted(() => {
       }
     });
   } catch (e) {
-    t.error(e.message, {
-      timeout: 5000,
-      position: toast.POSITION.BOTTOM_CENTER
-    });
+    $showToast(e.message, "error");
     error.value = true;
   }
 });
