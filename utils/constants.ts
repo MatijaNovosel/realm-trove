@@ -64,7 +64,8 @@ export enum SOURCE {
   MAD_GOD_MAYHEM,
   HIDDEN_INTERREGNUM,
   EVENT,
-  REALM
+  REALM,
+  FORGE
 }
 
 export const ITEM_DIMENSION = 46;
@@ -2435,6 +2436,162 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -12098
+    }
+  },
+  {
+    id: 264,
+    name: "Sunny Side Bow",
+    source: SOURCE.EVENT,
+    pos: {
+      y: 0,
+      x: -12144
+    }
+  }
+];
+
+export const ITEMS_ST: ItemInfo[] = [
+  {
+    id: 1501,
+    name: "Reikoku",
+    source: SOURCE.SECLUDED_THICKET,
+    pos: {
+      x: 0,
+      y: -46
+    }
+  },
+  {
+    id: 1502,
+    name: "Daybreak Chakram",
+    source: SOURCE.SECLUDED_THICKET,
+    pos: {
+      x: -46,
+      y: -46
+    }
+  },
+  {
+    id: 1503,
+    name: "Hirejou Tenne",
+    source: SOURCE.SECLUDED_THICKET,
+    pos: {
+      x: -92,
+      y: -46
+    }
+  },
+  {
+    id: 1504,
+    name: "Heavenly Magatama",
+    source: SOURCE.SECLUDED_THICKET,
+    pos: {
+      x: -138,
+      y: -46
+    }
+  },
+  {
+    id: 1505,
+    name: "Deathless Crossbow",
+    source: SOURCE.CURSED_LIBRARY,
+    pos: {
+      x: -184,
+      y: -46
+    }
+  },
+  {
+    id: 1506,
+    name: "Quiver of Shrieking Specters",
+    source: SOURCE.DAVY_JONES_LOCKER,
+    pos: {
+      x: -230,
+      y: -46
+    }
+  },
+  {
+    id: 1507,
+    name: "Wraith’s Brigandine",
+    source: SOURCE.CURSED_LIBRARY,
+    pos: {
+      x: -276,
+      y: -46
+    }
+  },
+  {
+    id: 1508,
+    name: "Revenant Ring",
+    source: SOURCE.DAVY_JONES_LOCKER,
+    pos: {
+      x: -322,
+      y: -46
+    }
+  },
+  {
+    id: 1509,
+    name: "Jagged Hatchet",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -368,
+      y: -46
+    }
+  },
+  {
+    id: 1510,
+    name: "Burlap Cowl",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -414,
+      y: -46
+    }
+  },
+  {
+    id: 1511,
+    name: "Overalls of Endurance",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -460,
+      y: -46
+    }
+  },
+  {
+    id: 1512,
+    name: "Headless Ted",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -506,
+      y: -46
+    }
+  },
+  {
+    id: 1513,
+    name: "Fiery Katana",
+    source: SOURCE.LAIR_OF_SHAITAN,
+    pos: {
+      x: -552,
+      y: -46
+    }
+  },
+  {
+    id: 1514,
+    name: "Pyro Sheath",
+    source: SOURCE.LAIR_OF_DRACONIS,
+    pos: {
+      x: -598,
+      y: -46
+    }
+  },
+  {
+    id: 1515,
+    name: "Flame Guard",
+    source: SOURCE.THE_NEST,
+    pos: {
+      x: -644,
+      y: -46
+    }
+  },
+  {
+    id: 1516,
+    name: "Firelight Necklace",
+    source: SOURCE.ABYSS_OF_DEMONS,
+    pos: {
+      x: -690,
+      y: -46
     }
   }
 ];
