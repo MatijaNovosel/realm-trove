@@ -2364,5 +2364,32 @@ export const ITEMS_UT: ItemInfo[] = [
       y: 0,
       x: -11730
     }
+  },
+  {
+    id: 256,
+    name: "Greaterhosen",
+    source: SOURCE.EVENT,
+    pos: {
+      y: 0,
+      x: -11776
+    }
+  },
+  {
+    id: 257,
+    name: "Mighty Stein",
+    source: SOURCE.EVENT,
+    pos: {
+      y: 0,
+      x: -11822
+    }
+  },
+  {
+    id: 258,
+    name: "Crystallized Worm Spellblade",
+    source: SOURCE.FUNGAL_CAVERN,
+    pos: {
+      y: 0,
+      x: -11868
+    }
   }
 ];
