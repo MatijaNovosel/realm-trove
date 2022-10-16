@@ -2593,5 +2593,347 @@ export const ITEMS_ST: ItemInfo[] = [
       x: -690,
       y: -46
     }
+  },
+  {
+    id: 1517,
+    name: "Withered Poncho",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -736,
+      y: -46
+    }
+  },
+  {
+    id: 1518,
+    name: "Burlap Hat",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -782,
+      y: -46
+    }
+  },
+  {
+    id: 1519,
+    name: "Bone Bow",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -828,
+      y: -46
+    }
+  },
+  {
+    id: 1520,
+    name: "Spinal Quiver",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -874,
+      y: -46
+    }
+  },
+  {
+    id: 1521,
+    name: "Torso Tunic",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -920,
+      y: -46
+    }
+  },
+  {
+    id: 1522,
+    name: "Collarbone Collar",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -966,
+      y: -46
+    }
+  },
+  {
+    id: 1523,
+    name: "Hellfire Broadsword",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1012,
+      y: -46
+    }
+  },
+  {
+    id: 1524,
+    name: "Sacrilege Seal",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1058,
+      y: -46
+    }
+  },
+  {
+    id: 1525,
+    name: "Tormentor’s Chainmail",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1104,
+      y: -46
+    }
+  },
+  {
+    id: 1526,
+    name: "Horned Ring",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1150,
+      y: -46
+    }
+  },
+  {
+    id: 1527,
+    name: "Stygian Torch",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1196,
+      y: -46
+    }
+  },
+  {
+    id: 1528,
+    name: "Orb of the Sabbath",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1242,
+      y: -46
+    }
+  },
+  {
+    id: 1529,
+    name: "Robe of the Enchantress",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1288,
+      y: -46
+    }
+  },
+  {
+    id: 1530,
+    name: "Witch’s Brooch",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -1334,
+      y: -46
+    }
+  },
+  {
+    id: 1531,
+    name: "Ring of the Inferno",
+    source: SOURCE.REALM,
+    pos: {
+      x: -1380,
+      y: -46
+    }
+  },
+  {
+    id: 1532,
+    name: "Molten Mantle",
+    source: SOURCE.ABYSS_OF_DEMONS,
+    pos: {
+      x: -1426,
+      y: -46
+    }
+  },
+  {
+    id: 1533,
+    name: "Scorchium Stone",
+    source: SOURCE.ABYSS_OF_DEMONS,
+    pos: {
+      x: -1472,
+      y: -46
+    }
+  },
+  {
+    id: 1534,
+    name: "Staff of Eruption",
+    source: SOURCE.LAIR_OF_SHAITAN,
+    pos: {
+      x: -1518,
+      y: -46
+    }
+  },
+  {
+    id: 1535,
+    name: "Radiant Heart",
+    source: SOURCE.CRYSTAL_CAVERN,
+    pos: {
+      x: -1564,
+      y: -46
+    }
+  },
+  {
+    id: 1536,
+    name: "Luminous Armor",
+    source: SOURCE.CRYSTAL_CAVERN,
+    pos: {
+      x: -1610,
+      y: -46
+    }
+  },
+  {
+    id: 1537,
+    name: "Crystalline Kunai",
+    source: SOURCE.FUNGAL_CAVERN,
+    pos: {
+      x: -1656,
+      y: -46
+    }
+  },
+  {
+    id: 1538,
+    name: "Quartz Cutter",
+    source: SOURCE.CRYSTAL_CAVERN,
+    pos: {
+      x: -1702,
+      y: -46
+    }
+  },
+  {
+    id: 1539,
+    name: "Pernicious Peridot",
+    source: SOURCE.SNAKE_PIT,
+    pos: {
+      x: -1748,
+      y: -46
+    }
+  },
+  {
+    id: 1540,
+    name: "Acidic Armor",
+    source: SOURCE.SNAKE_PIT,
+    pos: {
+      x: -1794,
+      y: -46
+    }
+  },
+  {
+    id: 1541,
+    name: "Virulent Venom",
+    source: SOURCE.TOXIC_SEWERS,
+    pos: {
+      x: -1840,
+      y: -46
+    }
+  },
+  {
+    id: 1542,
+    name: "Toxin Tooth",
+    source: SOURCE.TOXIC_SEWERS,
+    pos: {
+      x: -1886,
+      y: -46
+    }
+  },
+  {
+    id: 1543,
+    name: "Kiritsukeru",
+    source: SOURCE.REALM,
+    pos: {
+      x: -1932,
+      y: -46
+    }
+  },
+  {
+    id: 1544,
+    name: "Watarimono",
+    source: SOURCE.REALM,
+    pos: {
+      x: -1978,
+      y: -46
+    }
+  },
+  {
+    id: 1545,
+    name: "Reinforced Root Armor",
+    source: SOURCE.REALM,
+    pos: {
+      x: -2024,
+      y: -46
+    }
+  },
+  {
+    id: 1546,
+    name: "Traveler’s Trinket",
+    source: SOURCE.REALM,
+    pos: {
+      x: -2070,
+      y: -46
+    }
+  },
+  {
+    id: 1547,
+    name: "Tideturner Trident",
+    source: SOURCE.OCEAN_TRENCH,
+    pos: {
+      x: -2116,
+      y: -46
+    }
+  },
+  {
+    id: 1548,
+    name: "Slurpian Sea Scroll",
+    source: SOURCE.CNIDARIAN_REEF,
+    pos: {
+      x: -2162,
+      y: -46
+    }
+  },
+  {
+    id: 1549,
+    name: "Oceanic Apparel",
+    source: SOURCE.OCEAN_TRENCH,
+    pos: {
+      x: -2208,
+      y: -46
+    }
+  },
+  {
+    id: 1550,
+    name: "Imperial Keepsake",
+    source: SOURCE.CNIDARIAN_REEF,
+    pos: {
+      x: -2254,
+      y: -46
+    }
+  },
+  {
+    id: 1551,
+    name: "Magic Wand",
+    source: SOURCE.PUPPET_MASTERS_THEATRE,
+    pos: {
+      x: -2300,
+      y: -46
+    }
+  },
+  {
+    id: 1552,
+    name: "Lightshow Scepter",
+    source: SOURCE.PUPPET_MASTERS_THEATRE,
+    pos: {
+      x: -2346,
+      y: -46
+    }
+  },
+  {
+    id: 1553,
+    name: "Magician’s Robe",
+    source: SOURCE.PUPPET_MASTERS_THEATRE,
+    pos: {
+      x: -2392,
+      y: -46
+    }
+  },
+  {
+    id: 1554,
+    name: "Performer’s Hat",
+    source: SOURCE.PUPPET_MASTERS_THEATRE,
+    pos: {
+      x: -2438,
+      y: -46
+    }
   }
 ];
