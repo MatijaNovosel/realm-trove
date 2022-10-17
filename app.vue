@@ -43,5 +43,6 @@ setMeta("Realm trove");
 .toast-container {
   bottom: 15px;
   left: 50%;
+  transform: translateX(-50%);
 }
 </style>
