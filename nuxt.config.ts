@@ -1,3 +1,5 @@
+import pkg from "./package.json";
+
 export default defineNuxtConfig({
   css: ["@/assets/styles.css"],
   modules: ["nuxt-windicss", "unplugin-icons/nuxt"],
@@ -14,6 +16,7 @@ export default defineNuxtConfig({
       APP_ID: process.env.APP_ID,
       MEASUREMENT_ID: process.env.MEASUREMENT_ID,
       SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT,
+      CLIENT_VERSION: pkg.version,
       firebaseAuthCookie: {
         name: "fb",
         lifetime: 60 * 60 * 8,

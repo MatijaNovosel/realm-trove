@@ -2940,15 +2940,6 @@ export const ITEMS_ST: ItemInfo[] = [
     }
   },
   {
-    id: 1555,
-    name: "Corruption Tether",
-    source: SOURCE.THE_SHATTERS,
-    pos: {
-      x: -2484,
-      y: -46
-    }
-  },
-  {
     id: 1556,
     name: "Theurgy Wand",
     source: SOURCE.ORYX_CASTLE,
