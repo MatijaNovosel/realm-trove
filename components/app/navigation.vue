@@ -2,7 +2,14 @@
   <header
     class="flex md:justify-between md:w-full items-center fixed md:absolute mt-4 z-4 bg-dark-400 rounded-lg md:bg-transparent px-4 py-3"
   >
-    <span class="md:text-2xl"> v{{ $config.CLIENT_VERSION }} </span>
+    <span
+      class="md:text-2xl"
+      :class="{
+        'hidden md:block': $route.path === '/items'
+      }"
+    >
+      v{{ $config.CLIENT_VERSION }}
+    </span>
     <div v-if="user">
       <span class="mr-4">
         {{ user.username }}
