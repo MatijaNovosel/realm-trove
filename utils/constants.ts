@@ -67,7 +67,8 @@ export enum SOURCE {
   REALM,
   FORGE,
   ORYX_CASTLE,
-  HEROIC_UNDEAD_LAIR
+  HEROIC_UNDEAD_LAIR,
+  TRADING
 }
 
 export const ITEM_DIMENSION = 46;
@@ -4366,6 +4367,132 @@ export const ITEMS_ST: ItemInfo[] = [
     source: SOURCE.OCEAN_TRENCH,
     pos: {
       x: -9706,
+      y: -46
+    }
+  },
+  {
+    id: 1714,
+    name: "Legacy Etherite Dagger",
+    source: SOURCE.HAUNTED_CEMETERY,
+    pos: {
+      x: -9752,
+      y: -46
+    }
+  },
+  {
+    id: 1715,
+    name: "Legacy Mantle of Skuld",
+    source: SOURCE.TRADING,
+    pos: {
+      x: -9798,
+      y: -46
+    }
+  },
+  {
+    id: 1716,
+    name: "Legacy Ghastly Drape",
+    source: SOURCE.TRADING,
+    pos: {
+      x: -9844,
+      y: -46
+    }
+  },
+  {
+    id: 1717,
+    name: "Legacy Spectral Ring of Horrors",
+    source: SOURCE.HAUNTED_CEMETERY,
+    pos: {
+      x: -9890,
+      y: -46
+    }
+  },
+  {
+    id: 1718,
+    name: "Cupid’s Garments",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -9936,
+      y: -46
+    }
+  },
+  {
+    id: 1719,
+    name: "Ring of Unbound Love",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -9982,
+      y: -46
+    }
+  },
+  {
+    id: 1720,
+    name: "Heartstruck Bow",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -10028,
+      y: -46
+    }
+  },
+  {
+    id: 1721,
+    name: "Quiver of Dazing Love",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -10074,
+      y: -46
+    }
+  },
+  {
+    id: 1722,
+    name: "Legacy Sentient Staff",
+    source: SOURCE.TRADING,
+    pos: {
+      x: -10120,
+      y: -46
+    }
+  },
+  {
+    id: 1723,
+    name: "Legacy Ancient Spell: Pierce",
+    source: SOURCE.TRADING,
+    pos: {
+      x: -10166,
+      y: -46
+    }
+  },
+  {
+    id: 1724,
+    name: "Legacy Robe of Twilight",
+    source: SOURCE.TRADING,
+    pos: {
+      x: -10212,
+      y: -46
+    }
+  },
+  {
+    id: 1725,
+    name: "Legacy Forgotten Ring",
+    source: SOURCE.TRADING,
+    pos: {
+      x: -10258,
+      y: -46
+    }
+  },
+  {
+    id: 1726,
+    name: "Maize Machete",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -10304,
+      y: -46
+    }
+  },
+  {
+    id: 1727,
+    name: "Pumpkin Prism",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -10350,
       y: -46
     }
   }
