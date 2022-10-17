@@ -65,7 +65,9 @@ export enum SOURCE {
   HIDDEN_INTERREGNUM,
   EVENT,
   REALM,
-  FORGE
+  FORGE,
+  ORYX_CASTLE,
+  HEROIC_UNDEAD_LAIR
 }
 
 export const ITEM_DIMENSION = 46;
@@ -2414,7 +2416,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 261,
     name: "Ancient Stone Sword",
-    source: SOURCE.EVENT,
+    source: SOURCE.ORYX_CASTLE,
     pos: {
       y: 0,
       x: -12006
@@ -2933,6 +2935,699 @@ export const ITEMS_ST: ItemInfo[] = [
     source: SOURCE.PUPPET_MASTERS_THEATRE,
     pos: {
       x: -2438,
+      y: -46
+    }
+  },
+  {
+    id: 1555,
+    name: "Corruption Tether",
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      x: -2484,
+      y: -46
+    }
+  },
+  {
+    id: 1556,
+    name: "Theurgy Wand",
+    source: SOURCE.ORYX_CASTLE,
+    pos: {
+      x: -2484,
+      y: -46
+    }
+  },
+  {
+    id: 1557,
+    name: "Ceremonial Merlot",
+    source: SOURCE.ORYXS_CHAMBER,
+    pos: {
+      x: -2530,
+      y: -46
+    }
+  },
+  {
+    id: 1558,
+    name: "Anointed Robe",
+    source: SOURCE.ORYX_CASTLE,
+    pos: {
+      x: -2576,
+      y: -46
+    }
+  },
+  {
+    id: 1559,
+    name: "Ring of Pagan Favor",
+    source: SOURCE.ORYX_CASTLE,
+    pos: {
+      x: -2622,
+      y: -46
+    }
+  },
+  {
+    id: 1560,
+    name: "Bergenia Bow",
+    source: SOURCE.WOODLAND_LABYRINTH,
+    pos: {
+      x: -2668,
+      y: -46
+    }
+  },
+  {
+    id: 1561,
+    name: "Lifebringing Lotus",
+    source: SOURCE.MAGIC_WOODS,
+    pos: {
+      x: -2714,
+      y: -46
+    }
+  },
+  {
+    id: 1562,
+    name: "Hollyhock Hide",
+    source: SOURCE.WOODLAND_LABYRINTH,
+    pos: {
+      x: -2760,
+      y: -46
+    }
+  },
+  {
+    id: 1563,
+    name: "Chrysanthemum Corsage",
+    source: SOURCE.WOODLAND_LABYRINTH,
+    pos: {
+      x: -2806,
+      y: -46
+    }
+  },
+  {
+    id: 1564,
+    name: "Swashbuckler’s Sickle",
+    source: SOURCE.DAVY_JONES_LOCKER,
+    pos: {
+      x: -2852,
+      y: -46
+    }
+  },
+  {
+    id: 1565,
+    name: "Tricorne of the High Seas",
+    source: SOURCE.DEADWATER_DOCKS,
+    pos: {
+      x: -2898,
+      y: -46
+    }
+  },
+  {
+    id: 1566,
+    name: "Naval Uniform",
+    source: SOURCE.DEADWATER_DOCKS,
+    pos: {
+      x: -2944,
+      y: -46
+    }
+  },
+  {
+    id: 1567,
+    name: "First Mate's Hook",
+    source: SOURCE.DEADWATER_DOCKS,
+    pos: {
+      x: -2990,
+      y: -46
+    }
+  },
+  {
+    id: 1568,
+    name: "Shendyt of Geb",
+    source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    pos: {
+      x: -3036,
+      y: -46
+    }
+  },
+  {
+    id: 1569,
+    name: "Geb's Ring of Wisdom",
+    source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    pos: {
+      x: -3082,
+      y: -46
+    }
+  },
+  {
+    id: 1570,
+    name: "Book of Geb",
+    source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    pos: {
+      x: -3128,
+      y: -46
+    }
+  },
+  {
+    id: 1571,
+    name: "Wand of Geb",
+    source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    pos: {
+      x: -3174,
+      y: -46
+    }
+  },
+  {
+    id: 1572,
+    name: "Soulless Robe",
+    source: SOURCE.REALM,
+    pos: {
+      x: -3220,
+      y: -46
+    }
+  },
+  {
+    id: 1573,
+    name: "Ring of the Covetous Heart",
+    source: SOURCE.REALM,
+    pos: {
+      x: -3266,
+      y: -46
+    }
+  },
+  {
+    id: 1574,
+    name: "Soul of the Bearer",
+    source: SOURCE.REALM,
+    pos: {
+      x: -3312,
+      y: -46
+    }
+  },
+  {
+    id: 1575,
+    name: "The Phylactery",
+    source: SOURCE.REALM,
+    pos: {
+      x: -3358,
+      y: -46
+    }
+  },
+  {
+    id: 1576,
+    name: "Pixie-Enchanted Sword",
+    source: SOURCE.CANDYLAND_HUNTING_GROUNDS,
+    pos: {
+      x: -3404,
+      y: -46
+    }
+  },
+  {
+    id: 1577,
+    name: "Seal of the Enchanted Forest",
+    source: SOURCE.CANDYLAND_HUNTING_GROUNDS,
+    pos: {
+      x: -3450,
+      y: -46
+    }
+  },
+  {
+    id: 1578,
+    name: "Fairy Plate",
+    source: SOURCE.CANDYLAND_HUNTING_GROUNDS,
+    pos: {
+      x: -3496,
+      y: -46
+    }
+  },
+  {
+    id: 1579,
+    name: "Ring of Pure Wishes",
+    source: SOURCE.CANDYLAND_HUNTING_GROUNDS,
+    pos: {
+      x: -3542,
+      y: -46
+    }
+  },
+  {
+    id: 1580,
+    name: "Etherite Dagger",
+    source: SOURCE.HAUNTED_CEMETERY,
+    pos: {
+      x: -3588,
+      y: -46
+    }
+  },
+  {
+    id: 1581,
+    name: "Mantle of Skuld",
+    source: SOURCE.HAUNTED_CEMETERY,
+    pos: {
+      x: -3634,
+      y: -46
+    }
+  },
+  {
+    id: 1582,
+    name: "Ghastly Drape",
+    source: SOURCE.HAUNTED_CEMETERY,
+    pos: {
+      x: -3680,
+      y: -46
+    }
+  },
+  {
+    id: 1583,
+    name: "Spectral Ring of Horrors",
+    source: SOURCE.HAUNTED_CEMETERY,
+    pos: {
+      x: -3726,
+      y: -46
+    }
+  },
+  {
+    id: 1584,
+    name: "Corruption Tether",
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      x: -3772,
+      y: -46
+    }
+  },
+  {
+    id: 1585,
+    name: "Ancient Eminence",
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      x: -3818,
+      y: -46
+    }
+  },
+  {
+    id: 1586,
+    name: "Twilight Shroud",
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      x: -3864,
+      y: -46
+    }
+  },
+  {
+    id: 1587,
+    name: "Defiled Equilibrium",
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      x: -3910,
+      y: -46
+    }
+  },
+  {
+    id: 1588,
+    name: "Indomptable",
+    source: SOURCE.LAIR_OF_DRACONIS,
+    pos: {
+      x: -3956,
+      y: -46
+    }
+  },
+  {
+    id: 1589,
+    name: "Helm of Draconic Dominance",
+    source: SOURCE.LAIR_OF_DRACONIS,
+    pos: {
+      x: -4002,
+      y: -46
+    }
+  },
+  {
+    id: 1590,
+    name: "Zaarvox's Heart",
+    source: SOURCE.LAIR_OF_DRACONIS,
+    pos: {
+      x: -4048,
+      y: -46
+    }
+  },
+  {
+    id: 1591,
+    name: "Amulet of Drakefyre",
+    source: SOURCE.LAIR_OF_DRACONIS,
+    pos: {
+      x: -4094,
+      y: -46
+    }
+  },
+  {
+    id: 1592,
+    name: "Edictum Praetoris",
+    source: SOURCE.UNDEAD_LAIR,
+    pos: {
+      x: -4140,
+      y: -46
+    }
+  },
+  {
+    id: 1593,
+    name: "Memento Mori",
+    source: SOURCE.HEROIC_UNDEAD_LAIR,
+    pos: {
+      x: -4186,
+      y: -46
+    }
+  },
+  {
+    id: 1594,
+    name: "Toga Picta",
+    source: SOURCE.UNDEAD_LAIR,
+    pos: {
+      x: -4232,
+      y: -46
+    }
+  },
+  {
+    id: 1595,
+    name: "Interregnum",
+    source: SOURCE.REALM,
+    pos: {
+      x: -4278,
+      y: -46
+    }
+  },
+  {
+    id: 1596,
+    name: "Squaroid Staff",
+    source: SOURCE.THE_THIRD_DIMENSION,
+    pos: {
+      x: -4324,
+      y: -46
+    }
+  },
+  {
+    id: 1597,
+    name: "Cubic Frame",
+    source: SOURCE.THE_THIRD_DIMENSION,
+    pos: {
+      x: -4370,
+      y: -46
+    }
+  },
+  {
+    id: 1598,
+    name: "Polygonal Garbs",
+    source: SOURCE.THE_THIRD_DIMENSION,
+    pos: {
+      x: -4416,
+      y: -46
+    }
+  },
+  {
+    id: 1599,
+    name: "Cuband",
+    source: SOURCE.SPRITE_WORLD,
+    pos: {
+      x: -4462,
+      y: -46
+    }
+  },
+  {
+    id: 1600,
+    name: "Dalvar's Battle Axe",
+    source: SOURCE.ICE_CAVE,
+    pos: {
+      x: -4508,
+      y: -46
+    }
+  },
+  {
+    id: 1601,
+    name: "Sunken Buckler",
+    source: SOURCE.ICE_CAVE,
+    pos: {
+      x: -4554,
+      y: -46
+    }
+  },
+  {
+    id: 1602,
+    name: "Chainmail Body Armor",
+    source: SOURCE.ICE_CAVE,
+    pos: {
+      x: -4600,
+      y: -46
+    }
+  },
+  {
+    id: 1603,
+    name: "Gjallarhorn",
+    source: SOURCE.ICE_CAVE,
+    pos: {
+      x: -4646,
+      y: -46
+    }
+  },
+  {
+    id: 1604,
+    name: "C.L.A.W.",
+    source: SOURCE.HIGH_TECH_TERROR,
+    pos: {
+      x: -4692,
+      y: -46
+    }
+  },
+  {
+    id: 1605,
+    name: "B.O.O.M.",
+    source: SOURCE.HIGH_TECH_TERROR,
+    pos: {
+      x: -4738,
+      y: -46
+    }
+  },
+  {
+    id: 1606,
+    name: "A.R.M.O.R.",
+    source: SOURCE.HIGH_TECH_TERROR,
+    pos: {
+      x: -4784,
+      y: -46
+    }
+  },
+  {
+    id: 1607,
+    name: "C.O.N.T.R.O.L.L.E.R.",
+    source: SOURCE.MAD_LAB,
+    pos: {
+      x: -4830,
+      y: -46
+    }
+  },
+  {
+    id: 1608,
+    name: "Fallen One’s Blade",
+    source: SOURCE.THE_NEST,
+    pos: {
+      x: -4876,
+      y: -46
+    }
+  },
+  {
+    id: 1609,
+    name: "Abyssal Insignia",
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      x: -4922,
+      y: -46
+    }
+  },
+  {
+    id: 1610,
+    name: "Vortex Plating",
+    source: SOURCE.ICE_CAVE,
+    pos: {
+      x: -4968,
+      y: -46
+    }
+  },
+  {
+    id: 1611,
+    name: "Eye of the Void",
+    source: SOURCE.REALM,
+    pos: {
+      x: -5014,
+      y: -46
+    }
+  },
+  {
+    id: 1612,
+    name: "Archangel's Judgement",
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      x: -5060,
+      y: -46
+    }
+  },
+  {
+    id: 1613,
+    name: "Daevite Progenitor",
+    source: SOURCE.FUNGAL_CAVERN,
+    pos: {
+      x: -5106,
+      y: -46
+    }
+  },
+  {
+    id: 1614,
+    name: "Seraphim's Guard",
+    source: SOURCE.OCEAN_TRENCH,
+    pos: {
+      x: -5152,
+      y: -46
+    }
+  },
+  {
+    id: 1615,
+    name: "Flames of Genesis",
+    source: SOURCE.REALM,
+    pos: {
+      x: -5198,
+      y: -46
+    }
+  },
+  {
+    id: 1616,
+    name: "Symbiotic Ripper",
+    source: SOURCE.THE_CRAWLING_DEPTHS,
+    pos: {
+      x: -5244,
+      y: -46
+    }
+  },
+  {
+    id: 1617,
+    name: "Parasitic Concoction",
+    source: SOURCE.PARASITE_CHAMBERS,
+    pos: {
+      x: -5290,
+      y: -46
+    }
+  },
+  {
+    id: 1618,
+    name: "Rags of the Host",
+    source: SOURCE.PARASITE_CHAMBERS,
+    pos: {
+      x: -5336,
+      y: -46
+    }
+  },
+  {
+    id: 1619,
+    name: "Hivemind Circlet",
+    source: SOURCE.PARASITE_CHAMBERS,
+    pos: {
+      x: -5382,
+      y: -46
+    }
+  },
+  {
+    id: 1620,
+    name: "Kazekiri",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    pos: {
+      x: -5428,
+      y: -46
+    }
+  },
+  {
+    id: 1621,
+    name: "Kamishimo",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    pos: {
+      x: -5474,
+      y: -46
+    }
+  },
+  {
+    id: 1622,
+    name: "Akuma's Tear",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    pos: {
+      x: -5520,
+      y: -46
+    }
+  },
+  {
+    id: 1623,
+    name: "Ryu's Blade",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    pos: {
+      x: -5566,
+      y: -46
+    }
+  },
+  {
+    id: 1624,
+    name: "Mercy's Bane",
+    source: SOURCE.WINE_CELLAR,
+    pos: {
+      x: -5612,
+      y: -46
+    }
+  },
+  {
+    id: 1625,
+    name: "Bloodstone Ring",
+    source: SOURCE.WINE_CELLAR,
+    pos: {
+      x: -5658,
+      y: -46
+    }
+  },
+  {
+    id: 1626,
+    name: "Champion's Bastion",
+    source: SOURCE.WINE_CELLAR,
+    pos: {
+      x: -5704,
+      y: -46
+    }
+  },
+  {
+    id: 1627,
+    name: "Oryx's Greatsword",
+    source: SOURCE.WINE_CELLAR,
+    pos: {
+      x: -5750,
+      y: -46
+    }
+  },
+  {
+    id: 1628,
+    name: "Gravekeeper’s Scythe",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -5796,
+      y: -46
+    }
+  },
+  {
+    id: 1629,
+    name: "Hooded Skull",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -5842,
+      y: -46
+    }
+  },
+  {
+    id: 1630,
+    name: "Executioner’s Garb",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -5888,
+      y: -46
+    }
+  },
+  {
+    id: 1631,
+    name: "Grim Goblet",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -5934,
       y: -46
     }
   }
