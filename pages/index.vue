@@ -25,6 +25,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const router = useRouter();
 const { $firebaseAuth } = useNuxtApp();
+const { createToast } = useToast();
 
 const loggingIn = ref(false);
 
@@ -34,9 +35,10 @@ const signIn = async () => {
 
   try {
     await signInWithPopup($firebaseAuth, provider);
+    createToast("Successfully signed in!", "green-500");
     router.push("/items");
   } catch (e) {
-    // $showToast(e.message, "error");
+    createToast(e.message, "red-500");
     loggingIn.value = false;
   }
 };

@@ -1,5 +1,6 @@
 import type { DecodedIdToken } from "firebase-admin/auth";
 import type { User } from "firebase/auth";
+import type { User as CustomUser } from "~/composables/useUser";
 
 export const randInt = (min: number, max: number) => {
   min = Math.ceil(min);
@@ -23,9 +24,10 @@ export const groupBy = (array: any[], property: string): any[] => {
   }, {});
 };
 
-export const formatUser = (user: User | DecodedIdToken) => {
+export const formatUser = (user: User | DecodedIdToken): CustomUser => {
   return {
     uid: user.uid,
-    email: user.email
+    email: user.email,
+    username: user.displayName
   };
 };
