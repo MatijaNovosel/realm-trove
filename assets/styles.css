@@ -130,3 +130,13 @@ html {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+.list-enter-active,
+.list-leave-active {
+  animation: bounce 0.5s;
+}
+
+.list-enter-from,
+.list-leave-to {
+  animation: bounce 0.5s reverse;
+}

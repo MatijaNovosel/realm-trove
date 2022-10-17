@@ -9,14 +9,28 @@
         <AppFooter />
       </div>
     </div>
+    <TransitionGroup
+      name="list"
+      class="toast-container fixed text-white"
+      tag="div"
+    >
+      <div
+        class="px-6 py-2 rounded-lg"
+        v-for="(t, i) in toasts"
+        :key="i"
+        :class="{
+          'mb-4': i !== toasts.length - 1,
+          [`bg-${t.color}`]: true
+        }"
+      >
+        {{ t.msg }}
+      </div>
+    </TransitionGroup>
   </Html>
 </template>
 
 <script lang="ts" setup>
-onMounted(() => {
-  //
-});
-
+const { toasts } = useToast();
 const { setMeta } = useMetadata();
 setMeta("Realm trove");
 </script>
@@ -24,5 +38,10 @@ setMeta("Realm trove");
 <style scoped>
 .max-w-container {
   max-width: 1026px;
+}
+
+.toast-container {
+  bottom: 15px;
+  left: 50%;
 }
 </style>
