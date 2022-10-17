@@ -35,7 +35,7 @@ const signIn = async () => {
 
   try {
     await signInWithPopup($firebaseAuth, provider);
-    createToast("Successfully signed in!", "green-500");
+    createToast("Signed in!", "green-500");
     router.push("/items");
   } catch (e) {
     createToast(e.message, "red-500");

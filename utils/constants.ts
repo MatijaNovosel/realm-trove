@@ -3630,5 +3630,743 @@ export const ITEMS_ST: ItemInfo[] = [
       x: -5934,
       y: -46
     }
+  },
+  {
+    id: 1632,
+    name: "Eternal Graved Great Sword",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -5980,
+      y: -46
+    }
+  },
+  {
+    id: 1633,
+    name: "Spriteful Shield",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6026,
+      y: -46
+    }
+  },
+  {
+    id: 1634,
+    name: "Eggre Battle Armor",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6072,
+      y: -46
+    }
+  },
+  {
+    id: 1635,
+    name: "Tiara of Eggscellent Sturdiness",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6118,
+      y: -46
+    }
+  },
+  {
+    id: 1636,
+    name: "Savage Claws",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6164,
+      y: -46
+    }
+  },
+  {
+    id: 1637,
+    name: "Beastly Mane",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6210,
+      y: -46
+    }
+  },
+  {
+    id: 1638,
+    name: "Ragetorn Armor",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6256,
+      y: -46
+    }
+  },
+  {
+    id: 1639,
+    name: "Moonstone Ring",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6302,
+      y: -46
+    }
+  },
+  {
+    id: 1640,
+    name: "Tormented Shriek",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6348,
+      y: -46
+    }
+  },
+  {
+    id: 1641,
+    name: "Ghastly Mace",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6394,
+      y: -46
+    }
+  },
+  {
+    id: 1642,
+    name: "Lacerated Gown",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6440,
+      y: -46
+    }
+  },
+  {
+    id: 1643,
+    name: "Unresolved Grudge",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6486,
+      y: -46
+    }
+  },
+  {
+    id: 1644,
+    name: "Holy Artifact",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6532,
+      y: -46
+    }
+  },
+  {
+    id: 1645,
+    name: "Tome of Exorcism",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6578,
+      y: -46
+    }
+  },
+  {
+    id: 1646,
+    name: "Garb of the Ordained",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6624,
+      y: -46
+    }
+  },
+  {
+    id: 1647,
+    name: "Pontifex Ring",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6670,
+      y: -46
+    }
+  },
+  {
+    id: 1648,
+    name: "Silver Revolvers",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6716,
+      y: -46
+    }
+  },
+  {
+    id: 1649,
+    name: "Consecrated Trap",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6762,
+      y: -46
+    }
+  },
+  {
+    id: 1650,
+    name: "Metal-plated Corset",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6808,
+      y: -46
+    }
+  },
+  {
+    id: 1651,
+    name: "Vial of Sustenance",
+    source: SOURCE.EVENT,
+    pos: {
+      x: -6854,
+      y: -46
+    }
+  },
+  {
+    id: 1652,
+    name: "Hailstorm",
+    source: SOURCE.ICE_CAVE,
+    pos: {
+      x: -6900,
+      y: -46
+    }
+  },
+  {
+    id: 1653,
+    name: "Thundering Chorus",
+    source: SOURCE.SECLUDED_THICKET,
+    pos: {
+      x: -6946,
+      y: -46
+    }
+  },
+  {
+    id: 1654,
+    name: "Wind Dancer Robe",
+    source: SOURCE.LAIR_OF_DRACONIS,
+    pos: {
+      x: -6992,
+      y: -46
+    }
+  },
+  {
+    id: 1655,
+    name: "Augur of the Tempest",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    pos: {
+      x: -7038,
+      y: -46
+    }
+  },
+  {
+    id: 1656,
+    name: "Earthen Ward",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    pos: {
+      x: -7084,
+      y: -46
+    }
+  },
+  {
+    id: 1657,
+    name: "Stonemould Mace",
+    source: SOURCE.LAIR_OF_DRACONIS,
+    pos: {
+      x: -7130,
+      y: -46
+    }
+  },
+  {
+    id: 1658,
+    name: "Rocky Robe",
+    source: SOURCE.ABYSS_OF_DEMONS,
+    pos: {
+      x: -7176,
+      y: -46
+    }
+  },
+  {
+    id: 1659,
+    name: "Steadfast Glyph",
+    source: SOURCE.ANCIENT_RUINS,
+    pos: {
+      x: -7222,
+      y: -46
+    }
+  },
+  {
+    id: 1660,
+    name: "Abomination’s Wrath",
+    source: SOURCE.PARASITE_CHAMBERS,
+    pos: {
+      x: -7268,
+      y: -46
+    }
+  },
+  {
+    id: 1661,
+    name: "Grotesque Scepter",
+    source: SOURCE.MAD_LAB,
+    pos: {
+      x: -7314,
+      y: -46
+    }
+  },
+  {
+    id: 1662,
+    name: "Garment of the Beast",
+    source: SOURCE.PARASITE_CHAMBERS,
+    pos: {
+      x: -7360,
+      y: -46
+    }
+  },
+  {
+    id: 1663,
+    name: "Horrific Claws",
+    source: SOURCE.MAD_LAB,
+    pos: {
+      x: -7406,
+      y: -46
+    }
+  },
+  {
+    id: 1664,
+    name: "Harmonious Harp",
+    source: SOURCE.ORYXS_SANCTUARY,
+    pos: {
+      x: -7452,
+      y: -46
+    }
+  },
+  {
+    id: 1665,
+    name: "Angel’s Fanfare",
+    source: SOURCE.ORYXS_SANCTUARY,
+    pos: {
+      x: -7498,
+      y: -46
+    }
+  },
+  {
+    id: 1666,
+    name: "Wings of Sanctity",
+    source: SOURCE.ORYXS_SANCTUARY,
+    pos: {
+      x: -7544,
+      y: -46
+    }
+  },
+  {
+    id: 1667,
+    name: "Heavenly Halo",
+    source: SOURCE.ORYXS_SANCTUARY,
+    pos: {
+      x: -7590,
+      y: -46
+    }
+  },
+  {
+    id: 1668,
+    name: "Brilliance Bow",
+    source: SOURCE.THE_MACHINE,
+    pos: {
+      x: -7636,
+      y: -46
+    }
+  },
+  {
+    id: 1669,
+    name: "Quintessential Quiver",
+    source: SOURCE.THE_MACHINE,
+    pos: {
+      x: -7682,
+      y: -46
+    }
+  },
+  {
+    id: 1670,
+    name: "Luxurious Leather",
+    source: SOURCE.THE_MACHINE,
+    pos: {
+      x: -7728,
+      y: -46
+    }
+  },
+  {
+    id: 1671,
+    name: "Regal Ring",
+    source: SOURCE.THE_MACHINE,
+    pos: {
+      x: -7774,
+      y: -46
+    }
+  },
+  {
+    id: 1672,
+    name: "Alien Core: Power",
+    source: SOURCE.ALIENS,
+    pos: {
+      x: -7820,
+      y: -46
+    }
+  },
+  {
+    id: 1673,
+    name: "Alien Core: Warp",
+    source: SOURCE.ALIENS,
+    pos: {
+      x: -7866,
+      y: -46
+    }
+  },
+  {
+    id: 1674,
+    name: "Alien Core: Corrosion",
+    source: SOURCE.ALIENS,
+    pos: {
+      x: -7912,
+      y: -46
+    }
+  },
+  {
+    id: 1675,
+    name: "Alien Core: Dark Matter",
+    source: SOURCE.ALIENS,
+    pos: {
+      x: -7958,
+      y: -46
+    }
+  },
+  {
+    id: 1676,
+    name: "Shaman's Staff",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8004,
+      y: -46
+    }
+  },
+  {
+    id: 1677,
+    name: "Ritual Skull",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8050,
+      y: -46
+    }
+  },
+  {
+    id: 1678,
+    name: "Ragged Robes",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8096,
+      y: -46
+    }
+  },
+  {
+    id: 1679,
+    name: "Fang Necklace",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8142,
+      y: -46
+    }
+  },
+  {
+    id: 1680,
+    name: "Soul Gem Amulet",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8188,
+      y: -46
+    }
+  },
+  {
+    id: 1681,
+    name: "Toxic Toad",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8234,
+      y: -46
+    }
+  },
+  {
+    id: 1682,
+    name: "Makeshift Blowpipe",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8280,
+      y: -46
+    }
+  },
+  {
+    id: 1683,
+    name: "Alchemist's Disheveled Garbs",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8326,
+      y: -46
+    }
+  },
+  {
+    id: 1684,
+    name: "Protective Gloves",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8372,
+      y: -46
+    }
+  },
+  {
+    id: 1685,
+    name: "Supernatural Staff",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8418,
+      y: -46
+    }
+  },
+  {
+    id: 1686,
+    name: "Spectral Spell",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8464,
+      y: -46
+    }
+  },
+  {
+    id: 1687,
+    name: "Immortal Mantle",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8510,
+      y: -46
+    }
+  },
+  {
+    id: 1688,
+    name: "Phantom Pendant",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -8556,
+      y: -46
+    }
+  },
+  {
+    id: 1689,
+    name: "Nectar Crossfire",
+    source: SOURCE.THE_NEST,
+    pos: {
+      x: -8602,
+      y: -46
+    }
+  },
+  {
+    id: 1690,
+    name: "Honeytomb Snare",
+    source: SOURCE.THE_NEST,
+    pos: {
+      x: -8648,
+      y: -46
+    }
+  },
+  {
+    id: 1691,
+    name: "Apiary Armor",
+    source: SOURCE.THE_NEST,
+    pos: {
+      x: -8694,
+      y: -46
+    }
+  },
+  {
+    id: 1692,
+    name: "Honey Circlet",
+    source: SOURCE.THE_NEST,
+    pos: {
+      x: -8740,
+      y: -46
+    }
+  },
+  {
+    id: 1693,
+    name: "Soulcursed Scythe",
+    source: SOURCE.MANOR_OF_THE_IMMORTALS,
+    pos: {
+      x: -8786,
+      y: -46
+    }
+  },
+  {
+    id: 1694,
+    name: "Vampiric Cape",
+    source: SOURCE.MANOR_OF_THE_IMMORTALS,
+    pos: {
+      x: -8832,
+      y: -46
+    }
+  },
+  {
+    id: 1695,
+    name: "Hallowed Hide",
+    source: SOURCE.MANOR_OF_THE_IMMORTALS,
+    pos: {
+      x: -8878,
+      y: -46
+    }
+  },
+  {
+    id: 1696,
+    name: "Ruthven’s Rosary",
+    source: SOURCE.MANOR_OF_THE_IMMORTALS,
+    pos: {
+      x: -8924,
+      y: -46
+    }
+  },
+  {
+    id: 1697,
+    name: "Resplendent Bow",
+    source: SOURCE.ANCIENT_RUINS,
+    pos: {
+      x: -8970,
+      y: -46
+    }
+  },
+  {
+    id: 1698,
+    name: "Embellished Quiver",
+    source: SOURCE.ANCIENT_RUINS,
+    pos: {
+      x: -9016,
+      y: -46
+    }
+  },
+  {
+    id: 1699,
+    name: "Ornate Armor",
+    source: SOURCE.CAVE_OF_A_THOUSAND_TREASURES,
+    pos: {
+      x: -9062,
+      y: -46
+    }
+  },
+  {
+    id: 1700,
+    name: "Aquamarine Amulet",
+    source: SOURCE.ANCIENT_RUINS,
+    pos: {
+      x: -9108,
+      y: -46
+    }
+  },
+  {
+    id: 1701,
+    name: "Carved Golem Remains",
+    source: SOURCE.LOST_HALLS,
+    pos: {
+      x: -9154,
+      y: -46
+    }
+  },
+  {
+    id: 1702,
+    name: "Brain of the Golem",
+    source: SOURCE.LOST_HALLS,
+    pos: {
+      x: -9200,
+      y: -46
+    }
+  },
+  {
+    id: 1703,
+    name: "Golem Garments",
+    source: SOURCE.LOST_HALLS,
+    pos: {
+      x: -9246,
+      y: -46
+    }
+  },
+  {
+    id: 1704,
+    name: "Rusty Cuffs",
+    source: SOURCE.LOST_HALLS,
+    pos: {
+      x: -9292,
+      y: -46
+    }
+  },
+  {
+    id: 1705,
+    name: "Bolt Thrower",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -9338,
+      y: -46
+    }
+  },
+  {
+    id: 1706,
+    name: "Lightning Rod",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -9384,
+      y: -46
+    }
+  },
+  {
+    id: 1707,
+    name: "Wedding Dress",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -9430,
+      y: -46
+    }
+  },
+  {
+    id: 1708,
+    name: "Gothic Bouffant",
+    source: SOURCE.FORGE,
+    pos: {
+      x: -9476,
+      y: -46
+    }
+  },
+  {
+    id: 1709,
+    name: "Omni-Impotence Ring",
+    source: SOURCE.THE_MACHINE,
+    pos: {
+      x: -9522,
+      y: -46
+    }
+  },
+  {
+    id: 1710,
+    name: "Saif of the Deep",
+    source: SOURCE.DEADWATER_DOCKS,
+    pos: {
+      x: -9568,
+      y: -46
+    }
+  },
+  {
+    id: 1711,
+    name: "Loch Sheath",
+    source: SOURCE.OCEAN_TRENCH,
+    pos: {
+      x: -9614,
+      y: -46
+    }
+  },
+  {
+    id: 1712,
+    name: "Barrier Reef",
+    source: SOURCE.CNIDARIAN_REEF,
+    pos: {
+      x: -9660,
+      y: -46
+    }
+  },
+  {
+    id: 1713,
+    name: "Alexander’s Band",
+    source: SOURCE.OCEAN_TRENCH,
+    pos: {
+      x: -9706,
+      y: -46
+    }
   }
 ];
