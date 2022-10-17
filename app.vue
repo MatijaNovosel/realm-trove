@@ -11,7 +11,7 @@
     </div>
     <TransitionGroup
       name="list"
-      class="toast-container fixed text-white"
+      class="toast-container fixed text-white z-3"
       tag="div"
     >
       <div
