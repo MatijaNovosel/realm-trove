@@ -4,8 +4,6 @@ export default defineEventHandler(async (event) => {
   const body = await useBody(event);
   const cookieOptions = useRuntimeConfig().public.firebaseAuthCookie;
 
-  console.log(cookieOptions);
-
   if (body.token) {
     setCookie(event, `${cookieOptions.name}-token`, body.token, {
       domain: cookieOptions.domain,
@@ -19,7 +17,10 @@ export default defineEventHandler(async (event) => {
 
   setCookie(event, `${cookieOptions.name}-token`, "", {
     maxAge: -1,
-    path: cookieOptions.path
+    path: cookieOptions.path,
+    sameSite: "lax",
+    secure: true,
+    httpOnly: true
   });
 
   return "auth cookie cleared";

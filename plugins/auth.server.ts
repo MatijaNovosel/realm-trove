@@ -4,15 +4,23 @@ import app from "~/config/firebase-admin";
 
 export default defineNuxtPlugin(async () => {
   const token = useFirebaseToken();
-  const firebaseUser = useUser();
+  const user = useUser();
   const auth = getAuth(app);
+  const tokenExpired = useTokenExpiryStatus();
 
   if (!token.value) return;
 
   try {
     const result = await auth.verifyIdToken(token.value);
-    firebaseUser.value = formatUser(result);
+    user.value = formatUser(result);
   } catch (e) {
-    // Not authenticated or invalid token
+    switch (e.code) {
+      case "auth/id-token-expired":
+        tokenExpired.value = true;
+        console.log("Token expired");
+        break;
+      default:
+        console.log("Error while verifying token:", e.message);
+    }
   }
 });

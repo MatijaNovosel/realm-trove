@@ -35,7 +35,7 @@
         </div>
         <div class="display-contents" v-else>
           <div
-            class="text-4xl font-bold mb-5 mt-6 flex items-center justify-center user-select-none"
+            class="text-4xl font-bold mb-2 mt-6 flex items-center justify-center user-select-none"
           >
             <div
               @click="changeTab(TAB.UT)"
@@ -57,6 +57,7 @@
               ST
             </div>
           </div>
+          <div class="text-center text-2xl md:text-4xl">CrabFeeder</div>
           <div class="grid grid-cols-12 my-5 px-7 md:px-3">
             <div
               class="col-span-12 md:col-span-4 flex items-center justify-center md:justify-start"

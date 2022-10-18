@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { formatUser } from "~/utils/helpers";
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-  const firebaseUser = useUser();
+  const currentUser = useUser();
   const config = useRuntimeConfig();
 
   const firebaseConfig = {
@@ -26,10 +26,10 @@ export default defineNuxtPlugin(async (nuxtApp) => {
       if (user) {
         const token = await user.getIdToken();
         setServerSession(token);
-        firebaseUser.value = formatUser(user);
+        currentUser.value = formatUser(user);
       } else {
         setServerSession("");
-        firebaseUser.value = null;
+        currentUser.value = null;
       }
     });
   });
