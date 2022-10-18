@@ -155,7 +155,7 @@ const selectedGroups = ref<number[]>([]);
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
-const { createToast } = useToast();
+const { createToast, removePermanentToasts, permanentToastExists } = useToast();
 
 const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
@@ -199,6 +199,10 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     );
   }
 
+  if (!permanentToastExists.value) {
+    createToast("You have pending changes", "green-500", -1, true);
+  }
+
   if (id in playerCollection.value[activeTab.value]) {
     if (increment) {
       playerCollection.value[activeTab.value][id]++;
@@ -217,6 +221,7 @@ const updateCollection = async (id: number, increment: boolean = true) => {
 };
 
 const cancelChanges = () => {
+  removePermanentToasts();
   playerCollection.value = initialCollection.value;
   initialCollection.value = undefined;
 };
@@ -234,6 +239,8 @@ const confirmChanges = async () => {
   } catch (e) {
     createToast(e.message, "red-500");
     error.value = true;
+  } finally {
+    removePermanentToasts();
   }
 };
 
