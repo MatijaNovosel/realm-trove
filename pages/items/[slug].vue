@@ -182,7 +182,7 @@
 <script setup lang="ts">
 import { PlayerCollection, Profile } from "~/models";
 import { TAB, SOURCE } from "~/utils/constants";
-import { doc, onSnapshot, setDoc } from "firebase/firestore";
+import { doc, onSnapshot, setDoc, Unsubscribe } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
@@ -195,6 +195,7 @@ const modalOpen = ref(false);
 const confirmDialogOpen = ref(false);
 const pending = ref(true);
 const error = ref(false);
+const unsubscribe = ref<Unsubscribe>();
 const selectedGroups = ref<number[]>([]);
 const profile = ref<Profile>();
 
@@ -308,12 +309,11 @@ const resetCollection = async () => {
   }
 };
 
-onMounted(async () => {
+onMounted(() => {
   try {
     const docRef = doc($firebaseFirestore, "profile", userSlug.value as string);
-    onSnapshot(docRef, (snap) => {
+    unsubscribe.value = onSnapshot(docRef, (snap) => {
       profile.value = snap.data() as Profile;
-
       if (pending.value) {
         pending.value = false;
       }
@@ -321,6 +321,12 @@ onMounted(async () => {
   } catch (e) {
     createToast(e.message, "red-500");
     error.value = true;
+  }
+});
+
+onBeforeUnmount(() => {
+  if (unsubscribe.value) {
+    unsubscribe.value();
   }
 });
 

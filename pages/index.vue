@@ -42,8 +42,6 @@ const signIn = async () => {
     const result = await signInWithPopup($firebaseAuth, provider);
     const { isNewUser } = getAdditionalUserInfo(result);
 
-    console.log(isNewUser);
-
     if (isNewUser) {
       const docRef = doc($firebaseFirestore, "profile", result.user.uid);
       await setDoc(docRef, {

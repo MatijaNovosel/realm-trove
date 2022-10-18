@@ -1,18 +1,17 @@
 import { getApp } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
-import { useCookie } from "h3";
 
 export default defineEventHandler(async (event) => {
   const { req, res } = event;
-  const cookieOptions = useRuntimeConfig().public.firebaseAuthCookie;
+  const config = useRuntimeConfig();
 
   if (req.url === "/api/protected") {
-    const token = useCookie(event, `${cookieOptions.name}-token`);
+    const cookie = useCookie(`${config.COOKIE_OPTIONS.name}-token`);
     const app = getApp();
     const auth = getAuth(app);
 
     try {
-      await auth.verifyIdToken(token);
+      await auth.verifyIdToken(cookie.value);
     } catch (e) {
       res.statusCode = 400;
       res.end(

@@ -12,7 +12,7 @@ const tokenExpired = useTokenExpiryStatus();
 const router = useRouter();
 const route = useRoute();
 
-const setServerSession = (token) => {
+const setServerSession = (token: string) => {
   return $fetch("/api/session", {
     method: "POST",
     body: {

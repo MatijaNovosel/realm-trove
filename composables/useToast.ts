@@ -25,7 +25,10 @@ export default () => {
 
     if (!permanent) {
       setTimeout(() => {
-        toasts.value = toasts.value.filter((t) => t.id !== id);
+        const toastIdx = toasts.value.findIndex((t) => t.id === id);
+        if (toastIdx !== -1) {
+          toasts.value.splice(toastIdx, 1);
+        }
       }, timeout);
     }
   };

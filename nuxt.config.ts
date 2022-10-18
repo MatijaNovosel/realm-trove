@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       MEASUREMENT_ID: process.env.MEASUREMENT_ID,
       SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT,
       CLIENT_VERSION: pkg.version,
-      firebaseAuthCookie: {
+      COOKIE_OPTIONS: {
         name: "fb",
         lifetime: 60 * 60 * 8,
         domain: "",

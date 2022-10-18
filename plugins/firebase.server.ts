@@ -3,13 +3,19 @@ import { formatUser } from "~/utils/helpers";
 import app from "~/config/firebase-admin";
 
 export default defineNuxtPlugin(async () => {
-  const token = useFirebaseToken();
+  const config = useRuntimeConfig();
+  const cookie = useCookie(`${config.COOKIE_OPTIONS.name}-token`);
   const user = useUser();
-  const auth = getAuth(app);
   const tokenExpired = useTokenExpiryStatus();
 
+  const auth = getAuth(app);
+
+  if (!cookie.value) {
+    return;
+  }
+
   try {
-    const result = await auth.verifyIdToken(token.value);
+    const result = await auth.verifyIdToken(cookie.value);
     user.value = formatUser(result);
   } catch (e) {
     switch (e.code) {
