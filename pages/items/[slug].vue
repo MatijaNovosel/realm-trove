@@ -22,6 +22,28 @@
         </div>
       </app-modal>
     </transition>
+    <transition name="modal">
+      <app-modal
+        title="Are you sure?"
+        v-if="confirmDialogOpen"
+        @close="confirmDialogOpen = false"
+      >
+        <div class="flex justify-center py-3">
+          <button
+            class="mr-2 rounded px-2 bg-green-500 ripple"
+            @click="resetCollection"
+          >
+            Yes
+          </button>
+          <button
+            class="rounded px-2 bg-red-500 ripple"
+            @click="confirmDialogOpen = false"
+          >
+            No
+          </button>
+        </div>
+      </app-modal>
+    </transition>
     <div
       class="offset w-full"
       :class="{
@@ -78,10 +100,29 @@
                 v-model="searchText"
               />
               <div
-                class="bg-dark-800 ml-2 filter-btn flex items-center rounded-lg cursor-pointer ripple"
+                class="bg-dark-800 mx-2 filter-btn flex items-center rounded-lg cursor-pointer ripple"
                 @click="modalOpen = true"
+                v-tooltip="{
+                  content: 'Filter',
+                  theme: 'info-tooltip'
+                }"
               >
                 <FilterIcon />
+              </div>
+              <div
+                class="bg-dark-800 filter-btn flex items-center rounded-lg cursor-pointer"
+                v-tooltip="{
+                  content: 'Reset',
+                  theme: 'info-tooltip'
+                }"
+                :class="{
+                  'cursor-not-allowed': pendingChanges,
+                  'text-green-vue ripple': !pendingChanges
+                }"
+                :disabled="pendingChanges"
+                @click="pendingChanges ? null : (confirmDialogOpen = true)"
+              >
+                <ResetIcon />
               </div>
             </div>
             <div
@@ -145,17 +186,19 @@ import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
+import ResetIcon from "~icons/carbon/reset";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
 const searchText = ref("");
 const modalOpen = ref(false);
+const confirmDialogOpen = ref(false);
 const pending = ref(true);
 const error = ref(false);
 const selectedGroups = ref<number[]>([]);
 const profile = ref<Profile>();
 
-const { $firebaseFirestore, $firebaseAdminFirestore } = useNuxtApp();
+const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
 const { createToast, removePermanentToasts, permanentToastExists } = useToast();
 const user = useUser();
@@ -229,7 +272,6 @@ const updateCollection = async (id: number, increment: boolean = true) => {
 };
 
 const cancelChanges = () => {
-  removePermanentToasts();
   profile.value.collection = initialCollection.value;
   initialCollection.value = undefined;
 };
@@ -237,14 +279,32 @@ const cancelChanges = () => {
 const confirmChanges = async () => {
   try {
     const docRef = doc($firebaseFirestore, "profile", user.value.uid);
-    await setDoc(docRef, JSON.parse(JSON.stringify(profile.value)));
+    await setDoc(docRef, profile.value);
     createToast("Saved!", "green-500");
     initialCollection.value = undefined;
   } catch (e) {
     createToast(e.message, "red-500");
     error.value = true;
+  }
+};
+
+const resetCollection = async () => {
+  try {
+    const docRef = doc($firebaseFirestore, "profile", user.value.uid);
+    await setDoc(docRef, {
+      username: profile.value.username,
+      collection: {
+        st: {},
+        ut: {}
+      }
+    });
+    createToast("Progress has been reset!", "green-500");
+    initialCollection.value = undefined;
+  } catch (e) {
+    createToast(e.message, "red-500");
+    error.value = true;
   } finally {
-    removePermanentToasts();
+    confirmDialogOpen.value = false;
   }
 };
 
@@ -263,6 +323,15 @@ onMounted(async () => {
     error.value = true;
   }
 });
+
+watch(
+  () => pendingChanges.value,
+  (val) => {
+    if (!val) {
+      removePermanentToasts();
+    }
+  }
+);
 
 const { setMeta } = useMetadata();
 setMeta("Realm trove | Items");
