@@ -80,18 +80,31 @@
             </div>
           </div>
           <div class="flex justify-center items-center" v-if="profile">
-            <span class="text-2xl md:text-4xl">
+            <div v-if="editingUsername">
+              <items-custom-input
+                placeholder="New username"
+                :loading="pending"
+                :error="error"
+                v-model="usernameEditText"
+              />
+            </div>
+            <span class="text-2xl md:text-4xl" v-else>
               {{ profile.username }}
             </span>
             <div
               v-if="isCurrentUser"
               class="bg-dark-800 ml-4 filter-btn flex items-center rounded-lg cursor-pointer ripple h-full"
+              :class="{
+                'bg-green-vue': editingUsername
+              }"
               v-tooltip="{
                 content: 'Change username',
                 theme: 'info-tooltip'
               }"
+              @click="editingUsername = !editingUsername"
             >
-              <PencilIcon />
+              <CheckmarkIcon v-if="editingUsername" />
+              <PencilIcon v-else />
             </div>
           </div>
           <div class="grid grid-cols-12 my-5 px-7 md:px-3">
@@ -110,7 +123,9 @@
                 'md:col-span-12 justify-center': !isCurrentUser
               }"
             >
-              <items-search-input
+              <items-custom-input
+                placeholder="Search items"
+                dense
                 :loading="pending"
                 :error="error"
                 v-model="searchText"
@@ -207,6 +222,7 @@ import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
 import PencilIcon from "~icons/mdi/grease-pencil";
+import CheckmarkIcon from "~icons/ic/baseline-check";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
@@ -214,10 +230,12 @@ const searchText = ref("");
 const modalOpen = ref(false);
 const confirmDialogOpen = ref(false);
 const pending = ref(true);
+const editingUsername = ref(false);
 const error = ref(false);
 const unsubscribe = ref<Unsubscribe>();
 const selectedGroups = ref<number[]>([]);
 const profile = ref<Profile>();
+const usernameEditText = ref("");
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
@@ -339,6 +357,7 @@ onMounted(() => {
     unsubscribe.value = onSnapshot(docRef, (snap) => {
       profile.value = snap.data() as Profile;
       if (pending.value) {
+        usernameEditText.value = profile.value.username;
         pending.value = false;
       }
     });

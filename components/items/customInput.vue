@@ -2,12 +2,19 @@
   <div class="flex">
     <div
       class="bg-dark-800 icon flex items-center justify-center rounded-l-lg px-3"
+      :style="{
+        height: dense ? '30px' : '50px'
+      }"
     >
       <IconSearch class="text-lg text-gray-700" />
     </div>
     <input
+      :style="{
+        fontSize: dense ? '14px' : '20px',
+        height: dense ? '30px' : '50px'
+      }"
       :disabled="loading || !!error"
-      placeholder="Search items"
+      :placeholder="placeholder"
       class="bg-dark-800"
       :value="modelValue"
       @input="
@@ -17,6 +24,9 @@
     />
     <div
       class="bg-dark-800 icon flex items-center justify-center rounded-r-lg px-3"
+      :style="{
+        height: dense ? '30px' : '50px'
+      }"
     >
       <IconClear
         @click="clearSearch"
@@ -32,8 +42,10 @@ import IconClear from "~icons/ic/round-clear";
 
 defineProps<{
   modelValue: string;
+  placeholder?: string;
   loading: boolean;
   error: boolean | Error;
+  dense?: boolean;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
@@ -45,23 +57,15 @@ const clearSearch = () => {
 
 <style scoped>
 input {
-  height: 30px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 14px;
   color: rgb(193, 194, 197);
   outline: none;
   width: calc(100% - 100px);
 }
 
 .icon {
-  height: 30px;
   width: 50px;
   -webkit-tap-highlight-color: transparent;
-}
-
-.tag-search-btn {
-  height: 30px;
-  width: 50px;
 }
 
 input[type="search"]::-webkit-search-decoration,
