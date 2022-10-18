@@ -79,11 +79,24 @@
               ST
             </div>
           </div>
-          <div class="text-center text-2xl md:text-4xl" v-if="profile">
-            {{ profile.username }}
+          <div class="flex justify-center items-center" v-if="profile">
+            <span class="text-2xl md:text-4xl">
+              {{ profile.username }}
+            </span>
+            <div
+              v-if="isCurrentUser"
+              class="bg-dark-800 ml-4 filter-btn flex items-center rounded-lg cursor-pointer ripple h-full"
+              v-tooltip="{
+                content: 'Change username',
+                theme: 'info-tooltip'
+              }"
+            >
+              <PencilIcon />
+            </div>
           </div>
           <div class="grid grid-cols-12 my-5 px-7 md:px-3">
             <div
+              v-if="isCurrentUser"
               class="col-span-12 md:col-span-4 flex items-center justify-center md:justify-start"
             >
               <MouseButtonLeftIcon class="mr-1" />
@@ -93,6 +106,9 @@
             </div>
             <div
               class="col-span-12 md:col-span-4 my-4 md:my-0 flex items-center"
+              :class="{
+                'md:col-span-12 justify-center': !isCurrentUser
+              }"
             >
               <items-search-input
                 :loading="pending"
@@ -110,6 +126,7 @@
                 <FilterIcon />
               </div>
               <div
+                v-if="isCurrentUser"
                 class="bg-dark-800 filter-btn flex items-center rounded-lg cursor-pointer"
                 v-tooltip="{
                   content: 'Reset',
@@ -126,6 +143,7 @@
               </div>
             </div>
             <div
+              v-if="isCurrentUser"
               class="col-span-12 md:col-span-4 flex justify-center md:justify-end"
             >
               <button
@@ -170,6 +188,7 @@
             :collection="profile.collection"
             :initial="initialCollection"
             :tab="activeTab"
+            :disabled="!isCurrentUser"
             @increment="updateCollection"
             @decrement="updateCollection($event, false)"
           />
@@ -187,6 +206,7 @@ import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
+import PencilIcon from "~icons/mdi/grease-pencil";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
@@ -207,6 +227,10 @@ const route = useRoute();
 
 const userSlug = computed(() => {
   return route.params.slug;
+});
+
+const isCurrentUser = computed(() => {
+  return user.value.uid === userSlug.value;
 });
 
 const changeTab = (tab: TAB) => {

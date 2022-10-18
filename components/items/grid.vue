@@ -4,7 +4,7 @@
     v-if="items[tab].length > 0"
   >
     <div
-      class="item p-3 text-center p-2 m-1 relative cursor-pointer"
+      class="item p-3 text-center p-2 m-1 relative"
       v-for="({ pos, id, name }, i) in items[tab]"
       :key="i"
       :style="{
@@ -15,7 +15,10 @@
         content: name,
         theme: 'info-tooltip'
       }"
-      @click="$emit('increment', id)"
+      :class="{
+        'cursor-pointer': !disabled
+      }"
+      @click="disabled ? null : $emit('increment', id)"
       @contextmenu.prevent="$emit('decrement', id)"
     >
       <div class="badge user-select-none" :class="badgeClass(id)">
@@ -37,6 +40,7 @@ const props = defineProps<{
   initial: PlayerCollection | undefined;
   tab: TAB;
   items: IDictionary<ItemInfo[]>;
+  disabled: boolean;
 }>();
 
 const badgeClass = (id: number) => {
