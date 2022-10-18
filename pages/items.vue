@@ -139,7 +139,7 @@
 <script setup lang="ts">
 import { PlayerCollection } from "~/models";
 import { TAB, SOURCE } from "~/utils/constants";
-import { doc, onSnapshot, updateDoc } from "firebase/firestore";
+import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
@@ -156,6 +156,7 @@ const selectedGroups = ref<number[]>([]);
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
 const { createToast, removePermanentToasts, permanentToastExists } = useToast();
+const user = useUser();
 
 const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
@@ -228,12 +229,8 @@ const cancelChanges = () => {
 
 const confirmChanges = async () => {
   try {
-    const docRef = doc(
-      $firebaseFirestore,
-      "items",
-      "UnvQmlkSkodFO6NTyv3mtY1bJyJ3"
-    );
-    await updateDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
+    const docRef = doc($firebaseFirestore, "items", user.value.uid);
+    await setDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
     createToast("Saved!", "green-500");
     initialCollection.value = undefined;
   } catch (e) {
@@ -246,13 +243,17 @@ const confirmChanges = async () => {
 
 onMounted(() => {
   try {
-    const docRef = doc(
-      $firebaseFirestore,
-      "items",
-      "UnvQmlkSkodFO6NTyv3mtY1bJyJ3"
-    );
+    const docRef = doc($firebaseFirestore, "items", user.value.uid);
     onSnapshot(docRef, (snap) => {
-      playerCollection.value = snap.data() as PlayerCollection;
+      if (snap.data()) {
+        playerCollection.value = snap.data() as PlayerCollection;
+      } else {
+        playerCollection.value = {
+          st: {},
+          ut: {}
+        };
+      }
+
       if (pending.value) {
         pending.value = false;
       }
