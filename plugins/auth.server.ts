@@ -8,8 +8,6 @@ export default defineNuxtPlugin(async () => {
   const auth = getAuth(app);
   const tokenExpired = useTokenExpiryStatus();
 
-  if (!token.value) return;
-
   try {
     const result = await auth.verifyIdToken(token.value);
     user.value = formatUser(result);

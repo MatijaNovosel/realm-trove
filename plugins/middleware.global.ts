@@ -14,8 +14,13 @@ export default defineNuxtPlugin(() => {
         });
       }
 
-      if (to.path === "/" && user.value) return navigateTo("/items");
-      if (to.path !== "/" && !user.value) return navigateTo("/");
+      if (to.path === "/" && user.value) {
+        return navigateTo(`items/${user.value.uid}`);
+      }
+
+      if (to.path !== "/" && !user.value) {
+        return navigateTo("/");
+      }
     },
     { global: true }
   );

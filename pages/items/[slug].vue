@@ -57,7 +57,9 @@
               ST
             </div>
           </div>
-          <div class="text-center text-2xl md:text-4xl">CrabFeeder</div>
+          <div class="text-center text-2xl md:text-4xl" v-if="profile">
+            {{ profile.username }}
+          </div>
           <div class="grid grid-cols-12 my-5 px-7 md:px-3">
             <div
               class="col-span-12 md:col-span-4 flex items-center justify-center md:justify-start"
@@ -124,7 +126,7 @@
           </div>
           <items-grid
             :items="filteredItems"
-            :collection="playerCollection"
+            :collection="profile.collection"
             :initial="initialCollection"
             :tab="activeTab"
             @increment="updateCollection"
@@ -137,7 +139,7 @@
 </template>
 
 <script setup lang="ts">
-import { PlayerCollection } from "~/models";
+import { PlayerCollection, Profile } from "~/models";
 import { TAB, SOURCE } from "~/utils/constants";
 import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
@@ -146,17 +148,22 @@ import FilterIcon from "~icons/material-symbols/filter-list";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
-const playerCollection = ref<PlayerCollection>();
 const searchText = ref("");
 const modalOpen = ref(false);
 const pending = ref(true);
 const error = ref(false);
 const selectedGroups = ref<number[]>([]);
+const profile = ref<Profile>();
 
-const { $firebaseFirestore } = useNuxtApp();
+const { $firebaseFirestore, $firebaseAdminFirestore } = useNuxtApp();
 const { items } = useItems();
 const { createToast, removePermanentToasts, permanentToastExists } = useToast();
 const user = useUser();
+const route = useRoute();
+
+const userSlug = computed(() => {
+  return route.params.slug;
+});
 
 const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
@@ -176,8 +183,8 @@ const filteredItems = computed(() => {
 
 const itemsCollected = computed(() => {
   return {
-    [TAB.UT]: Object.keys(playerCollection.value.ut).length,
-    [TAB.ST]: Object.keys(playerCollection.value.st).length
+    [TAB.UT]: Object.keys(profile.value.collection.ut).length,
+    [TAB.ST]: Object.keys(profile.value.collection.st).length
   };
 });
 
@@ -189,14 +196,14 @@ const pendingChanges = computed(() => {
   return (
     initialCollection.value !== undefined &&
     JSON.stringify(initialCollection.value) !==
-      JSON.stringify(playerCollection.value)
+      JSON.stringify(profile.value.collection)
   );
 });
 
 const updateCollection = async (id: number, increment: boolean = true) => {
   if (!initialCollection.value) {
     initialCollection.value = JSON.parse(
-      JSON.stringify(playerCollection.value)
+      JSON.stringify(profile.value.collection)
     );
   }
 
@@ -204,33 +211,33 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     createToast("You have pending changes", "green-500", -1, true);
   }
 
-  if (id in playerCollection.value[activeTab.value]) {
+  if (id in profile.value.collection[activeTab.value]) {
     if (increment) {
-      playerCollection.value[activeTab.value][id]++;
+      profile.value.collection[activeTab.value][id]++;
     } else {
-      if (playerCollection.value[activeTab.value][id] - 1 <= 0) {
-        delete playerCollection.value[activeTab.value][id];
+      if (profile.value.collection[activeTab.value][id] - 1 <= 0) {
+        delete profile.value.collection[activeTab.value][id];
       } else {
-        playerCollection.value[activeTab.value][id]--;
+        profile.value.collection[activeTab.value][id]--;
       }
     }
   } else {
     if (increment) {
-      playerCollection.value[activeTab.value][id] = 1;
+      profile.value.collection[activeTab.value][id] = 1;
     }
   }
 };
 
 const cancelChanges = () => {
   removePermanentToasts();
-  playerCollection.value = initialCollection.value;
+  profile.value.collection = initialCollection.value;
   initialCollection.value = undefined;
 };
 
 const confirmChanges = async () => {
   try {
-    const docRef = doc($firebaseFirestore, "items", user.value.uid);
-    await setDoc(docRef, JSON.parse(JSON.stringify(playerCollection.value)));
+    const docRef = doc($firebaseFirestore, "profile", user.value.uid);
+    await setDoc(docRef, JSON.parse(JSON.stringify(profile.value)));
     createToast("Saved!", "green-500");
     initialCollection.value = undefined;
   } catch (e) {
@@ -241,18 +248,11 @@ const confirmChanges = async () => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
   try {
-    const docRef = doc($firebaseFirestore, "items", user.value.uid);
+    const docRef = doc($firebaseFirestore, "profile", userSlug.value as string);
     onSnapshot(docRef, (snap) => {
-      if (snap.data()) {
-        playerCollection.value = snap.data() as PlayerCollection;
-      } else {
-        playerCollection.value = {
-          st: {},
-          ut: {}
-        };
-      }
+      profile.value = snap.data() as Profile;
 
       if (pending.value) {
         pending.value = false;

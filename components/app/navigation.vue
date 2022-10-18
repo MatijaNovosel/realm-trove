@@ -5,14 +5,14 @@
     <span
       class="md:text-2xl"
       :class="{
-        'hidden md:block': $route.path === '/items'
+        'hidden md:block': $route.name === 'items-slug'
       }"
     >
       v{{ $config.CLIENT_VERSION }}
     </span>
     <div v-if="user">
       <span class="mr-4">
-        {{ user.username }}
+        {{ user.email }}
       </span>
       <button @click="logOut" class="ripple px-4 bg-green-vue rounded-lg">
         Sign out

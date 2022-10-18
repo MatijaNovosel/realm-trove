@@ -21,10 +21,15 @@
 </template>
 
 <script setup lang="ts">
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAdditionalUserInfo,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 const router = useRouter();
-const { $firebaseAuth } = useNuxtApp();
+const { $firebaseAuth, $firebaseFirestore } = useNuxtApp();
 const { createToast } = useToast();
 
 const loggingIn = ref(false);
@@ -34,9 +39,24 @@ const signIn = async () => {
   const provider = new GoogleAuthProvider();
 
   try {
-    await signInWithPopup($firebaseAuth, provider);
+    const result = await signInWithPopup($firebaseAuth, provider);
+    const { isNewUser } = getAdditionalUserInfo(result);
+
+    console.log(isNewUser);
+
+    if (isNewUser) {
+      const docRef = doc($firebaseFirestore, "profile", result.user.uid);
+      await setDoc(docRef, {
+        username: result.user.displayName,
+        collection: {
+          st: {},
+          ut: {}
+        }
+      });
+    }
+
     createToast("Signed in!", "green-500");
-    router.push("/items");
+    router.push(`items/${result.user.uid}`);
   } catch (e) {
     createToast(e.message, "red-500");
     loggingIn.value = false;

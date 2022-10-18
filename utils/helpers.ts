@@ -27,7 +27,6 @@ export const groupBy = (array: any[], property: string): any[] => {
 export const formatUser = (user: User | DecodedIdToken): CustomUser => {
   return {
     uid: user.uid,
-    email: user.email,
-    username: user.displayName
+    email: user.email
   };
 };

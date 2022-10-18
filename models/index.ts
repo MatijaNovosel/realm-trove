@@ -23,3 +23,8 @@ export interface PlayerCollection {
   ut: IDictionary<number>;
   st: IDictionary<number>;
 }
+
+export interface Profile {
+  username: string;
+  collection: PlayerCollection;
+}
