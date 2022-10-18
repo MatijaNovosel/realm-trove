@@ -85,6 +85,7 @@
                 placeholder="New username"
                 :loading="pending"
                 :error="error"
+                hide-clear
                 v-model="usernameEditText"
               />
             </div>

@@ -11,11 +11,15 @@
     <input
       :style="{
         fontSize: dense ? '14px' : '20px',
-        height: dense ? '30px' : '50px'
+        height: dense ? '30px' : '50px',
+        width: `calc(100% - ${hideClear ? 50 : 100}px)`
       }"
       :disabled="loading || !!error"
       :placeholder="placeholder"
-      class="bg-dark-800"
+      class="bg-dark-800 w-full"
+      :class="{
+        'rounded-r-lg': hideClear
+      }"
       :value="modelValue"
       @input="
         $emit('update:modelValue', ($event.target as HTMLInputElement).value)
@@ -23,6 +27,7 @@
       type="search"
     />
     <div
+      v-if="!hideClear"
       class="bg-dark-800 icon flex items-center justify-center rounded-r-lg px-3"
       :style="{
         height: dense ? '30px' : '50px'
@@ -46,6 +51,7 @@ defineProps<{
   loading: boolean;
   error: boolean | Error;
   dense?: boolean;
+  hideClear?: boolean;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
@@ -60,7 +66,6 @@ input {
   -webkit-tap-highlight-color: transparent;
   color: rgb(193, 194, 197);
   outline: none;
-  width: calc(100% - 100px);
 }
 
 .icon {
