@@ -11,11 +11,11 @@
     </div>
     <TransitionGroup
       name="list"
-      class="toast-container flex flex-col fixed text-white z-3 text-center text-sm"
+      class="toast-container flex flex-col fixed text-white z-3 text-center text-sm items-center"
       tag="div"
     >
       <div
-        class="px-6 py-2 rounded-lg"
+        class="px-6 py-2 rounded-lg w-fit-content"
         v-for="(t, i) in toasts"
         :key="t.id"
         :class="{

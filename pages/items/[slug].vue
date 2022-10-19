@@ -258,7 +258,10 @@ const userSlug = computed(() => {
 });
 
 const isCurrentUser = computed(() => {
-  return user.value.uid === userSlug.value;
+  if (user) {
+    return user.value.uid === userSlug.value;
+  }
+  return false;
 });
 
 const changeTab = (tab: TAB) => {

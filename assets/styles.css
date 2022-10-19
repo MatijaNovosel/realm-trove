@@ -140,3 +140,7 @@ html {
 .list-leave-to {
   animation: bounce 0.5s reverse;
 }
+
+.w-fit-content {
+  width: fit-content;
+}
