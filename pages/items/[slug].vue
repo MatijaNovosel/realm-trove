@@ -217,7 +217,14 @@
 <script setup lang="ts">
 import { PlayerCollection, Profile } from "~/models";
 import { TAB, SOURCE } from "~/utils/constants";
-import { doc, onSnapshot, setDoc, Unsubscribe } from "firebase/firestore";
+import {
+  doc,
+  DocumentData,
+  DocumentReference,
+  onSnapshot,
+  setDoc,
+  Unsubscribe
+} from "firebase/firestore";
 import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
 import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
@@ -238,6 +245,7 @@ const unsubscribe = ref<Unsubscribe>();
 const selectedGroups = ref<number[]>([]);
 const profile = ref<Profile>();
 const usernameEditText = ref("");
+const docRef = ref<DocumentReference<DocumentData>>();
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
@@ -323,8 +331,7 @@ const cancelChanges = () => {
 
 const confirmChanges = async () => {
   try {
-    const docRef = doc($firebaseFirestore, "profile", user.value.uid);
-    await setDoc(docRef, profile.value);
+    await setDoc(docRef.value, profile.value);
     createToast("Saved!", "green-500");
     initialCollection.value = undefined;
   } catch (e) {
@@ -335,8 +342,7 @@ const confirmChanges = async () => {
 
 const resetCollection = async () => {
   try {
-    const docRef = doc($firebaseFirestore, "profile", user.value.uid);
-    await setDoc(docRef, {
+    await setDoc(docRef.value, {
       username: profile.value.username,
       collection: {
         st: {},
@@ -360,8 +366,9 @@ onMounted(async () => {
     profile.value = data;
     usernameEditText.value = data.username;
 
-    const docRef = doc($firebaseFirestore, "profile", userSlug.value as string);
-    unsubscribe.value = onSnapshot(docRef, (snap) => {
+    docRef.value = doc($firebaseFirestore, "profile", userSlug.value as string);
+
+    unsubscribe.value = onSnapshot(docRef.value, (snap) => {
       if (initialMount.value) {
         initialMount.value = false;
       } else {
@@ -380,6 +387,7 @@ onBeforeUnmount(() => {
   if (unsubscribe.value) {
     unsubscribe.value();
   }
+  docRef.value = undefined;
 });
 
 watch(
