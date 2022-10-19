@@ -90,7 +90,7 @@
               />
             </div>
             <span class="text-2xl md:text-4xl" v-else>
-              {{ profile.username }}
+              {{ profile.username }}'s Loot
             </span>
             <div
               v-if="isCurrentUser"
@@ -99,10 +99,14 @@
                 'bg-green-vue': editingUsername
               }"
               v-tooltip="{
-                content: 'Change username',
+                content: editingUsername ? 'Confirm' : 'Change username',
                 theme: 'info-tooltip'
               }"
-              @click="editingUsername = !editingUsername"
+              @click="
+                editingUsername
+                  ? changeUsername()
+                  : (editingUsername = !editingUsername)
+              "
             >
               <CheckmarkIcon v-if="editingUsername" />
               <PencilIcon v-else />
@@ -258,7 +262,7 @@ const userSlug = computed(() => {
 });
 
 const isCurrentUser = computed(() => {
-  if (user) {
+  if (user.value) {
     return user.value.uid === userSlug.value;
   }
   return false;
@@ -324,6 +328,30 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     if (increment) {
       profile.value.collection[activeTab.value][id] = 1;
     }
+  }
+};
+
+const changeUsername = async () => {
+  if (
+    usernameEditText.value.length === 0 ||
+    usernameEditText.value.length > 15
+  ) {
+    createToast("Invalid username (must be <=15 chars)!", "red-500");
+    return;
+  }
+
+  if (usernameEditText.value === profile.value.username) {
+    editingUsername.value = false;
+    return;
+  }
+
+  try {
+    profile.value.username = usernameEditText.value;
+    await setDoc(docRef.value, profile.value);
+    createToast("Username updated!", "green-500");
+    editingUsername.value = false;
+  } catch (e) {
+    createToast(e.message, "red-500");
   }
 };
 
