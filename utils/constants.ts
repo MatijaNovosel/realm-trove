@@ -75,6 +75,15 @@ export const ITEM_DIMENSION = 46;
 
 export const ITEMS_UT: ItemInfo[] = [
   {
+    id: 0,
+    name: "Avarice",
+    source: SOURCE.ORYXS_SANCTUARY,
+    pos: {
+      y: 0,
+      x: 0
+    }
+  },
+  {
     id: 1,
     name: "Gambler's Fate",
     source: SOURCE.ORYXS_SANCTUARY,
