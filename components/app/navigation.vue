@@ -11,10 +11,14 @@
       v{{ $config.CLIENT_VERSION }}
     </span>
     <div v-if="user">
-      <span class="mr-4">
-        {{ user.email }}
-      </span>
-      <button @click="logOut" class="ripple px-4 bg-green-vue rounded-lg">
+      <NuxtLink
+        v-if="$route.name !== 'items-slug'"
+        class="ripple px-4 bg-green-vue rounded mr-3 py-0.5"
+        :to="`/items/${user.uid}`"
+      >
+        Collection
+      </NuxtLink>
+      <button @click="logOut" class="ripple px-4 bg-red-500 rounded">
         Sign out
       </button>
     </div>

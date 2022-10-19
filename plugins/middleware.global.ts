@@ -1,5 +1,4 @@
 export default defineNuxtPlugin(() => {
-  const user = useUser();
   const tokenExpired = useTokenExpiryStatus();
 
   addRouteMiddleware(
@@ -12,14 +11,6 @@ export default defineNuxtPlugin(() => {
             redirectUrl: to.path
           }
         });
-      }
-
-      if (to.path === "/" && user.value) {
-        return navigateTo(`items/${user.value.uid}`);
-      }
-
-      if (to.path !== "/" && !user.value) {
-        return navigateTo("/");
       }
     },
     { global: true }

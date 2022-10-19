@@ -231,6 +231,7 @@ const searchText = ref("");
 const modalOpen = ref(false);
 const confirmDialogOpen = ref(false);
 const pending = ref(true);
+const initialMount = ref(true);
 const editingUsername = ref(false);
 const error = ref(false);
 const unsubscribe = ref<Unsubscribe>();
@@ -352,19 +353,26 @@ const resetCollection = async () => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
   try {
+    const data = await $fetch(`/api/items/${userSlug.value}`);
+
+    profile.value = data;
+    usernameEditText.value = data.username;
+
     const docRef = doc($firebaseFirestore, "profile", userSlug.value as string);
     unsubscribe.value = onSnapshot(docRef, (snap) => {
-      profile.value = snap.data() as Profile;
-      if (pending.value) {
-        usernameEditText.value = profile.value.username;
-        pending.value = false;
+      if (initialMount.value) {
+        initialMount.value = false;
+      } else {
+        profile.value = snap.data() as Profile;
       }
     });
   } catch (e) {
     createToast(e.message, "red-500");
     error.value = true;
+  } finally {
+    pending.value = false;
   }
 });
 
