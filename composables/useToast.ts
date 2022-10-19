@@ -1,3 +1,5 @@
+import { randInt } from "~~/utils/helpers";
+
 interface Toast {
   id: number;
   msg: string;
@@ -14,7 +16,7 @@ export default () => {
     timeout = 4000,
     permanent = false
   ) => {
-    const id = Math.max(...toasts.value.map((t) => t.id));
+    const id = randInt(1, 9999);
 
     toasts.value.push({
       id,

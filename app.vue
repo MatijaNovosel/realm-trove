@@ -11,13 +11,13 @@
     </div>
     <TransitionGroup
       name="list"
-      class="toast-container fixed text-white z-3 text-center text-sm"
+      class="toast-container flex flex-col fixed text-white z-3 text-center text-sm"
       tag="div"
     >
       <div
         class="px-6 py-2 rounded-lg"
         v-for="(t, i) in toasts"
-        :key="i"
+        :key="t.id"
         :class="{
           'mb-4': i !== toasts.length - 1,
           [`bg-${t.color}`]: true

@@ -365,7 +365,6 @@ onMounted(async () => {
 
     profile.value = data;
     usernameEditText.value = data.username;
-
     docRef.value = doc($firebaseFirestore, "profile", userSlug.value as string);
 
     unsubscribe.value = onSnapshot(docRef.value, (snap) => {
