@@ -5,16 +5,16 @@
     <span
       class="md:text-2xl"
       :class="{
-        'hidden md:block': $route.name === 'items-slug'
+        'hidden md:block': $route.name === 'slug'
       }"
     >
       v{{ $config.CLIENT_VERSION }}
     </span>
     <div v-if="user">
       <NuxtLink
-        v-if="$route.name !== 'items-slug'"
+        v-if="$route.name !== 'slug'"
         class="ripple px-4 bg-green-vue rounded mr-3 py-0.5"
-        :to="`/items/${user.uid}`"
+        :to="user.uid"
       >
         Collection
       </NuxtLink>

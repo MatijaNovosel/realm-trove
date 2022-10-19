@@ -10,6 +10,7 @@
         <span class="text-3xl md:text-7xl mt-4">Realm trove</span>
         <span class="md:text-lg mt-4 text-gray-400">Track your loot!</span>
         <button
+          v-if="!user"
           @click="signIn"
           class="ripple px-4 bg-green-vue mt-6 rounded-lg"
         >
@@ -31,14 +32,14 @@ import { doc, setDoc } from "firebase/firestore";
 const router = useRouter();
 const { $firebaseAuth, $firebaseFirestore } = useNuxtApp();
 const { createToast } = useToast();
+const user = useUser();
 
 const loggingIn = ref(false);
 
 const signIn = async () => {
-  loggingIn.value = true;
-  const provider = new GoogleAuthProvider();
-
   try {
+    loggingIn.value = true;
+    const provider = new GoogleAuthProvider();
     const result = await signInWithPopup($firebaseAuth, provider);
     const { isNewUser } = getAdditionalUserInfo(result);
 
@@ -54,7 +55,7 @@ const signIn = async () => {
     }
 
     createToast("Signed in!", "green-500");
-    router.push(`items/${result.user.uid}`);
+    router.push(result.user.uid);
   } catch (e) {
     createToast(e.message, "red-500");
     loggingIn.value = false;

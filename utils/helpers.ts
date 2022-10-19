@@ -30,3 +30,7 @@ export const formatUser = (user: User | DecodedIdToken): CustomUser => {
     email: user.email
   };
 };
+
+export const generateShortId = () => {
+  return (Math.random() + 1).toString(36).substring(2, 8).toUpperCase();
+};
