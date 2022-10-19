@@ -1,7 +1,7 @@
 export const useMetadata = () => {
   const setMeta = (
     title: string,
-    desc = "Track your ROTMG loot",
+    desc = "Track your Realm of the Mad God loot, from white bags to STs!",
     image = "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/og2.png"
   ) => {
     useHead({
