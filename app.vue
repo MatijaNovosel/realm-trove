@@ -9,28 +9,69 @@
         <AppFooter />
       </div>
     </div>
-    <TransitionGroup
-      name="list"
-      class="toast-container flex flex-col fixed text-white z-3 text-center text-sm items-center user-select-none"
-      tag="div"
-    >
-      <div
-        class="px-6 py-2 rounded-lg w-fit-content"
-        v-for="(t, i) in toasts"
-        :key="t.id"
-        :class="{
-          'mb-4': i !== toasts.length - 1,
-          [`bg-${t.color}`]: true
-        }"
-      >
-        {{ t.msg }}
-      </div>
-    </TransitionGroup>
+    <app-toasts />
   </Html>
 </template>
 
 <script lang="ts" setup>
-const { toasts } = useToast();
+import {
+  getAdditionalUserInfo,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+
+const router = useRouter();
+const route = useRoute();
+const { createToast } = useToast();
+const loginTrigger = useLoginTrigger();
+const { $firebaseAuth, $firebaseFirestore } = useNuxtApp();
+const userData = useUserData();
+
+const signIn = async () => {
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup($firebaseAuth, provider);
+    const { isNewUser } = getAdditionalUserInfo(result);
+
+    if (isNewUser) {
+      const docRef = doc($firebaseFirestore, "profile", result.user.uid);
+      const username = result.user.displayName.substring(0, 15);
+
+      await setDoc(docRef, {
+        username,
+        collection: {
+          st: {},
+          ut: {}
+        }
+      });
+
+      userData.value.username = username;
+    } else {
+      const { username } = await $fetch(`/api/items/${result.user.uid}`);
+      userData.value.username = username;
+    }
+
+    createToast("Signed in!", "green-500");
+
+    if (route.name === "index") {
+      router.push(result.user.uid);
+    }
+  } catch (e) {
+    createToast(e.message, "red-500");
+    loginTrigger.value = false;
+  }
+};
+
+watch(
+  () => loginTrigger.value,
+  (val) => {
+    if (val) {
+      signIn();
+    }
+  }
+);
+
 const { setMeta } = useMetadata();
 setMeta("Realm trove");
 </script>

@@ -10,25 +10,27 @@
     >
       v{{ $config.CLIENT_VERSION }}
     </span>
-    <div v-if="user">
-      <NuxtLink
-        class="ripple px-4 bg-green-vue rounded mr-3 py-0.5"
-        :to="user.uid"
-      >
-        {{ user.email }}
-      </NuxtLink>
+    <div class="flex" v-if="user">
+      <client-only>
+        <NuxtLink
+          class="bg-green-vue mx-2 filter-btn flex items-center rounded cursor-pointer ripple px-2 py-1"
+          :to="user.uid"
+          v-tooltip="{
+            content: 'Your collection',
+            theme: 'info-tooltip'
+          }"
+        >
+          {{ userData.username }}
+        </NuxtLink>
+      </client-only>
       <button @click="logOut" class="ripple px-4 bg-red-500 rounded">
         Sign out
       </button>
     </div>
     <div v-else-if="$route.name !== 'index'">
       <button
-        @click="signInDisabled ? null : signIn()"
-        class="ml-4 px-4 rounded"
-        :class="{
-          'bg-green-vue ripple': !signInDisabled,
-          'cursor-not-allowed bg-dark-500': signInDisabled
-        }"
+        @click="loginTrigger = true"
+        class="ml-4 px-4 rounded bg-green-vue ripple"
       >
         Sign in
       </button>
@@ -37,53 +39,21 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  getAdditionalUserInfo,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut
-} from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { signOut } from "firebase/auth";
 
 const user = useUser();
+const loginTrigger = useLoginTrigger();
+const userData = useUserData();
 const { createToast } = useToast();
-const { $firebaseAuth, $firebaseFirestore } = useNuxtApp();
-
-const signInDisabled = ref(false);
+const { $firebaseAuth } = useNuxtApp();
 
 const logOut = async () => {
   try {
     await signOut($firebaseAuth);
+    userData.value.username = "";
     createToast("Signed out!", "green-500");
   } catch (e) {
     createToast(e.message, "red-500");
-  }
-};
-
-const signIn = async () => {
-  signInDisabled.value = true;
-
-  try {
-    const provider = new GoogleAuthProvider();
-    const result = await signInWithPopup($firebaseAuth, provider);
-    const { isNewUser } = getAdditionalUserInfo(result);
-
-    if (isNewUser) {
-      const docRef = doc($firebaseFirestore, "profile", result.user.uid);
-      await setDoc(docRef, {
-        username: result.user.displayName,
-        collection: {
-          st: {},
-          ut: {}
-        }
-      });
-    }
-
-    createToast("Signed in!", "green-500");
-  } catch (e) {
-    createToast(e.message, "red-500");
-  } finally {
-    signInDisabled.value = false;
   }
 };
 </script>

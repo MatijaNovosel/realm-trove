@@ -1,6 +1,7 @@
 import pkg from "./package.json";
 
 export default defineNuxtConfig({
+  ssr: false,
   css: ["@/assets/styles.css"],
   modules: ["nuxt-windicss", "unplugin-icons/nuxt"],
   experimental: {

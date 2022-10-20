@@ -25,6 +25,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     appId: config.APP_ID,
     measurementId: config.MEASUREMENT_ID
   });
+
   const auth = getAuth(app);
   const firestore = getFirestore(app);
 
