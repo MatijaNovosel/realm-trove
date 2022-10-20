@@ -328,7 +328,9 @@ const resetCollection = async () => {
 
 onMounted(async () => {
   try {
-    const data = await $fetch(`/api/items/${userSlug.value}`);
+    const data = await $fetch(`/api/${userSlug.value}?property=shortId`);
+
+    setMeta(`Realm trove | ${data.username}'s Items`);
 
     profile.value = data;
     usernameEditText.value = data.username;

@@ -25,6 +25,8 @@ export interface PlayerCollection {
 }
 
 export interface Profile {
+  shortId: string;
+  uid: string;
   username: string;
   collection: PlayerCollection;
 }

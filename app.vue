@@ -20,6 +20,7 @@ import {
   signInWithPopup
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import { generateShortId } from "~/utils/helpers";
 
 const router = useRouter();
 const route = useRoute();
@@ -37,28 +38,40 @@ const signIn = async () => {
     if (isNewUser) {
       const docRef = doc($firebaseFirestore, "profile", result.user.uid);
       const username = result.user.displayName.substring(0, 15);
+      const shortId = generateShortId();
 
       await setDoc(docRef, {
         username,
+        shortId,
+        uid: result.user.uid,
         collection: {
           st: {},
           ut: {}
         }
       });
 
-      userData.value.username = username;
+      userData.value = {
+        shortId,
+        username
+      };
     } else {
-      const { username } = await $fetch(`/api/items/${result.user.uid}`);
-      userData.value.username = username;
+      const { username, shortId } = await $fetch(
+        `/api/${result.user.uid}?property=uid`
+      );
+      userData.value = {
+        shortId,
+        username
+      };
     }
 
     createToast("Signed in!", "green-500");
 
     if (route.name === "index") {
-      router.push(result.user.uid);
+      router.push(userData.value.shortId);
     }
   } catch (e) {
     createToast(e.message, "red-500");
+  } finally {
     loginTrigger.value = false;
   }
 };

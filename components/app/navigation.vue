@@ -2,19 +2,20 @@
   <header
     class="flex md:justify-between md:w-full items-center fixed md:absolute mt-4 z-4 bg-dark-400 rounded-lg md:bg-transparent px-4 py-3"
   >
-    <span
-      class="md:text-2xl"
+    <NuxtLink
+      to="/"
+      class="md:text-2xl ripple py-1 px-3 rounded"
       :class="{
         'hidden md:block': $route.name === 'slug' && !!user
       }"
     >
       v{{ $config.CLIENT_VERSION }}
-    </span>
+    </NuxtLink>
     <div class="flex" v-if="user">
       <client-only>
         <NuxtLink
           class="bg-green-vue mx-2 filter-btn flex items-center rounded cursor-pointer ripple px-2 py-1"
-          :to="user.uid"
+          :to="userData.shortId"
           v-tooltip="{
             content: 'Your collection',
             theme: 'info-tooltip'
