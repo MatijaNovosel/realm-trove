@@ -19,7 +19,7 @@
         'cursor-pointer': !disabled
       }"
       @click="disabled ? null : $emit('increment', id)"
-      @contextmenu.prevent="$emit('decrement', id)"
+      @contextmenu.prevent="disabled ? null : $emit('decrement', id)"
     >
       <div class="badge user-select-none" :class="badgeClass(id)">
         {{ collection[tab][id] !== 0 ? collection[tab][id] : "" }}
