@@ -2488,7 +2488,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 268,
-    name: "Light Syndicate Attire",
+    name: "Obsidian Macuahuitl",
     source: SOURCE.HIDDEN_INTERREGNUM,
     pos: {
       y: 0,
@@ -2497,7 +2497,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 269,
-    name: "Mystic Syndicate Attire",
+    name: "Gilded Chain Scythe",
     source: SOURCE.HIDDEN_INTERREGNUM,
     pos: {
       y: 0,
@@ -2506,7 +2506,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 270,
-    name: "Heavy Syndicate Attire",
+    name: "Ritual Khopesh",
     source: SOURCE.HIDDEN_INTERREGNUM,
     pos: {
       y: 0,
@@ -2515,7 +2515,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 271,
-    name: "Sunken Fire Opal Ring",
+    name: "Pirate's Sidearms",
     source: SOURCE.HIDDEN_INTERREGNUM,
     pos: {
       y: 0,
@@ -2524,7 +2524,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 272,
-    name: "Faded Heart Scarab",
+    name: "Frangile Longbow",
     source: SOURCE.HIDDEN_INTERREGNUM,
     pos: {
       y: 0,
@@ -2533,11 +2533,65 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 273,
-    name: "Fractured Hannya",
+    name: "Royal Sekhem",
     source: SOURCE.HIDDEN_INTERREGNUM,
     pos: {
       y: 0,
       x: -12558
+    }
+  },
+  {
+    id: 274,
+    name: "Light Syndicate Attire",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12604
+    }
+  },
+  {
+    id: 275,
+    name: "Mystic Syndicate Attire",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12650
+    }
+  },
+  {
+    id: 276,
+    name: "Heavy Syndicate Attire",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12696
+    }
+  },
+  {
+    id: 277,
+    name: "Sunken Fire Opal Ring",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12742
+    }
+  },
+  {
+    id: 278,
+    name: "Faded Heart Scarab",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12788
+    }
+  },
+  {
+    id: 279,
+    name: "Fractured Hannya",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12834
     }
   }
 ];
