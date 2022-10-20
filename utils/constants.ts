@@ -2458,6 +2458,87 @@ export const ITEMS_UT: ItemInfo[] = [
       y: 0,
       x: -12144
     }
+  },
+  {
+    id: 265,
+    name: "Huntsman's Volley",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12190
+    }
+  },
+  {
+    id: 266,
+    name: "Storm Caller",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12236
+    }
+  },
+  {
+    id: 267,
+    name: "Rusted Barrel",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12282
+    }
+  },
+  {
+    id: 268,
+    name: "Light Syndicate Attire",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12328
+    }
+  },
+  {
+    id: 269,
+    name: "Mystic Syndicate Attire",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12374
+    }
+  },
+  {
+    id: 270,
+    name: "Heavy Syndicate Attire",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12420
+    }
+  },
+  {
+    id: 271,
+    name: "Sunken Fire Opal Ring",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12466
+    }
+  },
+  {
+    id: 272,
+    name: "Faded Heart Scarab",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12512
+    }
+  },
+  {
+    id: 273,
+    name: "Fractured Hannya",
+    source: SOURCE.HIDDEN_INTERREGNUM,
+    pos: {
+      y: 0,
+      x: -12558
+    }
   }
 ];
 
