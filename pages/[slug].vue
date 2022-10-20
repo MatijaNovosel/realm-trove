@@ -304,17 +304,23 @@ const pendingChanges = computed(() => {
 });
 
 const updateCollection = async (id: number, increment: boolean = true) => {
+  const existsInCollection = id in profile.value.collection[activeTab.value];
+
+  if (!increment && !existsInCollection) {
+    return;
+  }
+
   if (!initialCollection.value) {
     initialCollection.value = JSON.parse(
       JSON.stringify(profile.value.collection)
     );
+
+    if (!permanentToastExists.value) {
+      createToast("You have pending changes", "green-500", -1, true);
+    }
   }
 
-  if (!permanentToastExists.value) {
-    createToast("You have pending changes", "green-500", -1, true);
-  }
-
-  if (id in profile.value.collection[activeTab.value]) {
+  if (existsInCollection) {
     if (increment) {
       profile.value.collection[activeTab.value][id]++;
     } else {
@@ -425,6 +431,7 @@ watch(
   (val) => {
     if (!val) {
       removePermanentToasts();
+      initialCollection.value = undefined;
     }
   }
 );
