@@ -1,49 +1,12 @@
 <template>
   <div class="contents">
-    <transition name="modal">
-      <app-modal
-        title="Loot source"
-        v-if="modalOpen"
-        @close="modalOpen = false"
-      >
-        <div class="flex flex-col">
-          <div
-            class="flex items-center my-2"
-            v-for="(s, i) in Object.entries(SOURCE)
-              .filter((value) => typeof value[1] === 'string')
-              .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))"
-            :key="i"
-          >
-            <input type="checkbox" class="mr-3" />
-            <span>
-              {{ s[1] }}
-            </span>
-          </div>
-        </div>
-      </app-modal>
-    </transition>
-    <transition name="modal">
-      <app-modal
-        title="Are you sure?"
-        v-if="confirmDialogOpen"
-        @close="confirmDialogOpen = false"
-      >
-        <div class="flex justify-center py-3">
-          <button
-            class="mr-2 rounded px-2 bg-green-500 ripple"
-            @click="resetCollection"
-          >
-            Yes
-          </button>
-          <button
-            class="rounded px-2 bg-red-500 ripple"
-            @click="confirmDialogOpen = false"
-          >
-            No
-          </button>
-        </div>
-      </app-modal>
-    </transition>
+    <items-filter-modal :open="modalOpen" @close="modalOpen = false" />
+    <app-confirmation-dialog
+      :open="confirmDialogOpen"
+      @close="confirmDialogOpen = false"
+      @yes="resetCollection"
+      @no="confirmDialogOpen = false"
+    />
     <div
       class="offset w-full"
       :class="{
@@ -56,29 +19,7 @@
           An error ocurred.
         </div>
         <div class="display-contents" v-else>
-          <div
-            class="text-4xl font-bold mb-2 mt-6 flex items-center justify-center user-select-none"
-          >
-            <div
-              @click="changeTab(TAB.UT)"
-              class="ripple px-3 py-1 cursor-pointer rounded-lg"
-              :class="{
-                'text-green-vue': activeTab === TAB.UT
-              }"
-            >
-              UT
-            </div>
-            <div class="mx-3">•</div>
-            <div
-              @click="changeTab(TAB.ST)"
-              class="ripple px-3 py-1 cursor-pointer rounded-lg"
-              :class="{
-                'text-green-vue': activeTab === TAB.ST
-              }"
-            >
-              ST
-            </div>
-          </div>
+          <items-type-tab :active-tab="activeTab" @change="changeTab" />
           <div class="flex justify-center items-center" v-if="profile">
             <div v-if="editingUsername">
               <items-custom-input
@@ -113,15 +54,7 @@
             </div>
           </div>
           <div class="grid grid-cols-12 my-5 px-7 md:px-3">
-            <div
-              v-if="isCurrentUser"
-              class="col-span-12 md:col-span-4 flex items-center justify-center md:justify-start"
-            >
-              <MouseButtonLeftIcon class="mr-1" />
-              <span class="mr-3"> Increase </span>
-              <MouseButtonRightIcon class="mr-1" />
-              <span> Decrease </span>
-            </div>
+            <items-instructions v-if="isCurrentUser" />
             <div
               class="col-span-12 md:col-span-4 my-4 md:my-0 flex items-center"
               :class="{
@@ -220,7 +153,7 @@
 
 <script setup lang="ts">
 import { PlayerCollection, Profile } from "~/models";
-import { TAB, SOURCE } from "~/utils/constants";
+import { TAB } from "~/utils/constants";
 import {
   doc,
   DocumentData,
@@ -229,8 +162,6 @@ import {
   setDoc,
   Unsubscribe
 } from "firebase/firestore";
-import MouseButtonLeftIcon from "~icons/iconoir/mouse-button-left";
-import MouseButtonRightIcon from "~icons/iconoir/mouse-button-right";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
 import PencilIcon from "~icons/mdi/grease-pencil";
@@ -246,7 +177,6 @@ const initialMount = ref(true);
 const editingUsername = ref(false);
 const error = ref(false);
 const unsubscribe = ref<Unsubscribe>();
-const selectedGroups = ref<number[]>([]);
 const profile = ref<Profile>();
 const usernameEditText = ref("");
 const docRef = ref<DocumentReference<DocumentData>>();
