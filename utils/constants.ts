@@ -518,8 +518,8 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 49,
-    name: "Snake Charmer Pungi",
-    source: SOURCE.SNAKE_PIT,
+    name: "Wavecrest Concertina",
+    source: SOURCE.DEADWATER_DOCKS,
     pos: {
       y: 0,
       x: -2254
@@ -527,8 +527,8 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 50,
-    name: "Wavecrest Concertina",
-    source: SOURCE.DEADWATER_DOCKS,
+    name: "Snake Charmer Pungi",
+    source: SOURCE.SNAKE_PIT,
     pos: {
       y: 0,
       x: -2300
