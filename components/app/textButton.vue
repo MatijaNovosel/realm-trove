@@ -30,10 +30,10 @@ defineEmits(["on-click"]);
 
 const buttonClass = computed(() => {
   return {
-    [`ripple bg-${props.backgroundColor || "dark-800"} text-${
+    [`ripple bg-${props.backgroundColor || "dark"} text-${
       props.textColor || "white"
     }`]: !props.disabled,
-    "cursor-not-allowed bg-dark-800": props.disabled
+    "cursor-not-allowed bg-dark": props.disabled
   };
 });
 </script>

@@ -3,6 +3,7 @@
     <items-filter-modal
       @change="filterSelected"
       :open="modalOpen"
+      v-model:loot-source="lootSource"
       @close="modalOpen = false"
     />
     <app-confirmation-dialog
@@ -123,7 +124,7 @@
             </items-progress-bar>
           </div>
           <items-grid
-            :items="filteredItems"
+            :items="filteredCollection"
             :collection="profile.collection"
             :initial="initialCollection"
             :tab="activeTab"
@@ -138,8 +139,8 @@
 </template>
 
 <script setup lang="ts">
-import { PlayerCollection, Profile } from "~/models";
-import { TAB } from "~/utils/constants";
+import { IDictionary, ItemInfo, PlayerCollection, Profile } from "~/models";
+import { SOURCE, TAB } from "~/utils/constants";
 import {
   doc,
   DocumentData,
@@ -148,6 +149,7 @@ import {
   setDoc,
   Unsubscribe
 } from "firebase/firestore";
+import { useDebounceFn } from "@vueuse/core";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
 import PencilIcon from "~icons/mdi/grease-pencil";
@@ -165,6 +167,7 @@ const error = ref(false);
 const unsubscribe = ref<Unsubscribe>();
 const profile = ref<Profile>();
 const usernameEditText = ref("");
+const lootSource = ref<number>(0);
 const docRef = ref<DocumentReference<DocumentData>>();
 
 const { $firebaseFirestore } = useNuxtApp();
@@ -174,6 +177,11 @@ const user = useUser();
 const route = useRoute();
 const { setMeta } = useMetadata();
 const loginTrigger = useLoginTrigger();
+
+const filteredCollection = ref<IDictionary<ItemInfo[]>>({
+  [TAB.UT]: items[TAB.UT],
+  [TAB.ST]: items[TAB.ST]
+});
 
 const userSlug = computed(() => {
   return route.params.slug;
@@ -190,17 +198,6 @@ const changeTab = (tab: TAB) => {
   if (activeTab.value === tab) return;
   activeTab.value = tab;
 };
-
-const filteredItems = computed(() => {
-  return {
-    [TAB.UT]: items[TAB.UT].filter((item) =>
-      item.name.toLowerCase().includes(searchText.value.toLowerCase())
-    ),
-    [TAB.ST]: items[TAB.ST].filter((item) =>
-      item.name.toLowerCase().includes(searchText.value.toLowerCase())
-    )
-  };
-});
 
 const itemsCollected = computed(() => {
   return {
@@ -317,6 +314,25 @@ const filterSelected = () => {
   //
 };
 
+const searchItems = useDebounceFn(() => {
+  const filterConditions: ((item: ItemInfo) => boolean)[] = [
+    (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
+  ];
+
+  if (lootSource.value !== SOURCE.ALL) {
+    filterConditions.push((item) => item.source === lootSource.value);
+  }
+
+  filteredCollection.value = {
+    [TAB.UT]: items[TAB.UT].filter((item) =>
+      filterConditions.every((i) => i(item))
+    ),
+    [TAB.ST]: items[TAB.ST].filter((item) =>
+      filterConditions.every((i) => i(item))
+    )
+  };
+}, 300);
+
 onMounted(async () => {
   try {
     if (loginTrigger.value) {
@@ -359,6 +375,13 @@ onBeforeUnmount(() => {
   }
   docRef.value = undefined;
 });
+
+watch(
+  () => [searchText.value, lootSource.value],
+  () => {
+    searchItems();
+  }
+);
 
 watch(
   () => pendingChanges.value,

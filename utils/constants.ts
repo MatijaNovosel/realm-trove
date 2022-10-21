@@ -6,7 +6,8 @@ export enum TAB {
 }
 
 export enum SOURCE {
-  PIRATE_CAVE = 1,
+  ALL = 0,
+  PIRATE_CAVE,
   FOREST_MAZE,
   SPIDER_DEN,
   FORBIDDEN_JUNGLE,
@@ -4633,7 +4634,7 @@ export const ITEMS_ST: ItemInfo[] = [
   }
 ];
 
-export const ITEM_NAMES = {
+export const SOURCE_NAMES = {
   [SOURCE.ABYSS_OF_DEMONS]: "Abyss of Demons",
   [SOURCE.ALIENS]: "Aliens",
   [SOURCE.ANCIENT_RUINS]: "Ancient Ruins",

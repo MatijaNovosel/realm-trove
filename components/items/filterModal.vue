@@ -6,17 +6,28 @@
           <SackIcon class="mr-2 text-green-vue" /> Source
         </div>
         <div class="col-span-10">
-          <select class="flex flex-col w-full my-2 rounded bg-dark-900 p-2">
+          <select
+            class="flex flex-col w-full my-2 rounded bg-dark-900 p-2"
+            @change="
+              $emit(
+                'update:lootSource',
+                parseInt(($event.target as HTMLInputElement).value)
+              )
+            "
+            :value="lootSource"
+          >
             <option value="0">All</option>
             <option
               class="bg-dark-400"
               :value="s[0]"
               v-for="(s, i) in Object.entries(SOURCE)
-                .filter((value) => typeof value[1] === 'string')
+                .filter(
+                  (value) => typeof value[1] === 'string' && value[1] !== 'ALL'
+                )
                 .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))"
               :key="i"
             >
-              {{ ITEM_NAMES[s[0]] }}
+              {{ SOURCE_NAMES[s[0]] }}
             </option>
           </select>
         </div>
@@ -28,13 +39,11 @@
             <option value="0">All</option>
             <option
               class="bg-dark-400"
-              :value="s[0]"
-              v-for="(s, i) in Object.entries(SOURCE)
-                .filter((value) => typeof value[1] === 'string')
-                .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))"
+              :value="s"
+              v-for="(s, i) in 10"
               :key="i"
             >
-              {{ ITEM_NAMES[s[0]] }}
+              {{ s }}
             </option>
           </select>
         </div>
@@ -44,13 +53,14 @@
 </template>
 
 <script lang="ts" setup>
-import { SOURCE, ITEM_NAMES } from "~/utils/constants";
+import { SOURCE, SOURCE_NAMES } from "~/utils/constants";
 import SackIcon from "~icons/mdi/sack";
 import SwordIcon from "~icons/jam/sword-f";
 
 defineProps<{
+  lootSource: number | null;
   open: boolean;
 }>();
 
-defineEmits(["close"]);
+defineEmits(["close", "update:lootSource"]);
 </script>
