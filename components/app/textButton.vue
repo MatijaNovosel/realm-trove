@@ -1,7 +1,7 @@
 <template>
-  <button
+  <div
     @click="disabled ? null : onClick()"
-    class="px-2 rounded flex items-center"
+    class="px-2 rounded flex items-center cursor-pointer"
     :class="buttonClass"
     v-tooltip="{
       content: tooltip,
@@ -10,7 +10,7 @@
   >
     <LoadingIcon class="my-0.5 mx-3" v-if="loading" />
     <span v-else> {{ text }} </span>
-  </button>
+  </div>
 </template>
 
 <script lang="ts" setup>
