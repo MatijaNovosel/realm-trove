@@ -18,7 +18,7 @@
             class="mr-2"
             background-color="green-vue"
             tooltip="Your collection"
-            :text="userData.username"
+            :text="userData.username || ''"
           />
         </NuxtLink>
       </client-only>

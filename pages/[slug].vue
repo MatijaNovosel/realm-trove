@@ -168,6 +168,7 @@ const { createToast, removePermanentToasts, permanentToastExists } = useToast();
 const user = useUser();
 const route = useRoute();
 const { setMeta } = useMetadata();
+const loginTrigger = useLoginTrigger();
 
 const userSlug = computed(() => {
   return route.params.slug;
@@ -310,6 +311,10 @@ const resetCollection = async () => {
 
 onMounted(async () => {
   try {
+    if (loginTrigger.value) {
+      loginTrigger.value = false;
+    }
+
     const data = await $fetch(`/api/${userSlug.value}?property=shortId`);
 
     setMeta(

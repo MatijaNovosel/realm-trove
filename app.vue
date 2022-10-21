@@ -71,7 +71,6 @@ const signIn = async () => {
     }
   } catch (e) {
     createToast(e.message, "red-500");
-  } finally {
     loginTrigger.value = false;
   }
 };

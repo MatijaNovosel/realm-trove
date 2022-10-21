@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <app-modal title="Are you sure?" v-if="open" @close="$emit('close')">
+    <app-modal title="Are you sure?" v-show="open" @close="$emit('close')">
       <div class="flex justify-center py-3">
         <app-text-button
           class="mr-2"
