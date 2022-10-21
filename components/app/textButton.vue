@@ -1,6 +1,6 @@
 <template>
   <div
-    @click="disabled ? null : onClick()"
+    @click="disabled ? null : onClick!()"
     class="px-2 rounded flex items-center cursor-pointer"
     :class="buttonClass"
     v-tooltip="{
