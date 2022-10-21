@@ -51,7 +51,7 @@ const badgeClass = (id: number) => {
     if (initialCollectionCount > currentCollectionCount) {
       return "text-error font-bold";
     } else if (initialCollectionCount < currentCollectionCount) {
-      return "text-green-vuefont-bold";
+      return "text-green-vue font-bold";
     }
   }
 };
