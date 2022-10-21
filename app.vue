@@ -68,6 +68,8 @@ const signIn = async () => {
 
     if (route.name === "index") {
       router.push(userData.value.shortId);
+    } else {
+      loginTrigger.value = false;
     }
   } catch (e) {
     createToast(e.message, "red-500");
