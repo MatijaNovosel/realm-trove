@@ -1,7 +1,7 @@
 <template>
   <button
     @click="disabled ? null : onClick()"
-    class="px-2 rounded"
+    class="px-2 rounded flex"
     :class="buttonClass"
     v-tooltip="{
       content: tooltip,
@@ -28,7 +28,7 @@ const props = defineProps<{
 
 const buttonClass = computed(() => {
   return {
-    [`ripple bg-${props.backgroundColor || "black"} text-${
+    [`ripple bg-${props.backgroundColor || "dark-800"} text-${
       props.textColor || "white"
     }`]: !props.disabled,
     "cursor-not-allowed bg-dark-800": props.disabled
