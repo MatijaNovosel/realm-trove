@@ -193,7 +193,7 @@ const userSlug = computed(() => {
 
 const isCurrentUser = computed(() => {
   if (user.value) {
-    return user.value.uid === userSlug.value;
+    return user.value.uid === profile.value.uid;
   }
   return false;
 });
