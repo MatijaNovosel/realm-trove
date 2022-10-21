@@ -37,7 +37,7 @@
               v-if="isCurrentUser"
               class="ml-4"
               :tooltip="editingUsername ? 'Confirm' : 'Change username'"
-              :on-click="
+              @on-click="
                 () =>
                   editingUsername
                     ? changeUsername()
@@ -67,7 +67,7 @@
               <app-icon-button
                 class="mx-4"
                 tooltip="Filter"
-                :on-click="() => (modalOpen = true)"
+                @on-click="() => (modalOpen = true)"
               >
                 <FilterIcon />
               </app-icon-button>
@@ -76,7 +76,7 @@
                 tooltip="Reset"
                 icon-color="green-vue"
                 :disabled="pendingChanges"
-                :on-click="
+                @on-click="
                   () => (pendingChanges ? null : (confirmDialogOpen = true))
                 "
                 :background-color="editingUsername ? 'green-vue' : 'dark-800'"
@@ -93,14 +93,14 @@
                 text="Cancel"
                 class="ml-2"
                 :disabled="!pendingChanges"
-                :on-click="() => cancelChanges()"
+                @on-click="() => cancelChanges()"
               />
               <app-text-button
                 background-color="green-vue"
                 text="Save"
                 class="ml-2"
                 :disabled="!pendingChanges"
-                :on-click="() => confirmChanges()"
+                @on-click="() => confirmChanges()"
               />
             </div>
           </div>

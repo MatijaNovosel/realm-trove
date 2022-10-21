@@ -14,7 +14,7 @@
           class="mt-6"
           background-color="green-vue"
           text="Sign in with Google"
-          :on-click="() => (loginTrigger = true)"
+          @on-click="() => (loginTrigger = true)"
         />
       </div>
     </transition>

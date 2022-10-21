@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="disabled ? null : onClick!()"
+    @click="disabled ? null : $emit('on-click')"
     class="p-1.5 rounded text-sm flex items-center"
     :class="buttonClass"
     v-tooltip="{
@@ -24,6 +24,8 @@ const props = defineProps<{
   tooltip?: string;
   onClick?: () => void;
 }>();
+
+defineEmits(["on-click"]);
 
 const buttonClass = computed(() => {
   return {

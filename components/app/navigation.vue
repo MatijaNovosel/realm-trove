@@ -26,7 +26,7 @@
         class="mr-2"
         background-color="red-500"
         text="Sign out"
-        :on-click="() => logOut()"
+        @on-click="() => logOut()"
       />
     </div>
     <app-text-button
@@ -35,7 +35,7 @@
       text="Sign in"
       :loading="loginTrigger"
       :disabled="loginTrigger"
-      :on-click="() => (loginTrigger = true)"
+      @on-click="() => (loginTrigger = true)"
     />
   </header>
 </template>
