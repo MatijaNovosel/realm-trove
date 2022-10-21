@@ -7,7 +7,7 @@
         &copy; Realm trove {{ new Date().getFullYear() }}
       </span>
     </div>
-    <div>
+    <div class="flex">
       <a class="text-white" href="https://github.com/MatijaNovosel/realm-trove">
         <IconGithub :style="{ fontSize: '1.3em' }" />
       </a>
