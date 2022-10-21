@@ -1,6 +1,10 @@
 <template>
   <div class="contents">
-    <items-filter-modal :open="modalOpen" @close="modalOpen = false" />
+    <items-filter-modal
+      @change="filterSelected"
+      :open="modalOpen"
+      @close="modalOpen = false"
+    />
     <app-confirmation-dialog
       :open="confirmDialogOpen"
       @close="confirmDialogOpen = false"
@@ -67,6 +71,7 @@
               <app-icon-button
                 class="mx-4"
                 tooltip="Filter"
+                background-color="dark"
                 @on-click="() => (modalOpen = true)"
               >
                 <FilterIcon />
@@ -79,7 +84,7 @@
                 @on-click="
                   () => (pendingChanges ? null : (confirmDialogOpen = true))
                 "
-                :background-color="editingUsername ? 'green-vue' : 'dark'"
+                background-color="dark"
               >
                 <ResetIcon />
               </app-icon-button>
@@ -306,6 +311,10 @@ const resetCollection = async () => {
   } finally {
     confirmDialogOpen.value = false;
   }
+};
+
+const filterSelected = () => {
+  //
 };
 
 onMounted(async () => {
