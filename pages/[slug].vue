@@ -33,25 +33,21 @@
             <span class="text-2xl md:text-4xl" v-else>
               {{ profile.username }}'s Loot
             </span>
-            <div
+            <app-icon-button
               v-if="isCurrentUser"
-              class="bg-dark-800 ml-4 filter-btn flex items-center rounded-lg cursor-pointer ripple h-full"
-              :class="{
-                'bg-green-vue': editingUsername
-              }"
-              v-tooltip="{
-                content: editingUsername ? 'Confirm' : 'Change username',
-                theme: 'info-tooltip'
-              }"
-              @click="
-                editingUsername
-                  ? changeUsername()
-                  : (editingUsername = !editingUsername)
+              class="ml-4"
+              :tooltip="editingUsername ? 'Confirm' : 'Change username'"
+              :on-click="
+                () =>
+                  editingUsername
+                    ? changeUsername()
+                    : (editingUsername = !editingUsername)
               "
+              :background-color="editingUsername ? 'green-vue' : 'dark-800'"
             >
               <CheckmarkIcon v-if="editingUsername" />
               <PencilIcon v-else />
-            </div>
+            </app-icon-button>
           </div>
           <div class="grid grid-cols-12 my-5 px-7 md:px-3">
             <items-instructions v-if="isCurrentUser" />
@@ -68,32 +64,25 @@
                 :error="error"
                 v-model="searchText"
               />
-              <div
-                class="bg-dark-800 mx-2 filter-btn flex items-center rounded-lg cursor-pointer ripple"
-                @click="modalOpen = true"
-                v-tooltip="{
-                  content: 'Filter',
-                  theme: 'info-tooltip'
-                }"
+              <app-icon-button
+                class="mx-4"
+                tooltip="Filter"
+                :on-click="() => (modalOpen = true)"
               >
                 <FilterIcon />
-              </div>
-              <div
+              </app-icon-button>
+              <app-icon-button
                 v-if="isCurrentUser"
-                class="bg-dark-800 filter-btn flex items-center rounded-lg cursor-pointer"
-                v-tooltip="{
-                  content: 'Reset',
-                  theme: 'info-tooltip'
-                }"
-                :class="{
-                  'cursor-not-allowed': pendingChanges,
-                  'text-green-vue ripple': !pendingChanges
-                }"
+                tooltip="Reset"
+                icon-color="green-vue"
                 :disabled="pendingChanges"
-                @click="pendingChanges ? null : (confirmDialogOpen = true)"
+                :on-click="
+                  () => (pendingChanges ? null : (confirmDialogOpen = true))
+                "
+                :background-color="editingUsername ? 'green-vue' : 'dark-800'"
               >
                 <ResetIcon />
-              </div>
+              </app-icon-button>
             </div>
             <div
               v-if="isCurrentUser"

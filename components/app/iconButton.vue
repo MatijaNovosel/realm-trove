@@ -1,7 +1,7 @@
 <template>
   <button
     @click="disabled ? null : onClick()"
-    class="px-2 rounded"
+    class="p-1.5 rounded text-sm"
     :class="buttonClass"
     v-tooltip="{
       content: tooltip,
@@ -9,7 +9,7 @@
     }"
   >
     <LoadingIcon class="my-0.5 mx-3" v-if="loading" />
-    <span v-else> {{ text }} </span>
+    <slot v-else />
   </button>
 </template>
 
@@ -20,16 +20,15 @@ const props = defineProps<{
   loading?: boolean;
   disabled?: boolean;
   backgroundColor?: string;
-  textColor?: string;
+  iconColor?: string;
   tooltip?: string;
-  text: string;
   onClick?: () => void;
 }>();
 
 const buttonClass = computed(() => {
   return {
-    [`ripple bg-${props.backgroundColor || "black"} text-${
-      props.textColor || "white"
+    [`ripple bg-${props.backgroundColor || "dark-800"} text-${
+      props.iconColor || "white"
     }`]: !props.disabled,
     "cursor-not-allowed bg-dark-800": props.disabled
   };

@@ -13,15 +13,13 @@
     </NuxtLink>
     <div class="flex" v-if="user">
       <client-only>
-        <NuxtLink
-          class="bg-green-vue mx-2 filter-btn flex items-center rounded cursor-pointer ripple px-2 py-1"
-          :to="userData.shortId"
-          v-tooltip="{
-            content: 'Your collection',
-            theme: 'info-tooltip'
-          }"
-        >
-          {{ userData.username }}
+        <NuxtLink :to="userData.shortId">
+          <app-text-button
+            class="mr-2"
+            background-color="green-vue"
+            tooltip="Your collection"
+            :text="userData.username"
+          />
         </NuxtLink>
       </client-only>
       <app-text-button
