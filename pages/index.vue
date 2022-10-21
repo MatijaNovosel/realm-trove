@@ -9,8 +9,15 @@
         <img width="86" height="86" src="/whiteBag.png" class="mb-3" />
         <span class="text-3xl md:text-7xl mt-4">Realm trove</span>
         <span class="md:text-lg mt-4 text-gray-400">Track your loot!</span>
+        <NuxtLink :to="userData.shortId" v-if="user">
+          <app-text-button
+            class="mt-6"
+            background-color="green-vue"
+            text="Go to your collection"
+          />
+        </NuxtLink>
         <app-text-button
-          v-if="!user"
+          v-else
           class="mt-6"
           background-color="green-vue"
           text="Sign in with Google"
@@ -24,6 +31,7 @@
 <script setup lang="ts">
 const loginTrigger = useLoginTrigger();
 const user = useUser();
+const userData = useUserData();
 
 const { setMeta } = useMetadata();
 setMeta("Realm trove | Home");
