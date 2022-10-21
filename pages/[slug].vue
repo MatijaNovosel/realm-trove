@@ -341,14 +341,7 @@ onMounted(async () => {
 
     const data = await $fetch(`/api/${userSlug.value}?property=shortId`);
 
-    setMeta(
-      `Realm trove | ${data.username}'s Items`,
-      `${data.username} has collected ${
-        Object.keys(data.collection.ut).length
-      }/${items["ut"].length} UTs and ${
-        Object.keys(data.collection.st).length
-      }/${items["st"].length} STs!`
-    );
+    setMeta(`Realm trove | ${data.username}'s Items`);
 
     profile.value = data;
     usernameEditText.value = data.username;
