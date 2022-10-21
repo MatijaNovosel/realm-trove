@@ -64,7 +64,7 @@ const signIn = async () => {
       };
     }
 
-    createToast("Signed in!", "green-500");
+    createToast("Signed in!", "green-vue");
 
     if (route.name === "index") {
       router.push(userData.value.shortId);
@@ -72,7 +72,7 @@ const signIn = async () => {
       loginTrigger.value = false;
     }
   } catch (e) {
-    createToast(e.message, "red-500");
+    createToast(e.message, "error");
     loginTrigger.value = false;
   }
 };

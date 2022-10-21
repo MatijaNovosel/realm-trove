@@ -24,7 +24,7 @@
       </client-only>
       <app-text-button
         class="mr-2"
-        background-color="red-500"
+        background-color="error"
         text="Sign out"
         @on-click="() => logOut()"
       />
@@ -56,9 +56,9 @@ const logOut = async () => {
       shortId: null,
       username: null
     };
-    createToast("Signed out!", "green-500");
+    createToast("Signed out!", "green-vue");
   } catch (e) {
-    createToast(e.message, "red-500");
+    createToast(e.message, "error");
   }
 };
 </script>

@@ -49,9 +49,9 @@ const badgeClass = (id: number) => {
     const currentCollectionCount = props.collection[props.tab][id];
 
     if (initialCollectionCount > currentCollectionCount) {
-      return "text-red-500 font-bold";
+      return "text-error font-bold";
     } else if (initialCollectionCount < currentCollectionCount) {
-      return "text-green-500 font-bold";
+      return "text-green-vuefont-bold";
     }
   }
 };

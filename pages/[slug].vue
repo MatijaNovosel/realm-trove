@@ -15,7 +15,7 @@
     >
       <transition name="bounce">
         <spinner class="mt-4 mx-auto" v-if="pending" />
-        <div class="mt-4 mx-auto text-red-500 text-4xl" v-else-if="error">
+        <div class="mt-4 mx-auto text-error text-4xl" v-else-if="error">
           An error ocurred.
         </div>
         <div class="display-contents" v-else>
@@ -43,7 +43,7 @@
                     ? changeUsername()
                     : (editingUsername = !editingUsername)
               "
-              :background-color="editingUsername ? 'green-vue' : 'dark-800'"
+              :background-color="editingUsername ? 'green-vue' : 'dark'"
             >
               <CheckmarkIcon v-if="editingUsername" />
               <PencilIcon v-else />
@@ -79,7 +79,7 @@
                 @on-click="
                   () => (pendingChanges ? null : (confirmDialogOpen = true))
                 "
-                :background-color="editingUsername ? 'green-vue' : 'dark-800'"
+                :background-color="editingUsername ? 'green-vue' : 'dark'"
               >
                 <ResetIcon />
               </app-icon-button>
@@ -89,7 +89,7 @@
               class="col-span-12 md:col-span-4 flex justify-center md:justify-end"
             >
               <app-text-button
-                background-color="red-500"
+                background-color="error"
                 text="Cancel"
                 class="ml-2"
                 :disabled="!pendingChanges"
@@ -255,7 +255,7 @@ const changeUsername = async () => {
     usernameEditText.value.length === 0 ||
     usernameEditText.value.length > 15
   ) {
-    createToast("Invalid username (must be <=15 chars)!", "red-500");
+    createToast("Invalid username (must be <=15 chars)!", "error");
     return;
   }
 
@@ -270,7 +270,7 @@ const changeUsername = async () => {
     createToast("Username updated!", "green-500");
     editingUsername.value = false;
   } catch (e) {
-    createToast(e.message, "red-500");
+    createToast(e.message, "error");
   }
 };
 
@@ -285,7 +285,7 @@ const confirmChanges = async () => {
     createToast("Saved!", "green-500");
     initialCollection.value = undefined;
   } catch (e) {
-    createToast(e.message, "red-500");
+    createToast(e.message, "error");
     error.value = true;
   }
 };
@@ -301,7 +301,7 @@ const resetCollection = async () => {
     createToast("Progress has been reset!", "green-500");
     initialCollection.value = undefined;
   } catch (e) {
-    createToast(e.message, "red-500");
+    createToast(e.message, "error");
     error.value = true;
   } finally {
     confirmDialogOpen.value = false;
@@ -337,7 +337,7 @@ onMounted(async () => {
       }
     });
   } catch (e) {
-    createToast(e.message, "red-500");
+    createToast(e.message, "error");
     error.value = true;
   } finally {
     pending.value = false;

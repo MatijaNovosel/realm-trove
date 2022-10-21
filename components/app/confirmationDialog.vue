@@ -9,7 +9,7 @@
           @on-click="() => $emit('yes')"
         />
         <app-text-button
-          background-color="red-500"
+          background-color="error"
           text="No"
           @on-click="() => $emit('no')"
         />
