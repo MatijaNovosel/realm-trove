@@ -292,13 +292,12 @@ const confirmChanges = async () => {
 
 const resetCollection = async () => {
   try {
-    await setDoc(docRef.value, {
-      username: profile.value.username,
-      collection: {
-        st: {},
-        ut: {}
-      }
-    });
+    const emptyCollection = { ...profile.value };
+    emptyCollection.collection = {
+      st: {},
+      ut: {}
+    };
+    await setDoc(docRef.value, emptyCollection);
     createToast("Progress has been reset!", "green-500");
     initialCollection.value = undefined;
   } catch (e) {
