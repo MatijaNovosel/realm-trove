@@ -316,7 +316,9 @@ onMounted(async () => {
       `Realm trove | ${data.username}'s Items`,
       `${data.username} has collected ${
         Object.keys(data.collection.ut).length
-      }/`
+      }/${items["ut"].length} UTs and ${
+        Object.keys(data.collection.st).length
+      }/${items["st"].length} STs!`
     );
 
     profile.value = data;
