@@ -9,13 +9,13 @@
         <img width="86" height="86" src="/whiteBag.png" class="mb-3" />
         <span class="text-3xl md:text-7xl mt-4">Realm trove</span>
         <span class="md:text-lg mt-4 text-gray-400">Track your loot!</span>
-        <button
+        <app-text-button
           v-if="!user"
-          @click="loginTrigger = true"
-          class="ripple px-4 bg-green-vue mt-6 rounded-lg"
-        >
-          Sign in with Google
-        </button>
+          class="mt-6"
+          background-color="green-vue"
+          text="Sign in with Google"
+          :on-click="() => (loginTrigger = true)"
+        />
       </div>
     </transition>
   </div>

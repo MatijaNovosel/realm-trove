@@ -99,28 +99,20 @@
               v-if="isCurrentUser"
               class="col-span-12 md:col-span-4 flex justify-center md:justify-end"
             >
-              <button
+              <app-text-button
+                background-color="red-500"
+                text="Cancel"
+                class="ml-2"
                 :disabled="!pendingChanges"
-                :class="{
-                  'bg-dark-400 cursor-not-allowed': !pendingChanges,
-                  'bg-red-500 ripple': pendingChanges
-                }"
-                class="rounded px-2"
-                @click="pendingChanges ? cancelChanges() : null"
-              >
-                Cancel
-              </button>
-              <button
+                :on-click="() => cancelChanges()"
+              />
+              <app-text-button
+                background-color="green-vue"
+                text="Save"
+                class="ml-2"
                 :disabled="!pendingChanges"
-                :class="{
-                  'bg-dark-400 cursor-not-allowed': !pendingChanges,
-                  'bg-green-500 ripple': pendingChanges
-                }"
-                class="ml-2 rounded px-2"
-                @click="pendingChanges ? confirmChanges() : null"
-              >
-                Save
-              </button>
+                :on-click="() => confirmChanges()"
+              />
             </div>
           </div>
           <div class="px-7 md:px-3">
@@ -186,6 +178,7 @@ const { items } = useItems();
 const { createToast, removePermanentToasts, permanentToastExists } = useToast();
 const user = useUser();
 const route = useRoute();
+const { setMeta } = useMetadata();
 
 const userSlug = computed(() => {
   return route.params.slug;
@@ -330,7 +323,12 @@ onMounted(async () => {
   try {
     const data = await $fetch(`/api/${userSlug.value}?property=shortId`);
 
-    setMeta(`Realm trove | ${data.username}'s Items`);
+    setMeta(
+      `Realm trove | ${data.username}'s Items`,
+      `${data.username} has collected ${
+        Object.keys(data.collection.ut).length
+      }/`
+    );
 
     profile.value = data;
     usernameEditText.value = data.username;
@@ -368,7 +366,6 @@ watch(
   }
 );
 
-const { setMeta } = useMetadata();
 setMeta("Realm trove | Items");
 </script>
 

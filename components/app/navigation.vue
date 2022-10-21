@@ -24,18 +24,21 @@
           {{ userData.username }}
         </NuxtLink>
       </client-only>
-      <button @click="logOut" class="ripple px-4 bg-red-500 rounded">
-        Sign out
-      </button>
+      <app-text-button
+        class="mr-2"
+        background-color="red-500"
+        text="Sign out"
+        :on-click="() => logOut()"
+      />
     </div>
-    <div v-else-if="$route.name !== 'index'">
-      <button
-        @click="loginTrigger = true"
-        class="ml-4 px-4 rounded bg-green-vue ripple"
-      >
-        Sign in
-      </button>
-    </div>
+    <app-text-button
+      v-else-if="$route.name !== 'index'"
+      background-color="green-vue"
+      text="Sign in"
+      :loading="loginTrigger"
+      :disabled="loginTrigger"
+      :on-click="() => (loginTrigger = true)"
+    />
   </header>
 </template>
 
@@ -51,7 +54,10 @@ const { $firebaseAuth } = useNuxtApp();
 const logOut = async () => {
   try {
     await signOut($firebaseAuth);
-    userData.value.username = "";
+    userData.value = {
+      shortId: null,
+      username: null
+    };
     createToast("Signed out!", "green-500");
   } catch (e) {
     createToast(e.message, "red-500");

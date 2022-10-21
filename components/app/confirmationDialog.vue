@@ -2,15 +2,17 @@
   <transition name="modal">
     <app-modal title="Are you sure?" v-if="open" @close="$emit('close')">
       <div class="flex justify-center py-3">
-        <button
-          class="mr-2 rounded px-2 bg-green-500 ripple"
-          @click="$emit('yes')"
-        >
-          Yes
-        </button>
-        <button class="rounded px-2 bg-red-500 ripple" @click="$emit('no')">
-          No
-        </button>
+        <app-text-button
+          class="mr-2"
+          background-color="green-vue"
+          text="Yes"
+          :on-click="() => $emit('yes')"
+        />
+        <app-text-button
+          background-color="red-500"
+          text="No"
+          :on-click="() => $emit('no')"
+        />
       </div>
     </app-modal>
   </transition>
