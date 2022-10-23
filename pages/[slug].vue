@@ -1,7 +1,6 @@
 <template>
   <div class="contents">
     <items-filter-modal
-      @change="filterSelected"
       :open="modalOpen"
       v-model:loot-source="lootSource"
       @close="modalOpen = false"
@@ -269,7 +268,7 @@ const changeUsername = async () => {
   try {
     profile.value.username = usernameEditText.value;
     await setDoc(docRef.value, profile.value);
-    createToast("Username updated!", "green-500");
+    createToast("Username updated!", "green-vue");
     editingUsername.value = false;
   } catch (e) {
     createToast(e.message, "error");
@@ -284,7 +283,7 @@ const cancelChanges = () => {
 const confirmChanges = async () => {
   try {
     await setDoc(docRef.value, profile.value);
-    createToast("Saved!", "green-500");
+    createToast("Saved!", "green-vue");
     initialCollection.value = undefined;
   } catch (e) {
     createToast(e.message, "error");
@@ -300,7 +299,7 @@ const resetCollection = async () => {
       ut: {}
     };
     await setDoc(docRef.value, emptyCollection);
-    createToast("Progress has been reset!", "green-500");
+    createToast("Progress has been reset!", "green-vue");
     initialCollection.value = undefined;
   } catch (e) {
     createToast(e.message, "error");
@@ -308,10 +307,6 @@ const resetCollection = async () => {
   } finally {
     confirmDialogOpen.value = false;
   }
-};
-
-const filterSelected = () => {
-  //
 };
 
 const searchItems = useDebounceFn(() => {
@@ -388,9 +383,3 @@ watch(
 
 setMeta("Realm trove | Items");
 </script>
-
-<style scoped>
-.filter-btn {
-  padding: 5px;
-}
-</style>
