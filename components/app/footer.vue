@@ -1,12 +1,13 @@
 <template>
   <footer
-    class="w-full flex justify-between z-2 md:pb-5 pt-7 md:px-0 user-select-none pl-7 pr-4 md:pr-0 md:pl-3"
+    class="w-full flex items-center justify-between z-2 md:pb-5 pt-7 md:px-0 user-select-none px-4 md:px-0"
   >
-    <div>
-      <span class="text-sm md:text-base">
-        &copy; Realm trove {{ new Date().getFullYear() }}
-      </span>
-    </div>
+    <NuxtLink
+      to="/changes"
+      class="text-sm md:text-base ripple px-3 py-0.5 rounded"
+    >
+      v{{ $config.CLIENT_VERSION }}
+    </NuxtLink>
     <div class="flex">
       <a class="text-white" href="https://github.com/MatijaNovosel/realm-trove">
         <IconGithub :style="{ fontSize: '1.3em' }" />

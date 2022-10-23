@@ -30,3 +30,9 @@ export interface Profile {
   username: string;
   collection: PlayerCollection;
 }
+
+export interface ChangeModel {
+  date: string;
+  body: string;
+  version: string;
+}

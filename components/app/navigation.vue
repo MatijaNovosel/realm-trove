@@ -1,21 +1,15 @@
 <template>
   <header
-    class="flex md:justify-between md:w-full items-center fixed md:absolute mt-4 z-4 bg-dark-400 rounded-lg md:bg-transparent px-4 py-3"
+    class="flex justify-between w-full items-center absolute mt-4 z-4 rounded-lg bg-transparent py-3"
   >
-    <NuxtLink
-      to="/"
-      class="md:text-2xl ripple py-1 px-3 rounded"
-      :class="{
-        'hidden md:block': $route.name === 'slug' && !!user
-      }"
-    >
-      v{{ $config.CLIENT_VERSION }}
+    <NuxtLink to="/" class="text-sm md:text-2xl ripple py-1 px-3 rounded">
+      👑 Realm trove
     </NuxtLink>
     <div class="flex" v-if="user">
-      <client-only>
+      <client-only v-if="$route.params.slug !== userData.shortId">
         <NuxtLink :to="userData.shortId">
           <app-text-button
-            class="mr-2"
+            class="mr-2 text-sm md:text-base"
             background-color="green-vue"
             tooltip="Your collection"
             :text="userData.username || ''"
@@ -23,7 +17,7 @@
         </NuxtLink>
       </client-only>
       <app-text-button
-        class="mr-2"
+        class="mx-2 text-sm md:text-base"
         background-color="error"
         text="Sign out"
         @on-click="() => logOut()"
