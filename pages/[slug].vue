@@ -160,7 +160,7 @@
               :collection="profile.collection"
               :initial="initialCollection"
               :tab="activeTab"
-              :disabled="!isCurrentUser && screenshotLoading"
+              :disabled="!isCurrentUser || screenshotLoading"
               @increment="updateCollection"
               @decrement="updateCollection($event, false)"
             />

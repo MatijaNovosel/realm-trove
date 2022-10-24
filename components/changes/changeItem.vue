@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col text-xs md:text-sm">
     <div class="flex flex-col">
       <div class="text-3xl">
         {{ data.version }}

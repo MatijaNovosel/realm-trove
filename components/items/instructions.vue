@@ -1,6 +1,6 @@
 <template>
   <div
-    class="col-span-12 md:col-span-4 flex items-center justify-center md:justify-start"
+    class="col-span-12 md:col-span-4 flex items-center justify-center md:justify-start user-select-none"
   >
     <MouseButtonLeftIcon class="mr-1" />
     <span class="mr-3"> Increase </span>
