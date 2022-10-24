@@ -94,7 +94,9 @@
                 <ResetIcon />
               </app-icon-button>
               <app-icon-button
-                class="ml-2"
+                :class="{
+                  'ml-2': isCurrentUser
+                }"
                 tooltip="Export"
                 icon-color="green-vue"
                 background-color="dark"
