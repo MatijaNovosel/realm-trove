@@ -23,6 +23,7 @@
           An error ocurred.
         </div>
         <div class="display-contents" v-else>
+          {{ lootSource }}
           <items-type-tab :active-tab="activeTab" @change="changeTab" />
           <div class="flex justify-center items-center" v-if="profile">
             <div v-if="editingUsername">
@@ -166,13 +167,14 @@ const error = ref(false);
 const unsubscribe = ref<Unsubscribe>();
 const profile = ref<Profile>();
 const usernameEditText = ref("");
-const lootSource = ref<number>(0);
+const lootSource = ref<number[]>([0]);
 const docRef = ref<DocumentReference<DocumentData>>();
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
 const { createToast, removePermanentToasts, permanentToastExists } = useToast();
 const user = useUser();
+const userData = useUserData();
 const route = useRoute();
 const { setMeta } = useMetadata();
 const loginTrigger = useLoginTrigger();
@@ -268,6 +270,7 @@ const changeUsername = async () => {
   try {
     profile.value.username = usernameEditText.value;
     await setDoc(docRef.value, profile.value);
+    userData.value.username = usernameEditText.value;
     createToast("Username updated!", "green-vue");
     editingUsername.value = false;
   } catch (e) {
@@ -314,8 +317,8 @@ const searchItems = useDebounceFn(() => {
     (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
   ];
 
-  if (lootSource.value !== SOURCE.ALL) {
-    filterConditions.push((item) => item.source === lootSource.value);
+  if (!lootSource.value.includes(SOURCE.ALL)) {
+    filterConditions.push((item) => lootSource.value.includes(item.source));
   }
 
   filteredCollection.value = {

@@ -17,7 +17,7 @@
         </NuxtLink>
       </client-only>
       <app-text-button
-        class="mx-2 text-sm md:text-base"
+        class="mr-2 text-sm md:text-base"
         background-color="error"
         text="Sign out"
         @on-click="() => logOut()"

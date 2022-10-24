@@ -19,6 +19,7 @@
     "firebase-admin": "^11.1.0",
     "floating-vue": "^2.0.0-beta.19",
     "node-fetch-native": "^0.1.8",
-    "octokit": "^2.0.9"
+    "octokit": "^2.0.9",
+    "vue-select": "^4.0.0-beta.5"
   }
 }
