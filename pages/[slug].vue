@@ -23,7 +23,6 @@
           An error ocurred.
         </div>
         <div class="display-contents" v-else>
-          {{ lootSource }}
           <items-type-tab :active-tab="activeTab" @change="changeTab" />
           <div class="flex justify-center items-center" v-if="profile">
             <div v-if="editingUsername">
