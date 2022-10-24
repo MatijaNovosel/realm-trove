@@ -69,7 +69,7 @@
                 v-model="searchText"
               />
               <app-icon-button
-                class="mx-4 relative"
+                class="mx-2 relative"
                 tooltip="Filter"
                 background-color="dark"
                 @on-click="modalOpen = true"
@@ -88,6 +88,17 @@
                 background-color="dark"
               >
                 <ResetIcon />
+              </app-icon-button>
+              <app-icon-button
+                class="ml-2"
+                tooltip="Export"
+                icon-color="green-vue"
+                background-color="dark"
+                :disabled="pendingChanges"
+                :loading="screenshotLoading"
+                @on-click="pendingChanges ? null : exportAsScreenshot()"
+              >
+                <CameraIcon />
               </app-icon-button>
             </div>
             <div
@@ -110,28 +121,40 @@
               />
             </div>
           </div>
-          <div class="px-7 md:px-3">
-            <items-progress-bar
-              :progress="itemCollectionPercentage * 100"
-              class="mb-5 user-select-none"
+          <div
+            id="grid"
+            :class="{
+              'bg-black p-5': screenshotLoading
+            }"
+          >
+            <div
+              class="px-5 md:px-3"
+              :class="{
+                'pb-1': screenshotLoading
+              }"
             >
-              <span>
-                {{ itemsCollected[activeTab] }} /
-                {{ items[activeTab].length }} ({{
-                  (itemCollectionPercentage * 100).toFixed(2)
-                }}%)
-              </span>
-            </items-progress-bar>
+              <items-progress-bar
+                :progress="itemCollectionPercentage * 100"
+                class="mb-5 user-select-none"
+              >
+                <span>
+                  {{ itemsCollected[activeTab] }} /
+                  {{ items[activeTab].length }} ({{
+                    (itemCollectionPercentage * 100).toFixed(2)
+                  }}%)
+                </span>
+              </items-progress-bar>
+            </div>
+            <items-grid
+              :items="filteredCollection"
+              :collection="profile.collection"
+              :initial="initialCollection"
+              :tab="activeTab"
+              :disabled="!isCurrentUser && screenshotLoading"
+              @increment="updateCollection"
+              @decrement="updateCollection($event, false)"
+            />
           </div>
-          <items-grid
-            :items="filteredCollection"
-            :collection="profile.collection"
-            :initial="initialCollection"
-            :tab="activeTab"
-            :disabled="!isCurrentUser"
-            @increment="updateCollection"
-            @decrement="updateCollection($event, false)"
-          />
         </div>
       </transition>
     </div>
@@ -152,8 +175,10 @@ import {
 import { useDebounceFn } from "@vueuse/core";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
+import CameraIcon from "~icons/mdi/camera";
 import PencilIcon from "~icons/mdi/grease-pencil";
 import CheckmarkIcon from "~icons/ic/baseline-check";
+import domtoimage from "dom-to-image";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
@@ -161,6 +186,7 @@ const searchText = ref("");
 const modalOpen = ref(false);
 const confirmDialogOpen = ref(false);
 const pending = ref(true);
+const screenshotLoading = ref(false);
 const initialMount = ref(true);
 const editingUsername = ref(false);
 const error = ref(false);
@@ -339,6 +365,31 @@ const searchItems = useDebounceFn(() => {
     )
   };
 }, 300);
+
+const exportAsScreenshot = async () => {
+  try {
+    screenshotLoading.value = true;
+    if (!permanentToastExists.value) {
+      createToast(
+        "This'll take just a moment, sit tight!",
+        "green-vue",
+        -1,
+        true
+      );
+    }
+    const res = await domtoimage.toJpeg(document.getElementById("grid"));
+    var link = document.createElement("a");
+    link.download = `${new Date().toISOString()}.jpeg`;
+    link.href = res;
+    link.click();
+  } catch (e) {
+    createToast(e.message, "error");
+    error.value = true;
+  } finally {
+    screenshotLoading.value = false;
+    removePermanentToasts();
+  }
+};
 
 onMounted(async () => {
   try {

@@ -8,7 +8,7 @@
       theme: 'info-tooltip'
     }"
   >
-    <LoadingIcon class="my-0.5 mx-3" v-if="loading" />
+    <LoadingIcon class="mx-0.2" v-if="loading" />
     <slot v-else />
   </button>
 </template>
@@ -32,7 +32,7 @@ const buttonClass = computed(() => {
     [`ripple bg-${props.backgroundColor || "dark"} text-${
       props.iconColor || "white"
     }`]: !props.disabled,
-    "cursor-not-allowed bg-dark": props.disabled
+    "cursor-not-allowed bg-dark text-gray-500": props.disabled
   };
 });
 </script>

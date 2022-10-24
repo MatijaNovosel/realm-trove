@@ -10,7 +10,7 @@
 ## Features
 
 - Loot tracking for both UT and ST items
-- Data sharing by export to JSON or CSV files
+- Export your loot via generated screenshot
 - Share your loot profile with a unique link
 
 ## 🔨 Built With
