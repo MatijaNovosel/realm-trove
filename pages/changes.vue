@@ -13,6 +13,9 @@
           v-for="(item, i) in changes"
           :data="item"
           :key="i"
+          :class="{
+            'mt-4': i !== 0
+          }"
         />
       </div>
     </div>

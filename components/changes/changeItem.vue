@@ -8,9 +8,7 @@
         {{ new Date(data.date).toISOString().substring(0, 10) }}
       </div>
     </div>
-    <div>
-      {{ data.body }}
-    </div>
+    <pre class="text-sm">{{ data.body }}</pre>
   </div>
 </template>
 

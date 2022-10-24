@@ -6,7 +6,7 @@
         v-else
         class="z-2 flex flex-col items-center justify-center user-select-none mx-auto text-center"
       >
-        <img width="86" height="86" src="/whiteBag.png" class="mb-3" />
+        <img width="86" height="86" src="/whiteBag.png" class="mb-3 border-0" />
         <span class="text-3xl md:text-7xl mt-4">Realm trove</span>
         <span class="md:text-lg mt-4 text-gray-400 mb-6">Track your loot!</span>
         <NuxtLink :to="userData.shortId" v-if="user">
