@@ -16,12 +16,12 @@
           @rclick="$emit('decrement', id)"
         />
         <template #popper>
-          <div class="text-xs flex flex-col">
-            <span class="text-green-vue">
+          <div class="text-xs flex flex-col py-1">
+            <span class="text-green-vue text-center">
               {{ name }}
             </span>
             <hr class="divider my-1.5" />
-            <span> 🔸 {{ SOURCE_NAMES[source] }} </span>
+            <span class="mb-1"> 🔸 {{ SOURCE_NAMES[source] }} </span>
             <span> 🔸 {{ ITEM_TYPE_NAMES[type] }} </span>
           </div>
         </template>
