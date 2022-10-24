@@ -296,7 +296,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 22,
     name: "Thousand Shot",
     source: SOURCE.PUPPET_MASTERS_ENCORE,
-    type: ITEM_TYPE.ARMOR,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -1012
@@ -436,7 +436,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 88,
     name: "Dirk of Cronus",
     source: SOURCE.REALM_EVENT_BOSS,
-    type: ITEM_TYPE.ARMOR,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -4048
@@ -833,13 +833,13 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 46,
-    name: "Leaf Bow",
-    source: SOURCE.WOODLAND_LABYRINTH,
-    type: ITEM_TYPE.WEAPON,
+    id: 157,
+    name: "Mace of the Depths",
+    source: SOURCE.THE_CRAWLING_DEPTHS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
-      x: -2116
+      x: -7222
     }
   },
   {
@@ -1030,6 +1030,16 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -6946
+    }
+  },
+  {
+    id: 158,
+    name: "Hivemind Mace",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7268
     }
   },
   {
@@ -1246,7 +1256,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 94,
     name: "Peacekeeper",
     source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.WEAPON,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4324
@@ -1403,16 +1413,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 122,
-    name: "Cloak of the Planewalker",
-    source: SOURCE.SPRITE_WORLD,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -5612
-    }
-  },
-  {
     id: 123,
     name: "Skull of Endless Torment",
     source: SOURCE.LAIR_OF_SHAITAN,
@@ -1440,6 +1440,26 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -5704
+    }
+  },
+  {
+    id: 156,
+    name: "Mace of the Celestial Forest",
+    source: SOURCE.SPRITE_WORLD,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7176
+    }
+  },
+  {
+    id: 122,
+    name: "Cloak of the Planewalker",
+    source: SOURCE.SPRITE_WORLD,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -5612
     }
   },
   {
@@ -1775,7 +1795,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 152,
     name: "Crystal Wand",
-    source: SOURCE.EVENT,
+    source: SOURCE.REALM,
     type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
@@ -1785,11 +1805,21 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 154,
     name: "Crystal Sword",
-    source: SOURCE.EVENT,
+    source: SOURCE.REALM,
     type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -7084
+    }
+  },
+  {
+    id: 159,
+    name: "Crystal Mace",
+    source: SOURCE.REALM,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7314
     }
   },
   {
@@ -1810,46 +1840,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -5290
-    }
-  },
-  {
-    id: 156,
-    name: "Mace of the Celestial Forest",
-    source: SOURCE.SPRITE_WORLD,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7176
-    }
-  },
-  {
-    id: 157,
-    name: "Mace of the Depths",
-    source: SOURCE.THE_CRAWLING_DEPTHS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7222
-    }
-  },
-  {
-    id: 158,
-    name: "Hivemind Mace",
-    source: SOURCE.THE_NEST,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7268
-    }
-  },
-  {
-    id: 159,
-    name: "Crystal Mace",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7314
     }
   },
   {
@@ -2323,6 +2313,36 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 206,
+    name: "Phantasm Dirk",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.EVENT,
+    pos: {
+      y: 0,
+      x: -9476
+    }
+  },
+  {
+    id: 248,
+    name: "Trap of the Blood Spirit",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -11408
+    }
+  },
+  {
+    id: 249,
+    name: "Orb of Terror",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -11454
+    }
+  },
+  {
     id: 204,
     name: "Keychain Cutlass",
     type: ITEM_TYPE.WEAPON,
@@ -2340,16 +2360,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -9430
-    }
-  },
-  {
-    id: 206,
-    name: "Phantasm Dirk",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.EVENT,
-    pos: {
-      y: 0,
-      x: -9476
     }
   },
   {
@@ -2380,6 +2390,16 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -5382
+    }
+  },
+  {
+    id: 46,
+    name: "Leaf Bow",
+    source: SOURCE.WOODLAND_LABYRINTH,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -2116
     }
   },
   {
@@ -2606,7 +2626,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 236,
     name: "Painbow",
     source: SOURCE.RAINBOW_ROAD,
-    type: ITEM_TYPE.WEAPON,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -10856
@@ -2650,26 +2670,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -11040
-    }
-  },
-  {
-    id: 248,
-    name: "Trap of the Blood Spirit",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -11408
-    }
-  },
-  {
-    id: 249,
-    name: "Orb of Terror",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -11454
     }
   },
   {
@@ -3220,7 +3220,7 @@ export const ITEMS_ST: ItemInfo[] = [
     id: 1534,
     name: "Staff of Eruption",
     source: SOURCE.LAIR_OF_SHAITAN,
-    type: ITEM_TYPE.ARMOR,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       x: -1518,
       y: -46
@@ -3454,7 +3454,7 @@ export const ITEMS_ST: ItemInfo[] = [
   {
     id: 1554,
     name: "Performer’s Hat",
-    type: ITEM_TYPE.ABILITY,
+    type: ITEM_TYPE.RING,
     source: SOURCE.PUPPET_MASTERS_THEATRE,
     pos: {
       x: -2438,
@@ -4163,7 +4163,7 @@ export const ITEMS_ST: ItemInfo[] = [
     id: 1627,
     name: "Oryx's Greatsword",
     source: SOURCE.WINE_CELLAR,
-    type: ITEM_TYPE.ARMOR,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       x: -5750,
       y: -46
