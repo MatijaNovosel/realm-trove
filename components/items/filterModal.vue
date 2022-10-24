@@ -1,15 +1,16 @@
 <template>
   <transition name="modal">
-    <app-modal title="Filter items" v-if="open" @close="$emit('close')">
-      <multi-select
-        v-model="val"
+    <app-modal
+      title="Filter items"
+      v-show="open"
+      has-close-btn
+      @close-btn="$emit('close')"
+    >
+      <items-custom-select
         :options="options"
-        multiple
-        placeholder="Loot source"
-        label="text"
-        :reduce="(val) => val.value"
-        @option:selected="onSelected"
-        @option:deselected="onSelected"
+        v-model="selected"
+        @on-selected="onSelected"
+        popper-class="w-64 bg-white border rounded-lg shadow-md"
       />
     </app-modal>
   </transition>
@@ -34,10 +35,11 @@ const props = defineProps<{
   open: boolean;
 }>();
 
-const val = ref<number[]>(props.lootSource);
+const selected = ref<number[]>(props.lootSource);
+
 const emit = defineEmits(["close", "update:loot-source"]);
 
 const onSelected = () => {
-  emit("update:loot-source", val.value);
+  emit("update:loot-source", selected.value);
 };
 </script>

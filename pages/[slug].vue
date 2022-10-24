@@ -372,9 +372,7 @@ onBeforeUnmount(() => {
 
 watch(
   () => [searchText.value, lootSource.value],
-  () => {
-    searchItems();
-  }
+  () => searchItems()
 );
 
 watch(

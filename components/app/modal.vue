@@ -1,10 +1,26 @@
 <template>
   <div class="mask">
     <div class="wrapper">
-      <div class="container bg-dark-600 rounded-lg mx-auto" ref="modal">
-        <div class="text-sm w-full">
-          <div class="p-4">
-            {{ title }}
+      <div
+        class="container bg-dark-600 rounded-lg mx-auto"
+        :style="{
+          maxWidth: maxWidth || '600px'
+        }"
+        ref="modal"
+      >
+        <div class="w-full">
+          <div class="p-4 flex justify-between items-center">
+            <span>
+              {{ title }}
+            </span>
+            <app-icon-button
+              v-if="hasCloseBtn"
+              tooltip="Close"
+              background-color="dark"
+              @on-click="$emit('close-btn')"
+            >
+              <CloseIcon />
+            </app-icon-button>
           </div>
           <hr class="divider" />
         </div>
@@ -18,14 +34,16 @@
 
 <script lang="ts" setup>
 import { onClickOutside } from "@vueuse/core";
-const modal = ref(null);
-const emit = defineEmits(["close"]);
+import CloseIcon from "~icons/material-symbols/close";
 
-defineProps({
-  title: {
-    type: String
-  }
-});
+const modal = ref(null);
+const emit = defineEmits(["close", "close-btn"]);
+
+defineProps<{
+  title: string;
+  hasCloseBtn?: boolean;
+  maxWidth?: string;
+}>();
 
 onClickOutside(modal, () => {
   emit("close");
@@ -55,7 +73,6 @@ onClickOutside(modal, () => {
 }
 
 .container {
-  max-width: 600px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.186);
   transition: all 0.3s ease;
 }

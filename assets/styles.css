@@ -10,6 +10,10 @@
   src: url("/pixSymbols.ttf");
 }
 
+* {
+  border: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -84,6 +88,10 @@ html {
 }
 
 .bg-green-vue {
+  background-color: var(--vue-green);
+}
+
+.hover\:bg-green-vue:hover {
   background-color: var(--vue-green);
 }
 
