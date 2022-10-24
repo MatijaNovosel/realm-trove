@@ -36,9 +36,9 @@ const signIn = async () => {
     const { isNewUser } = getAdditionalUserInfo(result);
 
     if (isNewUser) {
-      const docRef = doc($firebaseFirestore, "profile", result.user.uid);
-      const username = result.user.displayName.substring(0, 15);
       const shortId = generateShortId();
+      const docRef = doc($firebaseFirestore, "profile", shortId);
+      const username = result.user.displayName.substring(0, 15);
 
       await setDoc(docRef, {
         username,
