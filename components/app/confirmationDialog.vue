@@ -6,12 +6,12 @@
           class="mr-2"
           background-color="green-vue"
           text="Yes"
-          @on-click="() => $emit('yes')"
+          @on-click="$emit('yes')"
         />
         <app-text-button
           background-color="error"
           text="No"
-          @on-click="() => $emit('no')"
+          @on-click="$emit('no')"
         />
       </div>
     </app-modal>

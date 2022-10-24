@@ -36,3 +36,8 @@ export interface ChangeModel {
   body: string;
   version: string;
 }
+
+export interface SelectItem<T> {
+  text: string;
+  value: T;
+}

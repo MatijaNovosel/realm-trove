@@ -20,7 +20,7 @@
         class="mr-2 text-sm md:text-base"
         background-color="error"
         text="Sign out"
-        @on-click="() => logOut()"
+        @on-click="logOut"
       />
     </div>
     <app-text-button
@@ -29,7 +29,7 @@
       text="Sign in"
       :loading="loginTrigger"
       :disabled="loginTrigger"
-      @on-click="() => (loginTrigger = true)"
+      @on-click="loginTrigger = true"
     />
   </header>
 </template>

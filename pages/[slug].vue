@@ -42,10 +42,9 @@
               class="ml-4"
               :tooltip="editingUsername ? 'Confirm' : 'Change username'"
               @on-click="
-                () =>
-                  editingUsername
-                    ? changeUsername()
-                    : (editingUsername = !editingUsername)
+                editingUsername
+                  ? changeUsername()
+                  : (editingUsername = !editingUsername)
               "
               :background-color="editingUsername ? 'green-vue' : 'dark'"
             >
@@ -69,10 +68,13 @@
                 v-model="searchText"
               />
               <app-icon-button
-                class="mx-4"
+                class="mx-4 relative"
                 tooltip="Filter"
                 background-color="dark"
-                @on-click="() => (modalOpen = true)"
+                @on-click="modalOpen = true"
+                :class="{
+                  badge: filterActive
+                }"
               >
                 <FilterIcon />
               </app-icon-button>
@@ -81,9 +83,7 @@
                 tooltip="Reset"
                 icon-color="green-vue"
                 :disabled="pendingChanges"
-                @on-click="
-                  () => (pendingChanges ? null : (confirmDialogOpen = true))
-                "
+                @on-click="pendingChanges ? null : (confirmDialogOpen = true)"
                 background-color="dark"
               >
                 <ResetIcon />
@@ -98,14 +98,14 @@
                 text="Cancel"
                 class="ml-2"
                 :disabled="!pendingChanges"
-                @on-click="() => cancelChanges()"
+                @on-click="cancelChanges"
               />
               <app-text-button
                 background-color="green-vue"
                 text="Save"
                 class="ml-2"
                 :disabled="!pendingChanges"
-                @on-click="() => confirmChanges()"
+                @on-click="confirmChanges"
               />
             </div>
           </div>
@@ -139,7 +139,7 @@
 
 <script setup lang="ts">
 import { IDictionary, ItemInfo, PlayerCollection, Profile } from "~/models";
-import { SOURCE, TAB } from "~/utils/constants";
+import { TAB } from "~/utils/constants";
 import {
   doc,
   DocumentData,
@@ -166,7 +166,7 @@ const error = ref(false);
 const unsubscribe = ref<Unsubscribe>();
 const profile = ref<Profile>();
 const usernameEditText = ref("");
-const lootSource = ref<number[]>([0]);
+const lootSource = ref<number[]>([]);
 const docRef = ref<DocumentReference<DocumentData>>();
 
 const { $firebaseFirestore } = useNuxtApp();
@@ -181,6 +181,10 @@ const loginTrigger = useLoginTrigger();
 const filteredCollection = ref<IDictionary<ItemInfo[]>>({
   [TAB.UT]: items[TAB.UT],
   [TAB.ST]: items[TAB.ST]
+});
+
+const filterActive = computed(() => {
+  return lootSource.value.length !== 0;
 });
 
 const userSlug = computed(() => {
@@ -316,7 +320,7 @@ const searchItems = useDebounceFn(() => {
     (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
   ];
 
-  if (!lootSource.value.includes(SOURCE.ALL)) {
+  if (lootSource.value.length !== 0) {
     filterConditions.push((item) => lootSource.value.includes(item.source));
   }
 
@@ -385,3 +389,14 @@ watch(
 
 setMeta("Realm trove | Items");
 </script>
+
+<style scoped>
+.badge::after {
+  content: "";
+  border-radius: 100%;
+  border: 7px solid var(--vue-green);
+  top: -5px;
+  right: -5px;
+  position: absolute;
+}
+</style>

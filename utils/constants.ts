@@ -6,8 +6,7 @@ export enum TAB {
 }
 
 export enum SOURCE {
-  ALL = 0,
-  PIRATE_CAVE,
+  PIRATE_CAVE = 1,
   FOREST_MAZE,
   SPIDER_DEN,
   FORBIDDEN_JUNGLE,

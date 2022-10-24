@@ -1,5 +1,6 @@
 :root {
   --vue-green: #42b883;
+  --vue-green-100: #38956b;
   --error: #de4747;
   --dark: #302a2a;
 }
@@ -84,6 +85,10 @@ html {
 
 .bg-green-vue {
   background-color: var(--vue-green);
+}
+
+.bg-green-vue-100 {
+  background-color: var(--vue-green-100);
 }
 
 .bg-error {
