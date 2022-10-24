@@ -1,7 +1,7 @@
 import type { DecodedIdToken } from "firebase-admin/auth";
 import type { User } from "firebase/auth";
 import type { User as CustomUser } from "~/composables/useUser";
-import { SOURCE } from "./constants";
+import { ITEM_TYPE } from "./constants";
 
 export const randInt = (min: number, max: number) => {
   min = Math.ceil(min);
@@ -34,4 +34,19 @@ export const formatUser = (user: User | DecodedIdToken): CustomUser => {
 
 export const generateShortId = () => {
   return (Math.random() + 1).toString(36).substring(2, 8).toUpperCase();
+};
+
+export const formatItemTypeIcon = (type?: ITEM_TYPE) => {
+  switch (type) {
+    case ITEM_TYPE.ABILITY:
+      return "📚";
+    case ITEM_TYPE.ARMOR:
+      return "🦺";
+    case ITEM_TYPE.RING:
+      return "💍";
+    case ITEM_TYPE.WEAPON:
+      return "🗡️";
+    default:
+      return "📦";
+  }
 };

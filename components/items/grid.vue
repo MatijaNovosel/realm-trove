@@ -21,8 +21,10 @@
               {{ name }}
             </span>
             <hr class="divider my-1.5" />
-            <span class="mb-1"> 🔸 {{ SOURCE_NAMES[source] }} </span>
-            <span> 🔸 {{ ITEM_TYPE_NAMES[type] }} </span>
+            <span class="mb-1"> 🌍 {{ SOURCE_NAMES[source] }} </span>
+            <span>
+              {{ formatItemTypeIcon(type) }} {{ ITEM_TYPE_NAMES[type] }}
+            </span>
           </div>
         </template>
       </Tooltip>
@@ -37,6 +39,7 @@
 import { Tooltip } from "floating-vue";
 import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
 import { TAB, SOURCE_NAMES, ITEM_TYPE_NAMES } from "~/utils/constants";
+import { formatItemTypeIcon } from "~/utils/helpers";
 
 const props = defineProps<{
   collection: PlayerCollection;
