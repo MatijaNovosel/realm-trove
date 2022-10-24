@@ -63,10 +63,6 @@ onClickOutside(modal, () => {
   transition: opacity 0.3s ease;
 }
 
-.divider {
-  border: 0.5px solid rgba(128, 128, 128, 0.318);
-}
-
 .wrapper {
   display: table-cell;
   vertical-align: middle;

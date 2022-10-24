@@ -188,3 +188,7 @@ select {
 option:checked {
   background: rgb(1, 1, 1);
 }
+
+.divider {
+  border: 0.5px solid rgba(128, 128, 128, 0.318);
+}

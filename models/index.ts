@@ -12,6 +12,7 @@ export interface ItemInfo {
   pos: ItemCoordinate;
   name: string;
   source: number;
+  type?: number;
   id: number;
 }
 

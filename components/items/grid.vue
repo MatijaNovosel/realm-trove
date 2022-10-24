@@ -3,27 +3,29 @@
     class="flex flex-wrap justify-center md:justify-start no-highlight"
     v-if="items[tab].length > 0"
   >
-    <div
-      class="item p-3 text-center p-2 m-1 relative"
-      v-for="({ pos, id, name }, i) in items[tab]"
-      :key="i"
-      :style="{
-        backgroundPosition: `${pos.x}px ${pos.y}px`,
-        filter: `grayscale(${collection[tab][id] ? 0 : 100}%)`
-      }"
-      v-tooltip="{
-        content: name,
-        theme: 'info-tooltip'
-      }"
-      :class="{
-        'cursor-pointer': !disabled
-      }"
-      @click="disabled ? null : $emit('increment', id)"
-      @contextmenu.prevent="disabled ? null : $emit('decrement', id)"
-    >
-      <div class="badge user-select-none" :class="badgeClass(id)">
-        {{ collection[tab][id] !== 0 ? collection[tab][id] : "" }}
-      </div>
+    <div v-for="{ pos, id, name, source, type } in items[tab]" :key="id">
+      <Tooltip theme="info-tooltip">
+        <items-grid-item
+          :x="pos.x"
+          :y="pos.y"
+          :status-class="badgeClass(id)"
+          :count="collection[tab][id]"
+          :id="id"
+          :disabled="disabled"
+          @lclick="$emit('increment', id)"
+          @rclick="$emit('decrement', id)"
+        />
+        <template #popper>
+          <div class="text-xs flex flex-col">
+            <span class="text-green-vue">
+              {{ name }}
+            </span>
+            <hr class="divider my-1.5" />
+            <span> 🔸 {{ SOURCE_NAMES[source] }} </span>
+            <span> 🔸 {{ ITEM_TYPE_NAMES[type] }} </span>
+          </div>
+        </template>
+      </Tooltip>
     </div>
   </div>
   <div class="text-center pt-3" v-else>
@@ -32,8 +34,9 @@
 </template>
 
 <script lang="ts" setup>
+import { Tooltip } from "floating-vue";
 import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
-import { TAB } from "~/utils/constants";
+import { TAB, SOURCE_NAMES, ITEM_TYPE_NAMES } from "~/utils/constants";
 
 const props = defineProps<{
   collection: PlayerCollection;
@@ -58,22 +61,3 @@ const badgeClass = (id: number) => {
 
 defineEmits(["increment", "decrement"]);
 </script>
-
-<style scoped>
-.item {
-  width: 46px;
-  height: 46px;
-  background-image: url("/items.png");
-  background-repeat: no-repeat;
-}
-
-.badge {
-  position: absolute;
-  font-size: 14px;
-  bottom: -6px;
-  right: -10px;
-  border-radius: 100%;
-  width: 22px;
-  height: 22px;
-}
-</style>

@@ -5,6 +5,13 @@ export enum TAB {
   ST = "st"
 }
 
+export enum ITEM_TYPE {
+  WEAPON = 1,
+  ABILITY,
+  ARMOR,
+  RING
+}
+
 export enum SOURCE {
   PIRATE_CAVE = 1,
   FOREST_MAZE,
@@ -78,6 +85,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 0,
     name: "Avarice",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: 0
@@ -87,6 +95,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 1,
     name: "Gambler's Fate",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -46
@@ -96,6 +105,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 2,
     name: "Turncoat cape",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -92
@@ -105,6 +115,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 3,
     name: "Collector's Monocle",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -138
@@ -114,6 +125,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 4,
     name: "Lumiaire",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -184
@@ -123,6 +135,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 5,
     name: "Chaotic Scripture",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -230
@@ -132,6 +145,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 6,
     name: "Vesture of Duality",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -276
@@ -141,6 +155,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 7,
     name: "Divine Coronation",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -322
@@ -150,6 +165,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 8,
     name: "Superior",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -368
@@ -159,6 +175,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 9,
     name: "Genesis Spell",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -414
@@ -168,6 +185,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 10,
     name: "Diplomatic Robe",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -460
@@ -177,6 +195,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 11,
     name: "Chancellor's Cranium",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -506
@@ -186,6 +205,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 12,
     name: "Enforcer",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -552
@@ -195,6 +215,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 13,
     name: "Ballistic Star",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -598
@@ -204,6 +225,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 14,
     name: "Centaur's Shielding",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -644
@@ -213,6 +235,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 15,
     name: "Battalion Banner",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -690
@@ -222,6 +245,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 16,
     name: "Divinity",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -736
@@ -231,6 +255,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 17,
     name: "Oryx's Escutcheon",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -782
@@ -240,6 +265,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 18,
     name: "Gladiator Guard",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -828
@@ -249,6 +275,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 19,
     name: "Exalted God's Horn",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -874
@@ -258,6 +285,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 20,
     name: "Helm of the Juggernaut",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -920
@@ -267,6 +295,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 21,
     name: "Quiver of Thunder",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -966
@@ -276,6 +305,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 22,
     name: "Thousand Shot",
     source: SOURCE.PUPPET_MASTERS_ENCORE,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1012
@@ -285,6 +315,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 23,
     name: "Coral Venom Trap",
     source: SOURCE.OCEAN_TRENCH,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1058
@@ -294,6 +325,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 24,
     name: "Trap of the Vile Spirit",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1104
@@ -303,6 +335,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 25,
     name: "Tome of Holy Protection",
     source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1150
@@ -312,6 +345,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 26,
     name: "Tome of Purification",
     source: SOURCE.MANOR_OF_THE_IMMORTALS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1196
@@ -321,6 +355,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 27,
     name: "Spirit Dagger",
     source: SOURCE.DAVY_JONES_LOCKER,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -1242
@@ -330,6 +365,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 28,
     name: "Ghostly Prism",
     source: SOURCE.DAVY_JONES_LOCKER,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1288
@@ -339,6 +375,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 29,
     name: "Robe of the Mad Scientist",
     source: SOURCE.MAD_LAB,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1334
@@ -348,6 +385,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 30,
     name: "Conducting Wand",
     source: SOURCE.MAD_LAB,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -1380
@@ -357,6 +395,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 31,
     name: "Scepter of Fulmination",
     source: SOURCE.MAD_LAB,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1426
@@ -366,6 +405,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 32,
     name: "Ray Katana",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -1472
@@ -375,6 +415,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 33,
     name: "Midnight Star",
     source: SOURCE.LAIR_OF_DRACONIS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1518
@@ -384,6 +425,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 34,
     name: "Plague Poison",
     source: SOURCE.HAUNTED_CEMETERY,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -1564
@@ -393,6 +435,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 35,
     name: "Resurrected Warrior's Armor",
     source: SOURCE.HAUNTED_CEMETERY,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1610
@@ -402,6 +445,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 36,
     name: "Soul's Guidance",
     source: SOURCE.HAUNTED_CEMETERY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -1656
@@ -411,6 +455,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 37,
     name: "Esben's Shaman Attire",
     source: SOURCE.ICE_CAVE,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1702
@@ -420,6 +465,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 38,
     name: "Esben's Wedding Ring",
     source: SOURCE.ICE_CAVE,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -1748
@@ -429,6 +475,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 39,
     name: "Candy Coated Armor",
     source: SOURCE.CANDYLAND_HUNTING_GROUNDS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1794
@@ -438,6 +485,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 40,
     name: "Leaf Dragon Hide Armor",
     source: SOURCE.LAIR_OF_DRACONIS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1840
@@ -447,6 +495,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 41,
     name: "Water Dragon Silk Robe",
     source: SOURCE.LAIR_OF_DRACONIS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1886
@@ -456,6 +505,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 42,
     name: "Fire Dragon Battle Armor",
     source: SOURCE.LAIR_OF_DRACONIS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -1932
@@ -465,6 +515,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 43,
     name: "Celestial Blade",
     source: SOURCE.LAIR_OF_DRACONIS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -1978
@@ -474,6 +525,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 44,
     name: "Pirate King's Cutlass",
     source: SOURCE.DEADWATER_DOCKS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2024
@@ -483,6 +535,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 45,
     name: "Doku No Ken",
     source: SOURCE.THE_CRAWLING_DEPTHS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2070
@@ -492,6 +545,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 46,
     name: "Leaf Bow",
     source: SOURCE.WOODLAND_LABYRINTH,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2116
@@ -501,6 +555,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 47,
     name: "Tablet of the King's Avatar",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2162
@@ -510,6 +565,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 48,
     name: "Harlequin Armor",
     source: SOURCE.PUPPET_MASTERS_THEATRE,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -2208
@@ -519,6 +575,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 49,
     name: "Wavecrest Concertina",
     source: SOURCE.DEADWATER_DOCKS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2254
@@ -528,6 +585,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 50,
     name: "Snake Charmer Pungi",
     source: SOURCE.SNAKE_PIT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2300
@@ -537,6 +595,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 51,
     name: "Pharaoh's Requiem",
     source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2346
@@ -546,6 +605,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 52,
     name: "Void Blade",
     source: SOURCE.TOXIC_SEWERS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2392
@@ -555,6 +615,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 53,
     name: "Murky Toxin",
     source: SOURCE.TOXIC_SEWERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2438
@@ -564,6 +625,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 54,
     name: "Prism of Dire Instability",
     source: SOURCE.PUPPET_MASTERS_ENCORE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2484
@@ -573,6 +635,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 55,
     name: "Spiteful Scutum",
     source: SOURCE.ORYXS_CHAMBER,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2530
@@ -582,6 +645,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 56,
     name: "Cnidaria Rod",
     source: SOURCE.CNIDARIAN_REEF,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2576
@@ -591,6 +655,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 57,
     name: "Bottled Medusozoan",
     source: SOURCE.CNIDARIAN_REEF,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2622
@@ -600,6 +665,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 58,
     name: "Ice Crown",
     source: SOURCE.ICE_TOMB,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -2668
@@ -609,6 +675,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 59,
     name: "Arcane Rapier",
     source: SOURCE.ANCIENT_RUINS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2714
@@ -618,6 +685,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 60,
     name: "Wand of the Fallen",
     source: SOURCE.MOUNTAIN_TEMPLE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2760
@@ -627,6 +695,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 61,
     name: "Kageboshi",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2806
@@ -636,6 +705,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 62,
     name: "Apocalypse Feather",
     source: SOURCE.ORYXS_CHAMBER,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2852
@@ -645,6 +715,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 63,
     name: "Helm of the Swift Bunny",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2898
@@ -654,6 +725,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 64,
     name: "Vitamin Buster",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -2944
@@ -663,6 +735,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 65,
     name: "Queen's Stinger",
     source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -2990
@@ -672,6 +745,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 66,
     name: "Hivemaster Helm",
     source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3036
@@ -681,6 +755,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 67,
     name: "Yellow Beehemoth Quiver",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3082
@@ -690,6 +765,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 68,
     name: "Red Beehemoth Quiver",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3128
@@ -699,6 +775,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 69,
     name: "Blue Beehemoth Quiver",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3174
@@ -708,6 +785,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 70,
     name: "Marble Seal",
     source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3220
@@ -717,6 +795,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 71,
     name: "Staff of Unholy Sacrifice",
     source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -3266
@@ -726,6 +805,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 72,
     name: "Shield of Ogmur",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3312
@@ -735,6 +815,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 73,
     name: "Bow of the Void",
     source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -3358
@@ -744,6 +825,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 74,
     name: "Quiver of the Shadows",
     source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3404
@@ -753,6 +835,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 75,
     name: "Armor of Nil",
     source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -3450
@@ -762,6 +845,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 76,
     name: "Sourcestone",
     source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -3496
@@ -771,6 +855,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 77,
     name: "Omnipotence Ring",
     source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -3542
@@ -780,6 +865,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 78,
     name: "Skull of Corrupted Souls",
     source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3588
@@ -789,6 +875,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 79,
     name: "Ritual Robe",
     source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -3634
@@ -798,6 +885,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 80,
     name: "Bloodshed Ring",
     source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -3680
@@ -807,6 +895,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 81,
     name: "Sword of the Colossus",
     source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -3726
@@ -816,6 +905,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 82,
     name: "Breastplate of New Life",
     source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -3772
@@ -825,6 +915,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 83,
     name: "Magical Lodestone",
     source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -3818
@@ -834,6 +925,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 84,
     name: "Shadow Serpent Sidearm",
     source: SOURCE.THE_THIRD_DIMENSION,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3864
@@ -843,6 +935,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 85,
     name: "Seal of Cubic Conundra",
     source: SOURCE.THE_THIRD_DIMENSION,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3910
@@ -852,6 +945,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 86,
     name: "Cloak of Cubic Enigma",
     source: SOURCE.THE_THIRD_DIMENSION,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -3956
@@ -861,6 +955,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 87,
     name: "Cloak of Bloody Surprises",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4002
@@ -870,6 +965,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 88,
     name: "Dirk of Cronus",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -4048
@@ -879,6 +975,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 89,
     name: "Recurring Terror Spell",
     source: SOURCE.PARASITE_CHAMBERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4094
@@ -888,6 +985,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 90,
     name: "Tome of Pain",
     source: SOURCE.PARASITE_CHAMBERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4140
@@ -897,6 +995,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 91,
     name: "Scepter of Devastation",
     source: SOURCE.PARASITE_CHAMBERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4186
@@ -906,6 +1005,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 92,
     name: "Doom Bow",
     source: SOURCE.UNDEAD_LAIR,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -4232
@@ -915,6 +1015,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 93,
     name: "Coral Bow",
     source: SOURCE.OCEAN_TRENCH,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -4278
@@ -924,6 +1025,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 94,
     name: "Peacekeeper",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -4324
@@ -933,6 +1035,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 95,
     name: "Vanguard's Visage",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4370
@@ -942,6 +1045,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 96,
     name: "Noble Mandolin",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4416
@@ -951,6 +1055,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 97,
     name: "Polarity Poison",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4462
@@ -960,6 +1065,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 98,
     name: "Sentinel's Sidearm",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4508
@@ -969,6 +1075,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 99,
     name: "Primal Arcana",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -4554
@@ -978,6 +1085,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 100,
     name: "Valor",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -4600
@@ -987,6 +1095,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 101,
     name: "Dusky Catalyst",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -4646
@@ -996,6 +1105,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 102,
     name: "Warmonger",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -4692
@@ -1005,6 +1115,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 103,
     name: "Mantle of the Monarchy",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -4738
@@ -1014,6 +1125,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 104,
     name: "Vest of Abandoned Shadows",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -4784
@@ -1023,6 +1135,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 105,
     name: "Royal Guard's Cuirass",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -4830
@@ -1032,6 +1145,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 106,
     name: "The Forgotten Crown",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -4876
@@ -1041,6 +1155,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 107,
     name: "The Twilight Gemstone",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -4922
@@ -1050,6 +1165,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 108,
     name: "Bracer of the Guardian",
     source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -4968
@@ -1059,6 +1175,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 109,
     name: "Ring of the Sphinx",
     source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -5014
@@ -1068,6 +1185,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 110,
     name: "Ring of the Nile",
     source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -5060
@@ -1077,6 +1195,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 111,
     name: "Ring of the Pyramid",
     source: SOURCE.TOMB_OF_THE_ANCIENTS,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -5106
@@ -1085,6 +1204,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 112,
     name: "Enchanted Ice Shard",
+    type: ITEM_TYPE.RING,
     source: SOURCE.ICE_TOMB,
     pos: {
       y: 0,
@@ -1094,6 +1214,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 113,
     name: "Ring of the Northern Light",
+    type: ITEM_TYPE.RING,
     source: SOURCE.ICE_TOMB,
     pos: {
       y: 0,
@@ -1104,6 +1225,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 114,
     name: "Frimarra",
     source: SOURCE.ICE_TOMB,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -5244
@@ -1113,6 +1235,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 115,
     name: "Volcanic Sheath",
     source: SOURCE.ABYSS_OF_DEMONS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5290
@@ -1122,6 +1245,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 116,
     name: "Kaiken",
     source: SOURCE.MOUNTAIN_TEMPLE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5336
@@ -1131,6 +1255,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 117,
     name: "Labyrinth Dweller's Sheath",
     source: SOURCE.WOODLAND_LABYRINTH,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5382
@@ -1140,6 +1265,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 118,
     name: "Quartermaster Scabbard",
     source: SOURCE.DAVY_JONES_LOCKER,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5428
@@ -1149,6 +1275,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 119,
     name: "Irradiance Sheath",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5474
@@ -1158,6 +1285,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 120,
     name: "Paper Machete",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5520
@@ -1167,6 +1295,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 121,
     name: "Seal of Blasphemous Prayer",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5566
@@ -1176,6 +1305,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 122,
     name: "Cloak of the Planewalker",
     source: SOURCE.SPRITE_WORLD,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5612
@@ -1185,6 +1315,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 123,
     name: "Skull of Endless Torment",
     source: SOURCE.LAIR_OF_SHAITAN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5658
@@ -1194,6 +1325,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 124,
     name: "Staff of Extreme Prejudice",
     source: SOURCE.SPRITE_WORLD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -5704
@@ -1203,6 +1335,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 125,
     name: "Barnacle Basher",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -5750
@@ -1212,6 +1345,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 126,
     name: "Corruption Cutter",
     source: SOURCE.CURSED_LIBRARY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -5796
@@ -1221,6 +1355,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 127,
     name: "Scholar's Seal",
     source: SOURCE.CURSED_LIBRARY,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -5842
@@ -1230,6 +1365,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 128,
     name: "K.I.D.D. Force",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -5888
@@ -1239,6 +1375,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 129,
     name: "MMace MMurderer",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -5934
@@ -1248,6 +1385,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 130,
     name: "Mister Mango",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -5980
@@ -1257,6 +1395,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 131,
     name: "Butter Bow",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -6026
@@ -1266,6 +1405,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 132,
     name: "Caduceus of Current Craziness",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -6072
@@ -1275,6 +1415,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 133,
     name: "Blade of Ages",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -6118
@@ -1284,6 +1425,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 134,
     name: "Mirror Cloak",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6164
@@ -1293,6 +1435,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 135,
     name: "Archerang",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6210
@@ -1302,6 +1445,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 136,
     name: "Spelling Spell",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6256
@@ -1311,6 +1455,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 137,
     name: "Tome of Moral Support",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6302
@@ -1320,6 +1465,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 138,
     name: "Challenger Helm",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6348
@@ -1329,6 +1475,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 139,
     name: "Shield of Pogmur",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6394
@@ -1338,6 +1485,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 140,
     name: "Lightning in a Bottle",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6440
@@ -1347,6 +1495,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 141,
     name: "Epiphany Skull",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6486
@@ -1356,6 +1505,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 142,
     name: "Helium Trap",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6532
@@ -1365,6 +1515,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 143,
     name: "Karma Orb",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6578
@@ -1374,6 +1525,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 144,
     name: "Fool's Prism",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6624
@@ -1383,6 +1535,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 145,
     name: "Honey Scepter Supreme",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6670
@@ -1392,6 +1545,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 146,
     name: "Unshuriken",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6716
@@ -1401,6 +1555,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 147,
     name: "NSFWakizashi",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -6762
@@ -1410,6 +1565,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 148,
     name: "Gem of Tenderness",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -6808
@@ -1419,6 +1575,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 149,
     name: "Gem of Adoration",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -6854
@@ -1428,6 +1585,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 150,
     name: "Soulful Affection",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -6900
@@ -1437,6 +1595,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 151,
     name: "Beekeeper's Flamethrower",
     source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -6946
@@ -1446,6 +1605,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 152,
     name: "Crystal Wand",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -6992
@@ -1455,6 +1615,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 153,
     name: "Wand of the Bulwark",
     source: SOURCE.SNAKE_PIT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -7038
@@ -1464,6 +1625,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 154,
     name: "Crystal Sword",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -7084
@@ -1473,6 +1635,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 155,
     name: "Demon Blade",
     source: SOURCE.ABYSS_OF_DEMONS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -7130
@@ -1482,6 +1645,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 156,
     name: "Mace of the Celestial Forest",
     source: SOURCE.SPRITE_WORLD,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7176
@@ -1491,6 +1655,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 157,
     name: "Mace of the Depths",
     source: SOURCE.THE_CRAWLING_DEPTHS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7222
@@ -1500,6 +1665,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 158,
     name: "Hivemind Mace",
     source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7268
@@ -1509,6 +1675,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 159,
     name: "Crystal Mace",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7314
@@ -1518,6 +1685,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 160,
     name: "Recursion Mace",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7360
@@ -1527,6 +1695,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 161,
     name: "Orb of Aether",
     source: SOURCE.MOUNTAIN_TEMPLE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7406
@@ -1536,6 +1705,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 162,
     name: "Silex's Hammer",
     source: SOURCE.MAD_GOD_MAYHEM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -7452
@@ -1545,6 +1715,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 163,
     name: "Jade Storm",
     source: SOURCE.MAD_GOD_MAYHEM,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7498
@@ -1554,6 +1725,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 164,
     name: "Cloak of the Mad God",
     source: SOURCE.MAD_GOD_MAYHEM,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7544
@@ -1563,6 +1735,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 165,
     name: "Shield of Flowing Clarity",
     source: SOURCE.MAD_GOD_MAYHEM,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7590
@@ -1572,6 +1745,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 166,
     name: "Sealed Crystal Skull",
     source: SOURCE.SECLUDED_THICKET,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7636
@@ -1581,6 +1755,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 167,
     name: "Penetrating Blast Spell",
     source: SOURCE.SECLUDED_THICKET,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7682
@@ -1590,6 +1765,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 168,
     name: "Tome of the Mushroom Tribes",
     source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7728
@@ -1599,6 +1775,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 169,
     name: "Sporous Spray Spell",
     source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7774
@@ -1608,6 +1785,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 170,
     name: "Fungal Breastplate",
     source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -7820
@@ -1617,6 +1795,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 171,
     name: "Echoes Prism",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7866
@@ -1626,6 +1805,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 172,
     name: "Crystal Shield",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7912
@@ -1635,6 +1815,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 173,
     name: "Crystallised Fang's Venom",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -7958
@@ -1644,6 +1825,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 174,
     name: "Crystallised Mist",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -8004
@@ -1653,6 +1835,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 175,
     name: "Cave Dweller Trap",
     source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -8050
@@ -1662,6 +1845,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 176,
     name: "Cloak of Refraction",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -8096
@@ -1671,6 +1855,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 177,
     name: "Fractured Gemstone Wakizashi",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -8142
@@ -1680,6 +1865,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 178,
     name: "Star of Enlightenment",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -8188
@@ -1689,6 +1875,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 179,
     name: "Burial Blades",
     source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8234
@@ -1698,6 +1885,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 180,
     name: "Fractal Blades",
     source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8280
@@ -1707,6 +1895,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 181,
     name: "Perennial Cranium",
     source: SOURCE.BELLADONNAS_GARDEN,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -8326
@@ -1716,6 +1905,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 182,
     name: "Clover Bow",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8372
@@ -1725,6 +1915,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 183,
     name: "Sword of the Rainbow's End",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8418
@@ -1734,6 +1925,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 184,
     name: "Katana of Good Fortune",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8464
@@ -1743,6 +1935,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 185,
     name: "Clover Star",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8510
@@ -1752,6 +1945,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 186,
     name: "Evergreen Dagger",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8556
@@ -1761,6 +1955,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 187,
     name: "Sleigh Bell Staff",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8602
@@ -1770,6 +1965,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 188,
     name: "Brass Chamberstick",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8648
@@ -1779,6 +1975,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 189,
     name: "Cheerful Chipper",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8694
@@ -1788,6 +1985,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 190,
     name: "Candy Katana",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8740
@@ -1797,6 +1995,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 191,
     name: "Garland Bow",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -8786
@@ -1805,6 +2004,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 192,
     name: "Chrysalis of Eternity",
+    type: ITEM_TYPE.RING,
     source: SOURCE.THE_SHATTERS,
     pos: {
       y: 0,
@@ -1814,6 +2014,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 193,
     name: "Necronomicon",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.CURSED_LIBRARY,
     pos: {
       y: 0,
@@ -1823,6 +2024,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 194,
     name: "Fire Blade",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ALIENS,
     pos: {
       y: 0,
@@ -1832,6 +2034,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 195,
     name: "Moonbeam Blade",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ALIENS,
     pos: {
       y: 0,
@@ -1841,6 +2044,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 196,
     name: "Foramite Staff",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ALIENS,
     pos: {
       y: 0,
@@ -1850,6 +2054,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 197,
     name: "Comet of Calamity",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ALIENS,
     pos: {
       y: 0,
@@ -1859,6 +2064,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 198,
     name: "Gaseous Glaive",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ALIENS,
     pos: {
       y: 0,
@@ -1868,6 +2074,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 199,
     name: "Acidic Slasher",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ALIENS,
     pos: {
       y: 0,
@@ -1877,6 +2084,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 200,
     name: "Helm of the Jack-o'-naut",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.EVENT,
     pos: {
       y: 0,
@@ -1886,6 +2094,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 201,
     name: "Random Spell Extraction Device",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.MAD_GOD_MAYHEM,
     pos: {
       y: 0,
@@ -1895,6 +2104,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 202,
     name: "Corrosion Cutter",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ALIENS,
     pos: {
       y: 0,
@@ -1904,6 +2114,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 203,
     name: "Orb of Conflict",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.EVENT,
     pos: {
       y: 0,
@@ -1913,6 +2124,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 204,
     name: "Keychain Cutlass",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.EVENT,
     pos: {
       y: 0,
@@ -1922,6 +2134,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 205,
     name: "Anatis Staff",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ORYXS_CHAMBER,
     pos: {
       y: 0,
@@ -1931,6 +2144,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 206,
     name: "Phantasm Dirk",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.EVENT,
     pos: {
       y: 0,
@@ -1940,6 +2154,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 207,
     name: "Useless Katana",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.EVENT,
     pos: {
       y: 0,
@@ -1949,6 +2164,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 208,
     name: "Wakizashi of Eastern Winds",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.WOODLAND_LABYRINTH,
     pos: {
       y: 0,
@@ -1958,6 +2174,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 209,
     name: "Wakizashi of Crossing Fires",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.LAIR_OF_SHAITAN,
     pos: {
       y: 0,
@@ -1967,6 +2184,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 210,
     name: "Hanagasaku",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.BELLADONNAS_GARDEN,
     pos: {
       y: 0,
@@ -1976,6 +2194,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 211,
     name: "Doctor Swordsworth",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.BATTLE_FOR_THE_NEXUS,
     pos: {
       y: 0,
@@ -1985,6 +2204,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 212,
     name: "KoalaPOW",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.BATTLE_FOR_THE_NEXUS,
     pos: {
       y: 0,
@@ -1994,6 +2214,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 213,
     name: "Spicy Wand of Spice",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.BATTLE_FOR_THE_NEXUS,
     pos: {
       y: 0,
@@ -2003,6 +2224,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 214,
     name: "Robobow",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.BATTLE_FOR_THE_NEXUS,
     pos: {
       y: 0,
@@ -2012,6 +2234,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 215,
     name: "Sunshine Shiv",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.BATTLE_FOR_THE_NEXUS,
     pos: {
       y: 0,
@@ -2021,6 +2244,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 216,
     name: "Arbiter's Wrath",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.BATTLE_FOR_THE_NEXUS,
     pos: {
       y: 0,
@@ -2030,6 +2254,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 217,
     name: "Staff of Esben",
+    type: ITEM_TYPE.WEAPON,
     source: SOURCE.ICE_CAVE,
     pos: {
       y: 0,
@@ -2039,6 +2264,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 218,
     name: "Skullish Remains of Esben",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.ICE_CAVE,
     pos: {
       y: 0,
@@ -2049,6 +2275,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 219,
     name: "Frozen Wand",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10074
@@ -2058,6 +2285,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 220,
     name: "Enchanted Ice Blade",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10120
@@ -2067,6 +2295,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 221,
     name: "Staff of Iceblast",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10166
@@ -2076,6 +2305,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 222,
     name: "Eternal Snowflake Wand",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10212
@@ -2085,6 +2315,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 223,
     name: "Arctic Bow",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10258
@@ -2094,6 +2325,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 224,
     name: "Tome of Frigid Protection",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -10304
@@ -2103,6 +2335,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 225,
     name: "Q.U.I.V.E.R.",
     source: SOURCE.HIGH_TECH_TERROR,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -10350
@@ -2112,6 +2345,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 226,
     name: "B.O.W.",
     source: SOURCE.HIGH_TECH_TERROR,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10396
@@ -2121,6 +2355,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 227,
     name: "S.T.A.F.F.",
     source: SOURCE.HIGH_TECH_TERROR,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10442
@@ -2130,6 +2365,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 228,
     name: "E.Y.E.",
     source: SOURCE.HIGH_TECH_TERROR,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -10488
@@ -2138,6 +2374,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 229,
     name: "Heart of Gold Prism",
+    type: ITEM_TYPE.ABILITY,
     source: SOURCE.EVENT,
     pos: {
       y: 0,
@@ -2148,6 +2385,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 230,
     name: "Spirit Staff",
     source: SOURCE.MAGIC_WOODS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10580
@@ -2157,6 +2395,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 231,
     name: "Enchantment Orb",
     source: SOURCE.MAGIC_WOODS,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -10626
@@ -2166,6 +2405,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 232,
     name: "Krathana",
     source: SOURCE.MAD_GOD_MAYHEM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10672
@@ -2175,6 +2415,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 233,
     name: "Tezcacoatl's Tail",
     source: SOURCE.SECLUDED_THICKET,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10718
@@ -2184,6 +2425,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 234,
     name: "Sword of Illumination",
     source: SOURCE.ABYSS_OF_DEMONS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10764
@@ -2193,6 +2435,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 235,
     name: "Rainbow Rod",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10810
@@ -2202,6 +2445,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 236,
     name: "Painbow",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10856
@@ -2211,6 +2455,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 237,
     name: "Prismatic Slasher",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10902
@@ -2220,6 +2465,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 238,
     name: "Staff of the Saint",
     source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -10948
@@ -2229,6 +2475,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 239,
     name: "Mimicry Trap",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -10994
@@ -2238,6 +2485,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 240,
     name: "Prismimic",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11040
@@ -2247,6 +2495,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 241,
     name: "Tome of Holy Furor",
     source: SOURCE.MAD_GOD_MAYHEM,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11086
@@ -2256,6 +2505,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 242,
     name: "Seal of Eternal Life",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11132
@@ -2265,6 +2515,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 243,
     name: "Blazon Bow",
     source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -11178
@@ -2274,6 +2525,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 244,
     name: "Sun's Judgement",
     source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -11224
@@ -2283,6 +2535,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 245,
     name: "Warlord Wand",
     source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -11270
@@ -2292,6 +2545,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 246,
     name: "Snowblind Wand",
     source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -11316
@@ -2301,6 +2555,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 247,
     name: "Cheater Heavy Armor",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -11362
@@ -2310,6 +2565,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 248,
     name: "Trap of the Blood Spirit",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11408
@@ -2319,6 +2575,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 249,
     name: "Orb of Terror",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11454
@@ -2328,6 +2585,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 250,
     name: "Fitted Protective Matrix",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -11500
@@ -2337,6 +2595,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 251,
     name: "Magic Protective Matrix",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -11546
@@ -2346,6 +2605,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 252,
     name: "Heavy Protective Matrix",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -11592
@@ -2355,6 +2615,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 253,
     name: "Prism of Dancing Swords",
     source: SOURCE.PUPPET_MASTERS_THEATRE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11638
@@ -2364,6 +2625,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 254,
     name: "Chicken Leg of Doom",
     source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -11684
@@ -2373,6 +2635,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 255,
     name: "Lullaby",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11730
@@ -2382,6 +2645,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 256,
     name: "Greaterhosen",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -11776
@@ -2391,6 +2655,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 257,
     name: "Mighty Stein",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11822
@@ -2400,6 +2665,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 258,
     name: "Crystallized Worm Spellblade",
     source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -11868
@@ -2409,6 +2675,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 259,
     name: "Sakura Wakizashi",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11914
@@ -2418,6 +2685,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 260,
     name: "Botany Book",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -11960
@@ -2427,6 +2695,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 261,
     name: "Ancient Stone Sword",
     source: SOURCE.ORYX_CASTLE,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12006
@@ -2436,6 +2705,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 262,
     name: "Cheater Light Armor",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -12052
@@ -2445,6 +2715,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 263,
     name: "Cheater Robe",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -12098
@@ -2454,6 +2725,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 264,
     name: "Sunny Side Bow",
     source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12144
@@ -2463,6 +2735,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 265,
     name: "Huntsman's Volley",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -12190
@@ -2472,6 +2745,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 266,
     name: "Storm Caller",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -12236
@@ -2481,6 +2755,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 267,
     name: "Rusted Barrel",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
       x: -12282
@@ -2490,6 +2765,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 268,
     name: "Obsidian Macuahuitl",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12328
@@ -2499,6 +2775,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 269,
     name: "Gilded Chain Scythe",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12374
@@ -2508,6 +2785,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 270,
     name: "Ritual Khopesh",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12420
@@ -2517,6 +2795,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 271,
     name: "Pirate's Sidearms",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12466
@@ -2526,6 +2805,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 272,
     name: "Frangile Longbow",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12512
@@ -2535,6 +2815,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 273,
     name: "Royal Sekhem",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
       x: -12558
@@ -2544,6 +2825,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 274,
     name: "Light Syndicate Attire",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -12604
@@ -2553,6 +2835,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 275,
     name: "Mystic Syndicate Attire",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -12650
@@ -2562,6 +2845,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 276,
     name: "Heavy Syndicate Attire",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.ARMOR,
     pos: {
       y: 0,
       x: -12696
@@ -2571,6 +2855,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 277,
     name: "Sunken Fire Opal Ring",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -12742
@@ -2580,6 +2865,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 278,
     name: "Faded Heart Scarab",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -12788
@@ -2589,6 +2875,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 279,
     name: "Fractured Hannya",
     source: SOURCE.HIDDEN_INTERREGNUM,
+    type: ITEM_TYPE.RING,
     pos: {
       y: 0,
       x: -12834
@@ -4632,6 +4919,13 @@ export const ITEMS_ST: ItemInfo[] = [
     }
   }
 ];
+
+export const ITEM_TYPE_NAMES = {
+  [ITEM_TYPE.ABILITY]: "Ability",
+  [ITEM_TYPE.ARMOR]: "Armor",
+  [ITEM_TYPE.RING]: "Ring",
+  [ITEM_TYPE.WEAPON]: "Weapon"
+};
 
 export const SOURCE_NAMES = {
   [SOURCE.ABYSS_OF_DEMONS]: "Abyss of Demons",
