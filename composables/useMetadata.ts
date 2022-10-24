@@ -2,7 +2,7 @@ export const useMetadata = () => {
   const setMeta = (
     title: string,
     desc = "Track your Realm of the Mad God loot, from white bags to STs!",
-    image = "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/og-trove.png"
+    image = "https://www.realm-trove.com/og-trove.png"
   ) => {
     useHead({
       title,
@@ -15,7 +15,7 @@ export const useMetadata = () => {
         { name: "og:site_name", content: "Matija Novosel" },
         { name: "og:description", content: desc },
         { name: "og:type", content: "website" },
-        { name: "og:url", content: "https://www.realmtrove.com/" },
+        { name: "og:url", content: "https://www.realm-trove.com/" },
         { name: "og:image", content: image },
         { name: "og:image:width", content: 1200 },
         { name: "og:image:height", content: 630 },
@@ -30,7 +30,7 @@ export const useMetadata = () => {
       link: [
         {
           rel: "canonical",
-          href: "https://realmtrove.com/"
+          href: "https://realm-trove.com/"
         }
       ]
     });
