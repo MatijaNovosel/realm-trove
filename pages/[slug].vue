@@ -83,8 +83,12 @@
                 v-if="isCurrentUser"
                 tooltip="Reset"
                 icon-color="green-vue"
-                :disabled="pendingChanges"
-                @on-click="pendingChanges ? null : (confirmDialogOpen = true)"
+                :disabled="pendingChanges || screenshotLoading"
+                @on-click="
+                  pendingChanges || screenshotLoading
+                    ? null
+                    : (confirmDialogOpen = true)
+                "
                 background-color="dark"
               >
                 <ResetIcon />
@@ -94,9 +98,13 @@
                 tooltip="Export"
                 icon-color="green-vue"
                 background-color="dark"
-                :disabled="pendingChanges"
+                :disabled="pendingChanges || screenshotLoading"
                 :loading="screenshotLoading"
-                @on-click="pendingChanges ? null : exportAsScreenshot()"
+                @on-click="
+                  pendingChanges || screenshotLoading
+                    ? null
+                    : exportAsScreenshot()
+                "
               >
                 <CameraIcon />
               </app-icon-button>

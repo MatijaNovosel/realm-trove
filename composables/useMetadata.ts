@@ -2,7 +2,7 @@ export const useMetadata = () => {
   const setMeta = (
     title: string,
     desc = "Track your Realm of the Mad God loot, from white bags to STs!",
-    image = "https://www.realm-trove.com/og-trove.png"
+    image = "https://www.realm-trove.com/og.png"
   ) => {
     useHead({
       title,
