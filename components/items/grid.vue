@@ -8,8 +8,8 @@
         <items-grid-item
           :x="pos.x"
           :y="pos.y"
-          :status-class="badgeClass(id)"
-          :count="collection[tab][id]"
+          :status-class="badgeClass(id) || ''"
+          :count="collection[tab][id] || 0"
           :id="id"
           :disabled="disabled"
           @lclick="$emit('increment', id)"
