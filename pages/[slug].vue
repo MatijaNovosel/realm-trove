@@ -3,6 +3,7 @@
     <items-filter-modal
       :open="modalOpen"
       v-model:loot-source="lootSource"
+      v-model:item-type="itemType"
       @close="modalOpen = false"
     />
     <app-confirmation-dialog
@@ -167,6 +168,7 @@ const unsubscribe = ref<Unsubscribe>();
 const profile = ref<Profile>();
 const usernameEditText = ref("");
 const lootSource = ref<number[]>([]);
+const itemType = ref<number[]>([]);
 const docRef = ref<DocumentReference<DocumentData>>();
 
 const { $firebaseFirestore } = useNuxtApp();
@@ -184,7 +186,7 @@ const filteredCollection = ref<IDictionary<ItemInfo[]>>({
 });
 
 const filterActive = computed(() => {
-  return lootSource.value.length !== 0;
+  return lootSource.value.length !== 0 || itemType.value.length !== 0;
 });
 
 const userSlug = computed(() => {
@@ -324,6 +326,10 @@ const searchItems = useDebounceFn(() => {
     filterConditions.push((item) => lootSource.value.includes(item.source));
   }
 
+  if (itemType.value.length !== 0) {
+    filterConditions.push((item) => itemType.value.includes(item.type));
+  }
+
   filteredCollection.value = {
     [TAB.UT]: items[TAB.UT].filter((item) =>
       filterConditions.every((i) => i(item))
@@ -371,7 +377,7 @@ onBeforeUnmount(() => {
 });
 
 watch(
-  () => [searchText.value, lootSource.value],
+  () => [searchText.value, lootSource.value, itemType.value],
   () => searchItems()
 );
 

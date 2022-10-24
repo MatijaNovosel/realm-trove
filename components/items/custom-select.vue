@@ -23,7 +23,7 @@
             :key="item"
           >
             <div class="bg-green-vue px-3 rounded-l">
-              {{ SOURCE_NAMES[item] }}
+              {{ options.find((opt) => opt.value === item).text }}
             </div>
             <div
               @click.stop="selectedItems.delete(item)"
@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-        <span v-else> Loot source </span>
+        <span v-else> {{ placeholder }} </span>
       </button>
     </template>
     <template #popper>
@@ -61,7 +61,6 @@
 <script lang="ts" setup>
 import { Dropdown as FloatingVueDropdown } from "floating-vue";
 import { SelectItem } from "~/models";
-import { SOURCE_NAMES } from "~/utils/constants";
 import CloseIcon from "~icons/material-symbols/close";
 
 const popoverRef = ref(null);
@@ -69,6 +68,7 @@ const selectedItems = ref<Set<number>>(new Set());
 
 defineProps<{
   modelValue: number[];
+  placeholder: string;
   options: SelectItem<number>[];
 }>();
 

@@ -6,21 +6,35 @@
       has-close-btn
       @close-btn="$emit('close')"
     >
-      <items-custom-select
-        :options="options"
-        v-model="selected"
-        @on-selected="onSelected"
-        popper-class="w-64 bg-white border rounded-lg shadow-md"
-      />
+      <div class="py-2">
+        <items-custom-select
+          placeholder="Loot source"
+          :options="optionsLootSource"
+          v-model="selectedLootSource"
+          @on-selected="$emit('update:loot-source', selectedLootSource)"
+        />
+        <items-custom-select
+          class="mt-4"
+          placeholder="Item type"
+          :options="optionsItemType"
+          v-model="selectedItemType"
+          @on-selected="$emit('update:item-type', selectedItemType)"
+        />
+      </div>
     </app-modal>
   </transition>
 </template>
 
 <script lang="ts" setup>
-import { SOURCE, SOURCE_NAMES } from "~/utils/constants";
+import {
+  SOURCE,
+  SOURCE_NAMES,
+  ITEM_TYPE,
+  ITEM_TYPE_NAMES
+} from "~/utils/constants";
 import { SelectItem } from "~/models";
 
-const options = computed<SelectItem<number>[]>(() => {
+const optionsLootSource = computed<SelectItem<number>[]>(() => {
   return Object.entries(SOURCE)
     .filter((value) => typeof value[1] === "string")
     .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))
@@ -30,16 +44,24 @@ const options = computed<SelectItem<number>[]>(() => {
     }));
 });
 
+const optionsItemType = computed<SelectItem<number>[]>(() => {
+  return Object.entries(ITEM_TYPE)
+    .filter((value) => typeof value[1] === "string")
+    .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))
+    .map((x) => ({
+      value: parseInt(x[0]),
+      text: ITEM_TYPE_NAMES[x[0]]
+    }));
+});
+
 const props = defineProps<{
   lootSource: number[];
+  itemType: number[];
   open: boolean;
 }>();
 
-const selected = ref<number[]>(props.lootSource);
+const selectedLootSource = ref<number[]>(props.lootSource);
+const selectedItemType = ref<number[]>(props.itemType);
 
-const emit = defineEmits(["close", "update:loot-source"]);
-
-const onSelected = () => {
-  emit("update:loot-source", selected.value);
-};
+defineEmits(["close", "update:loot-source", "update:item-type"]);
 </script>
