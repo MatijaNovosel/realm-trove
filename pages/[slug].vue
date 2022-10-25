@@ -297,7 +297,7 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     );
 
     if (!permanentToastExists.value) {
-      createToast("You have loading changes", "green-vue", -1, true);
+      createToast("You have pending changes", "green-vue", -1, true);
     }
   }
 
