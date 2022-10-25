@@ -36,6 +36,10 @@ export const generateShortId = () => {
   return (Math.random() + 1).toString(36).substring(2, 8).toUpperCase();
 };
 
+export const generateRandomUsername = () => {
+  return (Math.random() + 1).toString(36).substring(2, 15).toUpperCase();
+};
+
 export const formatItemTypeIcon = (type?: ITEM_TYPE) => {
   switch (type) {
     case ITEM_TYPE.ABILITY:

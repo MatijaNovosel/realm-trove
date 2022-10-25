@@ -31,6 +31,10 @@ const loginTrigger = useLoginTrigger();
 const user = useUser();
 const userData = useUserData();
 
+onMounted(() => {
+  loginTrigger.value = false;
+});
+
 const { setMeta } = useMetadata();
 setMeta("Realm trove | Home");
 </script>

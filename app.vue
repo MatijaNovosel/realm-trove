@@ -20,7 +20,7 @@ import {
   signInWithPopup
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { generateShortId } from "~/utils/helpers";
+import { generateShortId, generateRandomUsername } from "~/utils/helpers";
 
 const router = useRouter();
 const route = useRoute();
@@ -38,7 +38,7 @@ const signIn = async () => {
     if (isNewUser) {
       const shortId = generateShortId();
       const docRef = doc($firebaseFirestore, "profile", shortId);
-      const username = result.user.displayName.substring(0, 15);
+      const username = generateRandomUsername();
 
       await setDoc(docRef, {
         username,
