@@ -15,11 +15,11 @@
     <div
       class="offset w-full"
       :class="{
-        'h-full flex justify-center items-center': pending || error
+        'h-full flex justify-center items-center': loading || error
       }"
     >
       <transition name="bounce">
-        <spinner class="mt-4 mx-auto" v-if="pending" />
+        <spinner class="mt-4 mx-auto" v-if="loading" />
         <div class="mt-4 mx-auto text-error text-4xl" v-else-if="error">
           An error ocurred.
         </div>
@@ -29,7 +29,7 @@
             <div v-if="editingUsername">
               <items-custom-input
                 placeholder="New username"
-                :loading="pending"
+                :loading="loading"
                 :error="error"
                 hide-clear
                 v-model="usernameEditText"
@@ -64,7 +64,7 @@
               <items-custom-input
                 placeholder="Search items"
                 dense
-                :loading="pending"
+                :loading="loading"
                 :error="error"
                 v-model="searchText"
               />
@@ -83,12 +83,8 @@
                 v-if="isCurrentUser"
                 tooltip="Reset"
                 icon-color="green-vue"
-                :disabled="pendingChanges || screenshotLoading"
-                @on-click="
-                  pendingChanges || screenshotLoading
-                    ? null
-                    : (confirmDialogOpen = true)
-                "
+                :disabled="actionsDisabled"
+                @on-click="actionsDisabled ? null : (confirmDialogOpen = true)"
                 background-color="dark"
               >
                 <ResetIcon />
@@ -100,13 +96,9 @@
                 tooltip="Export"
                 icon-color="green-vue"
                 background-color="dark"
-                :disabled="pendingChanges || screenshotLoading"
+                :disabled="actionsDisabled"
                 :loading="screenshotLoading"
-                @on-click="
-                  pendingChanges || screenshotLoading
-                    ? null
-                    : exportAsScreenshot()
-                "
+                @on-click="actionsDisabled ? null : exportAsScreenshot()"
               >
                 <CameraIcon />
               </app-icon-button>
@@ -192,19 +184,19 @@ import domtoimage from "dom-to-image";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
+
 const searchText = ref("");
-const modalOpen = ref(false);
-const confirmDialogOpen = ref(false);
-const pending = ref(true);
-const screenshotLoading = ref(false);
-const initialMount = ref(true);
-const editingUsername = ref(false);
-const error = ref(false);
-const unsubscribe = ref<Unsubscribe>();
-const profile = ref<Profile>();
 const usernameEditText = ref("");
 const lootSource = ref<number[]>([]);
 const itemType = ref<number[]>([]);
+
+const modalOpen = ref(false);
+const confirmDialogOpen = ref(false);
+const screenshotLoading = ref(false);
+const initialMount = ref(true);
+const editingUsername = ref(false);
+
+const unsubscribe = ref<Unsubscribe>();
 const docRef = ref<DocumentReference<DocumentData>>();
 
 const { $firebaseFirestore } = useNuxtApp();
@@ -214,7 +206,8 @@ const user = useUser();
 const userData = useUserData();
 const route = useRoute();
 const { setMeta } = useMetadata();
-const loginTrigger = useLoginTrigger();
+
+setMeta("Realm trove | Items");
 
 const filteredCollection = ref<IDictionary<ItemInfo[]>>({
   [TAB.UT]: items[TAB.UT],
@@ -225,8 +218,12 @@ const filterActive = computed(() => {
   return lootSource.value.length !== 0 || itemType.value.length !== 0;
 });
 
-const userSlug = computed(() => {
-  return route.params.slug;
+const {
+  data: profile,
+  pending: loading,
+  error
+} = await useLazyFetch<Profile>(`/api/${route.params.slug}?property=shortId`, {
+  key: `/api/${route.params.slug}?property=shortId`
 });
 
 const isCurrentUser = computed(() => {
@@ -260,6 +257,10 @@ const pendingChanges = computed(() => {
   );
 });
 
+const actionsDisabled = computed(
+  () => pendingChanges.value || screenshotLoading.value
+);
+
 const updateCollection = async (id: number, increment: boolean = true) => {
   const existsInCollection = id in profile.value.collection[activeTab.value];
 
@@ -273,7 +274,7 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     );
 
     if (!permanentToastExists.value) {
-      createToast("You have pending changes", "green-vue", -1, true);
+      createToast("You have loading changes", "green-vue", -1, true);
     }
   }
 
@@ -401,42 +402,6 @@ const exportAsScreenshot = async () => {
   }
 };
 
-onMounted(async () => {
-  try {
-    if (loginTrigger.value) {
-      loginTrigger.value = false;
-    }
-
-    const data = await $fetch(`/api/${userSlug.value}?property=shortId`);
-
-    setMeta(`Realm trove | ${data.username}'s Items`);
-
-    profile.value = data;
-    usernameEditText.value = data.username;
-    docRef.value = doc($firebaseFirestore, "profile", userSlug.value as string);
-
-    unsubscribe.value = onSnapshot(docRef.value, (snap) => {
-      if (initialMount.value) {
-        initialMount.value = false;
-      } else {
-        profile.value = snap.data() as Profile;
-      }
-    });
-  } catch (e) {
-    createToast(e.message, "error");
-    error.value = true;
-  } finally {
-    pending.value = false;
-  }
-});
-
-onBeforeUnmount(() => {
-  if (unsubscribe.value) {
-    unsubscribe.value();
-  }
-  docRef.value = undefined;
-});
-
 watch(
   () => [searchText.value, lootSource.value, itemType.value],
   () => searchItems()
@@ -452,7 +417,41 @@ watch(
   }
 );
 
-setMeta("Realm trove | Items");
+watch(
+  loading,
+  () => {
+    if (profile.value) {
+      setMeta(`Realm trove | ${profile.value.username}'s Items`);
+      usernameEditText.value = profile.value.username;
+
+      docRef.value = doc(
+        $firebaseFirestore,
+        "profile",
+        route.params.slug as string
+      );
+
+      unsubscribe.value = onSnapshot(docRef.value, (snap) => {
+        if (initialMount.value) {
+          initialMount.value = false;
+        } else {
+          profile.value = snap.data() as Profile;
+        }
+      });
+    } else {
+      setMeta("Loading ...");
+    }
+  },
+  {
+    immediate: true
+  }
+);
+
+onBeforeUnmount(() => {
+  if (unsubscribe.value) {
+    unsubscribe.value();
+  }
+  docRef.value = undefined;
+});
 </script>
 
 <style scoped>
