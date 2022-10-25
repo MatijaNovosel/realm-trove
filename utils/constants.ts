@@ -916,7 +916,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 55,
     name: "Spiteful Scutum",
-    source: SOURCE.ORYXS_CHAMBER,
+    source: SOURCE.ORYX_CASTLE,
     type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
