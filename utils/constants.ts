@@ -504,6 +504,16 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 287,
+    name: "Hama Yumi",
+    source: SOURCE.REALM_EVENT_BOSS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -13202
+    }
+  },
+  {
     id: 203,
     name: "Orb of Conflict",
     type: ITEM_TYPE.ABILITY,
@@ -2301,6 +2311,16 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -11316
+    }
+  },
+  {
+    id: 286,
+    name: "Dueling Daggers",
+    source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -13156
     }
   },
   {
