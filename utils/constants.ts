@@ -76,7 +76,8 @@ export enum SOURCE {
   ORYX_CASTLE,
   HEROIC_UNDEAD_LAIR,
   TRADING,
-  REALM_EVENT_BOSS
+  REALM_EVENT_BOSS,
+  WETLANDS
 }
 
 export const ITEM_DIMENSION = 46;
@@ -2891,6 +2892,56 @@ export const ITEMS_UT: ItemInfo[] = [
       y: 0,
       x: -12834
     }
+  },
+  {
+    id: 281,
+    name: "Brambletooth Tachi",
+    source: SOURCE.WETLANDS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -12926
+    }
+  },
+  {
+    id: 282,
+    name: "Bogwood Crook",
+    source: SOURCE.WETLANDS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -12972
+    }
+  },
+  {
+    id: 283,
+    name: "Warped Mantle",
+    source: SOURCE.WETLANDS,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -13018
+    }
+  },
+  {
+    id: 284,
+    name: "Thistleleaf Necklace",
+    source: SOURCE.WETLANDS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -13064
+    }
+  },
+  {
+    id: 285,
+    name: "Sulphuric Stone",
+    source: SOURCE.WETLANDS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -13110
+    }
   }
 ];
 
@@ -5275,5 +5326,6 @@ export const SOURCE_NAMES = {
   [SOURCE.UNDEAD_LAIR]: "Undead Lair",
   [SOURCE.WINE_CELLAR]: "Wine Cellar",
   [SOURCE.WOODLAND_LABYRINTH]: "Woodland Labyrinth",
-  [SOURCE.REALM_EVENT_BOSS]: "Realm Event Boss"
+  [SOURCE.REALM_EVENT_BOSS]: "Realm Event Boss",
+  [SOURCE.WETLANDS]: "Wetlands"
 };
