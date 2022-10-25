@@ -438,7 +438,12 @@ const exportAsScreenshot = async () => {
 };
 
 watch(
-  () => [searchText, lootSource, itemType, showOnlyMissingItems.value],
+  () => [
+    searchText.value,
+    lootSource.value,
+    itemType.value,
+    showOnlyMissingItems.value
+  ],
   () => searchItems()
 );
 
