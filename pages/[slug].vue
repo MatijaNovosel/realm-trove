@@ -53,14 +53,14 @@
               <PencilIcon v-else />
             </app-icon-button>
           </div>
-          <div class="grid grid-cols-12 my-5 px-7 md:px-3">
+          <div class="grid grid-cols-12 my-5 px-5 md:px-3 items-center">
             <div
               class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
             >
               <items-instructions v-if="isCurrentUser" />
             </div>
             <div
-              class="col-span-12 md:col-span-6 my-4 md:my-0 flex items-center justify-center"
+              class="col-span-12 md:col-span-6 mt-4 md:mt-0 flex items-center justify-center"
               :class="{
                 'md:col-span-12 justify-center': !isCurrentUser
               }"
@@ -125,7 +125,7 @@
             </div>
             <div
               v-if="isCurrentUser"
-              class="col-span-12 md:col-span-3 flex justify-center md:justify-end"
+              class="col-span-12 md:col-span-3 flex md:justify-end fixed md:relative z-5 right-10 md:right-0 bottom-5 md:bottom-0 h-min"
             >
               <app-text-button
                 background-color="error"

@@ -1,7 +1,7 @@
 <template>
   <TransitionGroup
     name="list"
-    class="toast-container flex flex-col fixed text-white z-3 text-center text-sm items-center user-select-none"
+    class="toast-container top-5 md:bottom-5 flex flex-col fixed text-white z-5 text-center text-sm items-center user-select-none"
     tag="div"
   >
     <div
@@ -21,3 +21,10 @@
 <script lang="ts" setup>
 const { toasts } = useToast();
 </script>
+
+<style scoped>
+.toast-container {
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>

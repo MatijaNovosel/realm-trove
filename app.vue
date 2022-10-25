@@ -91,10 +91,4 @@ setMeta("Realm trove");
 .max-w-container {
   max-width: 1026px;
 }
-
-.toast-container {
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
 </style>
