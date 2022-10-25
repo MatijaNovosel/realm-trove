@@ -54,9 +54,13 @@
             </app-icon-button>
           </div>
           <div class="grid grid-cols-12 my-5 px-7 md:px-3">
-            <items-instructions v-if="isCurrentUser" />
             <div
-              class="col-span-12 md:col-span-4 my-4 md:my-0 flex items-center"
+              class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
+            >
+              <items-instructions v-if="isCurrentUser" />
+            </div>
+            <div
+              class="col-span-12 md:col-span-6 my-4 md:my-0 flex items-center justify-center"
               :class="{
                 'md:col-span-12 justify-center': !isCurrentUser
               }"
@@ -91,7 +95,23 @@
               </app-icon-button>
               <app-icon-button
                 :class="{
-                  'ml-2': isCurrentUser
+                  'mx-2': isCurrentUser
+                }"
+                tooltip="Show only unobtained items"
+                :icon-color="showOnlyMissingItems ? 'green-vue' : 'gray-500'"
+                background-color="dark"
+                :disabled="actionsDisabled"
+                @on-click="
+                  actionsDisabled
+                    ? null
+                    : (showOnlyMissingItems = !showOnlyMissingItems)
+                "
+              >
+                <EyeIcon />
+              </app-icon-button>
+              <app-icon-button
+                :class="{
+                  'ml-2': !isCurrentUser
                 }"
                 tooltip="Export"
                 icon-color="green-vue"
@@ -105,7 +125,7 @@
             </div>
             <div
               v-if="isCurrentUser"
-              class="col-span-12 md:col-span-4 flex justify-center md:justify-end"
+              class="col-span-12 md:col-span-3 flex justify-center md:justify-end"
             >
               <app-text-button
                 background-color="error"
@@ -178,9 +198,11 @@ import { useDebounceFn } from "@vueuse/core";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
 import CameraIcon from "~icons/mdi/camera";
+import EyeIcon from "~icons/ic/baseline-remove-red-eye";
 import PencilIcon from "~icons/mdi/grease-pencil";
 import CheckmarkIcon from "~icons/ic/baseline-check";
 import domtoimage from "dom-to-image";
+import JSConfetti from "js-confetti";
 
 const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
@@ -195,6 +217,7 @@ const confirmDialogOpen = ref(false);
 const screenshotLoading = ref(false);
 const initialMount = ref(true);
 const editingUsername = ref(false);
+const showOnlyMissingItems = ref(false);
 
 const unsubscribe = ref<Unsubscribe>();
 const docRef = ref<DocumentReference<DocumentData>>();
@@ -328,7 +351,13 @@ const cancelChanges = () => {
 const confirmChanges = async () => {
   try {
     await setDoc(docRef.value, profile.value);
-    createToast("Saved!", "green-vue");
+    if (itemCollectionPercentage.value === 1) {
+      const jsConfetti = new JSConfetti();
+      jsConfetti.addConfetti();
+      createToast("Congratulations!!!", "green-vue", 10000);
+    } else {
+      createToast("Saved!", "green-vue");
+    }
     initialCollection.value = undefined;
   } catch (e) {
     createToast(e.message, "error");
@@ -367,6 +396,12 @@ const searchItems = useDebounceFn(() => {
     filterConditions.push((item) => itemType.value.includes(item.type));
   }
 
+  if (showOnlyMissingItems.value) {
+    filterConditions.push(
+      (item) => !(item.id in profile.value.collection[activeTab.value])
+    );
+  }
+
   filteredCollection.value = {
     [TAB.UT]: items[TAB.UT].filter((item) =>
       filterConditions.every((i) => i(item))
@@ -403,19 +438,16 @@ const exportAsScreenshot = async () => {
 };
 
 watch(
-  () => [searchText.value, lootSource.value, itemType.value],
+  () => [searchText, lootSource, itemType, showOnlyMissingItems.value],
   () => searchItems()
 );
 
-watch(
-  () => pendingChanges.value,
-  (val) => {
-    if (!val) {
-      removePermanentToasts();
-      initialCollection.value = undefined;
-    }
+watch(pendingChanges, (val) => {
+  if (!val) {
+    removePermanentToasts();
+    initialCollection.value = undefined;
   }
-);
+});
 
 watch(
   loading,

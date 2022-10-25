@@ -77,14 +77,11 @@ const signIn = async () => {
   }
 };
 
-watch(
-  () => loginTrigger.value,
-  (val) => {
-    if (val) {
-      signIn();
-    }
+watch(loginTrigger, (val) => {
+  if (val) {
+    signIn();
   }
-);
+});
 
 const { setMeta } = useMetadata();
 setMeta("Realm trove");

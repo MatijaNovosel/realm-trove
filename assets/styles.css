@@ -107,6 +107,10 @@ html {
   background-color: var(--dark);
 }
 
+.text-dark {
+  color: var(--dark);
+}
+
 .text-error {
   color: var(--error);
 }
