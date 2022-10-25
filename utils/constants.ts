@@ -5104,6 +5104,7 @@ export const ITEMS_ST: ItemInfo[] = [
     id: 1709,
     name: "Omni-Impotence Ring",
     source: SOURCE.THE_MACHINE,
+    type: ITEM_TYPE.RING,
     pos: {
       x: -9522,
       y: -46
