@@ -38,6 +38,11 @@ html {
   background: transparent;
 }
 
+.v-popper__popper {
+  max-width: 200px !important;
+  user-select: none;
+}
+
 .v-popper--theme-info-tooltip .v-popper__inner {
   background: #2a2a2b;
   color: white;

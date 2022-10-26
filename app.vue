@@ -46,7 +46,8 @@ const signIn = async () => {
         uid: result.user.uid,
         collection: {
           st: {},
-          ut: {}
+          ut: {},
+          bp: {}
         }
       });
 

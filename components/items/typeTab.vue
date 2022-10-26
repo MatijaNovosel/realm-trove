@@ -1,25 +1,18 @@
 <template>
   <div
-    class="text-4xl font-bold mb-2 mt-6 flex items-center justify-center user-select-none"
+    class="text-2xl md:text-4xl font-bold mb-2 mt-6 flex items-center justify-center user-select-none"
   >
-    <div
-      @click="$emit('change', TAB.UT)"
-      class="ripple px-3 py-1 cursor-pointer rounded-lg"
-      :class="{
-        'text-green-vue': activeTab === TAB.UT
-      }"
-    >
-      UT
-    </div>
-    <div class="mx-3">•</div>
-    <div
-      @click="$emit('change', TAB.ST)"
-      class="ripple px-3 py-1 cursor-pointer rounded-lg"
-      :class="{
-        'text-green-vue': activeTab === TAB.ST
-      }"
-    >
-      ST
+    <div class="contents" v-for="(tab, i) in tabs" :key="i">
+      <div
+        @click="$emit('change', tab[1])"
+        class="ripple px-3 py-1 cursor-pointer rounded-lg"
+        :class="{
+          'text-green-vue': activeTab === tab[1]
+        }"
+      >
+        {{ tab[0] }}
+      </div>
+      <div class="mx-3" v-if="i !== tabs.length - 1">•</div>
     </div>
   </div>
 </template>
@@ -32,4 +25,8 @@ defineProps<{
 }>();
 
 defineEmits(["change"]);
+
+const tabs = computed(() =>
+  Object.entries(TAB).filter((value) => typeof value[1] === "string")
+);
 </script>

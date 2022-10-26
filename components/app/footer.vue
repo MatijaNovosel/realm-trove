@@ -6,7 +6,7 @@
       to="/changes"
       class="text-sm md:text-base ripple px-3 py-0.5 rounded"
     >
-      v{{ $config.CLIENT_VERSION }}
+      v{{ $config.CLIENT_VERSION }} © CrabFeeder {{ new Date().getFullYear() }}
     </NuxtLink>
     <div class="flex">
       <a class="text-white" href="https://github.com/MatijaNovosel/realm-trove">

@@ -8,11 +8,17 @@ export interface ItemCoordinate {
   y: number;
 }
 
+export interface BpData {
+  quality: number;
+  items: ItemCoordinate[];
+}
+
 export interface ItemInfo {
-  pos: ItemCoordinate;
-  name: string;
+  pos?: ItemCoordinate;
+  name?: string;
   source: number;
   type?: number;
+  bp?: BpData;
   id: number;
 }
 
@@ -23,6 +29,7 @@ export interface IDictionary<T> {
 export interface PlayerCollection {
   ut: IDictionary<number>;
   st: IDictionary<number>;
+  bp: IDictionary<number>;
 }
 
 export interface Profile {

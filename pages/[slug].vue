@@ -234,7 +234,8 @@ setMeta("Realm trove | Items");
 
 const filteredCollection = ref<IDictionary<ItemInfo[]>>({
   [TAB.UT]: items[TAB.UT],
-  [TAB.ST]: items[TAB.ST]
+  [TAB.ST]: items[TAB.ST],
+  [TAB.BP]: items[TAB.BP]
 });
 
 const filterActive = computed(() => {
@@ -264,7 +265,8 @@ const changeTab = (tab: TAB) => {
 const itemsCollected = computed(() => {
   return {
     [TAB.UT]: Object.keys(profile.value.collection.ut).length,
-    [TAB.ST]: Object.keys(profile.value.collection.st).length
+    [TAB.ST]: Object.keys(profile.value.collection.st).length,
+    [TAB.BP]: Object.keys(profile.value.collection.bp).length
   };
 });
 
@@ -370,7 +372,8 @@ const resetCollection = async () => {
     const emptyCollection = { ...profile.value };
     emptyCollection.collection = {
       st: {},
-      ut: {}
+      ut: {},
+      bp: {}
     };
     await setDoc(docRef.value, emptyCollection);
     createToast("Progress has been reset!", "green-vue");
@@ -407,6 +410,9 @@ const searchItems = useDebounceFn(() => {
       filterConditions.every((i) => i(item))
     ),
     [TAB.ST]: items[TAB.ST].filter((item) =>
+      filterConditions.every((i) => i(item))
+    ),
+    [TAB.BP]: items[TAB.BP].filter((item) =>
       filterConditions.every((i) => i(item))
     )
   };

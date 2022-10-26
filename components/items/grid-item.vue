@@ -14,11 +14,26 @@
     <div class="badge user-select-none" :class="statusClass">
       {{ count !== 0 ? count : "" }}
     </div>
+    <template v-if="bp">
+      <div
+        class="item absolute right-2"
+        :style="{
+          scale: 0.5,
+          backgroundPosition: `${item.x}px ${item.y}px`,
+          filter: `grayscale(${count ? 0 : 100}%)`
+        }"
+        v-for="(item, i) in bp.items"
+        :key="i"
+      />
+    </template>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { BpData } from "~/models";
+
 defineProps<{
+  bp?: BpData;
   disabled: boolean;
   x: number;
   y: number;

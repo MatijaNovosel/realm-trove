@@ -2,7 +2,8 @@ import { ItemInfo } from "~/models";
 
 export enum TAB {
   UT = "ut",
-  ST = "st"
+  ST = "st",
+  BP = "bp"
 }
 
 export enum ITEM_TYPE {
@@ -10,6 +11,16 @@ export enum ITEM_TYPE {
   ABILITY,
   ARMOR,
   RING
+}
+
+export enum BP_QUALITY {
+  BASIC = 1,
+  GREATER,
+  SUPERIOR,
+  PARAMOUNT,
+  EXALTED,
+  FESTIVE,
+  INCUBATION
 }
 
 export enum SOURCE {
@@ -77,7 +88,8 @@ export enum SOURCE {
   HEROIC_UNDEAD_LAIR,
   TRADING,
   REALM_EVENT_BOSS,
-  WETLANDS
+  WETLANDS,
+  BLUEPRINT_ROTATION
 }
 
 export const ITEM_DIMENSION = 46;
@@ -5276,6 +5288,138 @@ export const ITEMS_ST: ItemInfo[] = [
   }
 ];
 
+export const ITEMS_BP: ItemInfo[] = [
+  {
+    id: 3001,
+    name: "Divinity",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -736
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3002,
+    name: "Oryx’s Escutcheon",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -782
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3003,
+    name: "Gladiator Guard",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -828
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3004,
+    name: "Exalted God’s Horn",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -874
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3005,
+    name: "Helm of the Juggernaut",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -920
+        }
+      ]
+    },
+    source: SOURCE.REALM_EVENT_BOSS
+  },
+  {
+    id: 3006,
+    name: "Omnipotence Ring",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3542
+        }
+      ]
+    },
+    source: SOURCE.THE_VOID
+  },
+  {
+    id: 3007,
+    name: "Mace of the Celestial Forest",
+    bp: {
+      quality: BP_QUALITY.SUPERIOR,
+      items: [
+        {
+          y: 0,
+          x: -7176
+        }
+      ]
+    },
+    source: SOURCE.SPRITE_WORLD
+  }
+];
+
+export const BP_QUALITY_POS = {
+  [BP_QUALITY.BASIC]: {
+    x: -184,
+    y: -92
+  },
+  [BP_QUALITY.GREATER]: {
+    x: -138,
+    y: -92
+  },
+  [BP_QUALITY.SUPERIOR]: {
+    x: -92,
+    y: -92
+  },
+  [BP_QUALITY.PARAMOUNT]: {
+    x: -46,
+    y: -92
+  },
+  [BP_QUALITY.EXALTED]: {
+    x: 0,
+    y: -92
+  },
+  [BP_QUALITY.FESTIVE]: {
+    x: -230,
+    y: -92
+  },
+  [BP_QUALITY.INCUBATION]: {
+    x: -276,
+    y: -92
+  }
+};
+
 export const ITEM_TYPE_NAMES = {
   [ITEM_TYPE.ABILITY]: "Ability",
   [ITEM_TYPE.ARMOR]: "Armor",
@@ -5348,5 +5492,6 @@ export const SOURCE_NAMES = {
   [SOURCE.WINE_CELLAR]: "Wine Cellar",
   [SOURCE.WOODLAND_LABYRINTH]: "Woodland Labyrinth",
   [SOURCE.REALM_EVENT_BOSS]: "Realm Event Boss",
-  [SOURCE.WETLANDS]: "Wetlands"
+  [SOURCE.WETLANDS]: "Wetlands",
+  [SOURCE.BLUEPRINT_ROTATION]: "Blueprint Rotation"
 };

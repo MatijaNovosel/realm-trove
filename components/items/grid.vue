@@ -3,11 +3,12 @@
     class="flex flex-wrap justify-center md:justify-start no-highlight"
     v-if="items[tab].length > 0"
   >
-    <div v-for="{ pos, id, name, source, type } in items[tab]" :key="id">
+    <div v-for="{ pos, id, name, source, type, bp } in items[tab]" :key="id">
       <Tooltip theme="info-tooltip">
         <items-grid-item
-          :x="pos.x"
-          :y="pos.y"
+          :bp="bp"
+          :x="bp ? BP_QUALITY_POS[bp.quality].x : pos.x"
+          :y="bp ? BP_QUALITY_POS[bp.quality].y : pos.y"
           :status-class="badgeClass(id) || ''"
           :count="collection[tab][id] || 0"
           :id="id"
@@ -17,12 +18,12 @@
         />
         <template #popper>
           <div class="text-xs flex flex-col py-1">
-            <span class="text-green-vue text-center">
+            <span class="text-green-vue text-center md:text-left">
               {{ name }}
             </span>
             <hr class="divider my-1.5" />
             <span class="mb-1"> 🌍 {{ SOURCE_NAMES[source] }} </span>
-            <span>
+            <span v-if="type">
               {{ formatItemTypeIcon(type) }} {{ ITEM_TYPE_NAMES[type] }}
             </span>
           </div>
@@ -38,7 +39,12 @@
 <script lang="ts" setup>
 import { Tooltip } from "floating-vue";
 import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
-import { TAB, SOURCE_NAMES, ITEM_TYPE_NAMES } from "~/utils/constants";
+import {
+  TAB,
+  SOURCE_NAMES,
+  ITEM_TYPE_NAMES,
+  BP_QUALITY_POS
+} from "~/utils/constants";
 import { formatItemTypeIcon } from "~/utils/helpers";
 
 const props = defineProps<{
