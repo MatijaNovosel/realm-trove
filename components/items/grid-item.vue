@@ -19,7 +19,7 @@
         class="item absolute"
         :style="{
           right: '12px',
-          bottom: bp.items.length !== 1 ? `${-15 * (i - 1)}px` : '-10px',
+          top: bp.items.length !== 1 ? `${13 * (i - 1)}px` : '10px',
           scale: 0.5,
           backgroundPosition: `${item.x}px ${item.y}px`,
           filter: `grayscale(${count ? 0 : 100}%)`

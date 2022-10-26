@@ -19,7 +19,7 @@
         <template #popper>
           <div class="text-xs flex flex-col py-1">
             <span class="text-green-vue text-center md:text-left">
-              {{ name }}
+              {{ `${name}${bp ? " Blueprint" : ""}` }}
             </span>
             <hr class="divider my-1.5" />
             <span class="mb-1"> 🌍 {{ SOURCE_NAMES[source] }} </span>

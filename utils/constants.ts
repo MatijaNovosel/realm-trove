@@ -5391,7 +5391,7 @@ export const ITEMS_BP: ItemInfo[] = [
     id: 3008,
     name: "Tezcacoatl's Tail, Wavecrest Concertina, Coral Venom Trap",
     bp: {
-      quality: BP_QUALITY.SUPERIOR,
+      quality: BP_QUALITY.PARAMOUNT,
       items: [
         {
           y: 0,
@@ -5408,6 +5408,1021 @@ export const ITEMS_BP: ItemInfo[] = [
       ]
     },
     source: SOURCE.WINE_CELLAR
+  },
+  {
+    id: 3009,
+    name: "Ring of the Nile, Wakizashi of Crossing Fires, Bottled Medusozoan",
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -5060
+        },
+        {
+          y: 0,
+          x: -9614
+        },
+        {
+          y: 0,
+          x: -2622
+        }
+      ]
+    },
+    source: SOURCE.WINE_CELLAR
+  },
+  {
+    id: 3010,
+    name: "Pharaoh's Requiem, Thousand Shot, Cnidaria Rod",
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -2346
+        },
+        {
+          y: 0,
+          x: -1012
+        },
+        {
+          y: 0,
+          x: -2576
+        }
+      ]
+    },
+    source: SOURCE.WINE_CELLAR
+  },
+  {
+    id: 3011,
+    name: "Leaf Bow, Ancient Stone Sword, Spiteful Scutum",
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -2116
+        },
+        {
+          y: 0,
+          x: -12006
+        },
+        {
+          y: 0,
+          x: -2530
+        }
+      ]
+    },
+    source: SOURCE.WINE_CELLAR
+  },
+  {
+    id: 3012,
+    name: "Demon Blade, Esben's Shaman Attire, Conducting Wand",
+    bp: {
+      quality: BP_QUALITY.SUPERIOR,
+      items: [
+        {
+          y: 0,
+          x: -7130
+        },
+        {
+          y: 0,
+          x: -1702
+        },
+        {
+          y: 0,
+          x: -1380
+        }
+      ]
+    },
+    source: SOURCE.ORYX_CASTLE
+  },
+  {
+    id: 3013,
+    name: "Arcane Rapier, Soul's Guidance, Esben's Wedding Ring",
+    bp: {
+      quality: BP_QUALITY.SUPERIOR,
+      items: [
+        {
+          y: 0,
+          x: -2714
+        },
+        {
+          y: 0,
+          x: -1656
+        },
+        {
+          y: 0,
+          x: -1748
+        }
+      ]
+    },
+    source: SOURCE.ORYX_CASTLE
+  },
+  {
+    id: 3014,
+    name: "Sealed Crystal Skull, Snake Charmer Pungi",
+    bp: {
+      quality: BP_QUALITY.SUPERIOR,
+      items: [
+        {
+          y: 0,
+          x: -7636
+        },
+        {
+          y: 0,
+          x: -2300
+        }
+      ]
+    },
+    source: SOURCE.ORYX_CASTLE
+  },
+  {
+    id: 3015,
+    name: "Staff of Esben, Harlequin Armor, Crystal Sword",
+    bp: {
+      quality: BP_QUALITY.SUPERIOR,
+      items: [
+        {
+          y: 0,
+          x: -9982
+        },
+        {
+          y: 0,
+          x: -2208
+        },
+        {
+          y: 0,
+          x: -7084
+        }
+      ]
+    },
+    source: SOURCE.ORYX_CASTLE
+  },
+  {
+    id: 3016,
+    name: "Ring of the Sphinx, Candy Coated Armor, Scholar's Seal",
+    bp: {
+      quality: BP_QUALITY.SUPERIOR,
+      items: [
+        {
+          y: 0,
+          x: -5014
+        },
+        {
+          y: 0,
+          x: -1794
+        },
+        {
+          y: 0,
+          x: -5842
+        }
+      ]
+    },
+    source: SOURCE.ORYX_CASTLE
+  },
+  {
+    id: 3017,
+    name: "Orb of Conflict",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -9338
+        }
+      ]
+    },
+    source: SOURCE.REALM_EVENT_BOSS
+  },
+  {
+    id: 3018,
+    name: "Yellow Beehemoth Quiver",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3082
+        }
+      ]
+    },
+    source: SOURCE.REALM_EVENT_BOSS
+  },
+  {
+    id: 3019,
+    name: "Red Beehemoth Quiver",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3128
+        }
+      ]
+    },
+    source: SOURCE.REALM_EVENT_BOSS
+  },
+  {
+    id: 3020,
+    name: "Blue Beehemoth Quiver",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3174
+        }
+      ]
+    },
+    source: SOURCE.REALM_EVENT_BOSS
+  },
+  {
+    id: 3021,
+    name: "Hivemind Mace",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -7268
+        }
+      ]
+    },
+    source: SOURCE.THE_NEST
+  },
+  {
+    id: 3022,
+    name: "Queen's Stinger",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -2990
+        }
+      ]
+    },
+    source: SOURCE.THE_NEST
+  },
+  {
+    id: 3023,
+    name: "Hivemaster Helm",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3036
+        }
+      ]
+    },
+    source: SOURCE.THE_NEST
+  },
+  {
+    id: 3024,
+    name: "Staff of Unholy Sacrifice",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3266
+        }
+      ]
+    },
+    source: SOURCE.CULTIST_HIDEOUT
+  },
+  {
+    id: 3025,
+    name: "Skull of Corrupted Souls",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3588
+        }
+      ]
+    },
+    source: SOURCE.CULTIST_HIDEOUT
+  },
+  {
+    id: 3026,
+    name: "Ritual Robe",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3634
+        }
+      ]
+    },
+    source: SOURCE.CULTIST_HIDEOUT
+  },
+  {
+    id: 3027,
+    name: "Bloodshed Ring",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3680
+        }
+      ]
+    },
+    source: SOURCE.CULTIST_HIDEOUT
+  },
+  {
+    id: 3028,
+    name: "Sword of the Colossus",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3726
+        }
+      ]
+    },
+    source: SOURCE.LOST_HALLS
+  },
+  {
+    id: 3029,
+    name: "Marble Seal",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3220
+        }
+      ]
+    },
+    source: SOURCE.LOST_HALLS
+  },
+  {
+    id: 3030,
+    name: "Breastplate of New Life",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3772
+        }
+      ]
+    },
+    source: SOURCE.LOST_HALLS
+  },
+  {
+    id: 3031,
+    name: "Magical Lodestone",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3818
+        }
+      ]
+    },
+    source: SOURCE.LOST_HALLS
+  },
+  {
+    id: 3032,
+    name: "Bow of the Void",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3358
+        }
+      ]
+    },
+    source: SOURCE.THE_VOID
+  },
+  {
+    id: 3033,
+    name: "Quiver of the Shadows",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3404
+        }
+      ]
+    },
+    source: SOURCE.THE_VOID
+  },
+  {
+    id: 3034,
+    name: "Armor of Nil",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3450
+        }
+      ]
+    },
+    source: SOURCE.THE_VOID
+  },
+  {
+    id: 3035,
+    name: "Sourcestone",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -3496
+        }
+      ]
+    },
+    source: SOURCE.THE_VOID
+  },
+  {
+    id: 3036,
+    name: "Crystallised Fang's Venom",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -7958
+        }
+      ]
+    },
+    source: SOURCE.REALM_EVENT_BOSS
+  },
+  {
+    id: 3037,
+    name: "Sporous Spray Spell",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -7774
+        }
+      ]
+    },
+    source: SOURCE.FUNGAL_CAVERN
+  },
+  {
+    id: 3038,
+    name: "Cave Dweller Trap",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -8050
+        }
+      ]
+    },
+    source: SOURCE.FUNGAL_CAVERN
+  },
+  {
+    id: 3039,
+    name: "Crystal Shield",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -7912
+        }
+      ]
+    },
+    source: SOURCE.FUNGAL_CAVERN
+  },
+  {
+    id: 3040,
+    name: "Fractured Gemstone Wakizashi",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -8142
+        }
+      ]
+    },
+    source: SOURCE.CRYSTAL_CAVERN
+  },
+  {
+    id: 3041,
+    name: "Star of Enlightenment",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -8188
+        }
+      ]
+    },
+    source: SOURCE.CRYSTAL_CAVERN
+  },
+  {
+    id: 3042,
+    name: "Echoes Prism",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -7866
+        }
+      ]
+    },
+    source: SOURCE.CRYSTAL_CAVERN
+  },
+  {
+    id: 3043,
+    name: "Cloak of Refraction",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -8096
+        }
+      ]
+    },
+    source: SOURCE.CRYSTAL_CAVERN
+  },
+  {
+    id: 3044,
+    name: "Crystallised Mist",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -8004
+        }
+      ]
+    },
+    source: SOURCE.CRYSTAL_CAVERN
+  },
+  {
+    id: 3045,
+    name: "Tablet of the King's Avatar",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -2162
+        }
+      ]
+    },
+    source: SOURCE.REALM_EVENT_BOSS
+  },
+  {
+    id: 3046,
+    name: "Valor",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4600
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3047,
+    name: "Royal Guard's Cuirass",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4830
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3048,
+    name: "Sentinel's Sidearm",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4508
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3049,
+    name: "Vanguard's Visage",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4370
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3050,
+    name: "Bracer of the Guardian",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4968
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3051,
+    name: "Dusky Catalyst",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4646
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3052,
+    name: "Vest of Abandoned Shadows",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4784
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3053,
+    name: "Primal Arcana",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4554
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3054,
+    name: "Polarity Poison",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4462
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3055,
+    name: "The Twilight Gemstone",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4922
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3056,
+    name: "Warmonger",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4692
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3057,
+    name: "Mantle of the Monarchy",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4738
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3058,
+    name: "Noble Mandolin",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4416
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3059,
+    name: "Peacekeeper",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4324
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3060,
+    name: "The Forgotten Crown",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4876
+        }
+      ]
+    },
+    source: SOURCE.THE_SHATTERS
+  },
+  {
+    id: 3061,
+    name: "Avarice",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: 0
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3062,
+    name: "Gambler's Fate",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -46
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3063,
+    name: "Turncoat Cape",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -92
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3064,
+    name: "Collector's Monocle",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -138
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  // Leucoryx
+  {
+    id: 3065,
+    name: "Lumiaire",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -184
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3066,
+    name: "Chaotic Scripture",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -230
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3067,
+    name: "Vesture of Duality",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -276
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3068,
+    name: "Divine Coronation",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -322
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  // Dammah
+  {
+    id: 3069,
+    name: "Superior",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -368
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3070,
+    name: "Genesis Spell",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -414
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3071,
+    name: "Diplomatic Robe",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -460
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3072,
+    name: "Chancellor's Cranium",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -506
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  // Beisa
+  {
+    id: 3073,
+    name: "Enforcer",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -552
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3074,
+    name: "Ballistic Star",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -598
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3075,
+    name: "Centaur's Shielding",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -644
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
+  },
+  {
+    id: 3076,
+    name: "Battalion Banner",
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -690
+        }
+      ]
+    },
+    source: SOURCE.ORYXS_SANCTUARY
   }
 ];
 
