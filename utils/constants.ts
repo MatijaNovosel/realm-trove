@@ -5386,6 +5386,28 @@ export const ITEMS_BP: ItemInfo[] = [
       ]
     },
     source: SOURCE.SPRITE_WORLD
+  },
+  {
+    id: 3008,
+    name: "Tezcacoatl's Tail, Wavecrest Concertina, Coral Venom Trap",
+    bp: {
+      quality: BP_QUALITY.SUPERIOR,
+      items: [
+        {
+          y: 0,
+          x: -10718
+        },
+        {
+          y: 0,
+          x: -2254
+        },
+        {
+          y: 0,
+          x: -1058
+        }
+      ]
+    },
+    source: SOURCE.WINE_CELLAR
   }
 ];
 
