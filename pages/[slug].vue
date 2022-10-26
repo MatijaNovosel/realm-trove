@@ -371,11 +371,7 @@ const confirmChanges = async () => {
 const resetCollection = async () => {
   try {
     const emptyCollection = { ...profile.value };
-    emptyCollection.collection = {
-      st: {},
-      ut: {},
-      bp: {}
-    };
+    emptyCollection.collection[selectedTab.value] = {};
     await setDoc(docRef.value, emptyCollection);
     createToast("Progress has been reset!", "green-vue");
     initialCollection.value = undefined;
