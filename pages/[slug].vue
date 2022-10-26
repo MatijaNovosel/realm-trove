@@ -24,7 +24,7 @@
           An error ocurred.
         </div>
         <div class="display-contents" v-else>
-          <items-type-tab :active-tab="activeTab" @change="changeTab" />
+          <items-type-tab />
           <div class="flex justify-center items-center" v-if="profile">
             <div v-if="editingUsername">
               <items-custom-input
@@ -163,8 +163,8 @@
                 class="mb-5 user-select-none"
               >
                 <span>
-                  {{ itemsCollected[activeTab] }} /
-                  {{ items[activeTab].length }} ({{
+                  {{ itemsCollected[selectedTab] }} /
+                  {{ items[selectedTab].length }} ({{
                     (itemCollectionPercentage * 100).toFixed(2)
                   }}%)
                 </span>
@@ -174,7 +174,7 @@
               :items="filteredCollection"
               :collection="profile.collection"
               :initial="initialCollection"
-              :tab="activeTab"
+              :tab="selectedTab"
               :disabled="!isCurrentUser || screenshotLoading"
               @increment="updateCollection"
               @decrement="updateCollection($event, false)"
@@ -207,7 +207,6 @@ import CheckmarkIcon from "~icons/ic/baseline-check";
 import domtoimage from "dom-to-image";
 import JSConfetti from "js-confetti";
 
-const activeTab = ref(TAB.UT);
 const initialCollection = ref<PlayerCollection>();
 
 const searchText = ref("");
@@ -230,6 +229,7 @@ const { items } = useItems();
 const { createToast, removePermanentToasts, permanentToastExists } = useToast();
 const user = useUser();
 const userData = useUserData();
+const selectedTab = useSelectedTab();
 const route = useRoute();
 const { setMeta } = useMetadata();
 
@@ -260,11 +260,6 @@ const isCurrentUser = computed(() => {
   return false;
 });
 
-const changeTab = (tab: TAB) => {
-  if (activeTab.value === tab) return;
-  activeTab.value = tab;
-};
-
 const itemsCollected = computed(() => {
   return {
     [TAB.UT]: Object.keys(profile.value.collection.ut).length,
@@ -274,7 +269,9 @@ const itemsCollected = computed(() => {
 });
 
 const itemCollectionPercentage = computed(() => {
-  return itemsCollected.value[activeTab.value] / items[activeTab.value].length;
+  return (
+    itemsCollected.value[selectedTab.value] / items[selectedTab.value].length
+  );
 });
 
 const pendingChanges = computed(() => {
@@ -290,7 +287,7 @@ const actionsDisabled = computed(
 );
 
 const updateCollection = async (id: number, increment: boolean = true) => {
-  const existsInCollection = id in profile.value.collection[activeTab.value];
+  const existsInCollection = id in profile.value.collection[selectedTab.value];
 
   if (!increment && !existsInCollection) {
     return;
@@ -308,17 +305,17 @@ const updateCollection = async (id: number, increment: boolean = true) => {
 
   if (existsInCollection) {
     if (increment) {
-      profile.value.collection[activeTab.value][id]++;
+      profile.value.collection[selectedTab.value][id]++;
     } else {
-      if (profile.value.collection[activeTab.value][id] - 1 <= 0) {
-        delete profile.value.collection[activeTab.value][id];
+      if (profile.value.collection[selectedTab.value][id] - 1 <= 0) {
+        delete profile.value.collection[selectedTab.value][id];
       } else {
-        profile.value.collection[activeTab.value][id]--;
+        profile.value.collection[selectedTab.value][id]--;
       }
     }
   } else {
     if (increment) {
-      profile.value.collection[activeTab.value][id] = 1;
+      profile.value.collection[selectedTab.value][id] = 1;
     }
   }
 };
@@ -341,6 +338,7 @@ const changeUsername = async () => {
     profile.value.username = usernameEditText.value;
     await setDoc(docRef.value, profile.value);
     userData.value.username = usernameEditText.value;
+    setMeta(`Realm trove | ${usernameEditText.value}'s Items`);
     createToast("Username updated!", "green-vue");
     editingUsername.value = false;
   } catch (e) {
@@ -409,10 +407,10 @@ const searchItems = useDebounceFn(() => {
 
   if (showOnlyMissingItems.value) {
     filterConditions.push(
-      (item) => !(item.id in profile.value.collection[activeTab.value])
+      (item) => !(item.id in profile.value.collection[selectedTab.value])
     );
     filterConditionsBp.push(
-      (item) => !(item.id in profile.value.collection[activeTab.value])
+      (item) => !(item.id in profile.value.collection[selectedTab.value])
     );
   }
 

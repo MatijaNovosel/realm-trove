@@ -14,6 +14,7 @@
           @on-selected="$emit('update:loot-source', selectedLootSource)"
         />
         <items-custom-select
+          v-if="selectedTab !== TAB.BP"
           class="mt-4"
           placeholder="Item type"
           :options="optionsItemType"
@@ -30,9 +31,12 @@ import {
   SOURCE,
   SOURCE_NAMES,
   ITEM_TYPE,
-  ITEM_TYPE_NAMES
+  ITEM_TYPE_NAMES,
+  TAB
 } from "~/utils/constants";
 import { SelectItem } from "~/models";
+
+const selectedTab = useSelectedTab();
 
 const optionsLootSource = computed<SelectItem<number>[]>(() => {
   return Object.entries(SOURCE)
