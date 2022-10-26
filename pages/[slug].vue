@@ -53,7 +53,7 @@
               <PencilIcon v-else />
             </app-icon-button>
           </div>
-          <div class="grid grid-cols-12 my-5 px-5 md:px-3 items-center">
+          <div class="grid grid-cols-12 mb-5 md:mt-5 px-5 md:px-3 items-center">
             <div
               class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
             >

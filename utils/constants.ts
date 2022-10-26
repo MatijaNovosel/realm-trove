@@ -89,7 +89,8 @@ export enum SOURCE {
   TRADING,
   REALM_EVENT_BOSS,
   WETLANDS,
-  BLUEPRINT_ROTATION
+  BLUEPRINT_ROTATION,
+  BAZAAR
 }
 
 export const ITEM_DIMENSION = 46;
@@ -6423,6 +6424,63 @@ export const ITEMS_BP: ItemInfo[] = [
       ]
     },
     source: SOURCE.ORYXS_SANCTUARY
+  },
+  // Bazaar bps
+  {
+    id: 3077,
+    name: "Crystal Sword",
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -7084
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3078,
+    name: "Crystal Wand",
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -6992
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3079,
+    name: "Ray Katana",
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -1472
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3080,
+    name: "Spiteful Scutum",
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -2530
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
   }
 ];
 
@@ -6530,5 +6588,6 @@ export const SOURCE_NAMES = {
   [SOURCE.WOODLAND_LABYRINTH]: "Woodland Labyrinth",
   [SOURCE.REALM_EVENT_BOSS]: "Realm Event Boss",
   [SOURCE.WETLANDS]: "Wetlands",
-  [SOURCE.BLUEPRINT_ROTATION]: "Blueprint Rotation"
+  [SOURCE.BLUEPRINT_ROTATION]: "Blueprint Rotation",
+  [SOURCE.BAZAAR]: "Bazaar"
 };

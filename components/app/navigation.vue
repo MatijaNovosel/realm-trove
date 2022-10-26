@@ -50,6 +50,7 @@ const logOut = async () => {
       shortId: null,
       username: null
     };
+    loginTrigger.value = false;
     createToast("Signed out!", "green-vue");
   } catch (e) {
     createToast(e.message, "error");
