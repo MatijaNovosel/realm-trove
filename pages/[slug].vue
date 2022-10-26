@@ -391,8 +391,13 @@ const searchItems = useDebounceFn(() => {
     (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
   ];
 
+  const filterConditionsBp: ((item: ItemInfo) => boolean)[] = [
+    (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
+  ];
+
   if (lootSource.value.length !== 0) {
     filterConditions.push((item) => lootSource.value.includes(item.source));
+    filterConditionsBp.push((item) => lootSource.value.includes(item.source));
   }
 
   if (itemType.value.length !== 0) {
@@ -401,6 +406,9 @@ const searchItems = useDebounceFn(() => {
 
   if (showOnlyMissingItems.value) {
     filterConditions.push(
+      (item) => !(item.id in profile.value.collection[activeTab.value])
+    );
+    filterConditionsBp.push(
       (item) => !(item.id in profile.value.collection[activeTab.value])
     );
   }
@@ -413,7 +421,7 @@ const searchItems = useDebounceFn(() => {
       filterConditions.every((i) => i(item))
     ),
     [TAB.BP]: items[TAB.BP].filter((item) =>
-      filterConditions.every((i) => i(item))
+      filterConditionsBp.every((i) => i(item))
     )
   };
 }, 300);
