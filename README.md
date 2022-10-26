@@ -9,7 +9,7 @@
 
 ## Features
 
-- Loot tracking for both UT and ST items
+- Loot tracking for UT & ST items and blueprints
 - Export your loot via generated screenshot
 - Share your loot profile with a unique link
 
