@@ -436,7 +436,7 @@ export const ITEMS_UT: ItemInfo[] = [
     id: 203,
     name: "Orb of Conflict",
     type: ITEM_TYPE.ABILITY,
-    source: SOURCE.EVENT,
+    source: SOURCE.REALM_EVENT_BOSS,
     pos: {
       y: 0,
       x: -9338
