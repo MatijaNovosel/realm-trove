@@ -89,7 +89,8 @@ export enum SOURCE {
   WETLANDS,
   BLUEPRINT_ROTATION,
   BAZAAR,
-  GODLANDS_DUNGEONS
+  GODLANDS_DUNGEONS,
+  TINKERER
 }
 
 export const ITEM_DIMENSION = 46;
@@ -200,5 +201,6 @@ export const SOURCE_NAMES = {
   [SOURCE.WETLANDS]: "Wetlands",
   [SOURCE.BLUEPRINT_ROTATION]: "Blueprint Rotation",
   [SOURCE.BAZAAR]: "Bazaar",
-  [SOURCE.GODLANDS_DUNGEONS]: "Godlands Dungeons"
+  [SOURCE.GODLANDS_DUNGEONS]: "Godlands Dungeons",
+  [SOURCE.TINKERER]: "Tinkerer"
 };

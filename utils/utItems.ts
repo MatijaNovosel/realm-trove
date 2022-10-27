@@ -2881,5 +2881,195 @@ export const ITEMS_UT: ItemInfo[] = [
       y: 0,
       x: -13110
     }
+  },
+  {
+    id: 289,
+    name: "Aegis Armor",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -14398
+    }
+  },
+  {
+    id: 290,
+    name: "Squadron Sheathing",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -14444
+    }
+  },
+  {
+    id: 291,
+    name: "Judge's Robe",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -14490
+    }
+  },
+  {
+    id: 292,
+    name: "Cursed Spire Spell",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14628
+    }
+  },
+  {
+    id: 293,
+    name: "Siege Scepter",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14536
+    }
+  },
+  {
+    id: 294,
+    name: "Rage Claws",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14582
+    }
+  },
+  {
+    id: 295,
+    name: "Amaterasu",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14674
+    }
+  },
+  {
+    id: 296,
+    name: "Blacklight Artifice",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14720
+    }
+  },
+  {
+    id: 297,
+    name: "Demon Lord’s Skull",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14766
+    }
+  },
+  {
+    id: 298,
+    name: "Tome of the Tarnished Gods",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14858
+    }
+  },
+  {
+    id: 299,
+    name: "Prism of Shattered Light",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14812
+    }
+  },
+  {
+    id: 300,
+    name: "Cloak of the Darkened Sun",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14904
+    }
+  },
+  {
+    id: 301,
+    name: "Orb of Conquest",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14950
+    }
+  },
+  {
+    id: 302,
+    name: "Chief’s War Horn",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14996
+    }
+  },
+  {
+    id: 303,
+    name: "Seal of the Battle God",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -15042
+    }
+  },
+  {
+    id: 304,
+    name: "Helm of Exalted Might",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -15088
+    }
+  },
+  {
+    id: 305,
+    name: "Brutal Buckler",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -15134
+    }
+  },
+  {
+    id: 306,
+    name: "Mad Javelin",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -15180
+    }
+  },
+  {
+    id: 307,
+    name: "Tyrant’s Toxin",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -15226
+    }
   }
 ];
