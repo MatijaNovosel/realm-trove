@@ -2130,6 +2130,118 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.BAZAAR
   },
   {
+    id: 3095,
+    name: "Coral Ring",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -13478
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3096,
+    name: "Spirit Staff",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -10580
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3097,
+    name: "Captain's Ring",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -13248
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3098,
+    name: "Staff of Extreme Prejudice",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -5704
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3099,
+    name: "Wand of the Bulwark",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -7038
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3100,
+    name: "Experimental Ring",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -14352
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3101,
+    name: "Ronin's Wakizashi",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -14306
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
+    id: 3102,
+    name: "Cloak of the Planewalker",
+    bp: {
+      quality: BP_QUALITY.GREATER,
+      items: [
+        {
+          y: 0,
+          x: -5612
+        }
+      ]
+    },
+    source: SOURCE.BAZAAR
+  },
+  {
     id: 3081,
     name: "Sprite Wand, Staff of the Crystal Serpent, Fairy Ring, Snake Skin Armor",
     bp: {
@@ -2344,118 +2456,6 @@ export const ITEMS_BP: ItemInfo[] = [
         {
           y: 0,
           x: -14122
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3095,
-    name: "Coral Ring",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -13478
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3096,
-    name: "Spirit Staff",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -10580
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3097,
-    name: "Captain's Ring",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -13248
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3098,
-    name: "Staff of Extreme Prejudice",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -5704
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3099,
-    name: "Wand of the Bulwark",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -7038
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3100,
-    name: "Experimental Ring",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -14352
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3101,
-    name: "Ronin's Wakizashi",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -14306
-        }
-      ]
-    },
-    source: SOURCE.BAZAAR
-  },
-  {
-    id: 3102,
-    name: "Cloak of the Planewalker",
-    bp: {
-      quality: BP_QUALITY.GREATER,
-      items: [
-        {
-          y: 0,
-          x: -5612
         }
       ]
     },
