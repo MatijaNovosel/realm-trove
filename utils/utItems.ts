@@ -3071,5 +3071,65 @@ export const ITEMS_UT: ItemInfo[] = [
       y: 0,
       x: -15226
     }
+  },
+  {
+    id: 308,
+    name: "Henchman’s Claymore",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -15272
+    }
+  },
+  {
+    id: 309,
+    name: "Tyrant’s Wand",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -15318
+    }
+  },
+  {
+    id: 310,
+    name: "Predator Bow",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -15364
+    }
+  },
+  {
+    id: 311,
+    name: "Bounty Hunter’s Dagger",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -15410
+    }
+  },
+  {
+    id: 312,
+    name: "Oppressor’s Staff",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -15456
+    }
+  },
+  {
+    id: 313,
+    name: "Blade of the Assailant",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -15502
+    }
   }
 ];
