@@ -2103,16 +2103,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 358,
-    name: "Fungal Breastplate",
-    source: SOURCE.FUNGAL_CAVERN,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -18216
-    }
-  },
-  {
     id: 171,
     name: "Echoes Prism",
     source: SOURCE.CRYSTAL_CAVERN,
@@ -2483,16 +2473,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 205,
-    name: "Anatis Staff",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ORYXS_CHAMBER,
-    pos: {
-      y: 0,
-      x: -9430
-    }
-  },
-  {
     id: 207,
     name: "Useless Katana",
     type: ITEM_TYPE.WEAPON,
@@ -2820,6 +2800,16 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -11684
+    }
+  },
+  {
+    id: 205,
+    name: "Anatis Staff",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ORYXS_CHAMBER,
+    pos: {
+      y: 0,
+      x: -9430
     }
   },
   {
@@ -3879,7 +3869,7 @@ export const ITEMS_UT: ItemInfo[] = [
     type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
-      x: -18772
+      x: -18722
     }
   },
   {
