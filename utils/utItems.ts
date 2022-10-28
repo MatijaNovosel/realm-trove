@@ -203,53 +203,493 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 21,
-    name: "Quiver of Thunder",
-    source: SOURCE.EVENT,
+    id: 94,
+    name: "Peacekeeper",
+    source: SOURCE.THE_SHATTERS,
     type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
-      x: -966
+      x: -4324
     }
   },
   {
-    id: 22,
-    name: "Thousand Shot",
-    source: SOURCE.PUPPET_MASTERS_ENCORE,
+    id: 96,
+    name: "Noble Mandolin",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -4416
+    }
+  },
+  {
+    id: 97,
+    name: "Polarity Poison",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -4462
+    }
+  },
+  {
+    id: 99,
+    name: "Primal Arcana",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -4554
+    }
+  },
+  {
+    id: 100,
+    name: "Valor",
+    source: SOURCE.THE_SHATTERS,
     type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
-      x: -1012
+      x: -4600
     }
   },
   {
-    id: 54,
-    name: "Prism of Dire Instability",
-    source: SOURCE.PUPPET_MASTERS_ENCORE,
+    id: 98,
+    name: "Sentinel's Sidearm",
+    source: SOURCE.THE_SHATTERS,
     type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
-      x: -2484
+      x: -4508
     }
   },
   {
-    id: 93,
-    name: "Coral Bow",
-    source: SOURCE.OCEAN_TRENCH,
+    id: 95,
+    name: "Vanguard's Visage",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -4370
+    }
+  },
+  {
+    id: 101,
+    name: "Dusky Catalyst",
+    source: SOURCE.THE_SHATTERS,
     type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
-      x: -4278
+      x: -4646
     }
   },
   {
-    id: 23,
-    name: "Coral Venom Trap",
-    source: SOURCE.OCEAN_TRENCH,
+    id: 102,
+    name: "Warmonger",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -4692
+    }
+  },
+  {
+    id: 103,
+    name: "Mantle of the Monarchy",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -4738
+    }
+  },
+  {
+    id: 104,
+    name: "Vest of Abandoned Shadows",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -4784
+    }
+  },
+  {
+    id: 105,
+    name: "Royal Guard's Cuirass",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -4830
+    }
+  },
+  {
+    id: 106,
+    name: "The Forgotten Crown",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -4876
+    }
+  },
+  {
+    id: 107,
+    name: "The Twilight Gemstone",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -4922
+    }
+  },
+  {
+    id: 108,
+    name: "Bracer of the Guardian",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -4968
+    }
+  },
+  {
+    id: 404,
+    name: "The Forgotten Ring",
+    source: SOURCE.THE_SHATTERS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -14168
+    }
+  },
+  {
+    id: 192,
+    name: "Chrysalis of Eternity",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.THE_SHATTERS,
+    pos: {
+      y: 0,
+      x: -8832
+    }
+  },
+  {
+    id: 71,
+    name: "Staff of Unholy Sacrifice",
+    source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -3266
+    }
+  },
+  {
+    id: 78,
+    name: "Skull of Corrupted Souls",
+    source: SOURCE.CULTIST_HIDEOUT,
     type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
-      x: -1058
+      x: -3588
+    }
+  },
+  {
+    id: 79,
+    name: "Ritual Robe",
+    source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -3634
+    }
+  },
+  {
+    id: 80,
+    name: "Bloodshed Ring",
+    source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -3680
+    }
+  },
+  {
+    id: 179,
+    name: "Burial Blades",
+    source: SOURCE.CULTIST_HIDEOUT,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -8234
+    }
+  },
+  {
+    id: 73,
+    name: "Bow of the Void",
+    source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -3358
+    }
+  },
+  {
+    id: 74,
+    name: "Quiver of the Shadows",
+    source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -3404
+    }
+  },
+  {
+    id: 75,
+    name: "Armor of Nil",
+    source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -3450
+    }
+  },
+  {
+    id: 76,
+    name: "Sourcestone",
+    source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -3496
+    }
+  },
+  {
+    id: 77,
+    name: "Omnipotence Ring",
+    source: SOURCE.THE_VOID,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -3542
+    }
+  },
+  {
+    id: 81,
+    name: "Sword of the Colossus",
+    source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -3726
+    }
+  },
+  {
+    id: 70,
+    name: "Marble Seal",
+    source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -3220
+    }
+  },
+  {
+    id: 82,
+    name: "Breastplate of New Life",
+    source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -3772
+    }
+  },
+  {
+    id: 83,
+    name: "Magical Lodestone",
+    source: SOURCE.LOST_HALLS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -3818
+    }
+  },
+  {
+    id: 168,
+    name: "Tome of the Mushroom Tribes",
+    source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7728
+    }
+  },
+  {
+    id: 169,
+    name: "Sporous Spray Spell",
+    source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7774
+    }
+  },
+  {
+    id: 170,
+    name: "Fungal Breastplate",
+    source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -7820
+    }
+  },
+  {
+    id: 175,
+    name: "Cave Dweller Trap",
+    source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -8050
+    }
+  },
+  {
+    id: 258,
+    name: "Crystallized Worm Spellblade",
+    source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -11868
+    }
+  },
+  {
+    id: 407,
+    name: "Ring of Decades",
+    source: SOURCE.FUNGAL_CAVERN,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -20424
+    }
+  },
+  {
+    id: 171,
+    name: "Echoes Prism",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7866
+    }
+  },
+  {
+    id: 172,
+    name: "Crystal Shield",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7912
+    }
+  },
+  {
+    id: 174,
+    name: "Crystallised Mist",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -8004
+    }
+  },
+  {
+    id: 176,
+    name: "Cloak of Refraction",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -8096
+    }
+  },
+  {
+    id: 177,
+    name: "Fractured Gemstone Wakizashi",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -8142
+    }
+  },
+  {
+    id: 178,
+    name: "Star of Enlightenment",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -8188
+    }
+  },
+  {
+    id: 180,
+    name: "Fractal Blades",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -8280
+    }
+  },
+  {
+    id: 119,
+    name: "Irradiance Sheath",
+    source: SOURCE.CRYSTAL_CAVERN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -5474
+    }
+  },
+  {
+    id: 65,
+    name: "Queen's Stinger",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -2990
+    }
+  },
+  {
+    id: 66,
+    name: "Hivemaster Helm",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -3036
+    }
+  },
+  {
+    id: 151,
+    name: "Beekeeper's Flamethrower",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -6946
+    }
+  },
+  {
+    id: 158,
+    name: "Hivemind Mace",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7268
     }
   },
   {
@@ -270,6 +710,16 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -920
+    }
+  },
+  {
+    id: 21,
+    name: "Quiver of Thunder",
+    source: SOURCE.REALM_EVENT_BOSS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -966
     }
   },
   {
@@ -550,6 +1000,126 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -10258
+    }
+  },
+  {
+    id: 52,
+    name: "Void Blade",
+    source: SOURCE.TOXIC_SEWERS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -2392
+    }
+  },
+  {
+    id: 53,
+    name: "Murky Toxin",
+    source: SOURCE.TOXIC_SEWERS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -2438
+    }
+  },
+  {
+    id: 55,
+    name: "Spiteful Scutum",
+    source: SOURCE.ORYX_CASTLE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -2530
+    }
+  },
+  {
+    id: 261,
+    name: "Ancient Stone Sword",
+    source: SOURCE.ORYX_CASTLE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -12006
+    }
+  },
+  {
+    id: 56,
+    name: "Cnidaria Rod",
+    source: SOURCE.CNIDARIAN_REEF,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -2576
+    }
+  },
+  {
+    id: 57,
+    name: "Bottled Medusozoan",
+    source: SOURCE.CNIDARIAN_REEF,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -2622
+    }
+  },
+  {
+    id: 59,
+    name: "Arcane Rapier",
+    source: SOURCE.ANCIENT_RUINS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -2714
+    }
+  },
+  {
+    id: 405,
+    name: "Sandstone Seal",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14076
+    }
+  },
+  {
+    id: 406,
+    name: "Amber Encrusted Helmet",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14122
+    }
+  },
+  {
+    id: 60,
+    name: "Wand of the Fallen",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -2760
+    }
+  },
+  {
+    id: 116,
+    name: "Kaiken",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -5336
+    }
+  },
+  {
+    id: 161,
+    name: "Orb of Aether",
+    source: SOURCE.MOUNTAIN_TEMPLE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7406
     }
   },
   {
@@ -843,436 +1413,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 44,
-    name: "Pirate King's Cutlass",
-    source: SOURCE.DEADWATER_DOCKS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -2024
-    }
-  },
-  {
-    id: 49,
-    name: "Wavecrest Concertina",
-    source: SOURCE.DEADWATER_DOCKS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2254
-    }
-  },
-  {
-    id: 45,
-    name: "Doku No Ken",
-    source: SOURCE.THE_CRAWLING_DEPTHS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -2070
-    }
-  },
-  {
-    id: 157,
-    name: "Mace of the Depths",
-    source: SOURCE.THE_CRAWLING_DEPTHS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7222
-    }
-  },
-  {
-    id: 48,
-    name: "Harlequin Armor",
-    source: SOURCE.PUPPET_MASTERS_THEATRE,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -2208
-    }
-  },
-  {
-    id: 253,
-    name: "Prism of Dancing Swords",
-    source: SOURCE.PUPPET_MASTERS_THEATRE,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -11638
-    }
-  },
-  {
-    id: 50,
-    name: "Snake Charmer Pungi",
-    source: SOURCE.SNAKE_PIT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2300
-    }
-  },
-  {
-    id: 153,
-    name: "Wand of the Bulwark",
-    source: SOURCE.SNAKE_PIT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -7038
-    }
-  },
-  {
-    id: 351,
-    name: "Snakeskin Shield",
-    source: SOURCE.SNAKE_PIT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -13938
-    }
-  },
-  {
-    id: 355,
-    name: "Snakeskin Armor",
-    source: SOURCE.SNAKE_PIT,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -14030
-    }
-  },
-  {
-    id: 359,
-    name: "Snake Eye Ring",
-    source: SOURCE.SNAKE_PIT,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -14214
-    }
-  },
-  {
-    id: 52,
-    name: "Void Blade",
-    source: SOURCE.TOXIC_SEWERS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -2392
-    }
-  },
-  {
-    id: 53,
-    name: "Murky Toxin",
-    source: SOURCE.TOXIC_SEWERS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2438
-    }
-  },
-  {
-    id: 55,
-    name: "Spiteful Scutum",
-    source: SOURCE.ORYX_CASTLE,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2530
-    }
-  },
-  {
-    id: 56,
-    name: "Cnidaria Rod",
-    source: SOURCE.CNIDARIAN_REEF,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2576
-    }
-  },
-  {
-    id: 57,
-    name: "Bottled Medusozoan",
-    source: SOURCE.CNIDARIAN_REEF,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2622
-    }
-  },
-  {
-    id: 59,
-    name: "Arcane Rapier",
-    source: SOURCE.ANCIENT_RUINS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -2714
-    }
-  },
-  {
-    id: 60,
-    name: "Wand of the Fallen",
-    source: SOURCE.MOUNTAIN_TEMPLE,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -2760
-    }
-  },
-  {
-    id: 116,
-    name: "Kaiken",
-    source: SOURCE.MOUNTAIN_TEMPLE,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -5336
-    }
-  },
-  {
-    id: 161,
-    name: "Orb of Aether",
-    source: SOURCE.MOUNTAIN_TEMPLE,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7406
-    }
-  },
-  {
-    id: 62,
-    name: "Apocalypse Feather",
-    source: SOURCE.ORYXS_CHAMBER,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -2852
-    }
-  },
-  {
-    id: 63,
-    name: "Helm of the Swift Bunny",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2898
-    }
-  },
-  {
-    id: 64,
-    name: "Vitamin Buster",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -2944
-    }
-  },
-  {
-    id: 339,
-    name: "Wand of Egg-cellence",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -16422
-    }
-  },
-  {
-    id: 332,
-    name: "Dagger of the Hasteful Rabbit",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -18906
-    }
-  },
-  {
-    id: 65,
-    name: "Queen's Stinger",
-    source: SOURCE.THE_NEST,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -2990
-    }
-  },
-  {
-    id: 66,
-    name: "Hivemaster Helm",
-    source: SOURCE.THE_NEST,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -3036
-    }
-  },
-  {
-    id: 151,
-    name: "Beekeeper's Flamethrower",
-    source: SOURCE.THE_NEST,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -6946
-    }
-  },
-  {
-    id: 158,
-    name: "Hivemind Mace",
-    source: SOURCE.THE_NEST,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7268
-    }
-  },
-  {
-    id: 71,
-    name: "Staff of Unholy Sacrifice",
-    source: SOURCE.CULTIST_HIDEOUT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -3266
-    }
-  },
-  {
-    id: 78,
-    name: "Skull of Corrupted Souls",
-    source: SOURCE.CULTIST_HIDEOUT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -3588
-    }
-  },
-  {
-    id: 79,
-    name: "Ritual Robe",
-    source: SOURCE.CULTIST_HIDEOUT,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -3634
-    }
-  },
-  {
-    id: 80,
-    name: "Bloodshed Ring",
-    source: SOURCE.CULTIST_HIDEOUT,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -3680
-    }
-  },
-  {
-    id: 179,
-    name: "Burial Blades",
-    source: SOURCE.CULTIST_HIDEOUT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -8234
-    }
-  },
-  {
-    id: 73,
-    name: "Bow of the Void",
-    source: SOURCE.THE_VOID,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -3358
-    }
-  },
-  {
-    id: 74,
-    name: "Quiver of the Shadows",
-    source: SOURCE.THE_VOID,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -3404
-    }
-  },
-  {
-    id: 75,
-    name: "Armor of Nil",
-    source: SOURCE.THE_VOID,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -3450
-    }
-  },
-  {
-    id: 76,
-    name: "Sourcestone",
-    source: SOURCE.THE_VOID,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -3496
-    }
-  },
-  {
-    id: 77,
-    name: "Omnipotence Ring",
-    source: SOURCE.THE_VOID,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -3542
-    }
-  },
-  {
-    id: 81,
-    name: "Sword of the Colossus",
-    source: SOURCE.LOST_HALLS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -3726
-    }
-  },
-  {
-    id: 70,
-    name: "Marble Seal",
-    source: SOURCE.LOST_HALLS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -3220
-    }
-  },
-  {
-    id: 82,
-    name: "Breastplate of New Life",
-    source: SOURCE.LOST_HALLS,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -3772
-    }
-  },
-  {
-    id: 83,
-    name: "Magical Lodestone",
-    source: SOURCE.LOST_HALLS,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -3818
-    }
-  },
-  {
     id: 84,
     name: "Shadow Serpent Sidearm",
     source: SOURCE.THE_THIRD_DIMENSION,
@@ -1340,166 +1480,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -4232
-    }
-  },
-  {
-    id: 94,
-    name: "Peacekeeper",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -4324
-    }
-  },
-  {
-    id: 96,
-    name: "Noble Mandolin",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -4416
-    }
-  },
-  {
-    id: 97,
-    name: "Polarity Poison",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -4462
-    }
-  },
-  {
-    id: 99,
-    name: "Primal Arcana",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -4554
-    }
-  },
-  {
-    id: 100,
-    name: "Valor",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -4600
-    }
-  },
-  {
-    id: 98,
-    name: "Sentinel's Sidearm",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -4508
-    }
-  },
-  {
-    id: 95,
-    name: "Vanguard's Visage",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -4370
-    }
-  },
-  {
-    id: 101,
-    name: "Dusky Catalyst",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -4646
-    }
-  },
-  {
-    id: 102,
-    name: "Warmonger",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -4692
-    }
-  },
-  {
-    id: 103,
-    name: "Mantle of the Monarchy",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -4738
-    }
-  },
-  {
-    id: 104,
-    name: "Vest of Abandoned Shadows",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -4784
-    }
-  },
-  {
-    id: 105,
-    name: "Royal Guard's Cuirass",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -4830
-    }
-  },
-  {
-    id: 106,
-    name: "The Forgotten Crown",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -4876
-    }
-  },
-  {
-    id: 107,
-    name: "The Twilight Gemstone",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -4922
-    }
-  },
-  {
-    id: 108,
-    name: "Bracer of the Guardian",
-    source: SOURCE.THE_SHATTERS,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -4968
-    }
-  },
-  {
-    id: 192,
-    name: "Chrysalis of Eternity",
-    type: ITEM_TYPE.RING,
-    source: SOURCE.THE_SHATTERS,
-    pos: {
-      y: 0,
-      x: -8832
     }
   },
   {
@@ -1590,6 +1570,526 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -14306
+    }
+  },
+  {
+    id: 44,
+    name: "Pirate King's Cutlass",
+    source: SOURCE.DEADWATER_DOCKS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -2024
+    }
+  },
+  {
+    id: 49,
+    name: "Wavecrest Concertina",
+    source: SOURCE.DEADWATER_DOCKS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -2254
+    }
+  },
+  {
+    id: 45,
+    name: "Doku No Ken",
+    source: SOURCE.THE_CRAWLING_DEPTHS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -2070
+    }
+  },
+  {
+    id: 157,
+    name: "Mace of the Depths",
+    source: SOURCE.THE_CRAWLING_DEPTHS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7222
+    }
+  },
+  {
+    id: 48,
+    name: "Harlequin Armor",
+    source: SOURCE.PUPPET_MASTERS_THEATRE,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -2208
+    }
+  },
+  {
+    id: 253,
+    name: "Prism of Dancing Swords",
+    source: SOURCE.PUPPET_MASTERS_THEATRE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -11638
+    }
+  },
+  {
+    id: 22,
+    name: "Thousand Shot",
+    source: SOURCE.PUPPET_MASTERS_ENCORE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -1012
+    }
+  },
+  {
+    id: 54,
+    name: "Prism of Dire Instability",
+    source: SOURCE.PUPPET_MASTERS_ENCORE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -2484
+    }
+  },
+  {
+    id: 152,
+    name: "Crystal Wand",
+    source: SOURCE.REALM,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -6992
+    }
+  },
+  {
+    id: 154,
+    name: "Crystal Sword",
+    source: SOURCE.REALM,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -7084
+    }
+  },
+  {
+    id: 159,
+    name: "Crystal Mace",
+    source: SOURCE.REALM,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7314
+    }
+  },
+  {
+    id: 155,
+    name: "Demon Blade",
+    source: SOURCE.ABYSS_OF_DEMONS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -7130
+    }
+  },
+  {
+    id: 115,
+    name: "Volcanic Sheath",
+    source: SOURCE.ABYSS_OF_DEMONS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -5290
+    }
+  },
+  {
+    id: 166,
+    name: "Sealed Crystal Skull",
+    source: SOURCE.SECLUDED_THICKET,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7636
+    }
+  },
+  {
+    id: 167,
+    name: "Penetrating Blast Spell",
+    source: SOURCE.SECLUDED_THICKET,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -7682
+    }
+  },
+  {
+    id: 233,
+    name: "Tezcacoatl's Tail",
+    source: SOURCE.SECLUDED_THICKET,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -10718
+    }
+  },
+  {
+    id: 357,
+    name: "Tlatoani's Shroud",
+    source: SOURCE.SECLUDED_THICKET,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -19228
+    }
+  },
+  {
+    id: 93,
+    name: "Coral Bow",
+    source: SOURCE.OCEAN_TRENCH,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -4278
+    }
+  },
+  {
+    id: 23,
+    name: "Coral Venom Trap",
+    source: SOURCE.OCEAN_TRENCH,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -1058
+    }
+  },
+  {
+    id: 429,
+    name: "Coral Silk Armor",
+    source: SOURCE.OCEAN_TRENCH,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -20516
+    }
+  },
+  {
+    id: 430,
+    name: "Coral Ring",
+    source: SOURCE.OCEAN_TRENCH,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -13478
+    }
+  },
+  {
+    id: 50,
+    name: "Snake Charmer Pungi",
+    source: SOURCE.SNAKE_PIT,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -2300
+    }
+  },
+  {
+    id: 153,
+    name: "Wand of the Bulwark",
+    source: SOURCE.SNAKE_PIT,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -7038
+    }
+  },
+  {
+    id: 351,
+    name: "Snakeskin Shield",
+    source: SOURCE.SNAKE_PIT,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -13938
+    }
+  },
+  {
+    id: 355,
+    name: "Snakeskin Armor",
+    source: SOURCE.SNAKE_PIT,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -14030
+    }
+  },
+  {
+    id: 359,
+    name: "Snake Eye Ring",
+    source: SOURCE.SNAKE_PIT,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -14214
+    }
+  },
+  {
+    id: 314,
+    name: "Poison Fang Dagger",
+    source: SOURCE.SPIDER_DEN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -13800
+    }
+  },
+  {
+    id: 315,
+    name: "Spider Shuriken",
+    source: SOURCE.SPIDER_DEN,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -14260
+    }
+  },
+  {
+    id: 316,
+    name: "Spider's Eye Ring",
+    source: SOURCE.SPIDER_DEN,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -15548
+    }
+  },
+  {
+    id: 346,
+    name: "Staff of the Crystal Serpent",
+    source: SOURCE.FORBIDDEN_JUNGLE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -13570
+    }
+  },
+  {
+    id: 347,
+    name: "Cracked Crystal Skull",
+    source: SOURCE.FORBIDDEN_JUNGLE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -13616
+    }
+  },
+  {
+    id: 348,
+    name: "Robe of the Tlatoani",
+    source: SOURCE.FORBIDDEN_JUNGLE,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -13524
+    }
+  },
+  {
+    id: 349,
+    name: "Crystal Bone Ring",
+    source: SOURCE.FORBIDDEN_JUNGLE,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -13662
+    }
+  },
+  {
+    id: 230,
+    name: "Spirit Staff",
+    source: SOURCE.MAGIC_WOODS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -10580
+    }
+  },
+  {
+    id: 231,
+    name: "Enchantment Orb",
+    source: SOURCE.MAGIC_WOODS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -10626
+    }
+  },
+  {
+    id: 356,
+    name: "Woodland Robe",
+    source: SOURCE.MAGIC_WOODS,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -13846
+    }
+  },
+  {
+    id: 361,
+    name: "Fairy Ring",
+    source: SOURCE.MAGIC_WOODS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -13892
+    }
+  },
+  {
+    id: 352,
+    name: "Orb of Sweet Demise",
+    source: SOURCE.THE_HIVE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -13754
+    }
+  },
+  {
+    id: 353,
+    name: "Honey Scepter",
+    source: SOURCE.THE_HIVE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -13708
+    }
+  },
+  {
+    id: 194,
+    name: "Fire Blade",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ALIENS,
+    pos: {
+      y: 0,
+      x: -8924
+    }
+  },
+  {
+    id: 195,
+    name: "Moonbeam Blade",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ALIENS,
+    pos: {
+      y: 0,
+      x: -8970
+    }
+  },
+  {
+    id: 196,
+    name: "Foramite Staff",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ALIENS,
+    pos: {
+      y: 0,
+      x: -9016
+    }
+  },
+  {
+    id: 197,
+    name: "Comet of Calamity",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ALIENS,
+    pos: {
+      y: 0,
+      x: -9062
+    }
+  },
+  {
+    id: 198,
+    name: "Gaseous Glaive",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ALIENS,
+    pos: {
+      y: 0,
+      x: -9108
+    }
+  },
+  {
+    id: 199,
+    name: "Acidic Slasher",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ALIENS,
+    pos: {
+      y: 0,
+      x: -9154
+    }
+  },
+  {
+    id: 202,
+    name: "Corrosion Cutter",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ALIENS,
+    pos: {
+      y: 0,
+      x: -9292
+    }
+  },
+  {
+    id: 243,
+    name: "Blazon Bow",
+    source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -11178
+    }
+  },
+  {
+    id: 244,
+    name: "Sun's Judgement",
+    source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -11224
+    }
+  },
+  {
+    id: 245,
+    name: "Warlord Wand",
+    source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -11270
+    }
+  },
+  {
+    id: 246,
+    name: "Snowblind Wand",
+    source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -11316
+    }
+  },
+  {
+    id: 286,
+    name: "Dueling Daggers",
+    source: SOURCE.ALIENS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -13156
+    }
+  },
+  {
+    id: 424,
+    name: "Locked Reactor",
+    source: SOURCE.ALIENS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -20470
     }
   },
   {
@@ -1863,83 +2363,13 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 148,
-    name: "Gem of Tenderness",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -6808
-    }
-  },
-  {
-    id: 149,
-    name: "Gem of Adoration",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -6854
-    }
-  },
-  {
-    id: 150,
-    name: "Soulful Affection",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -6900
-    }
-  },
-  {
-    id: 152,
-    name: "Crystal Wand",
-    source: SOURCE.REALM,
+    id: 207,
+    name: "Useless Katana",
     type: ITEM_TYPE.WEAPON,
+    source: SOURCE.EVENT,
     pos: {
       y: 0,
-      x: -6992
-    }
-  },
-  {
-    id: 154,
-    name: "Crystal Sword",
-    source: SOURCE.REALM,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -7084
-    }
-  },
-  {
-    id: 159,
-    name: "Crystal Mace",
-    source: SOURCE.REALM,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7314
-    }
-  },
-  {
-    id: 155,
-    name: "Demon Blade",
-    source: SOURCE.ABYSS_OF_DEMONS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -7130
-    }
-  },
-  {
-    id: 115,
-    name: "Volcanic Sheath",
-    source: SOURCE.ABYSS_OF_DEMONS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -5290
+      x: -9522
     }
   },
   {
@@ -2013,176 +2443,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 166,
-    name: "Sealed Crystal Skull",
-    source: SOURCE.SECLUDED_THICKET,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7636
-    }
-  },
-  {
-    id: 167,
-    name: "Penetrating Blast Spell",
-    source: SOURCE.SECLUDED_THICKET,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7682
-    }
-  },
-  {
-    id: 233,
-    name: "Tezcacoatl's Tail",
-    source: SOURCE.SECLUDED_THICKET,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -10718
-    }
-  },
-  {
-    id: 357,
-    name: "Tlatoani's Shroud",
-    source: SOURCE.SECLUDED_THICKET,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -19228
-    }
-  },
-  {
-    id: 168,
-    name: "Tome of the Mushroom Tribes",
-    source: SOURCE.FUNGAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7728
-    }
-  },
-  {
-    id: 169,
-    name: "Sporous Spray Spell",
-    source: SOURCE.FUNGAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7774
-    }
-  },
-  {
-    id: 170,
-    name: "Fungal Breastplate",
-    source: SOURCE.FUNGAL_CAVERN,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -7820
-    }
-  },
-  {
-    id: 175,
-    name: "Cave Dweller Trap",
-    source: SOURCE.FUNGAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -8050
-    }
-  },
-  {
-    id: 258,
-    name: "Crystallized Worm Spellblade",
-    source: SOURCE.FUNGAL_CAVERN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -11868
-    }
-  },
-  {
-    id: 171,
-    name: "Echoes Prism",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7866
-    }
-  },
-  {
-    id: 172,
-    name: "Crystal Shield",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -7912
-    }
-  },
-  {
-    id: 174,
-    name: "Crystallised Mist",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -8004
-    }
-  },
-  {
-    id: 176,
-    name: "Cloak of Refraction",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -8096
-    }
-  },
-  {
-    id: 177,
-    name: "Fractured Gemstone Wakizashi",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -8142
-    }
-  },
-  {
-    id: 178,
-    name: "Star of Enlightenment",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -8188
-    }
-  },
-  {
-    id: 180,
-    name: "Fractal Blades",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -8280
-    }
-  },
-  {
-    id: 119,
-    name: "Irradiance Sheath",
-    source: SOURCE.CRYSTAL_CAVERN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -5474
-    }
-  },
-  {
     id: 181,
     name: "Perennial Cranium",
     source: SOURCE.BELLADONNAS_GARDEN,
@@ -2203,9 +2463,70 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 317,
+    name: "Heartfind Dagger",
+    source: SOURCE.BELLADONNAS_GARDEN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -16284
+    }
+  },
+  {
+    id: 318,
+    name: "Cupid's Bow",
+    source: SOURCE.BELLADONNAS_GARDEN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -16376
+    }
+  },
+  {
+    id: 319,
+    name: "Staff of Adoration",
+    source: SOURCE.BELLADONNAS_GARDEN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -16192
+    }
+  },
+  {
+    id: 320,
+    name: "Wand of Budding Romance",
+    source: SOURCE.BELLADONNAS_GARDEN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -16238
+    }
+  },
+  {
+    id: 321,
+    name: "Vinesword",
+    source: SOURCE.BELLADONNAS_GARDEN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -16330
+    }
+  },
+  {
+    id: 322,
+    name: "Diamond Bladed Katana",
+    source: SOURCE.BELLADONNAS_GARDEN,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -16146
+    }
+  },
+  {
     id: 182,
     name: "Clover Bow",
     source: SOURCE.RAINBOW_ROAD,
+    vanity: true,
     type: ITEM_TYPE.WEAPON,
     pos: {
       y: 0,
@@ -2217,6 +2538,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Sword of the Rainbow's End",
     source: SOURCE.RAINBOW_ROAD,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -8418
@@ -2227,6 +2549,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Katana of Good Fortune",
     source: SOURCE.RAINBOW_ROAD,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -8464
@@ -2237,229 +2560,54 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Clover Star",
     source: SOURCE.RAINBOW_ROAD,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -8510
     }
   },
   {
-    id: 186,
-    name: "Evergreen Dagger",
+    id: 235,
+    name: "Rainbow Rod",
     source: SOURCE.RAINBOW_ROAD,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -8556
+      x: -10810
     }
   },
   {
-    id: 187,
-    name: "Sleigh Bell Staff",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -8602
-    }
-  },
-  {
-    id: 188,
-    name: "Brass Chamberstick",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -8648
-    }
-  },
-  {
-    id: 189,
-    name: "Cheerful Chipper",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -8694
-    }
-  },
-  {
-    id: 190,
-    name: "Candy Katana",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -8740
-    }
-  },
-  {
-    id: 191,
-    name: "Garland Bow",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -8786
-    }
-  },
-  {
-    id: 194,
-    name: "Fire Blade",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ALIENS,
-    pos: {
-      y: 0,
-      x: -8924
-    }
-  },
-  {
-    id: 195,
-    name: "Moonbeam Blade",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ALIENS,
-    pos: {
-      y: 0,
-      x: -8970
-    }
-  },
-  {
-    id: 196,
-    name: "Foramite Staff",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ALIENS,
-    pos: {
-      y: 0,
-      x: -9016
-    }
-  },
-  {
-    id: 197,
-    name: "Comet of Calamity",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ALIENS,
-    pos: {
-      y: 0,
-      x: -9062
-    }
-  },
-  {
-    id: 198,
-    name: "Gaseous Glaive",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ALIENS,
-    pos: {
-      y: 0,
-      x: -9108
-    }
-  },
-  {
-    id: 199,
-    name: "Acidic Slasher",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ALIENS,
-    pos: {
-      y: 0,
-      x: -9154
-    }
-  },
-  {
-    id: 202,
-    name: "Corrosion Cutter",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ALIENS,
-    pos: {
-      y: 0,
-      x: -9292
-    }
-  },
-  {
-    id: 243,
-    name: "Blazon Bow",
-    source: SOURCE.ALIENS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -11178
-    }
-  },
-  {
-    id: 244,
-    name: "Sun's Judgement",
-    source: SOURCE.ALIENS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -11224
-    }
-  },
-  {
-    id: 245,
-    name: "Warlord Wand",
-    source: SOURCE.ALIENS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -11270
-    }
-  },
-  {
-    id: 246,
-    name: "Snowblind Wand",
-    source: SOURCE.ALIENS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -11316
-    }
-  },
-  {
-    id: 286,
-    name: "Dueling Daggers",
-    source: SOURCE.ALIENS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -13156
-    }
-  },
-  {
-    id: 200,
-    name: "Helm of the Jack-o'-naut",
+    id: 236,
+    name: "Painbow",
+    source: SOURCE.RAINBOW_ROAD,
     type: ITEM_TYPE.ABILITY,
-    source: SOURCE.EVENT,
+    vanity: true,
     pos: {
       y: 0,
-      x: -9200
+      x: -10856
     }
   },
   {
-    id: 206,
-    name: "Phantasm Dirk",
+    id: 237,
+    name: "Prismatic Slasher",
+    source: SOURCE.RAINBOW_ROAD,
     type: ITEM_TYPE.WEAPON,
-    source: SOURCE.EVENT,
+    vanity: true,
     pos: {
       y: 0,
-      x: -9476
+      x: -10902
     }
   },
   {
-    id: 248,
-    name: "Trap of the Blood Spirit",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
+    id: 238,
+    name: "Staff of the Saint",
+    source: SOURCE.RAINBOW_ROAD,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -11408
-    }
-  },
-  {
-    id: 249,
-    name: "Orb of Terror",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -11454
+      x: -10948
     }
   },
   {
@@ -2470,16 +2618,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -9384
-    }
-  },
-  {
-    id: 207,
-    name: "Useless Katana",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.EVENT,
-    pos: {
-      y: 0,
-      x: -9522
     }
   },
   {
@@ -2663,56 +2801,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 229,
-    name: "Heart of Gold Prism",
-    type: ITEM_TYPE.ABILITY,
-    source: SOURCE.EVENT,
-    pos: {
-      y: 0,
-      x: -10534
-    }
-  },
-  {
-    id: 230,
-    name: "Spirit Staff",
-    source: SOURCE.MAGIC_WOODS,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -10580
-    }
-  },
-  {
-    id: 231,
-    name: "Enchantment Orb",
-    source: SOURCE.MAGIC_WOODS,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -10626
-    }
-  },
-  {
-    id: 356,
-    name: "Woodland Robe",
-    source: SOURCE.MAGIC_WOODS,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -13846
-    }
-  },
-  {
-    id: 361,
-    name: "Fairy Ring",
-    source: SOURCE.MAGIC_WOODS,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -13892
-    }
-  },
-  {
     id: 234,
     name: "Sword of Illumination",
     source: SOURCE.ABYSS_OF_DEMONS,
@@ -2730,46 +2818,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -12880
-    }
-  },
-  {
-    id: 235,
-    name: "Rainbow Rod",
-    source: SOURCE.RAINBOW_ROAD,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -10810
-    }
-  },
-  {
-    id: 236,
-    name: "Painbow",
-    source: SOURCE.RAINBOW_ROAD,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -10856
-    }
-  },
-  {
-    id: 237,
-    name: "Prismatic Slasher",
-    source: SOURCE.RAINBOW_ROAD,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -10902
-    }
-  },
-  {
-    id: 238,
-    name: "Staff of the Saint",
-    source: SOURCE.RAINBOW_ROAD,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -10948
     }
   },
   {
@@ -2797,6 +2845,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Chicken Leg of Doom",
     source: SOURCE.ORYXS_SANCTUARY,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -11684
@@ -2807,9 +2856,21 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Anatis Staff",
     type: ITEM_TYPE.WEAPON,
     source: SOURCE.ORYXS_CHAMBER,
+    vanity: true,
     pos: {
       y: 0,
       x: -9430
+    }
+  },
+  {
+    id: 62,
+    name: "Apocalypse Feather",
+    source: SOURCE.ORYXS_CHAMBER,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -2852
     }
   },
   {
@@ -2833,16 +2894,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 259,
-    name: "Sakura Wakizashi",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -11914
-    }
-  },
-  {
     id: 260,
     name: "Botany Book",
     source: SOURCE.EVENT,
@@ -2850,26 +2901,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -11960
-    }
-  },
-  {
-    id: 261,
-    name: "Ancient Stone Sword",
-    source: SOURCE.ORYX_CASTLE,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -12006
-    }
-  },
-  {
-    id: 264,
-    name: "Sunny Side Bow",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -12144
     }
   },
   {
@@ -2993,6 +3024,39 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 399,
+    name: "Cuirass of the Black Blade",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19826
+    }
+  },
+  {
+    id: 400,
+    name: "Pirate Queen's Brigandine",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19872
+    }
+  },
+  {
+    id: 401,
+    name: "Wanderer's Cape",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -20010
+    }
+  },
+  {
     id: 277,
     name: "Sunken Fire Opal Ring",
     source: SOURCE.HIDDEN_INTERREGNUM,
@@ -3020,6 +3084,28 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -12834
+    }
+  },
+  {
+    id: 402,
+    name: "Emblem of the Empire",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19918
+    }
+  },
+  {
+    id: 403,
+    name: "Amulet of the Great Shaman",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19964
     }
   },
   {
@@ -3323,100 +3409,11 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 314,
-    name: "Poison Fang Dagger",
-    source: SOURCE.SPIDER_DEN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -13800
-    }
-  },
-  {
-    id: 315,
-    name: "Spider Shuriken",
-    source: SOURCE.SPIDER_DEN,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -14260
-    }
-  },
-  {
-    id: 316,
-    name: "Spider's Eye Ring",
-    source: SOURCE.SPIDER_DEN,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -15548
-    }
-  },
-  {
-    id: 317,
-    name: "Heartfind Dagger",
-    source: SOURCE.BELLADONNAS_GARDEN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -16284
-    }
-  },
-  {
-    id: 318,
-    name: "Cupid's Bow",
-    source: SOURCE.BELLADONNAS_GARDEN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -16376
-    }
-  },
-  {
-    id: 319,
-    name: "Staff of Adoration",
-    source: SOURCE.BELLADONNAS_GARDEN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -16192
-    }
-  },
-  {
-    id: 320,
-    name: "Wand of Budding Romance",
-    source: SOURCE.BELLADONNAS_GARDEN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -16238
-    }
-  },
-  {
-    id: 321,
-    name: "Vinesword",
-    source: SOURCE.BELLADONNAS_GARDEN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -16330
-    }
-  },
-  {
-    id: 322,
-    name: "Diamond Bladed Katana",
-    source: SOURCE.BELLADONNAS_GARDEN,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -16146
-    }
-  },
-  {
     id: 323,
     name: "Toy Knife",
     source: SOURCE.MAD_GOD_MAYHEM,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -16054
@@ -3427,6 +3424,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Precisely Calibrated Stringstick",
     source: SOURCE.MAD_GOD_MAYHEM,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15916
@@ -3437,6 +3435,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Barely Attuned Magic Thingy",
     source: SOURCE.MAD_GOD_MAYHEM,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15962
@@ -3447,6 +3446,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Lethargic Sentience",
     source: SOURCE.MAD_GOD_MAYHEM,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -16008
@@ -3457,6 +3457,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Unstable Anomaly",
     source: SOURCE.MAD_GOD_MAYHEM,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15870
@@ -3467,6 +3468,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Dagger of the Terrible Talon",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15640
@@ -3477,6 +3479,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Bow of Nightmares",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15686
@@ -3487,6 +3490,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Staff of Horrific Knowledge",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15732
@@ -3497,6 +3501,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Wand of Ancient Terror",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15594
@@ -3507,6 +3512,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Skull-splitter Sword",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -16100
@@ -3517,9 +3523,54 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Corrupted Cleaver",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -15778
+    }
+  },
+  {
+    id: 200,
+    name: "Helm of the Jack-o'-naut",
+    type: ITEM_TYPE.ABILITY,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -9200
+    }
+  },
+  {
+    id: 206,
+    name: "Phantasm Dirk",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -9476
+    }
+  },
+  {
+    id: 248,
+    name: "Trap of the Blood Spirit",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -11408
+    }
+  },
+  {
+    id: 249,
+    name: "Orb of Terror",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -11454
     }
   },
   {
@@ -3527,6 +3578,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Frost Lich's Finger",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -18998
@@ -3537,6 +3589,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Icicle Launcher",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -18952
@@ -3547,6 +3600,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Frosty’s Walking Stick",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -19044
@@ -3557,6 +3611,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Winter’s Breath Wand",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -19090
@@ -3567,6 +3622,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Saint Nicolas’ Blade",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -19136
@@ -3577,69 +3633,10 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Yuki",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -19186
-    }
-  },
-  {
-    id: 346,
-    name: "Staff of the Crystal Serpent",
-    source: SOURCE.FORBIDDEN_JUNGLE,
-    type: ITEM_TYPE.WEAPON,
-    pos: {
-      y: 0,
-      x: -13570
-    }
-  },
-  {
-    id: 347,
-    name: "Cracked Crystal Skull",
-    source: SOURCE.FORBIDDEN_JUNGLE,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -13616
-    }
-  },
-  {
-    id: 348,
-    name: "Robe of the Tlatoani",
-    source: SOURCE.FORBIDDEN_JUNGLE,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -13524
-    }
-  },
-  {
-    id: 349,
-    name: "Crystal Bone Ring",
-    source: SOURCE.FORBIDDEN_JUNGLE,
-    type: ITEM_TYPE.RING,
-    pos: {
-      y: 0,
-      x: -13662
-    }
-  },
-  {
-    id: 352,
-    name: "Orb of Sweet Demise",
-    source: SOURCE.THE_HIVE,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -13754
-    }
-  },
-  {
-    id: 353,
-    name: "Honey Scepter",
-    source: SOURCE.THE_HIVE,
-    type: ITEM_TYPE.ABILITY,
-    pos: {
-      y: 0,
-      x: -13708
     }
   },
   {
@@ -3647,6 +3644,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "An Icicle",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -17526
@@ -3657,6 +3655,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Bow of Eternal Frost",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -17388
@@ -3667,6 +3666,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Staff of Yuletide Carols",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -17572
@@ -3677,6 +3677,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Present Dispensing Wand",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -17480
@@ -3687,6 +3688,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Frostbite",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -17434
@@ -3697,99 +3699,76 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Salju",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
       x: -19458
     }
   },
   {
-    id: 372,
-    name: "Spatula Dagger",
+    id: 186,
+    name: "Evergreen Dagger",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -17710
+      x: -8556
     }
   },
   {
-    id: 373,
-    name: "Nail Gun Bow",
+    id: 187,
+    name: "Sleigh Bell Staff",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -19504
+      x: -8602
     }
   },
   {
-    id: 374,
-    name: "Screwdriver Staff",
+    id: 188,
+    name: "Brass Chamberstick",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -17756
+      x: -8648
     }
   },
   {
-    id: 375,
-    name: "Measuring Wand",
+    id: 189,
+    name: "Cheerful Chipper",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -17802
+      x: -8694
     }
   },
   {
-    id: 376,
-    name: "Hammer Sword",
+    id: 190,
+    name: "Candy Katana",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -17848
+      x: -8740
     }
   },
   {
-    id: 377,
-    name: "Sawblade Katana",
+    id: 191,
+    name: "Garland Bow",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       y: 0,
-      x: -17894
-    }
-  },
-  {
-    id: 378,
-    name: "Frost Drake Hide Armor",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -19550
-    }
-  },
-  {
-    id: 379,
-    name: "Frost Elementalist Robe",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -19596
-    }
-  },
-  {
-    id: 380,
-    name: "Frost Citadel Armor",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ARMOR,
-    pos: {
-      y: 0,
-      x: -19642
+      x: -8786
     }
   },
   {
@@ -3797,6 +3776,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Cloak of Winter",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18768
@@ -3807,6 +3787,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Coalbearing Quiver",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18400
@@ -3817,6 +3798,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Vigil Spell",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18492
@@ -3827,6 +3809,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Nativity Tome",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18676
@@ -3837,6 +3820,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Pathfinder’s Helm",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18354
@@ -3847,6 +3831,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Resounding Shield",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18584
@@ -3857,6 +3842,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Advent Seal",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18814
@@ -3867,6 +3853,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Holly Poison",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18722
@@ -3877,6 +3864,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Skull of Krampus",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18446
@@ -3887,6 +3875,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Greedsnatcher Trap",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18538
@@ -3897,6 +3886,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Snowbound Orb",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18308
@@ -3907,6 +3897,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Ornamental Prism",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18630
@@ -3917,6 +3908,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Scepter of Sainthood",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18262
@@ -3927,6 +3919,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Ilex Star",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -18860
@@ -3937,6 +3930,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Peppermint Wakizashi",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -20056
@@ -3947,6 +3941,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Oryxmas Carol",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -19688
@@ -3957,6 +3952,7 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Mace of the North Pole",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -19780
@@ -3967,9 +3963,439 @@ export const ITEMS_UT: ItemInfo[] = [
     name: "Snowman’s Sheath",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
+    vanity: true,
     pos: {
       y: 0,
       x: -19734
+    }
+  },
+  {
+    id: 378,
+    name: "Frost Drake Hide Armor",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19550
+    }
+  },
+  {
+    id: 379,
+    name: "Frost Elementalist Robe",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19596
+    }
+  },
+  {
+    id: 380,
+    name: "Frost Citadel Armor",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19642
+    }
+  },
+  {
+    id: 148,
+    name: "Gem of Tenderness",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -6808
+    }
+  },
+  {
+    id: 149,
+    name: "Gem of Adoration",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -6854
+    }
+  },
+  {
+    id: 150,
+    name: "Soulful Affection",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -6900
+    }
+  },
+  {
+    id: 229,
+    name: "Heart of Gold Prism",
+    type: ITEM_TYPE.ABILITY,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -10534
+    }
+  },
+  {
+    id: 63,
+    name: "Helm of the Swift Bunny",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -2898
+    }
+  },
+  {
+    id: 64,
+    name: "Vitamin Buster",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -2944
+    }
+  },
+  {
+    id: 339,
+    name: "Wand of Egg-cellence",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16422
+    }
+  },
+  {
+    id: 332,
+    name: "Dagger of the Hasteful Rabbit",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -18906
+    }
+  },
+  {
+    id: 259,
+    name: "Sakura Wakizashi",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -11914
+    }
+  },
+  {
+    id: 264,
+    name: "Sunny Side Bow",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -12144
+    }
+  },
+  {
+    id: 372,
+    name: "Spatula Dagger",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17710
+    }
+  },
+  {
+    id: 373,
+    name: "Nail Gun Bow",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -19504
+    }
+  },
+  {
+    id: 374,
+    name: "Screwdriver Staff",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17756
+    }
+  },
+  {
+    id: 375,
+    name: "Measuring Wand",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17802
+    }
+  },
+  {
+    id: 376,
+    name: "Hammer Sword",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17848
+    }
+  },
+  {
+    id: 377,
+    name: "Sawblade Katana",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17894
+    }
+  },
+  {
+    id: 421,
+    name: "Fitted Construction Vest",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17986
+    }
+  },
+  {
+    id: 422,
+    name: "Magic Construction Vest",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17940
+    }
+  },
+  {
+    id: 423,
+    name: "Heavy Construction Vest",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -18032
+    }
+  },
+  {
+    id: 408,
+    name: "Shadowbeast Hide",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16928
+    }
+  },
+  {
+    id: 409,
+    name: "Robe of Dark Summoning",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16974
+    }
+  },
+  {
+    id: 410,
+    name: "Armor of Heavenly Light",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -17020
+    }
+  },
+  {
+    id: 411,
+    name: "Dagger of Eternal Chaos",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16652
+    }
+  },
+  {
+    id: 412,
+    name: "Bow of the Sky’s Glory",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16698
+    }
+  },
+  {
+    id: 413,
+    name: "Staff of Silver Wings",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16744
+    }
+  },
+  {
+    id: 414,
+    name: "Wand of the Summoned One",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16790
+    }
+  },
+  {
+    id: 415,
+    name: "Sword of the Unending Chaos",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16836
+    }
+  },
+  {
+    id: 416,
+    name: "Skybound Blade",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16882
+    }
+  },
+  {
+    id: 417,
+    name: "Mask of Anubis",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -20102
+    }
+  },
+  {
+    id: 418,
+    name: "Mask of Lightning",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -20148
+    }
+  },
+  {
+    id: 419,
+    name: "Mask of Cnidaria",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -20194
+    }
+  },
+  {
+    id: 420,
+    name: "Mask of Mucus",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -20240
+    }
+  },
+  {
+    id: 425,
+    name: "Staff of the Rising Sun",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16468
+    }
+  },
+  {
+    id: 426,
+    name: "Thousand Suns Spell",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16514
+    }
+  },
+  {
+    id: 427,
+    name: "Robe of the Summer Solstice",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ARMOR,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16560
+    }
+  },
+  {
+    id: 428,
+    name: "Ring of the Burning Sun",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -16606
     }
   }
 ];

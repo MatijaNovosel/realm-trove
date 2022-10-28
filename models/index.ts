@@ -19,6 +19,7 @@ export interface ItemInfo {
   source: number;
   type?: number;
   bp?: BpData;
+  vanity?: boolean;
   id: number;
 }
 

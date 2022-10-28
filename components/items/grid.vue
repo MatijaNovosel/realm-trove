@@ -3,7 +3,10 @@
     class="flex flex-wrap justify-center md:justify-start no-highlight"
     v-if="items[tab].length > 0"
   >
-    <div v-for="{ pos, id, name, source, type, bp } in items[tab]" :key="id">
+    <div
+      v-for="{ pos, id, name, source, type, bp, vanity } in items[tab]"
+      :key="id"
+    >
       <Tooltip theme="info-tooltip">
         <items-grid-item
           :bp="bp"
@@ -25,6 +28,9 @@
             <span class="mb-1"> 🌍 {{ SOURCE_NAMES[source] }} </span>
             <span v-if="type">
               {{ formatItemTypeIcon(type) }} {{ ITEM_TYPE_NAMES[type] }}
+            </span>
+            <span class="mt-1.5" v-if="vanity">
+              🎭 Limited edition / Vanity
             </span>
           </div>
         </template>

@@ -4,6 +4,12 @@ export enum TAB {
   BP = "bp"
 }
 
+export enum CHECKBOX_STATE {
+  EMPTY = 1,
+  INDETERMINATE,
+  CHECKED
+}
+
 export enum ITEM_TYPE {
   WEAPON = 1,
   ABILITY,

@@ -4,6 +4,8 @@
       :open="modalOpen"
       v-model:loot-source="lootSource"
       v-model:item-type="itemType"
+      v-model:show-vanity="showVanity"
+      v-model:show-missing-items="showOnlyMissingItems"
       @close="modalOpen = false"
     />
     <app-confirmation-dialog
@@ -87,35 +89,6 @@
                 <FilterIcon />
               </app-icon-button>
               <app-icon-button
-                v-if="isCurrentUser"
-                tooltip="Reset"
-                icon-color="green-vue"
-                :disabled="actionsDisabled"
-                @on-click="actionsDisabled ? null : (confirmDialogOpen = true)"
-                background-color="dark"
-              >
-                <ResetIcon />
-              </app-icon-button>
-              <app-icon-button
-                :class="{
-                  'mx-2': isCurrentUser
-                }"
-                tooltip="Show only unobtained items"
-                :icon-color="showOnlyMissingItems ? 'green-vue' : 'gray-500'"
-                background-color="dark"
-                :disabled="actionsDisabled"
-                @on-click="
-                  actionsDisabled
-                    ? null
-                    : (showOnlyMissingItems = !showOnlyMissingItems)
-                "
-              >
-                <EyeIcon />
-              </app-icon-button>
-              <app-icon-button
-                :class="{
-                  'ml-2': !isCurrentUser
-                }"
                 tooltip="Export"
                 icon-color="green-vue"
                 background-color="dark"
@@ -124,6 +97,17 @@
                 @on-click="actionsDisabled ? null : exportAsScreenshot()"
               >
                 <CameraIcon />
+              </app-icon-button>
+              <app-icon-button
+                v-if="isCurrentUser"
+                class="ml-2"
+                tooltip="Reset"
+                icon-color="green-vue"
+                :disabled="actionsDisabled"
+                @on-click="actionsDisabled ? null : (confirmDialogOpen = true)"
+                background-color="dark"
+              >
+                <ResetIcon />
               </app-icon-button>
             </div>
             <div
@@ -188,7 +172,7 @@
 
 <script setup lang="ts">
 import { IDictionary, ItemInfo, PlayerCollection, Profile } from "~/models";
-import { TAB } from "~/utils/constants";
+import { CHECKBOX_STATE, TAB } from "~/utils/constants";
 import {
   doc,
   DocumentData,
@@ -201,7 +185,6 @@ import { useDebounceFn } from "@vueuse/core";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
 import CameraIcon from "~icons/mdi/camera";
-import EyeIcon from "~icons/ic/baseline-remove-red-eye";
 import PencilIcon from "~icons/mdi/grease-pencil";
 import CheckmarkIcon from "~icons/ic/baseline-check";
 import domtoimage from "dom-to-image";
@@ -213,13 +196,14 @@ const searchText = ref("");
 const usernameEditText = ref("");
 const lootSource = ref<number[]>([]);
 const itemType = ref<number[]>([]);
+const showVanity = ref<CHECKBOX_STATE>(CHECKBOX_STATE.INDETERMINATE);
+const showOnlyMissingItems = ref<CHECKBOX_STATE>(CHECKBOX_STATE.INDETERMINATE);
 
 const modalOpen = ref(false);
 const confirmDialogOpen = ref(false);
 const screenshotLoading = ref(false);
 const initialMount = ref(true);
 const editingUsername = ref(false);
-const showOnlyMissingItems = ref(false);
 
 const unsubscribe = ref<Unsubscribe>();
 const docRef = ref<DocumentReference<DocumentData>>();
@@ -388,25 +372,31 @@ const searchItems = useDebounceFn(() => {
     (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
   ];
 
-  const filterConditionsBp: ((item: ItemInfo) => boolean)[] = [
-    (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
-  ];
-
+  // Source
   if (lootSource.value.length !== 0) {
     filterConditions.push((item) => lootSource.value.includes(item.source));
-    filterConditionsBp.push((item) => lootSource.value.includes(item.source));
   }
 
+  // Type
   if (itemType.value.length !== 0) {
     filterConditions.push((item) => itemType.value.includes(item.type));
   }
 
-  if (showOnlyMissingItems.value) {
+  // Vanity items
+  if (showVanity.value === CHECKBOX_STATE.EMPTY) {
+    filterConditions.push((item) => item.vanity !== true);
+  } else if (showVanity.value === CHECKBOX_STATE.CHECKED) {
+    filterConditions.push((item) => item.vanity === true);
+  }
+
+  // Missing items
+  if (showOnlyMissingItems.value === CHECKBOX_STATE.CHECKED) {
     filterConditions.push(
       (item) => !(item.id in profile.value.collection[selectedTab.value])
     );
-    filterConditionsBp.push(
-      (item) => !(item.id in profile.value.collection[selectedTab.value])
+  } else if (showOnlyMissingItems.value === CHECKBOX_STATE.EMPTY) {
+    filterConditions.push(
+      (item) => item.id in profile.value.collection[selectedTab.value]
     );
   }
 
@@ -418,7 +408,7 @@ const searchItems = useDebounceFn(() => {
       filterConditions.every((i) => i(item))
     ),
     [TAB.BP]: items[TAB.BP].filter((item) =>
-      filterConditionsBp.every((i) => i(item))
+      filterConditions.every((i) => i(item))
     )
   };
 }, 300);
@@ -453,7 +443,8 @@ watch(
     searchText.value,
     lootSource.value,
     itemType.value,
-    showOnlyMissingItems.value
+    showOnlyMissingItems.value,
+    showVanity.value
   ],
   () => searchItems()
 );
