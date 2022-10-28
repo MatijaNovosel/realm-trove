@@ -1,18 +1,18 @@
 <template>
   <div class="contents">
     <items-filter-modal
-      :open="modalOpen"
-      v-model:loot-source="lootSource"
-      v-model:item-type="itemType"
-      v-model:show-vanity="showVanity"
-      v-model:show-missing-items="showOnlyMissingItems"
-      @close="modalOpen = false"
+      :open="state.modalOpen"
+      v-model:loot-source="state.lootSource"
+      v-model:item-type="state.itemType"
+      v-model:show-vanity="state.showVanity"
+      v-model:show-missing-items="state.showOnlyMissingItems"
+      @close="state.modalOpen = false"
     />
     <app-confirmation-dialog
-      :open="confirmDialogOpen"
-      @close="confirmDialogOpen = false"
+      :open="state.confirmDialogOpen"
+      @close="state.confirmDialogOpen = false"
       @yes="resetCollection"
-      @no="confirmDialogOpen = false"
+      @no="state.confirmDialogOpen = false"
     />
     <div
       class="offset w-full"
@@ -28,13 +28,13 @@
         <div class="display-contents" v-else>
           <items-type-tab />
           <div class="flex justify-center items-center" v-if="profile">
-            <div v-if="editingUsername">
+            <div v-if="state.editingUsername">
               <items-custom-input
                 placeholder="New username"
                 :loading="loading"
                 :error="error"
                 hide-clear
-                v-model="usernameEditText"
+                v-model="state.usernameEditText"
               />
             </div>
             <span class="text-2xl md:text-4xl" v-else>
@@ -43,15 +43,15 @@
             <app-icon-button
               v-if="isCurrentUser"
               class="ml-4"
-              :tooltip="editingUsername ? 'Confirm' : 'Change username'"
+              :tooltip="state.editingUsername ? 'Confirm' : 'Change username'"
               @on-click="
-                editingUsername
+                state.editingUsername
                   ? changeUsername()
-                  : (editingUsername = !editingUsername)
+                  : (state.editingUsername = !state.editingUsername)
               "
-              :background-color="editingUsername ? 'green-vue' : 'dark'"
+              :background-color="state.editingUsername ? 'green-vue' : 'dark'"
             >
-              <CheckmarkIcon v-if="editingUsername" />
+              <CheckmarkIcon v-if="state.editingUsername" />
               <PencilIcon v-else />
             </app-icon-button>
           </div>
@@ -75,13 +75,13 @@
                 dense
                 :loading="loading"
                 :error="error"
-                v-model="searchText"
+                v-model="state.searchText"
               />
               <app-icon-button
                 class="mx-2 relative"
                 tooltip="Filter"
                 background-color="dark"
-                @on-click="modalOpen = true"
+                @on-click="state.modalOpen = true"
                 :class="{
                   badge: filterActive
                 }"
@@ -93,7 +93,7 @@
                 icon-color="green-vue"
                 background-color="dark"
                 :disabled="actionsDisabled"
-                :loading="screenshotLoading"
+                :loading="state.screenshotLoading"
                 @on-click="actionsDisabled ? null : exportAsScreenshot()"
               >
                 <CameraIcon />
@@ -104,7 +104,9 @@
                 tooltip="Reset"
                 icon-color="green-vue"
                 :disabled="actionsDisabled"
-                @on-click="actionsDisabled ? null : (confirmDialogOpen = true)"
+                @on-click="
+                  actionsDisabled ? null : (state.confirmDialogOpen = true)
+                "
                 background-color="dark"
               >
                 <ResetIcon />
@@ -133,23 +135,23 @@
           <div
             id="grid"
             :class="{
-              'bg-black p-5': screenshotLoading
+              'bg-black p-5': state.screenshotLoading
             }"
           >
             <div
               class="px-5 md:px-3"
               :class="{
-                'pb-1': screenshotLoading
+                'pb-1': state.screenshotLoading
               }"
             >
               <items-progress-bar
-                :progress="itemCollectionPercentage * 100"
+                :progress="itemCollectionPercentage"
                 class="mb-5 user-select-none"
               >
                 <span>
                   {{ itemsCollected[selectedTab] }} /
                   {{ items[selectedTab].length }} ({{
-                    (itemCollectionPercentage * 100).toFixed(2)
+                    itemCollectionPercentage.toFixed(2)
                   }}%)
                 </span>
               </items-progress-bar>
@@ -159,7 +161,7 @@
               :collection="profile.collection"
               :initial="initialCollection"
               :tab="selectedTab"
-              :disabled="!isCurrentUser || screenshotLoading"
+              :disabled="!isCurrentUser || state.screenshotLoading"
               @increment="updateCollection"
               @decrement="updateCollection($event, false)"
             />
@@ -192,18 +194,19 @@ import JSConfetti from "js-confetti";
 
 const initialCollection = ref<PlayerCollection>();
 
-const searchText = ref("");
-const usernameEditText = ref("");
-const lootSource = ref<number[]>([]);
-const itemType = ref<number[]>([]);
-const showVanity = ref<CHECKBOX_STATE>(CHECKBOX_STATE.INDETERMINATE);
-const showOnlyMissingItems = ref<CHECKBOX_STATE>(CHECKBOX_STATE.INDETERMINATE);
-
-const modalOpen = ref(false);
-const confirmDialogOpen = ref(false);
-const screenshotLoading = ref(false);
-const initialMount = ref(true);
-const editingUsername = ref(false);
+const state = reactive({
+  searchText: "",
+  usernameEditText: "",
+  lootSource: [],
+  itemType: [],
+  showVanity: CHECKBOX_STATE.INDETERMINATE,
+  showOnlyMissingItems: CHECKBOX_STATE.INDETERMINATE,
+  modalOpen: false,
+  confirmDialogOpen: false,
+  screenshotLoading: false,
+  initialMount: false,
+  editingUsername: false
+});
 
 const unsubscribe = ref<Unsubscribe>();
 const docRef = ref<DocumentReference<DocumentData>>();
@@ -226,7 +229,7 @@ const filteredCollection = ref<IDictionary<ItemInfo[]>>({
 });
 
 const filterActive = computed(() => {
-  return lootSource.value.length !== 0 || itemType.value.length !== 0;
+  return state.lootSource.length !== 0 || state.itemType.length !== 0;
 });
 
 const {
@@ -254,7 +257,9 @@ const itemsCollected = computed(() => {
 
 const itemCollectionPercentage = computed(() => {
   return (
-    itemsCollected.value[selectedTab.value] / items[selectedTab.value].length
+    (itemsCollected.value[selectedTab.value] /
+      items[selectedTab.value].length) *
+    100
   );
 });
 
@@ -267,7 +272,7 @@ const pendingChanges = computed(() => {
 });
 
 const actionsDisabled = computed(
-  () => pendingChanges.value || screenshotLoading.value
+  () => pendingChanges.value || state.screenshotLoading
 );
 
 const updateCollection = async (id: number, increment: boolean = true) => {
@@ -306,25 +311,25 @@ const updateCollection = async (id: number, increment: boolean = true) => {
 
 const changeUsername = async () => {
   if (
-    usernameEditText.value.length === 0 ||
-    usernameEditText.value.length > 15
+    state.usernameEditText.length === 0 ||
+    state.usernameEditText.length > 15
   ) {
     createToast("Invalid username (must be <=15 chars)!", "error");
     return;
   }
 
-  if (usernameEditText.value === profile.value.username) {
-    editingUsername.value = false;
+  if (state.usernameEditText === profile.value.username) {
+    state.editingUsername = false;
     return;
   }
 
   try {
-    profile.value.username = usernameEditText.value;
+    profile.value.username = state.usernameEditText;
     await setDoc(docRef.value, profile.value);
-    userData.value.username = usernameEditText.value;
-    setMeta(`Realm trove | ${usernameEditText.value}'s Items`);
+    userData.value.username = state.usernameEditText;
+    setMeta(`Realm trove | ${state.usernameEditText}'s Items`);
     createToast("Username updated!", "green-vue");
-    editingUsername.value = false;
+    state.editingUsername = false;
   } catch (e) {
     createToast(e.message, "error");
   }
@@ -338,7 +343,7 @@ const cancelChanges = () => {
 const confirmChanges = async () => {
   try {
     await setDoc(docRef.value, profile.value);
-    if (itemCollectionPercentage.value === 1) {
+    if (itemCollectionPercentage.value === 100) {
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
       createToast("Congratulations!!!", "green-vue", 10000);
@@ -363,38 +368,38 @@ const resetCollection = async () => {
     createToast(e.message, "error");
     error.value = true;
   } finally {
-    confirmDialogOpen.value = false;
+    state.confirmDialogOpen = false;
   }
 };
 
 const searchItems = useDebounceFn(() => {
   const filterConditions: ((item: ItemInfo) => boolean)[] = [
-    (item) => item.name.toLowerCase().includes(searchText.value.toLowerCase())
+    (item) => item.name.toLowerCase().includes(state.searchText.toLowerCase())
   ];
 
   // Source
-  if (lootSource.value.length !== 0) {
-    filterConditions.push((item) => lootSource.value.includes(item.source));
+  if (state.lootSource.length !== 0) {
+    filterConditions.push((item) => state.lootSource.includes(item.source));
   }
 
   // Type
-  if (itemType.value.length !== 0) {
-    filterConditions.push((item) => itemType.value.includes(item.type));
+  if (state.itemType.length !== 0) {
+    filterConditions.push((item) => state.itemType.includes(item.type));
   }
 
   // Vanity items
-  if (showVanity.value === CHECKBOX_STATE.EMPTY) {
+  if (state.showVanity === CHECKBOX_STATE.EMPTY) {
     filterConditions.push((item) => item.vanity !== true);
-  } else if (showVanity.value === CHECKBOX_STATE.CHECKED) {
+  } else if (state.showVanity === CHECKBOX_STATE.CHECKED) {
     filterConditions.push((item) => item.vanity === true);
   }
 
   // Missing items
-  if (showOnlyMissingItems.value === CHECKBOX_STATE.CHECKED) {
+  if (state.showOnlyMissingItems === CHECKBOX_STATE.CHECKED) {
     filterConditions.push(
       (item) => !(item.id in profile.value.collection[selectedTab.value])
     );
-  } else if (showOnlyMissingItems.value === CHECKBOX_STATE.EMPTY) {
+  } else if (state.showOnlyMissingItems === CHECKBOX_STATE.EMPTY) {
     filterConditions.push(
       (item) => item.id in profile.value.collection[selectedTab.value]
     );
@@ -415,7 +420,7 @@ const searchItems = useDebounceFn(() => {
 
 const exportAsScreenshot = async () => {
   try {
-    screenshotLoading.value = true;
+    state.screenshotLoading = true;
     if (!permanentToastExists.value) {
       createToast(
         "This'll take just a moment, sit tight!",
@@ -433,18 +438,18 @@ const exportAsScreenshot = async () => {
     createToast(e.message, "error");
     error.value = true;
   } finally {
-    screenshotLoading.value = false;
+    state.screenshotLoading = false;
     removePermanentToasts();
   }
 };
 
 watch(
   () => [
-    searchText.value,
-    lootSource.value,
-    itemType.value,
-    showOnlyMissingItems.value,
-    showVanity.value
+    state.searchText,
+    state.lootSource,
+    state.itemType,
+    state.showOnlyMissingItems,
+    state.showVanity
   ],
   () => searchItems()
 );
@@ -461,7 +466,7 @@ watch(
   () => {
     if (profile.value) {
       setMeta(`Realm trove | ${profile.value.username}'s Items`);
-      usernameEditText.value = profile.value.username;
+      state.usernameEditText = profile.value.username;
 
       docRef.value = doc(
         $firebaseFirestore,
@@ -470,8 +475,8 @@ watch(
       );
 
       unsubscribe.value = onSnapshot(docRef.value, (snap) => {
-        if (initialMount.value) {
-          initialMount.value = false;
+        if (state.initialMount) {
+          state.initialMount = false;
         } else {
           profile.value = snap.data() as Profile;
         }
