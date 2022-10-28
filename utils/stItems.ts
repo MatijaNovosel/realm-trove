@@ -2187,47 +2187,6 @@ export const ITEMS_ST: ItemInfo[] = [
       y: -46
     }
   },
-  // Legacy skuld
-  {
-    id: 1714,
-    name: "Legacy Etherite Dagger",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.HAUNTED_CEMETERY,
-    pos: {
-      x: -9752,
-      y: -46
-    }
-  },
-  {
-    id: 1715,
-    name: "Legacy Mantle of Skuld",
-    type: ITEM_TYPE.ABILITY,
-    source: SOURCE.TRADING,
-    pos: {
-      x: -9798,
-      y: -46
-    }
-  },
-  {
-    id: 1716,
-    name: "Legacy Ghastly Drape",
-    type: ITEM_TYPE.ARMOR,
-    source: SOURCE.TRADING,
-    pos: {
-      x: -9844,
-      y: -46
-    }
-  },
-  {
-    id: 1717,
-    name: "Legacy Spectral Ring of Horrors",
-    type: ITEM_TYPE.RING,
-    source: SOURCE.HAUNTED_CEMETERY,
-    pos: {
-      x: -9890,
-      y: -46
-    }
-  },
   // Cupid archer
   {
     id: 1720,
@@ -2269,12 +2228,58 @@ export const ITEMS_ST: ItemInfo[] = [
       y: -46
     }
   },
+  // Legacy skuld
+  {
+    id: 1714,
+    name: "Legacy Etherite Dagger",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.HAUNTED_CEMETERY,
+    vanity: true,
+    pos: {
+      x: -9752,
+      y: -46
+    }
+  },
+  {
+    id: 1715,
+    name: "Legacy Mantle of Skuld",
+    type: ITEM_TYPE.ABILITY,
+    source: SOURCE.TRADING,
+    vanity: true,
+    pos: {
+      x: -9798,
+      y: -46
+    }
+  },
+  {
+    id: 1716,
+    name: "Legacy Ghastly Drape",
+    type: ITEM_TYPE.ARMOR,
+    source: SOURCE.TRADING,
+    vanity: true,
+    pos: {
+      x: -9844,
+      y: -46
+    }
+  },
+  {
+    id: 1717,
+    name: "Legacy Spectral Ring of Horrors",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.HAUNTED_CEMETERY,
+    vanity: true,
+    pos: {
+      x: -9890,
+      y: -46
+    }
+  },
   // Legacy archmage
   {
     id: 1722,
     name: "Legacy Sentient Staff",
     source: SOURCE.TRADING,
     type: ITEM_TYPE.WEAPON,
+    vanity: true,
     pos: {
       x: -10120,
       y: -46
@@ -2285,6 +2290,7 @@ export const ITEMS_ST: ItemInfo[] = [
     name: "Legacy Ancient Spell: Pierce",
     type: ITEM_TYPE.ABILITY,
     source: SOURCE.TRADING,
+    vanity: true,
     pos: {
       x: -10166,
       y: -46
@@ -2295,6 +2301,7 @@ export const ITEMS_ST: ItemInfo[] = [
     name: "Legacy Robe of Twilight",
     type: ITEM_TYPE.ARMOR,
     source: SOURCE.TRADING,
+    vanity: true,
     pos: {
       x: -10212,
       y: -46
@@ -2305,8 +2312,108 @@ export const ITEMS_ST: ItemInfo[] = [
     name: "Legacy Forgotten Ring",
     type: ITEM_TYPE.RING,
     source: SOURCE.TRADING,
+    vanity: true,
     pos: {
       x: -10258,
+      y: -46
+    }
+  },
+  {
+    id: 1728,
+    name: "Laborer's Hard Hat",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10396,
+      y: -46
+    }
+  },
+  {
+    id: 1729,
+    name: "Operator's Hard Hat",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10442,
+      y: -46
+    }
+  },
+  {
+    id: 1730,
+    name: "Foreman's Hard Hat",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10488,
+      y: -46
+    }
+  },
+  {
+    id: 1731,
+    name: "Ember of the Void",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10534,
+      y: -46
+    }
+  },
+  {
+    id: 1732,
+    name: "Ember of the Daeva",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10580,
+      y: -46
+    }
+  },
+  {
+    id: 1733,
+    name: "Antimony Artifact",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10626,
+      y: -46
+    }
+  },
+  {
+    id: 1734,
+    name: "Loaded Core",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10672,
+      y: -46
+    }
+  },
+  {
+    id: 1735,
+    name: "Entropy Reactor",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10718,
+      y: -46
+    }
+  },
+  {
+    id: 1736,
+    name: "Ornaments of Unity",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.EVENT,
+    vanity: true,
+    pos: {
+      x: -10764,
       y: -46
     }
   }

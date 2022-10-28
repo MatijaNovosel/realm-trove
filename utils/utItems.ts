@@ -4023,6 +4023,39 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 432,
+    name: "Oryxmas Ornament: Energized",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -21114
+    }
+  },
+  {
+    id: 433,
+    name: "Oryxmas Ornament: Weak",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -21160
+    }
+  },
+  {
+    id: 434,
+    name: "Oryxmas Ornament: Exposed",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.RING,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -21206
+    }
+  },
+  {
     id: 148,
     name: "Gem of Tenderness",
     source: SOURCE.EVENT,
@@ -4416,39 +4449,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -16606
-    }
-  },
-  {
-    id: 432,
-    name: "Oryxmas Ornament: Energized",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.RING,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -21114
-    }
-  },
-  {
-    id: 433,
-    name: "Oryxmas Ornament: Weak",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.RING,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -21160
-    }
-  },
-  {
-    id: 434,
-    name: "Oryxmas Ornament: Exposed",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.RING,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -21206
     }
   },
   {
