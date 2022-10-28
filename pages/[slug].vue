@@ -160,7 +160,6 @@
               :items="filteredCollection"
               :collection="profile.collection"
               :initial="initialCollection"
-              :tab="selectedTab"
               :disabled="!isCurrentUser || state.screenshotLoading"
               @increment="updateCollection"
               @decrement="updateCollection($event, false)"

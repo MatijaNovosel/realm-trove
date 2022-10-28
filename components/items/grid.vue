@@ -1,10 +1,10 @@
 <template>
   <div
     class="flex flex-wrap justify-center md:justify-start no-highlight"
-    v-if="items[tab].length > 0"
+    v-if="items[selectedTab].length > 0"
   >
     <div
-      v-for="{ pos, id, name, source, type, bp, vanity } in items[tab]"
+      v-for="{ pos, id, name, source, type, bp, vanity } in items[selectedTab]"
       :key="id"
     >
       <Tooltip theme="info-tooltip">
@@ -13,7 +13,7 @@
           :x="bp ? BP_QUALITY_POS[bp.quality].x : pos.x"
           :y="bp ? BP_QUALITY_POS[bp.quality].y : pos.y"
           :status-class="badgeClass(id) || ''"
-          :count="collection[tab][id] || 0"
+          :count="collection[selectedTab][id] || 0"
           :id="id"
           :disabled="disabled"
           @lclick="$emit('increment', id)"
@@ -56,15 +56,16 @@ import { formatItemTypeIcon } from "~/utils/helpers";
 const props = defineProps<{
   collection: PlayerCollection;
   initial: PlayerCollection | undefined;
-  tab: TAB;
   items: IDictionary<ItemInfo[]>;
   disabled: boolean;
 }>();
 
+const selectedTab = useSelectedTab();
+
 const badgeClass = (id: number) => {
   if (props.initial) {
-    const initialCollectionCount = props.initial[props.tab][id] || 0;
-    const currentCollectionCount = props.collection[props.tab][id];
+    const initialCollectionCount = props.initial[selectedTab.value][id] || 0;
+    const currentCollectionCount = props.collection[selectedTab.value][id];
 
     if (initialCollectionCount > currentCollectionCount) {
       return "text-error font-bold";
