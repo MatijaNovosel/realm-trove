@@ -228,7 +228,14 @@ const filteredCollection = ref<IDictionary<ItemInfo[]>>({
 });
 
 const filterActive = computed(() => {
-  return state.lootSource.length !== 0 || state.itemType.length !== 0;
+  return (
+    state.lootSource.length !== 0 ||
+    state.itemType.length !== 0 ||
+    state.showVanity === CHECKBOX_STATE.CHECKED ||
+    state.showVanity === CHECKBOX_STATE.EMPTY ||
+    state.showOnlyMissingItems === CHECKBOX_STATE.CHECKED ||
+    state.showOnlyMissingItems === CHECKBOX_STATE.EMPTY
+  );
 });
 
 const {
