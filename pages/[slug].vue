@@ -356,6 +356,7 @@ const confirmChanges = async () => {
     } else {
       createToast("Saved!", "green-vue");
     }
+    searchItems();
     initialCollection.value = undefined;
   } catch (e) {
     createToast(e.message, "error");
