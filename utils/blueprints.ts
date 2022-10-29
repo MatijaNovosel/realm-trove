@@ -930,6 +930,89 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.THE_SHATTERS
   },
   {
+    id: 3096,
+    name: "Cloak of Bloody Surprises",
+    vanity: true,
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4002
+        }
+      ]
+    },
+    source: SOURCE.EVENT
+  },
+  {
+    id: 3097,
+    name: "Dirk of Cronus",
+    vanity: true,
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -4048
+        }
+      ]
+    },
+    source: SOURCE.EVENT
+  },
+  {
+    id: 3098,
+    name: "Irradiance Sheath",
+    vanity: true,
+    bp: {
+      quality: BP_QUALITY.EXALTED,
+      items: [
+        {
+          y: 0,
+          x: -5474
+        }
+      ]
+    },
+    source: SOURCE.EVENT
+  },
+  {
+    id: 3095,
+    name: "Incubation Mace",
+    vanity: true,
+    bp: {
+      quality: BP_QUALITY.INCUBATION,
+      items: [
+        {
+          y: 0,
+          x: -21298
+        }
+      ]
+    },
+    source: SOURCE.EVENT
+  },
+  {
+    id: 3100,
+    name: "Santa's Arsenal",
+    vanity: true,
+    bp: {
+      quality: BP_QUALITY.FESTIVE,
+      items: [
+        {
+          y: 0,
+          x: -8556
+        },
+        {
+          y: 0,
+          x: -8602
+        },
+        {
+          y: 0,
+          x: -8648
+        }
+      ]
+    },
+    source: SOURCE.EVENT
+  },
+  {
     id: 3008,
     name: "Tezcacoatl's Tail, Wavecrest Concertina, Coral Venom Trap",
     bp: {
@@ -1520,6 +1603,21 @@ export const ITEMS_BP: ItemInfo[] = [
       ]
     },
     source: SOURCE.BAZAAR
+  },
+  {
+    id: 3099,
+    name: "Labyrinth Dweller's Sheath",
+    vanity: true,
+    bp: {
+      quality: BP_QUALITY.PARAMOUNT,
+      items: [
+        {
+          y: 0,
+          x: -5382
+        }
+      ]
+    },
+    source: SOURCE.EVENT
   },
   {
     id: 3012,
