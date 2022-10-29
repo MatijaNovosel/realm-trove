@@ -3103,61 +3103,6 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
-    id: 219,
-    name: "Frozen Wand",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -10074
-    }
-  },
-  {
-    id: 220,
-    name: "Enchanted Ice Blade",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -10120
-    }
-  },
-  {
-    id: 221,
-    name: "Staff of Iceblast",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -10166
-    }
-  },
-  {
-    id: 222,
-    name: "Eternal Snowflake Wand",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.WEAPON,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -10212
-    }
-  },
-  {
-    id: 224,
-    name: "Tome of Frigid Protection",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -10304
-    }
-  },
-  {
     id: 234,
     name: "Sword of Illumination",
     source: SOURCE.ABYSS_OF_DEMONS,
@@ -3177,50 +3122,6 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -12880
-    }
-  },
-  {
-    id: 254,
-    name: "Chicken Leg of Doom",
-    source: SOURCE.ORYXS_SANCTUARY,
-    type: ITEM_TYPE.WEAPON,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -11684
-    }
-  },
-  {
-    id: 205,
-    name: "Anatis Staff",
-    type: ITEM_TYPE.WEAPON,
-    source: SOURCE.ORYXS_CHAMBER,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -9430
-    }
-  },
-  {
-    id: 62,
-    name: "Apocalypse Feather",
-    source: SOURCE.ORYXS_CHAMBER,
-    type: ITEM_TYPE.WEAPON,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -2852
-    }
-  },
-  {
-    id: 260,
-    name: "Botany Book",
-    source: SOURCE.EVENT,
-    type: ITEM_TYPE.ABILITY,
-    vanity: true,
-    pos: {
-      y: 0,
-      x: -11960
     }
   },
   {
@@ -3591,6 +3492,61 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -11454
+    }
+  },
+  {
+    id: 219,
+    name: "Frozen Wand",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -10074
+    }
+  },
+  {
+    id: 220,
+    name: "Enchanted Ice Blade",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -10120
+    }
+  },
+  {
+    id: 221,
+    name: "Staff of Iceblast",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -10166
+    }
+  },
+  {
+    id: 222,
+    name: "Eternal Snowflake Wand",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -10212
+    }
+  },
+  {
+    id: 224,
+    name: "Tome of Frigid Protection",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -10304
     }
   },
   {
@@ -4163,6 +4119,50 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -12144
+    }
+  },
+  {
+    id: 260,
+    name: "Botany Book",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.ABILITY,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -11960
+    }
+  },
+  {
+    id: 254,
+    name: "Chicken Leg of Doom",
+    source: SOURCE.ORYXS_SANCTUARY,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -11684
+    }
+  },
+  {
+    id: 205,
+    name: "Anatis Staff",
+    type: ITEM_TYPE.WEAPON,
+    source: SOURCE.ORYXS_CHAMBER,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -9430
+    }
+  },
+  {
+    id: 62,
+    name: "Apocalypse Feather",
+    source: SOURCE.ORYXS_CHAMBER,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -2852
     }
   },
   {
