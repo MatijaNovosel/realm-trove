@@ -209,3 +209,15 @@ pre {
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
+
+.row {
+  @apply grid grid-cols-12;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-col {
+  @apply flex flex-col;
+}

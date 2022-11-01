@@ -2,7 +2,7 @@
   <div
     class="offset w-full px-3"
     :class="{
-      'h-full flex justify-center items-center': loading || error
+      'h-full flex-center': loading || error
     }"
   >
     <spinner class="mt-4 mx-auto" v-if="loading" />

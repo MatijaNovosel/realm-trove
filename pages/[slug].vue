@@ -17,7 +17,7 @@
     <div
       class="offset w-full"
       :class="{
-        'h-full flex justify-center items-center': loading || error
+        'h-full flex-center': loading || error
       }"
     >
       <transition name="bounce">
@@ -27,7 +27,7 @@
         </div>
         <div class="display-contents" v-else>
           <items-type-tab />
-          <div class="flex justify-center items-center" v-if="profile">
+          <div class="flex-center" v-if="profile">
             <div v-if="state.editingUsername">
               <items-custom-input
                 placeholder="New username"
@@ -56,7 +56,7 @@
             </app-icon-button>
           </div>
           <div
-            class="grid grid-cols-12 my-5 px-5 md:px-3 items-center"
+            class="row my-5 px-5 md:px-3 items-center"
             :class="{ 'mt-0 md:mt-5': !isCurrentUser }"
           >
             <div
@@ -65,7 +65,7 @@
               <items-instructions v-if="isCurrentUser" />
             </div>
             <div
-              class="col-span-12 md:col-span-6 mt-4 md:mt-0 flex items-center justify-center"
+              class="col-span-12 md:col-span-6 mt-4 md:mt-0 flex-center"
               :class="{
                 'md:col-span-12 justify-center': !isCurrentUser
               }"

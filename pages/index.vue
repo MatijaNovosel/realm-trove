@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-center items-center">
+  <div class="w-full h-full flex-center">
     <transition name="bounce">
       <spinner class="mt-4 mx-auto" v-if="loginTrigger" />
       <div

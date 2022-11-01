@@ -27,7 +27,7 @@
             </div>
             <div
               @click.stop="selectedItems.delete(item)"
-              class="flex items-center justify-center bg-dark-800 rounded-r px-1 ripple"
+              class="flex-center bg-dark-800 rounded-r px-1 ripple"
             >
               <CloseIcon />
             </div>

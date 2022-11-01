@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div
-      class="bg-dark-800 icon flex items-center justify-center rounded-l-lg px-3"
+      class="bg-dark-800 icon flex-center rounded-l-lg px-3"
       :style="{
         height: dense ? '30px' : '50px'
       }"
@@ -28,7 +28,7 @@
     />
     <div
       v-if="!hideClear"
-      class="bg-dark-800 icon flex items-center justify-center rounded-r-lg px-3"
+      class="bg-dark-800 icon flex-center rounded-r-lg px-3"
       :style="{
         height: dense ? '30px' : '50px'
       }"

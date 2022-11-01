@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-center items-center">
+  <div class="w-full h-full flex-center">
     <spinner class="mt-4 mx-auto" />
   </div>
 </template>

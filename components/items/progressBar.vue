@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="bg-dark-800 w-full progress-bar rounded-lg relative flex items-center justify-center"
-  >
+  <div class="bg-dark-800 w-full progress-bar rounded-lg relative flex-center">
     <div
       class="bg-green-vue progress-bar absolute top-0 left-0"
       :style="style"
