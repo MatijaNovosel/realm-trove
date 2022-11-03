@@ -174,14 +174,7 @@
 <script setup lang="ts">
 import { ItemInfo, Profile } from "~/models";
 import { CHECKBOX_STATE, TAB } from "~/utils/constants";
-import {
-  doc,
-  DocumentData,
-  DocumentReference,
-  onSnapshot,
-  setDoc,
-  Unsubscribe
-} from "firebase/firestore";
+import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import { useDebounceFn } from "@vueuse/core";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
@@ -190,9 +183,6 @@ import PencilIcon from "~icons/mdi/grease-pencil";
 import CheckmarkIcon from "~icons/ic/baseline-check";
 import domtoimage from "dom-to-image";
 import JSConfetti from "js-confetti";
-
-const unsubscribe = ref<Unsubscribe>();
-const docRef = ref<DocumentReference<DocumentData>>();
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
@@ -216,6 +206,8 @@ const state = reactive({
   initialMount: false,
   initialCollection: undefined,
   editingUsername: false,
+  unsubscribe: undefined,
+  docRef: undefined,
   filteredCollection: {
     [TAB.UT]: items[TAB.UT],
     [TAB.ST]: items[TAB.ST],
@@ -328,7 +320,7 @@ const changeUsername = async () => {
 
   try {
     profile.value.username = username;
-    await setDoc(docRef.value, profile.value);
+    await setDoc(state.docRef, profile.value);
     userData.value.username = username;
     setMeta(`Realm trove | ${username}'s Items`);
     createToast("Username updated!", "green-vue");
@@ -345,7 +337,7 @@ const cancelChanges = () => {
 
 const confirmChanges = async () => {
   try {
-    await setDoc(docRef.value, profile.value);
+    await setDoc(state.docRef, profile.value);
     if (itemCollectionPercentage.value === 100) {
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
@@ -365,7 +357,7 @@ const resetCollection = async () => {
   try {
     const emptyCollection = { ...profile.value };
     emptyCollection.collection[selectedTab.value] = {};
-    await setDoc(docRef.value, emptyCollection);
+    await setDoc(state.docRef, emptyCollection);
     createToast("Progress has been reset!", "green-vue");
     state.initialCollection = undefined;
   } catch (e) {
@@ -472,13 +464,13 @@ watch(
       setMeta(`Realm trove | ${profile.value.username}'s Items`);
       state.usernameEditText = profile.value.username;
 
-      docRef.value = doc(
+      state.docRef = doc(
         $firebaseFirestore,
         "profile",
         route.params.slug as string
       );
 
-      unsubscribe.value = onSnapshot(docRef.value, (snap) => {
+      state.unsubscribe = onSnapshot(state.docRef, (snap) => {
         if (state.initialMount) {
           state.initialMount = false;
         } else {
@@ -495,10 +487,12 @@ watch(
 );
 
 onBeforeUnmount(() => {
-  if (unsubscribe.value) {
-    unsubscribe.value();
+  if (state.unsubscribe) {
+    state.unsubscribe();
   }
-  docRef.value = undefined;
+  state.docRef = undefined;
+  state.initialCollection = undefined;
+  removePermanentToasts();
 });
 </script>
 

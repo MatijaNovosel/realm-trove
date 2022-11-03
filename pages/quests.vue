@@ -13,6 +13,9 @@
       }"
     >
       <spinner class="mt-4 mx-auto" v-if="pending" />
+      <div class="mt-4 mx-auto text-error text-4xl" v-else-if="error">
+        An error ocurred.
+      </div>
       <div v-else>
         <h1>Quests</h1>
         <div class="row my-5 md:px-0 items-center">
@@ -76,12 +79,7 @@ import { useDebounceFn } from "@vueuse/core";
 import { MarkInfo, Profile } from "~/models";
 import { MARKS } from "~/utils/marks";
 import ResetIcon from "~icons/carbon/reset";
-import {
-  doc,
-  DocumentData,
-  DocumentReference,
-  setDoc
-} from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 
 const userData = useUserData();
 const { setMeta } = useMetadata();
@@ -99,10 +97,9 @@ const state = reactive({
   initialCollection: undefined,
   filteredMarks: MARKS,
   searchText: "",
-  confirmDialogOpen: false
+  confirmDialogOpen: false,
+  docRef: undefined
 });
-
-const docRef = ref<DocumentReference<DocumentData>>();
 
 const pendingChanges = computed(() => {
   return (
@@ -163,7 +160,7 @@ const searchMarks = useDebounceFn(() => {
 
 const confirmChanges = async () => {
   try {
-    await setDoc(docRef.value, data.value);
+    await setDoc(state.docRef, data.value);
     createToast("Saved!", "green-vue");
     searchMarks();
     state.initialCollection = undefined;
@@ -177,7 +174,7 @@ const resetCollection = async () => {
   try {
     const emptyCollection = { ...data.value };
     emptyCollection.quests.marks = {};
-    await setDoc(docRef.value, emptyCollection);
+    await setDoc(state.docRef, emptyCollection);
     createToast("Progress has been reset!", "green-vue");
     state.initialCollection = undefined;
   } catch (e) {
@@ -204,7 +201,7 @@ watch(
   pending,
   () => {
     if (data.value) {
-      docRef.value = doc($firebaseFirestore, "profile", userData.value.shortId);
+      state.docRef = doc($firebaseFirestore, "profile", userData.value.shortId);
       setMeta("Realm trove | Quests");
     } else {
       setMeta("Loading ...");
@@ -214,6 +211,11 @@ watch(
     immediate: true
   }
 );
+
+onBeforeUnmount(() => {
+  state.initialCollection = undefined;
+  removePermanentToasts();
+});
 </script>
 
 <style scoped>
