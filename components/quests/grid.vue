@@ -15,9 +15,7 @@
           @rclick="$emit('decrement', id)"
         />
         <template #popper>
-          <span class="text-center md:text-left">
-            {{ name }}
-          </span>
+          {{ name }}
         </template>
       </Tooltip>
     </div>

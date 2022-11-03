@@ -2,58 +2,122 @@ import { MarkInfo } from "~/models";
 
 export const MARKS: MarkInfo[] = [
   {
-    id: 1,
-    name: "Mark of Septavius",
+    id: 17,
+    name: "Mark of Shaitan",
     pos: {
-      x: 0,
+      x: -736,
       y: -138
     }
   },
   {
-    id: 2,
-    name: "Mark of Malphas",
+    id: 40,
+    name: "Mark of the Interregnum",
     pos: {
-      x: -46,
+      x: -1794,
       y: -138
     }
   },
   {
-    id: 3,
-    name: "Mark of Gulpord",
+    id: 16,
+    name: "Mark of the Forgotten King",
     pos: {
-      x: -92,
+      x: -690,
       y: -138
     }
   },
   {
-    id: 4,
-    name: "Mark of Dr Terrible",
+    id: 20,
+    name: "Mark of the Killer Bee Queen",
     pos: {
-      x: -138,
+      x: -874,
       y: -138
     }
   },
   {
-    id: 5,
-    name: "Mark of the Puppet Master",
+    id: 38,
+    name: "Mark of the Crystal Entity",
     pos: {
-      x: -184,
+      x: -1702,
       y: -138
     }
   },
   {
-    id: 6,
-    name: "Mark of Skuld",
+    id: 27,
+    name: "Mark of the Marble Colossus",
     pos: {
-      x: -230,
+      x: -1196,
       y: -138
     }
   },
   {
-    id: 7,
-    name: "Mark of Ruthven",
+    id: 29,
+    name: "Mark of Malus",
     pos: {
-      x: -276,
+      x: -1288,
+      y: -138
+    }
+  },
+  {
+    id: 28,
+    name: "Mark of the Void Entity",
+    pos: {
+      x: -1242,
+      y: -138
+    }
+  },
+  {
+    id: 37,
+    name: "Mark of the Exalted God",
+    pos: {
+      x: -1656,
+      y: -138
+    }
+  },
+  {
+    id: 30,
+    name: "Mark of the Effigy",
+    pos: {
+      x: -1334,
+      y: -138
+    }
+  },
+  {
+    id: 24,
+    name: "Mark of Parasitic Horrors",
+    pos: {
+      x: -1058,
+      y: -138
+    }
+  },
+  {
+    id: 18,
+    name: "Mark of Bilgewater",
+    pos: {
+      x: -782,
+      y: -138
+    }
+  },
+  {
+    id: 19,
+    name: "Mark of the Megamoth",
+    pos: {
+      x: -828,
+      y: -138
+    }
+  },
+  {
+    id: 21,
+    name: "Mark of the Son of Arachna",
+    pos: {
+      x: -920,
+      y: -138
+    }
+  },
+  {
+    id: 23,
+    name: "Mark of Davy Jones",
+    pos: {
+      x: -1012,
       y: -138
     }
   },
@@ -66,18 +130,26 @@ export const MARKS: MarkInfo[] = [
     }
   },
   {
-    id: 9,
-    name: "Mark of Esben",
+    id: 15,
+    name: "Mark of the Wyvern",
     pos: {
-      x: -368,
+      x: -644,
       y: -138
     }
   },
   {
-    id: 10,
-    name: "Mark of Limon",
+    id: 36,
+    name: "Mark of the Tesseract Goddess",
     pos: {
-      x: -414,
+      x: -1610,
+      y: -138
+    }
+  },
+  {
+    id: 9,
+    name: "Mark of Esben",
+    pos: {
+      x: -368,
       y: -138
     }
   },
@@ -114,58 +186,10 @@ export const MARKS: MarkInfo[] = [
     }
   },
   {
-    id: 15,
-    name: "Mark of the Wyvern",
+    id: 39,
+    name: "Mark of the Sandstone Titan",
     pos: {
-      x: -644,
-      y: -138
-    }
-  },
-  {
-    id: 16,
-    name: "Mark of the Forgotten King",
-    pos: {
-      x: -690,
-      y: -138
-    }
-  },
-  {
-    id: 17,
-    name: "Mark of Shaitan",
-    pos: {
-      x: -736,
-      y: -138
-    }
-  },
-  {
-    id: 18,
-    name: "Mark of Bilgewater",
-    pos: {
-      x: -782,
-      y: -138
-    }
-  },
-  {
-    id: 19,
-    name: "Mark of the Megamoth",
-    pos: {
-      x: -828,
-      y: -138
-    }
-  },
-  {
-    id: 20,
-    name: "Mark of the Killer Bee Queen",
-    pos: {
-      x: -874,
-      y: -138
-    }
-  },
-  {
-    id: 21,
-    name: "Mark of the Son of Arachna",
-    pos: {
-      x: -920,
+      x: -1748,
       y: -138
     }
   },
@@ -178,18 +202,10 @@ export const MARKS: MarkInfo[] = [
     }
   },
   {
-    id: 23,
-    name: "Mark of Davy Jones",
+    id: 10,
+    name: "Mark of Limon",
     pos: {
-      x: -1012,
-      y: -138
-    }
-  },
-  {
-    id: 24,
-    name: "Mark of Parasitic Horrors",
-    pos: {
-      x: -1058,
+      x: -414,
       y: -138
     }
   },
@@ -202,6 +218,22 @@ export const MARKS: MarkInfo[] = [
     }
   },
   {
+    id: 1,
+    name: "Mark of Septavius",
+    pos: {
+      x: 0,
+      y: -138
+    }
+  },
+  {
+    id: 2,
+    name: "Mark of Malphas",
+    pos: {
+      x: -46,
+      y: -138
+    }
+  },
+  {
     id: 26,
     name: "Mark of the Archivist",
     pos: {
@@ -210,34 +242,42 @@ export const MARKS: MarkInfo[] = [
     }
   },
   {
-    id: 27,
-    name: "Mark of the Marble Colossus",
+    id: 3,
+    name: "Mark of Gulpord",
     pos: {
-      x: -1196,
+      x: -92,
       y: -138
     }
   },
   {
-    id: 28,
-    name: "Mark of the Void Entity",
+    id: 4,
+    name: "Mark of Dr Terrible",
     pos: {
-      x: -1242,
+      x: -138,
       y: -138
     }
   },
   {
-    id: 29,
-    name: "Mark of Malus",
+    id: 5,
+    name: "Mark of the Puppet Master",
     pos: {
-      x: -1288,
+      x: -184,
       y: -138
     }
   },
   {
-    id: 30,
-    name: "Mark of the Effigy",
+    id: 7,
+    name: "Mark of Ruthven",
     pos: {
-      x: -1334,
+      x: -276,
+      y: -138
+    }
+  },
+  {
+    id: 6,
+    name: "Mark of Skuld",
+    pos: {
+      x: -230,
       y: -138
     }
   },
@@ -278,46 +318,6 @@ export const MARKS: MarkInfo[] = [
     name: "Mark of Mixcoatl",
     pos: {
       x: -1564,
-      y: -138
-    }
-  },
-  {
-    id: 36,
-    name: "Mark of the Tesseract Goddess",
-    pos: {
-      x: -1610,
-      y: -138
-    }
-  },
-  {
-    id: 37,
-    name: "Mark of the Exalted God",
-    pos: {
-      x: -1656,
-      y: -138
-    }
-  },
-  {
-    id: 38,
-    name: "Mark of the Crystal Entity",
-    pos: {
-      x: -1702,
-      y: -138
-    }
-  },
-  {
-    id: 39,
-    name: "Mark of the Sandstone Titan",
-    pos: {
-      x: -1748,
-      y: -138
-    }
-  },
-  {
-    id: 40,
-    name: "Mark of the Interregnum",
-    pos: {
-      x: -1794,
       y: -138
     }
   }
