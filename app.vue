@@ -44,6 +44,10 @@ const signIn = async () => {
         username,
         shortId,
         uid: result.user.uid,
+        quests: {
+          activeQuests: [],
+          marks: {}
+        },
         collection: {
           st: {},
           ut: {},

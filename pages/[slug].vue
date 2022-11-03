@@ -157,9 +157,9 @@
               </items-progress-bar>
             </div>
             <items-grid
-              :items="filteredCollection"
+              :items="state.filteredCollection"
               :collection="profile.collection"
-              :initial="initialCollection"
+              :initial="state.initialCollection"
               :disabled="!isCurrentUser || state.screenshotLoading"
               @increment="updateCollection"
               @decrement="updateCollection($event, false)"
@@ -191,22 +191,6 @@ import CheckmarkIcon from "~icons/ic/baseline-check";
 import domtoimage from "dom-to-image";
 import JSConfetti from "js-confetti";
 
-const initialCollection = ref<PlayerCollection>();
-
-const state = reactive({
-  searchText: "",
-  usernameEditText: "",
-  lootSource: [],
-  itemType: [],
-  showVanity: CHECKBOX_STATE.INDETERMINATE,
-  showOnlyMissingItems: CHECKBOX_STATE.INDETERMINATE,
-  modalOpen: false,
-  confirmDialogOpen: false,
-  screenshotLoading: false,
-  initialMount: false,
-  editingUsername: false
-});
-
 const unsubscribe = ref<Unsubscribe>();
 const docRef = ref<DocumentReference<DocumentData>>();
 
@@ -219,13 +203,27 @@ const selectedTab = useSelectedTab();
 const route = useRoute();
 const { setMeta } = useMetadata();
 
-setMeta("Realm trove | Items");
-
-const filteredCollection = ref<IDictionary<ItemInfo[]>>({
-  [TAB.UT]: items[TAB.UT],
-  [TAB.ST]: items[TAB.ST],
-  [TAB.BP]: items[TAB.BP]
+const state = reactive({
+  searchText: "",
+  usernameEditText: "",
+  lootSource: [],
+  itemType: [],
+  showVanity: CHECKBOX_STATE.INDETERMINATE,
+  showOnlyMissingItems: CHECKBOX_STATE.INDETERMINATE,
+  modalOpen: false,
+  confirmDialogOpen: false,
+  screenshotLoading: false,
+  initialMount: false,
+  initialCollection: undefined,
+  editingUsername: false,
+  filteredCollection: {
+    [TAB.UT]: items[TAB.UT],
+    [TAB.ST]: items[TAB.ST],
+    [TAB.BP]: items[TAB.BP]
+  }
 });
+
+setMeta("Realm trove | Items");
 
 const filterActive = computed(() => {
   return (
@@ -271,8 +269,8 @@ const itemCollectionPercentage = computed(() => {
 
 const pendingChanges = computed(() => {
   return (
-    initialCollection.value !== undefined &&
-    JSON.stringify(initialCollection.value) !==
+    state.initialCollection !== undefined &&
+    JSON.stringify(state.initialCollection) !==
       JSON.stringify(profile.value.collection)
   );
 });
@@ -288,8 +286,8 @@ const updateCollection = async (id: number, increment: boolean = true) => {
     return;
   }
 
-  if (!initialCollection.value) {
-    initialCollection.value = JSON.parse(
+  if (!state.initialCollection) {
+    state.initialCollection = JSON.parse(
       JSON.stringify(profile.value.collection)
     );
 
@@ -316,24 +314,23 @@ const updateCollection = async (id: number, increment: boolean = true) => {
 };
 
 const changeUsername = async () => {
-  if (
-    state.usernameEditText.length === 0 ||
-    state.usernameEditText.length > 15
-  ) {
+  const username = state.usernameEditText.trim();
+
+  if (username.length === 0 || username.length > 15) {
     createToast("Invalid username (must be <=15 chars)!", "error");
     return;
   }
 
-  if (state.usernameEditText === profile.value.username) {
+  if (username === profile.value.username) {
     state.editingUsername = false;
     return;
   }
 
   try {
-    profile.value.username = state.usernameEditText;
+    profile.value.username = username;
     await setDoc(docRef.value, profile.value);
-    userData.value.username = state.usernameEditText;
-    setMeta(`Realm trove | ${state.usernameEditText}'s Items`);
+    userData.value.username = username;
+    setMeta(`Realm trove | ${username}'s Items`);
     createToast("Username updated!", "green-vue");
     state.editingUsername = false;
   } catch (e) {
@@ -342,8 +339,8 @@ const changeUsername = async () => {
 };
 
 const cancelChanges = () => {
-  profile.value.collection = initialCollection.value;
-  initialCollection.value = undefined;
+  profile.value.collection = state.initialCollection;
+  state.initialCollection = undefined;
 };
 
 const confirmChanges = async () => {
@@ -357,7 +354,7 @@ const confirmChanges = async () => {
       createToast("Saved!", "green-vue");
     }
     searchItems();
-    initialCollection.value = undefined;
+    state.initialCollection = undefined;
   } catch (e) {
     createToast(e.message, "error");
     error.value = true;
@@ -370,7 +367,7 @@ const resetCollection = async () => {
     emptyCollection.collection[selectedTab.value] = {};
     await setDoc(docRef.value, emptyCollection);
     createToast("Progress has been reset!", "green-vue");
-    initialCollection.value = undefined;
+    state.initialCollection = undefined;
   } catch (e) {
     createToast(e.message, "error");
     error.value = true;
@@ -412,7 +409,7 @@ const searchItems = useDebounceFn(() => {
     );
   }
 
-  filteredCollection.value = {
+  state.filteredCollection = {
     [TAB.UT]: items[TAB.UT].filter((item) =>
       filterConditions.every((i) => i(item))
     ),
@@ -464,7 +461,7 @@ watch(
 watch(pendingChanges, (val) => {
   if (!val) {
     removePermanentToasts();
-    initialCollection.value = undefined;
+    state.initialCollection = undefined;
   }
 });
 

@@ -1,15 +1,21 @@
 import app from "~/config/firebase-admin";
-import { getFirestore } from "firebase-admin/firestore";
 import { Profile } from "~/models";
 
 export default defineEventHandler(async (event) => {
   const slug = event.context.params.slug;
-  const query = getQuery(event);
-  const firestore = getFirestore(app);
-  const c = firestore
+  const { property } = getQuery(event);
+
+  const col = app
+    .firestore()
     .collection("profile")
-    .where(query.property as string, "==", slug);
-  const d = await c.get();
-  const res = d.docs[0].data();
+    .where(property as string, "==", slug);
+
+  const data = await col.get();
+
+  if (data.empty) {
+    throw Error("No profile found.");
+  }
+
+  const res = data.docs[0].data();
   return res as Profile;
 });

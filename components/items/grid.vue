@@ -46,7 +46,6 @@
 import { Tooltip } from "floating-vue";
 import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
 import {
-  TAB,
   SOURCE_NAMES,
   ITEM_TYPE_NAMES,
   BP_QUALITY_POS

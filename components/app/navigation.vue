@@ -9,15 +9,22 @@
       <client-only v-if="$route.params.slug !== userData.shortId">
         <NuxtLink :to="userData.shortId">
           <app-text-button
-            class="mr-2 text-sm md:text-base"
+            class="text-sm md:text-base"
             background-color="green-vue"
             tooltip="Your collection"
             :text="userData.username || ''"
           />
         </NuxtLink>
       </client-only>
+      <NuxtLink v-if="$route.name !== 'quests'" to="quests">
+        <app-text-button
+          class="ml-2 text-sm md:text-base"
+          background-color="blue"
+          text="Quests"
+        />
+      </NuxtLink>
       <app-text-button
-        class="mr-2 text-sm md:text-base"
+        class="mx-2 text-sm md:text-base"
         background-color="error"
         text="Sign out"
         @on-click="logOut"
@@ -42,16 +49,24 @@ const loginTrigger = useLoginTrigger();
 const userData = useUserData();
 const { createToast } = useToast();
 const { $firebaseAuth } = useNuxtApp();
+const route = useRoute();
+const router = useRouter();
 
 const logOut = async () => {
   try {
     await signOut($firebaseAuth);
+
     userData.value = {
       shortId: null,
       username: null
     };
+
     loginTrigger.value = false;
     createToast("Signed out!", "green-vue");
+
+    if (route.name === "quests") {
+      router.push("/");
+    }
   } catch (e) {
     createToast(e.message, "error");
   }

@@ -33,11 +33,17 @@ export interface PlayerCollection {
   bp: IDictionary<number>;
 }
 
+export interface ProfileQuests {
+  activeQuests: number[];
+  marks: IDictionary<number>;
+}
+
 export interface Profile {
   shortId: string;
   uid: string;
   username: string;
   collection: PlayerCollection;
+  quests: ProfileQuests;
 }
 
 export interface ChangeModel {
@@ -49,4 +55,10 @@ export interface ChangeModel {
 export interface SelectItem<T> {
   text: string;
   value: T;
+}
+
+export interface MarkInfo {
+  id: number;
+  name: string;
+  pos: ItemCoordinate;
 }
