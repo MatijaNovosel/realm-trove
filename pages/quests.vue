@@ -8,7 +8,7 @@
     <spinner class="mt-4 mx-auto" v-if="pending" />
     <div v-else>
       <h1>Quests</h1>
-      <div class="row my-5 px-5 md:px-3 items-center">
+      <div class="row my-5 md:px-0 items-center">
         <div
           class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
         >
