@@ -172,7 +172,7 @@
 </template>
 
 <script setup lang="ts">
-import { IDictionary, ItemInfo, PlayerCollection, Profile } from "~/models";
+import { ItemInfo, Profile } from "~/models";
 import { CHECKBOX_STATE, TAB } from "~/utils/constants";
 import {
   doc,
