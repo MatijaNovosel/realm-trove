@@ -15,7 +15,7 @@
       @no="state.confirmDialogOpen = false"
     />
     <div
-      class="offset"
+      class="offset w-full"
       :class="{
         'h-full flex-center': loading || error
       }"

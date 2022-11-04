@@ -7,7 +7,7 @@
       @no="state.confirmDialogOpen = false"
     />
     <div
-      class="offset px-3"
+      class="offset px-3 w-full"
       :class="{
         'h-full flex-center': pending || error
       }"
