@@ -210,3 +210,10 @@ export const SOURCE_NAMES = {
   [SOURCE.GODLANDS_DUNGEONS]: "Godlands Dungeons",
   [SOURCE.TINKERER]: "Tinkerer"
 };
+
+export enum QUEST_QUALITY {
+  SCOUT = 1,
+  STANDARD,
+  MIGHTY,
+  EPIC
+}

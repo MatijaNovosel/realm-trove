@@ -1,324 +1,410 @@
-import { MarkInfo } from "~/models";
+import { IDictionary, ItemCoordinate, MarkInfo } from "~/models";
+
+export enum MARK_ENUM {
+  SEPTAVIUS = 1,
+  MALPHAS,
+  GULPORD,
+  DR_TERRIBLE,
+  PUPPET_MASTER,
+  SKULD,
+  RUTHVEN,
+  DAICHI,
+  ESBEN,
+  LIMON,
+  THESSAL,
+  GEB,
+  ORYX,
+  JANUS,
+  WYVERN,
+  FORGOTTEN_KING,
+  SHAITAN,
+  BILGEWATER,
+  MEGAMOTH,
+  BEE_QUEEN,
+  SON_OF_ARACHNA,
+  STHENO,
+  DAVY_JONES,
+  PARASITIC_HORRORS,
+  FOUNTAIN_SPIRIT,
+  ARCHIVIST,
+  COLOSSUS,
+  VOID,
+  MALUS,
+  TREASURE,
+  PIRATE,
+  MOTH,
+  ARACHNA,
+  BEE,
+  JUNGLE,
+  TESSERACT,
+  EXALTED,
+  CRYSTAL_ENTITY,
+  SANDSTONE,
+  INTERREGNUM
+}
+
+export const MARK_POS: IDictionary<ItemCoordinate> = {
+  [MARK_ENUM.SEPTAVIUS]: {
+    x: 0,
+    y: -138
+  },
+  [MARK_ENUM.MALPHAS]: {
+    x: -46,
+    y: -138
+  },
+  [MARK_ENUM.GULPORD]: {
+    x: -92,
+    y: -138
+  },
+  [MARK_ENUM.DR_TERRIBLE]: {
+    x: -138,
+    y: -138
+  },
+  [MARK_ENUM.PUPPET_MASTER]: {
+    x: -184,
+    y: -138
+  },
+  [MARK_ENUM.RUTHVEN]: {
+    x: -276,
+    y: -138
+  },
+  [MARK_ENUM.SKULD]: {
+    x: -230,
+    y: -138
+  },
+  [MARK_ENUM.SHAITAN]: {
+    x: -736,
+    y: -138
+  },
+  [MARK_ENUM.INTERREGNUM]: {
+    x: -1794,
+    y: -138
+  },
+  [MARK_ENUM.FORGOTTEN_KING]: {
+    x: -690,
+    y: -138
+  },
+  [MARK_ENUM.BEE_QUEEN]: {
+    x: -874,
+    y: -138
+  },
+  [MARK_ENUM.CRYSTAL_ENTITY]: {
+    x: -1702,
+    y: -138
+  },
+  [MARK_ENUM.COLOSSUS]: {
+    x: -1196,
+    y: -138
+  },
+  [MARK_ENUM.MALUS]: {
+    x: -1288,
+    y: -138
+  },
+  [MARK_ENUM.VOID]: {
+    x: -1242,
+    y: -138
+  },
+  [MARK_ENUM.EXALTED]: {
+    x: -1656,
+    y: -138
+  },
+  [MARK_ENUM.TREASURE]: {
+    x: -1334,
+    y: -138
+  },
+  [MARK_ENUM.PARASITIC_HORRORS]: {
+    x: -1058,
+    y: -138
+  },
+  [MARK_ENUM.BILGEWATER]: {
+    x: -782,
+    y: -138
+  },
+  [MARK_ENUM.MEGAMOTH]: {
+    x: -828,
+    y: -138
+  },
+  [MARK_ENUM.SON_OF_ARACHNA]: {
+    x: -920,
+    y: -138
+  },
+  [MARK_ENUM.DAVY_JONES]: {
+    x: -1012,
+    y: -138
+  },
+  [MARK_ENUM.DAICHI]: {
+    x: -322,
+    y: -138
+  },
+  [MARK_ENUM.WYVERN]: {
+    x: -644,
+    y: -138
+  },
+  [MARK_ENUM.TESSERACT]: {
+    x: -1610,
+    y: -138
+  },
+  [MARK_ENUM.ESBEN]: {
+    x: -368,
+    y: -138
+  },
+  [MARK_ENUM.THESSAL]: {
+    x: -460,
+    y: -138
+  },
+  [MARK_ENUM.GEB]: {
+    x: -506,
+    y: -138
+  },
+  [MARK_ENUM.ORYX]: {
+    x: -552,
+    y: -138
+  },
+  [MARK_ENUM.JANUS]: {
+    x: -598,
+    y: -138
+  },
+  [MARK_ENUM.SANDSTONE]: {
+    x: -1748,
+    y: -138
+  },
+  [MARK_ENUM.STHENO]: {
+    x: -966,
+    y: -138
+  },
+  [MARK_ENUM.LIMON]: {
+    x: -414,
+    y: -138
+  },
+  [MARK_ENUM.FOUNTAIN_SPIRIT]: {
+    x: -1104,
+    y: -138
+  },
+  [MARK_ENUM.ARCHIVIST]: {
+    x: -1150,
+    y: -138
+  },
+  [MARK_ENUM.PIRATE]: {
+    x: -1380,
+    y: -138
+  },
+  [MARK_ENUM.MOTH]: {
+    x: -1426,
+    y: -138
+  },
+  [MARK_ENUM.ARACHNA]: {
+    x: -1472,
+    y: -138
+  },
+  [MARK_ENUM.BEE]: {
+    x: -1518,
+    y: -138
+  },
+  [MARK_ENUM.JUNGLE]: {
+    x: -1564,
+    y: -138
+  }
+};
 
 export const MARKS: MarkInfo[] = [
   {
-    id: 17,
+    id: MARK_ENUM.SHAITAN,
     name: "Mark of Shaitan",
-    pos: {
-      x: -736,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.SHAITAN]
   },
   {
-    id: 40,
+    id: MARK_ENUM.INTERREGNUM,
     name: "Mark of the Interregnum",
-    pos: {
-      x: -1794,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.INTERREGNUM]
   },
   {
-    id: 16,
+    id: MARK_ENUM.FORGOTTEN_KING,
     name: "Mark of the Forgotten King",
-    pos: {
-      x: -690,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.FORGOTTEN_KING]
   },
   {
-    id: 20,
+    id: MARK_ENUM.BEE_QUEEN,
     name: "Mark of the Killer Bee Queen",
-    pos: {
-      x: -874,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.BEE_QUEEN]
   },
   {
-    id: 38,
+    id: MARK_ENUM.CRYSTAL_ENTITY,
     name: "Mark of the Crystal Entity",
-    pos: {
-      x: -1702,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.CRYSTAL_ENTITY]
   },
   {
-    id: 27,
+    id: MARK_ENUM.COLOSSUS,
     name: "Mark of the Marble Colossus",
-    pos: {
-      x: -1196,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.COLOSSUS]
   },
   {
-    id: 29,
+    id: MARK_ENUM.MALUS,
     name: "Mark of Malus",
-    pos: {
-      x: -1288,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.MALUS]
   },
   {
-    id: 28,
+    id: MARK_ENUM.VOID,
     name: "Mark of the Void Entity",
-    pos: {
-      x: -1242,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.VOID]
   },
   {
-    id: 37,
+    id: MARK_ENUM.EXALTED,
     name: "Mark of the Exalted God",
-    pos: {
-      x: -1656,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.EXALTED]
   },
   {
-    id: 30,
+    id: MARK_ENUM.TREASURE,
     name: "Mark of the Effigy",
-    pos: {
-      x: -1334,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.TREASURE]
   },
   {
-    id: 24,
+    id: MARK_ENUM.PARASITIC_HORRORS,
     name: "Mark of Parasitic Horrors",
-    pos: {
-      x: -1058,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.PARASITIC_HORRORS]
   },
   {
-    id: 18,
+    id: MARK_ENUM.BILGEWATER,
     name: "Mark of Bilgewater",
-    pos: {
-      x: -782,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.BILGEWATER]
   },
   {
-    id: 19,
+    id: MARK_ENUM.MEGAMOTH,
     name: "Mark of the Megamoth",
-    pos: {
-      x: -828,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.MEGAMOTH]
   },
   {
-    id: 21,
+    id: MARK_ENUM.SON_OF_ARACHNA,
     name: "Mark of the Son of Arachna",
-    pos: {
-      x: -920,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.SON_OF_ARACHNA]
   },
   {
-    id: 23,
+    id: MARK_ENUM.SON_OF_ARACHNA,
     name: "Mark of Davy Jones",
-    pos: {
-      x: -1012,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.DAVY_JONES]
   },
   {
-    id: 8,
+    id: MARK_ENUM.DAICHI,
     name: "Mark of Daichi",
-    pos: {
-      x: -322,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.DAICHI]
   },
   {
-    id: 15,
+    id: MARK_ENUM.WYVERN,
     name: "Mark of the Wyvern",
-    pos: {
-      x: -644,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.WYVERN]
   },
   {
-    id: 36,
+    id: MARK_ENUM.TESSERACT,
     name: "Mark of the Tesseract Goddess",
-    pos: {
-      x: -1610,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.TESSERACT]
   },
   {
-    id: 9,
+    id: MARK_ENUM.ESBEN,
     name: "Mark of Esben",
-    pos: {
-      x: -368,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.ESBEN]
   },
   {
-    id: 11,
+    id: MARK_ENUM.THESSAL,
     name: "Mark of Thessal",
-    pos: {
-      x: -460,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.THESSAL]
   },
   {
-    id: 12,
+    id: MARK_ENUM.GEB,
     name: "Mark of Geb",
-    pos: {
-      x: -506,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.GEB]
   },
   {
-    id: 13,
+    id: MARK_ENUM.ORYX,
     name: "Mark of Oryx",
-    pos: {
-      x: -552,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.ORYX]
   },
   {
-    id: 14,
+    id: MARK_ENUM.JANUS,
     name: "Mark of Janus",
-    pos: {
-      x: -598,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.JANUS]
   },
   {
-    id: 39,
+    id: MARK_ENUM.SANDSTONE,
     name: "Mark of the Sandstone Titan",
-    pos: {
-      x: -1748,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.SANDSTONE]
   },
   {
-    id: 22,
+    id: MARK_ENUM.STHENO,
     name: "Mark of Stheno",
-    pos: {
-      x: -966,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.STHENO]
   },
   {
-    id: 10,
+    id: MARK_ENUM.LIMON,
     name: "Mark of Limon",
-    pos: {
-      x: -414,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.LIMON]
   },
   {
-    id: 25,
+    id: MARK_ENUM.FOUNTAIN_SPIRIT,
     name: "Mark of the Fountain Spirit",
-    pos: {
-      x: -1104,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.FOUNTAIN_SPIRIT]
   },
   {
-    id: 1,
+    id: MARK_ENUM.SEPTAVIUS,
     name: "Mark of Septavius",
-    pos: {
-      x: 0,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.SEPTAVIUS]
   },
   {
-    id: 2,
+    id: MARK_ENUM.MALPHAS,
     name: "Mark of Malphas",
-    pos: {
-      x: -46,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.MALPHAS]
   },
   {
-    id: 26,
+    id: MARK_ENUM.ARCHIVIST,
     name: "Mark of the Archivist",
-    pos: {
-      x: -1150,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.ARCHIVIST]
   },
   {
-    id: 3,
+    id: MARK_ENUM.GULPORD,
     name: "Mark of Gulpord",
-    pos: {
-      x: -92,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.GULPORD]
   },
   {
-    id: 4,
+    id: MARK_ENUM.DR_TERRIBLE,
     name: "Mark of Dr Terrible",
-    pos: {
-      x: -138,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.DR_TERRIBLE]
   },
   {
-    id: 5,
+    id: MARK_ENUM.PUPPET_MASTER,
     name: "Mark of the Puppet Master",
-    pos: {
-      x: -184,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.PUPPET_MASTER]
   },
   {
-    id: 7,
+    id: MARK_ENUM.RUTHVEN,
     name: "Mark of Ruthven",
-    pos: {
-      x: -276,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.RUTHVEN]
   },
   {
-    id: 6,
+    id: MARK_ENUM.SKULD,
     name: "Mark of Skuld",
-    pos: {
-      x: -230,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.SKULD]
   },
   {
-    id: 31,
+    id: MARK_ENUM.PIRATE,
     name: "Mark of Dreadstump",
-    pos: {
-      x: -1380,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.PIRATE]
   },
   {
-    id: 32,
+    id: MARK_ENUM.MOTH,
     name: "Mark of Mama Megamoth",
-    pos: {
-      x: -1426,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.MOTH]
   },
   {
-    id: 33,
+    id: MARK_ENUM.ARACHNA,
     name: "Mark of Arachna",
-    pos: {
-      x: -1472,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.ARACHNA]
   },
   {
-    id: 34,
+    id: MARK_ENUM.BEE,
     name: "Mark of the Queen Bee",
-    pos: {
-      x: -1518,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.BEE]
   },
   {
-    id: 35,
+    id: MARK_ENUM.JUNGLE,
     name: "Mark of Mixcoatl",
-    pos: {
-      x: -1564,
-      y: -138
-    }
+    pos: MARK_POS[MARK_ENUM.JUNGLE]
   }
 ];

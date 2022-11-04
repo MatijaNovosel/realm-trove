@@ -18,6 +18,45 @@
       </div>
       <div v-else>
         <h1>Quests</h1>
+        <div class="row">
+          <div class="col-span-12 tex" v-if="quests.length === 0">
+            No active quests.
+          </div>
+          <div class="col-span-12" v-else>
+            <div class="row flex gap-4">
+              <div
+                class="col-span-12 md:col-span-4"
+                v-for="(quest, i) in quests"
+                :key="i"
+              >
+                <div class="flex flex-col bg-dark-800 rounded relative">
+                  <div class="px-2 py-1 text-sm">
+                    {{ quest.name }}
+                  </div>
+                  <hr class="divider" />
+                  <div
+                    class="px-2 py-2 flex relative"
+                    :style="{
+                      height: '46px'
+                    }"
+                  >
+                    <div
+                      v-for="(mark, j) in quest.marks"
+                      :key="j"
+                      class="item absolute"
+                      :style="{
+                        backgroundPosition: `${MARK_POS[mark].x}px ${MARK_POS[mark].y}px`,
+                        scale: 0.8,
+                        bottom: '0px',
+                        left: `${j * 18}px`
+                      }"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="row my-5 md:px-0 items-center">
           <div
             class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
@@ -77,9 +116,10 @@
 <script lang="ts" setup>
 import { useDebounceFn } from "@vueuse/core";
 import { MarkInfo, Profile } from "~/models";
-import { MARKS } from "~/utils/marks";
+import { MARKS, MARK_POS } from "~/utils/marks";
 import ResetIcon from "~icons/carbon/reset";
 import { doc, setDoc } from "firebase/firestore";
+import { QUESTS } from "~/utils/quests";
 
 const userData = useUserData();
 const { setMeta } = useMetadata();
@@ -107,6 +147,15 @@ const pendingChanges = computed(() => {
     JSON.stringify(state.initialCollection) !==
       JSON.stringify(data.value.quests.marks)
   );
+});
+
+const quests = computed(() => {
+  if (data.value.quests.activeQuests.length === 0) {
+    return [];
+  }
+  return QUESTS.filter((q) =>
+    data.value.quests.activeQuests.includes(q.id)
+  ).sort((a, b) => b.quality - a.quality);
 });
 
 const updateCollection = async (id: number, increment = true) => {
@@ -186,7 +235,7 @@ const resetCollection = async () => {
 };
 
 watch(
-  () => [state.searchText],
+  () => state.searchText,
   () => searchMarks()
 );
 

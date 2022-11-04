@@ -62,3 +62,10 @@ export interface MarkInfo {
   name: string;
   pos: ItemCoordinate;
 }
+
+export interface QuestInfo {
+  id: number;
+  name: string;
+  marks: number[];
+  quality: number;
+}
