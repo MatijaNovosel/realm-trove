@@ -1,6 +1,6 @@
 <template>
   <div
-    class="offset w-full px-3"
+    class="offset px-3"
     :class="{
       'h-full flex-center': loading || error
     }"

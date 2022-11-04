@@ -1,5 +1,5 @@
 <template>
-  <div class="offset w-full px-3">
+  <div class="offset px-3">
     <h1>Privacy policy</h1>
     <p>Last updated: November 01, 2022</p>
     <p>

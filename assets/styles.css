@@ -238,6 +238,10 @@ pre {
   height: 22px;
 }
 
+.w-fit-content {
+  width: fit-content;
+}
+
 .row {
   @apply grid grid-cols-12;
 }

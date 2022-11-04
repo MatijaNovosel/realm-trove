@@ -7,7 +7,7 @@
       @no="state.confirmDialogOpen = false"
     />
     <div
-      class="offset w-full px-3"
+      class="offset px-3"
       :class="{
         'h-full flex-center': pending || error
       }"
@@ -18,39 +18,55 @@
       </div>
       <div v-else>
         <h1>Quests</h1>
-        <div class="row">
-          <div class="col-span-12 tex" v-if="quests.length === 0">
+        <div class="row mt-5">
+          <div class="col-span-12 mb-5">
+            <app-text-button
+              class="text-sm md:text-base w-fit-content mx-auto"
+              background-color="green-vue"
+              text="Add quests"
+            />
+          </div>
+          <div class="col-span-12" v-if="quests.length === 0">
             No active quests.
           </div>
           <div class="col-span-12" v-else>
             <div class="row flex gap-4">
               <div
-                class="col-span-12 md:col-span-4"
+                class="col-span-12 md:col-span-3"
                 v-for="(quest, i) in quests"
                 :key="i"
               >
-                <div class="flex flex-col bg-dark-800 rounded relative">
-                  <div class="px-2 py-1 text-sm">
-                    {{ quest.name }}
-                  </div>
-                  <hr class="divider" />
-                  <div
-                    class="px-2 py-2 flex relative"
-                    :style="{
-                      height: '46px'
-                    }"
-                  >
+                <div class="flex bg-dark-800 rounded-lg relative">
+                  <div class="flex flex-col" style="width: 70%">
+                    <div class="pl-3 pt-2 text-sm">
+                      {{ quest.name }}
+                    </div>
                     <div
-                      v-for="(mark, j) in quest.marks"
-                      :key="j"
-                      class="item absolute"
+                      class="px-2 py-2 flex relative"
                       :style="{
-                        backgroundPosition: `${MARK_POS[mark].x}px ${MARK_POS[mark].y}px`,
-                        scale: 0.8,
-                        bottom: '0px',
-                        left: `${j * 18}px`
+                        height: '46px'
                       }"
-                    />
+                    >
+                      <div
+                        v-for="(mark, j) in quest.marks"
+                        :key="j"
+                        class="item absolute"
+                        :style="{
+                          backgroundPosition: `${MARK_POS[mark].x}px ${MARK_POS[mark].y}px`,
+                          scale: 0.8,
+                          bottom: '0px',
+                          left: `${j * 18}px`
+                        }"
+                      />
+                    </div>
+                  </div>
+                  <div style="width: 30%" class="flex-center">
+                    <app-icon-button
+                      background-color="dark"
+                      @on-click="removeQuest(quest.id)"
+                    >
+                      <CheckIcon />
+                    </app-icon-button>
                   </div>
                 </div>
               </div>
@@ -58,6 +74,9 @@
           </div>
         </div>
         <div class="row my-5 md:px-0 items-center">
+          <div class="col-span-12 mb-5">
+            <hr class="divider" />
+          </div>
           <div
             class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
           >
@@ -117,9 +136,10 @@
 import { useDebounceFn } from "@vueuse/core";
 import { MarkInfo, Profile } from "~/models";
 import { MARKS, MARK_POS } from "~/utils/marks";
-import ResetIcon from "~icons/carbon/reset";
 import { doc, setDoc } from "firebase/firestore";
 import { QUESTS } from "~/utils/quests";
+import ResetIcon from "~icons/carbon/reset";
+import CheckIcon from "~icons/ic/baseline-check";
 
 const userData = useUserData();
 const { setMeta } = useMetadata();
@@ -232,6 +252,13 @@ const resetCollection = async () => {
   } finally {
     state.confirmDialogOpen = false;
   }
+};
+
+const removeQuest = (id: number) => {
+  data.value.quests.activeQuests = data.value.quests.activeQuests.filter(
+    (qId) => qId !== id
+  );
+  setDoc(state.docRef, data.value);
 };
 
 watch(
