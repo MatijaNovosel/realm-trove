@@ -1,11 +1,11 @@
 <template>
   <header
-    class="flex justify-between w-full items-center absolute mt-4 z-4 rounded-lg bg-transparent py-3"
+    class="flex flex-col md:flex-row justify-between w-full items-center absolute mt-4 z-4 rounded-lg bg-transparent py-3"
   >
-    <NuxtLink to="/" class="text-sm md:text-2xl ripple py-1 px-3 rounded">
+    <NuxtLink to="/" class="text-xl md:text-2xl ripple py-1 px-3 rounded">
       👑 Realm trove
     </NuxtLink>
-    <div class="flex" v-if="user">
+    <div class="flex-center mt-3 md:mt-0" v-if="user">
       <client-only v-if="$route.params.slug !== userData.shortId">
         <NuxtLink :to="userData.shortId">
           <app-text-button
@@ -26,7 +26,7 @@
       <app-text-button
         class="mx-2 text-sm md:text-base"
         background-color="error"
-        text="Sign out"
+        text="Log out"
         @on-click="logOut"
       />
     </div>

@@ -129,6 +129,12 @@ html {
   padding-top: 60px;
 }
 
+@media only screen and (max-width: 600px) {
+  .offset {
+    padding-top: 90px;
+  }
+}
+
 .user-select-none {
   user-select: none;
 }
@@ -221,8 +227,4 @@ pre {
 
 .flex-center {
   @apply flex items-center justify-center;
-}
-
-.flex-col {
-  @apply flex flex-col;
 }
