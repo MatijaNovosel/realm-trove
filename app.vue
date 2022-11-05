@@ -94,6 +94,6 @@ setMeta("Realm trove");
 
 <style scoped>
 .max-w-container {
-  max-width: 1026px;
+  max-width: 1104px;
 }
 </style>
