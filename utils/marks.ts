@@ -278,7 +278,7 @@ export const MARKS: MarkInfo[] = [
     pos: MARK_POS[MARK_ENUM.SON_OF_ARACHNA]
   },
   {
-    id: MARK_ENUM.SON_OF_ARACHNA,
+    id: MARK_ENUM.DAVY_JONES,
     name: "Mark of Davy Jones",
     pos: MARK_POS[MARK_ENUM.DAVY_JONES]
   },
