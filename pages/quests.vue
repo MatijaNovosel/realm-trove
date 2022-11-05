@@ -26,7 +26,7 @@
               text="Add quests"
             />
           </div>
-          <div class="col-span-12" v-if="quests.length === 0">
+          <div class="col-span-12 text-center" v-if="quests.length === 0">
             No active quests.
           </div>
           <div class="col-span-12" v-else>

@@ -191,6 +191,7 @@ const user = useUser();
 const userData = useUserData();
 const selectedTab = useSelectedTab();
 const route = useRoute();
+const logoutTrigger = useLogoutTrigger();
 const { setMeta } = useMetadata();
 
 const state = reactive({
@@ -456,6 +457,16 @@ watch(pendingChanges, (val) => {
     state.initialCollection = undefined;
   }
 });
+
+watch(
+  () => logoutTrigger.value,
+  (val) => {
+    if (val) {
+      profile.value.collection = state.initialCollection;
+      state.initialCollection = undefined;
+    }
+  }
+);
 
 watch(
   loading,

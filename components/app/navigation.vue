@@ -46,14 +46,16 @@ import { signOut } from "firebase/auth";
 
 const user = useUser();
 const loginTrigger = useLoginTrigger();
+const logoutTrigger = useLogoutTrigger();
 const userData = useUserData();
-const { createToast } = useToast();
+const { createToast, removePermanentToasts } = useToast();
 const { $firebaseAuth } = useNuxtApp();
 const route = useRoute();
 const router = useRouter();
 
 const logOut = async () => {
   try {
+    logoutTrigger.value = true;
     await signOut($firebaseAuth);
 
     userData.value = {
@@ -62,6 +64,8 @@ const logOut = async () => {
     };
 
     loginTrigger.value = false;
+    logoutTrigger.value = false;
+    removePermanentToasts();
     createToast("Signed out!", "green-vue");
 
     if (route.name === "quests") {
