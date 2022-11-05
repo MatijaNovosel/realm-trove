@@ -46,3 +46,15 @@ defineProps<{
 
 defineEmits(["lclick", "rclick"]);
 </script>
+
+<style scoped>
+.badge {
+  position: absolute;
+  font-size: 14px;
+  bottom: -6px;
+  right: -10px;
+  border-radius: 100%;
+  width: 22px;
+  height: 22px;
+}
+</style>

@@ -228,16 +228,6 @@ pre {
   background-repeat: no-repeat;
 }
 
-.badge {
-  position: absolute;
-  font-size: 14px;
-  bottom: -6px;
-  right: -10px;
-  border-radius: 100%;
-  width: 22px;
-  height: 22px;
-}
-
 .w-fit-content {
   width: fit-content;
 }
