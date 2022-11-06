@@ -4,6 +4,15 @@ export enum TAB {
   BP = "bp"
 }
 
+export enum ITEM_QUALITY {
+  SS = 1,
+  S,
+  A,
+  B,
+  C,
+  D
+}
+
 export enum CHECKBOX_STATE {
   EMPTY = 1,
   INDETERMINATE,
@@ -217,3 +226,17 @@ export enum QUEST_QUALITY {
   MIGHTY,
   EPIC
 }
+
+export const QUEST_QUALITY_COLOR = {
+  [QUEST_QUALITY.SCOUT]: "#B5AFAA",
+  [QUEST_QUALITY.STANDARD]: "#19AFFF",
+  [QUEST_QUALITY.MIGHTY]: "#A328D4",
+  [QUEST_QUALITY.EPIC]: "#F7760C"
+};
+
+export const QUEST_QUALITY_NAME = {
+  [QUEST_QUALITY.SCOUT]: "Scout",
+  [QUEST_QUALITY.STANDARD]: "Standard",
+  [QUEST_QUALITY.MIGHTY]: "Mighty",
+  [QUEST_QUALITY.EPIC]: "Epic"
+};

@@ -6,6 +6,10 @@
       @yes="resetCollection"
       @no="state.confirmDialogOpen = false"
     />
+    <quests-modal
+      :open="state.newQuestsModalOpen"
+      @close="state.newQuestsModalOpen = false"
+    />
     <div
       class="offset px-3 w-full"
       :class="{
@@ -18,12 +22,13 @@
       </div>
       <div v-else>
         <h1>Quests</h1>
-        <div class="row mt-5">
+        <div class="row mt-3">
           <div class="col-span-12 mb-5">
             <app-text-button
               class="text-sm md:text-base w-fit-content mx-auto"
               background-color="green-vue"
               text="Add quests"
+              @on-click="state.newQuestsModalOpen = true"
             />
           </div>
           <div class="col-span-12 text-center" v-if="quests.length === 0">
@@ -36,39 +41,7 @@
                 v-for="(quest, i) in quests"
                 :key="i"
               >
-                <div class="flex bg-dark-800 rounded-lg relative">
-                  <div class="flex flex-col" style="width: 70%">
-                    <div class="pl-3 pt-2 text-sm">
-                      {{ quest.name }}
-                    </div>
-                    <div
-                      class="px-2 py-2 flex relative"
-                      :style="{
-                        height: '46px'
-                      }"
-                    >
-                      <div
-                        v-for="(mark, j) in quest.marks"
-                        :key="j"
-                        class="item absolute"
-                        :style="{
-                          backgroundPosition: `${MARK_POS[mark].x}px ${MARK_POS[mark].y}px`,
-                          scale: 0.8,
-                          bottom: '0px',
-                          left: `${j * 18}px`
-                        }"
-                      />
-                    </div>
-                  </div>
-                  <div style="width: 30%" class="flex-center">
-                    <app-icon-button
-                      background-color="dark"
-                      @on-click="removeQuest(quest.id)"
-                    >
-                      <CheckIcon />
-                    </app-icon-button>
-                  </div>
-                </div>
+                <quests-card @remove="removeQuest" :quest="quest" />
               </div>
             </div>
           </div>
@@ -135,11 +108,10 @@
 <script lang="ts" setup>
 import { useDebounceFn } from "@vueuse/core";
 import { MarkInfo, Profile } from "~/models";
-import { MARKS, MARK_POS } from "~/utils/marks";
+import { MARKS } from "~/utils/marks";
 import { doc, setDoc } from "firebase/firestore";
 import { QUESTS } from "~/utils/quests";
 import ResetIcon from "~icons/carbon/reset";
-import CheckIcon from "~icons/ic/baseline-check";
 
 const userData = useUserData();
 const { setMeta } = useMetadata();
@@ -158,6 +130,7 @@ const state = reactive({
   filteredMarks: MARKS,
   searchText: "",
   confirmDialogOpen: false,
+  newQuestsModalOpen: false,
   docRef: undefined
 });
 
@@ -296,6 +269,6 @@ onBeforeUnmount(() => {
 
 <style scoped>
 h1 {
-  @apply text-xl md:text-3xl mt-5 mb-3 text-center;
+  @apply text-xl md:text-3xl mt-5 text-center;
 }
 </style>
