@@ -412,43 +412,43 @@ export const QUESTS: QuestInfo[] = [
     quality: QUEST_QUALITY.MIGHTY
   },
   {
-    id: 51,
+    id: 52,
     name: "The Effigy",
     marks: [MARK_ENUM.TREASURE],
     quality: QUEST_QUALITY.MIGHTY
   },
   {
-    id: 52,
+    id: 53,
     name: "The Colossus",
     marks: [...new Array(3)].map(() => MARK_ENUM.COLOSSUS),
     quality: QUEST_QUALITY.EPIC
   },
   {
-    id: 53,
+    id: 54,
     name: "The Cultist",
     marks: [...new Array(3)].map(() => MARK_ENUM.MALUS),
     quality: QUEST_QUALITY.EPIC
   },
   {
-    id: 54,
+    id: 55,
     name: "The End",
     marks: [...new Array(3)].map(() => MARK_ENUM.VOID),
     quality: QUEST_QUALITY.EPIC
   },
   {
-    id: 55,
+    id: 56,
     name: "The King",
     marks: [...new Array(3)].map(() => MARK_ENUM.FORGOTTEN_KING),
     quality: QUEST_QUALITY.EPIC
   },
   {
-    id: 56,
+    id: 57,
     name: "The Crystal",
     marks: [...new Array(3)].map(() => MARK_ENUM.CRYSTAL_ENTITY),
     quality: QUEST_QUALITY.EPIC
   },
   {
-    id: 57,
+    id: 58,
     name: "The Killer Queen",
     marks: [...new Array(3)].map(() => MARK_ENUM.BEE_QUEEN),
     quality: QUEST_QUALITY.EPIC
