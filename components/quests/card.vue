@@ -45,7 +45,8 @@
         :background-color="active ? 'green-vue-100' : undefined"
         @on-click="$emit('on-click', quest.id)"
       >
-        <CheckIcon />
+        <CheckIcon v-if="active" />
+        <PlusIcon v-else />
       </app-icon-button>
     </div>
   </div>
@@ -56,6 +57,7 @@ import { QuestInfo } from "~/models";
 import { QUEST_QUALITY_COLOR, QUEST_QUALITY_NAME } from "~/utils/constants";
 import { MARK_POS } from "~/utils/marks";
 import CheckIcon from "~icons/ic/baseline-check";
+import PlusIcon from "~icons/mdi/plus";
 
 defineProps<{
   quest: QuestInfo;
