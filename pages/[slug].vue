@@ -462,7 +462,9 @@ watch(
   () => logoutTrigger.value,
   (val) => {
     if (val) {
-      profile.value.collection = state.initialCollection;
+      if (state.initialCollection) {
+        profile.value.collection = state.initialCollection;
+      }
       state.initialCollection = undefined;
     }
   }
