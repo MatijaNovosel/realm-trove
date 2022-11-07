@@ -45,7 +45,7 @@
         :background-color="active ? 'green-vue-100' : undefined"
         @on-click="$emit('on-click', quest.id)"
       >
-        <CheckIcon v-if="active" />
+        <CheckIcon v-if="active || preview" />
         <PlusIcon v-else />
       </app-icon-button>
     </div>
@@ -63,6 +63,7 @@ defineProps<{
   quest: QuestInfo;
   showSubtitle?: boolean;
   active?: boolean;
+  preview?: boolean;
 }>();
 
 defineEmits(["remove", "on-click"]);

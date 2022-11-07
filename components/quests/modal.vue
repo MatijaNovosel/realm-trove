@@ -39,6 +39,7 @@
                 <quests-card
                   :active="activeQuests.includes(quest.id)"
                   :quest="quest"
+                  @on-click="$emit('add-quest', quest.id)"
                 />
               </div>
             </div>
@@ -62,7 +63,7 @@ defineProps<{
   activeQuests: number[];
 }>();
 
-defineEmits(["close"]);
+defineEmits(["close", "add-quest"]);
 
 const state = reactive({
   searchText: "",

@@ -10,6 +10,7 @@
       :active-quests="data ? data.quests.activeQuests : []"
       :open="state.newQuestsModalOpen"
       @close="state.newQuestsModalOpen = false"
+      @add-quest="addQuest"
     />
     <div
       class="offset px-3 w-full"
@@ -44,7 +45,8 @@
               >
                 <quests-card
                   show-subtitle
-                  @on-click="removeQuest"
+                  preview
+                  @on-click="addQuest"
                   :quest="quest"
                 />
               </div>
@@ -232,12 +234,16 @@ const resetCollection = async () => {
   }
 };
 
-const removeQuest = (id: number) => {
-  data.value.quests.activeQuests = data.value.quests.activeQuests.filter(
-    (qId) => qId !== id
-  );
+const addQuest = useDebounceFn((id: number) => {
+  if (data.value.quests.activeQuests.includes(id)) {
+    data.value.quests.activeQuests = data.value.quests.activeQuests.filter(
+      (qId) => qId !== id
+    );
+  } else {
+    data.value.quests.activeQuests.push(id);
+  }
   setDoc(state.docRef, data.value);
-};
+}, 350);
 
 watch(
   () => state.searchText,
