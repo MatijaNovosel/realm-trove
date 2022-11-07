@@ -31,6 +31,7 @@
       />
     </div>
     <app-text-button
+      class="mt-3 md:mt-0"
       v-else-if="$route.name !== 'index'"
       background-color="green-vue"
       text="Sign in"
