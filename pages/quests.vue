@@ -7,6 +7,7 @@
       @no="state.confirmDialogOpen = false"
     />
     <quests-modal
+      :active-quests="data ? data.quests.activeQuests : []"
       :open="state.newQuestsModalOpen"
       @close="state.newQuestsModalOpen = false"
     />
@@ -41,7 +42,11 @@
                 v-for="(quest, i) in quests"
                 :key="i"
               >
-                <quests-card @remove="removeQuest" :quest="quest" />
+                <quests-card
+                  show-subtitle
+                  @on-click="removeQuest"
+                  :quest="quest"
+                />
               </div>
             </div>
           </div>

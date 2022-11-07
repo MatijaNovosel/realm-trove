@@ -10,6 +10,7 @@
             color: QUEST_QUALITY_COLOR[quest.quality]
           }"
           class="text-xs mt-1"
+          v-if="showSubtitle"
         >
           {{ QUEST_QUALITY_NAME[quest.quality] }}
         </span>
@@ -36,7 +37,7 @@
     <div style="width: 30%" class="flex-center">
       <app-icon-button
         background-color="dark"
-        @on-click="$emit('remove', quest.id)"
+        @on-click="$emit('on-click', quest.id)"
       >
         <CheckIcon />
       </app-icon-button>
@@ -52,7 +53,9 @@ import CheckIcon from "~icons/ic/baseline-check";
 
 defineProps<{
   quest: QuestInfo;
+  showSubtitle?: boolean;
+  active?: boolean;
 }>();
 
-defineEmits(["remove"]);
+defineEmits(["remove", "on-click"]);
 </script>

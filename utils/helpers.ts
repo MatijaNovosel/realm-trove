@@ -1,6 +1,7 @@
 import type { DecodedIdToken } from "firebase-admin/auth";
 import type { User } from "firebase/auth";
 import type { User as CustomUser } from "~/composables/useUser";
+import { IDictionary } from "~/models";
 import { ITEM_TYPE } from "./constants";
 
 export const randInt = (min: number, max: number) => {
@@ -11,11 +12,11 @@ export const randInt = (min: number, max: number) => {
 
 /**
  * Groups values in an array of objects.
- * @param {any[]} array - The array of objects to be grouped by.
+ * @param {T[]} array - The array of objects to be grouped by.
  * @param {string} property - The property of the objects to group by.
- * @return {any[]} Array of objects grouped by the provided property.
+ * @return {IDictionary<T[]>} A dictionary with the key being the property and the value being the objects grouped by the provided property.
  */
-export const groupBy = (array: any[], property: string): any[] => {
+export const groupBy = <T>(array: T[], property: string): IDictionary<T[]> => {
   return array.reduce((memo, x) => {
     if (!memo[x[property]]) {
       memo[x[property]] = [];

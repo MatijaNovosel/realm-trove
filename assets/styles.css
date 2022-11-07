@@ -232,6 +232,10 @@ pre {
   width: fit-content;
 }
 
+.h-fit-content {
+  height: fit-content;
+}
+
 .row {
   @apply grid grid-cols-12;
 }
