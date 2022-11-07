@@ -103,7 +103,6 @@ const questsGroupedByQuality = computed(() => {
 
 const pendingChanges = computed(() => {
   return (
-    state.initialSelectedQuests.length !== 0 &&
     JSON.stringify(state.initialSelectedQuests.sort()) !==
       JSON.stringify(state.selectedQuests.sort())
   );
