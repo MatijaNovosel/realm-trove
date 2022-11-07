@@ -8,6 +8,14 @@
       @close-btn="$emit('close')"
     >
       <div class="py-2 row">
+        <div class="col-span-12">
+          <app-custom-input
+            class="w-full"
+            placeholder="Search quests"
+            dense
+            v-model="state.searchText"
+          />
+        </div>
         <div
           class="col-span-12"
           v-for="({ quality, quests }, i) in questsGroupedByQuality"
@@ -51,6 +59,10 @@ defineProps<{
 }>();
 
 defineEmits(["close"]);
+
+const state = reactive({
+  searchText: ""
+});
 
 const questsGroupedByQuality = computed(() => {
   return Object.entries(groupBy<QuestInfo>(QUESTS, "quality")).map((e) => ({

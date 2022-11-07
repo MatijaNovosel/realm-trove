@@ -48,8 +48,8 @@ import IconClear from "~icons/ic/round-clear";
 defineProps<{
   modelValue: string;
   placeholder?: string;
-  loading: boolean;
-  error: boolean | Error;
+  loading?: boolean;
+  error?: boolean | Error;
   dense?: boolean;
   hideClear?: boolean;
 }>();

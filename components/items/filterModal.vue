@@ -18,14 +18,14 @@
           label="Show unobtained items"
           @on-selected="$emit('update:show-missing-items', showMissingItems)"
         />
-        <items-custom-select
+        <app-custom-select
           placeholder="Loot source"
           :options="optionsLootSource"
           v-model="selectedLootSource"
           @on-selected="$emit('update:loot-source', selectedLootSource)"
         />
         <template v-if="selectedTab !== TAB.BP">
-          <items-custom-select
+          <app-custom-select
             class="mt-4"
             placeholder="Item type"
             :options="optionsItemType"

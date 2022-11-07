@@ -29,7 +29,7 @@
           <items-type-tab />
           <div class="flex-center" v-if="profile">
             <div v-if="state.editingUsername">
-              <items-custom-input
+              <app-custom-input
                 placeholder="New username"
                 :loading="loading"
                 :error="error"
@@ -70,7 +70,7 @@
                 'md:col-span-12 justify-center': !isCurrentUser
               }"
             >
-              <items-custom-input
+              <app-custom-input
                 placeholder="Search items"
                 dense
                 :loading="loading"

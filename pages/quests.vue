@@ -61,7 +61,7 @@
             <items-instructions />
           </div>
           <div class="col-span-12 md:col-span-6 mt-4 md:mt-0 flex-center">
-            <items-custom-input
+            <app-custom-input
               class="w-full"
               placeholder="Search marks"
               dense

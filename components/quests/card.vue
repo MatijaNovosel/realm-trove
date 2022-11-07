@@ -1,5 +1,11 @@
 <template>
-  <div class="flex bg-dark-800 rounded-lg relative">
+  <div
+    class="flex rounded-lg relative"
+    :class="{
+      'bg-green-vue': active,
+      'bg-dark-800': !active
+    }"
+  >
     <div class="flex flex-col" style="width: 70%">
       <div class="pl-3 pt-2 flex flex-col">
         <span class="text-sm">
@@ -36,7 +42,7 @@
     </div>
     <div style="width: 30%" class="flex-center">
       <app-icon-button
-        background-color="dark"
+        :background-color="active ? 'green-vue-100' : undefined"
         @on-click="$emit('on-click', quest.id)"
       >
         <CheckIcon />
