@@ -143,7 +143,6 @@ const state = reactive({
 
 const pendingChanges = computed(() => {
   return (
-    state.initialCollection !== undefined &&
     JSON.stringify(state.initialCollection) !==
       JSON.stringify(data.value.quests.marks)
   );
