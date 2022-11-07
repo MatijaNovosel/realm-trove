@@ -218,6 +218,14 @@ const state = reactive({
 
 setMeta("Realm trove | Items");
 
+const {
+  data: profile,
+  pending: loading,
+  error
+} = await useLazyFetch<Profile>(`/api/${route.params.slug}?property=shortId`, {
+  key: `/api/${route.params.slug}?property=shortId`
+});
+
 const filterActive = computed(() => {
   return (
     state.lootSource.length !== 0 ||
@@ -227,14 +235,6 @@ const filterActive = computed(() => {
     state.showOnlyMissingItems === CHECKBOX_STATE.CHECKED ||
     state.showOnlyMissingItems === CHECKBOX_STATE.EMPTY
   );
-});
-
-const {
-  data: profile,
-  pending: loading,
-  error
-} = await useLazyFetch<Profile>(`/api/${route.params.slug}?property=shortId`, {
-  key: `/api/${route.params.slug}?property=shortId`
 });
 
 const isCurrentUser = computed(() => {

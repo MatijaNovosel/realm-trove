@@ -10,7 +10,7 @@
       :active-quests="data ? data.quests.activeQuests : []"
       :open="state.newQuestsModalOpen"
       @close="state.newQuestsModalOpen = false"
-      @add-quest="addQuest"
+      @confirm-changes="modifyQuests"
     />
     <div
       class="offset px-3 w-full"
@@ -46,7 +46,7 @@
                 <quests-card
                   show-subtitle
                   preview
-                  @on-click="addQuest"
+                  @on-click="modifyQuests"
                   :quest="quest"
                 />
               </div>
@@ -234,16 +234,20 @@ const resetCollection = async () => {
   }
 };
 
-const addQuest = useDebounceFn((id: number) => {
-  if (data.value.quests.activeQuests.includes(id)) {
-    data.value.quests.activeQuests = data.value.quests.activeQuests.filter(
-      (qId) => qId !== id
-    );
+const modifyQuests = (id: number | number[]) => {
+  if (typeof id === "number") {
+    if (data.value.quests.activeQuests.includes(id)) {
+      data.value.quests.activeQuests = data.value.quests.activeQuests.filter(
+        (qId) => qId !== id
+      );
+    } else {
+      data.value.quests.activeQuests.push(id);
+    }
   } else {
-    data.value.quests.activeQuests.push(id);
+    data.value.quests.activeQuests = id;
   }
   setDoc(state.docRef, data.value);
-}, 350);
+};
 
 watch(
   () => state.searchText,

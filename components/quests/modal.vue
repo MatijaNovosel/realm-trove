@@ -7,8 +7,8 @@
       max-width="800px"
       @close-btn="$emit('close')"
     >
-      <div class="py-2 row">
-        <div class="col-span-12">
+      <template #top>
+        <div class="p-3">
           <app-custom-input
             class="w-full"
             placeholder="Search quests"
@@ -16,6 +16,8 @@
             v-model="state.searchText"
           />
         </div>
+      </template>
+      <div class="pb-2 row relative">
         <template v-if="state.filteredQuests.length !== 0">
           <div
             class="col-span-12"
@@ -37,9 +39,9 @@
                 :key="j"
               >
                 <quests-card
-                  :active="activeQuests.includes(quest.id)"
+                  :active="state.selectedQuests.includes(quest.id)"
                   :quest="quest"
-                  @on-click="$emit('add-quest', quest.id)"
+                  @on-click="modifyQuestList(quest.id)"
                 />
               </div>
             </div>
@@ -47,6 +49,24 @@
         </template>
         <div class="col-span-12 text-center mt-3" v-else>No quests found.</div>
       </div>
+      <template #bottom>
+        <div class="flex justify-center md:justify-end pr-3 py-3">
+          <app-text-button
+            background-color="error"
+            text="Cancel"
+            class="ml-2"
+            :disabled="!pendingChanges"
+            @on-click="cancelChanges"
+          />
+          <app-text-button
+            background-color="green-vue"
+            text="Save"
+            class="ml-2"
+            :disabled="!pendingChanges"
+            @on-click="confirmChanges"
+          />
+        </div>
+      </template>
     </app-modal>
   </transition>
 </template>
@@ -58,16 +78,18 @@ import { QUEST_QUALITY_NAME, QUEST_QUALITY_COLOR } from "~/utils/constants";
 import { QuestInfo } from "~/models";
 import { useDebounceFn } from "@vueuse/core";
 
-defineProps<{
+const props = defineProps<{
   open: boolean;
   activeQuests: number[];
 }>();
 
-defineEmits(["close", "add-quest"]);
+const emit = defineEmits(["close", "confirm-changes"]);
 
 const state = reactive({
   searchText: "",
-  filteredQuests: [...QUESTS]
+  filteredQuests: [...QUESTS],
+  selectedQuests: [],
+  initialSelectedQuests: []
 });
 
 const questsGroupedByQuality = computed(() => {
@@ -79,14 +101,51 @@ const questsGroupedByQuality = computed(() => {
   }));
 });
 
+const pendingChanges = computed(() => {
+  return (
+    state.initialSelectedQuests.length !== 0 &&
+    JSON.stringify(state.initialSelectedQuests.sort()) !==
+      JSON.stringify(state.selectedQuests.sort())
+  );
+});
+
 const searchQuests = useDebounceFn(() => {
   state.filteredQuests = QUESTS.filter((item) =>
     item.name.toLowerCase().includes(state.searchText.toLowerCase())
   );
 }, 300);
 
+const modifyQuestList = (questId: number) => {
+  if (state.selectedQuests.includes(questId)) {
+    state.selectedQuests = state.selectedQuests.filter(
+      (qId) => qId !== questId
+    );
+  } else {
+    state.selectedQuests.push(questId);
+  }
+};
+
+const cancelChanges = () => {
+  state.selectedQuests = [...state.initialSelectedQuests];
+};
+
+const confirmChanges = () => {
+  emit("confirm-changes", state.selectedQuests);
+  emit("close");
+};
+
 watch(
   () => state.searchText,
   () => searchQuests()
+);
+
+watch(
+  () => props.open,
+  (val) => {
+    if (val) {
+      state.selectedQuests = [...props.activeQuests];
+      state.initialSelectedQuests = [...props.activeQuests];
+    }
+  }
 );
 </script>

@@ -24,8 +24,14 @@
           </div>
           <hr class="divider" />
         </div>
-        <div class="px-4 py-2 inner overflow-auto">
+        <div>
+          <slot name="top" />
+        </div>
+        <div class="px-4 py-2 inner overflow-auto relative">
           <slot />
+        </div>
+        <div>
+          <slot name="bottom" />
         </div>
       </div>
     </div>
