@@ -144,7 +144,7 @@
                 'pb-1': state.screenshotLoading
               }"
             >
-              <items-progress-bar
+              <progress-bar
                 :progress="itemCollectionPercentage"
                 class="mb-5 user-select-none"
               >
@@ -154,7 +154,7 @@
                     itemCollectionPercentage.toFixed(2)
                   }}%)
                 </span>
-              </items-progress-bar>
+              </progress-bar>
             </div>
             <items-grid
               :items="state.filteredCollection"
