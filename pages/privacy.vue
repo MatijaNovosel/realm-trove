@@ -1,10 +1,10 @@
 <template>
   <div class="contents">
     <confirmation-dialog
-      :open="confirmationDialog"
-      @close="confirmationDialog = false"
+      :open="state.confirmationDialog"
+      @close="state.confirmationDialog = false"
       @yes="deleteAccount"
-      @no="confirmationDialog = false"
+      @no="state.confirmationDialog = false"
     />
     <div class="offset px-3">
       <h1>Privacy policy</h1>
@@ -26,7 +26,7 @@
           class="w-fill-content"
           background-color="error"
           text="Delete my account"
-          @on-click="confirmationDialog = true"
+          @on-click="state.confirmationDialog = true"
         />
       </div>
       <h1>Interpretation and Definitions</h1>
@@ -413,14 +413,41 @@
 </template>
 
 <script setup lang="ts">
+import { deleteUser } from "firebase/auth";
+import { deleteDoc, doc } from "firebase/firestore";
+
+const { $firebaseAuth, $firebaseFirestore } = useNuxtApp();
 const { setMeta } = useMetadata();
+const { createToast } = useToast();
+const userData = useUserData();
 const user = useUser();
 
-const confirmationDialog = ref(false);
+const state = reactive({
+  confirmationDialog: false,
+  docRef: undefined
+});
 
-const deleteAccount = () => {
-  //
+const deleteAccount = async () => {
+  try {
+    userData.value = {
+      shortId: null,
+      username: null
+    };
+
+    await deleteUser($firebaseAuth.currentUser);
+    await deleteDoc(state.docRef);
+
+    createToast("Account deleted!", "green-vue");
+  } catch (e) {
+    createToast(e.message, "error");
+  } finally {
+    state.confirmationDialog = false;
+  }
 };
+
+onMounted(() => {
+  state.docRef = doc($firebaseFirestore, "profile", userData.value.shortId);
+});
 
 setMeta("Realm trove | Privacy policy");
 </script>
