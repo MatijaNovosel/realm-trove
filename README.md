@@ -7,6 +7,8 @@
   A web app for checking off Realm of the mad god loot items.
 </p>
 
+![image](https://user-images.githubusercontent.com/36193643/200687060-7e52c4d7-e4e6-4dbc-b29a-7a7d2150fa77.png)
+
 ## 🚀 Features
 
 - Loot tracking for UT & ST items and blueprints
