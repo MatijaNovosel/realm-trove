@@ -2228,6 +2228,36 @@ export const ITEMS_ST: ItemInfo[] = [
       y: -46
     }
   },
+  {
+    id: 1737,
+    name: "Mayhem Medallion",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.TINKERER,
+    pos: {
+      x: -10810,
+      y: -46
+    }
+  },
+  {
+    id: 1738,
+    name: "Ring of Wrath",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.TINKERER,
+    pos: {
+      x: -10856,
+      y: -46
+    }
+  },
+  {
+    id: 1739,
+    name: "Autarch Amulet",
+    type: ITEM_TYPE.RING,
+    source: SOURCE.TINKERER,
+    pos: {
+      x: -10902,
+      y: -46
+    }
+  },
   // Legacy skuld
   {
     id: 1714,
