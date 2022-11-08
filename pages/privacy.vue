@@ -419,6 +419,7 @@ import { deleteDoc, doc } from "firebase/firestore";
 const { $firebaseAuth, $firebaseFirestore } = useNuxtApp();
 const { setMeta } = useMetadata();
 const { createToast } = useToast();
+const loginTrigger = useLoginTrigger();
 const userData = useUserData();
 const user = useUser();
 
@@ -429,6 +430,8 @@ const state = reactive({
 
 const deleteAccount = async () => {
   try {
+    loginTrigger.value = false;
+
     userData.value = {
       shortId: null,
       username: null
@@ -436,6 +439,7 @@ const deleteAccount = async () => {
 
     await deleteUser($firebaseAuth.currentUser);
     await deleteDoc(state.docRef);
+    state.docRef = undefined;
 
     createToast("Account deleted!", "green-vue");
   } catch (e) {
@@ -446,8 +450,19 @@ const deleteAccount = async () => {
 };
 
 onMounted(() => {
-  state.docRef = doc($firebaseFirestore, "profile", userData.value.shortId);
+  if (userData.value.shortId) {
+    state.docRef = doc($firebaseFirestore, "profile", userData.value.shortId);
+  }
 });
+
+watch(
+  () => userData.value,
+  (val) => {
+    if (val.shortId) {
+      state.docRef = doc($firebaseFirestore, "profile", userData.value.shortId);
+    }
+  }
+);
 
 setMeta("Realm trove | Privacy policy");
 </script>
