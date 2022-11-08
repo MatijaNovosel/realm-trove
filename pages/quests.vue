@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <app-confirmation-dialog
+    <confirmation-dialog
       :open="state.confirmDialogOpen"
       @close="state.confirmDialogOpen = false"
       @yes="resetCollection"
@@ -26,7 +26,7 @@
         <h1>Quests</h1>
         <div class="row mt-3">
           <div class="col-span-12 mb-5">
-            <app-text-button
+            <text-button
               class="text-sm md:text-base w-fit-content mx-auto"
               background-color="green-vue"
               text="Add quests"
@@ -60,10 +60,10 @@
           <div
             class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
           >
-            <items-instructions />
+            <instructions />
           </div>
           <div class="col-span-12 md:col-span-6 mt-4 md:mt-0 flex-center">
-            <app-custom-input
+            <custom-input
               class="w-full"
               placeholder="Search marks"
               dense
@@ -71,7 +71,7 @@
               :error="error"
               v-model="state.searchText"
             />
-            <app-icon-button
+            <icon-button
               class="ml-2"
               tooltip="Reset"
               icon-color="green-vue"
@@ -79,19 +79,19 @@
               @on-click="state.confirmDialogOpen = true"
             >
               <ResetIcon />
-            </app-icon-button>
+            </icon-button>
           </div>
           <div
             class="col-span-12 md:col-span-3 flex md:justify-end fixed md:relative z-5 right-10 md:right-0 bottom-5 md:bottom-0 h-min"
           >
-            <app-text-button
+            <text-button
               background-color="error"
               text="Cancel"
               class="ml-2"
               :disabled="!pendingChanges"
               @on-click="cancelChanges"
             />
-            <app-text-button
+            <text-button
               background-color="green-vue"
               text="Save"
               class="ml-2"

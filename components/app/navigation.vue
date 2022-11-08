@@ -8,7 +8,7 @@
     <div class="flex-center mt-3 md:mt-0" v-if="user">
       <client-only v-if="$route.params.slug !== userData.shortId">
         <NuxtLink :to="userData.shortId">
-          <app-text-button
+          <text-button
             class="text-sm md:text-base"
             background-color="green-vue"
             tooltip="Your collection"
@@ -17,20 +17,20 @@
         </NuxtLink>
       </client-only>
       <NuxtLink v-if="$route.name !== 'quests'" to="quests">
-        <app-text-button
+        <text-button
           class="ml-2 text-sm md:text-base"
           background-color="blue"
           text="Quests"
         />
       </NuxtLink>
-      <app-text-button
+      <text-button
         class="mx-2 text-sm md:text-base"
         background-color="error"
         text="Log out"
         @on-click="logOut"
       />
     </div>
-    <app-text-button
+    <text-button
       class="mt-3 md:mt-0"
       v-else-if="$route.name !== 'index'"
       background-color="green-vue"

@@ -13,14 +13,14 @@
             <span>
               {{ title }}
             </span>
-            <app-icon-button
+            <icon-button
               v-if="hasCloseBtn"
               tooltip="Close"
               background-color="dark"
               @on-click="$emit('close-btn')"
             >
               <CloseIcon />
-            </app-icon-button>
+            </icon-button>
           </div>
           <hr class="divider" />
         </div>

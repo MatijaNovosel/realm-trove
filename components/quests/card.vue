@@ -41,13 +41,13 @@
       </div>
     </div>
     <div style="width: 30%" class="flex-center">
-      <app-icon-button
+      <icon-button
         :background-color="active ? 'green-vue-100' : undefined"
         @on-click="$emit('on-click', quest.id)"
       >
         <CheckIcon v-if="active || preview" />
         <PlusIcon v-else />
-      </app-icon-button>
+      </icon-button>
     </div>
   </div>
 </template>

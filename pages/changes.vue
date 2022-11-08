@@ -9,7 +9,7 @@
     <div v-else>
       <div class="text-xl md:text-3xl mt-5 mb-3">Changes</div>
       <div class="flex flex-col pl-2">
-        <changes-change-item
+        <changes-item
           v-for="(item, i) in changes"
           :data="item"
           :key="i"

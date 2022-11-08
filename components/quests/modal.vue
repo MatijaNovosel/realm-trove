@@ -9,7 +9,7 @@
     >
       <template #top>
         <div class="p-3">
-          <app-custom-input
+          <custom-input
             class="w-full"
             placeholder="Search quests"
             dense
@@ -51,14 +51,14 @@
       </div>
       <template #bottom>
         <div class="flex justify-center md:justify-end pr-3 py-3">
-          <app-text-button
+          <text-button
             background-color="error"
             text="Cancel"
             class="ml-2"
             :disabled="!pendingChanges"
             @on-click="cancelChanges"
           />
-          <app-text-button
+          <text-button
             background-color="green-vue"
             text="Save"
             class="ml-2"
@@ -104,7 +104,7 @@ const questsGroupedByQuality = computed(() => {
 const pendingChanges = computed(() => {
   return (
     JSON.stringify(state.initialSelectedQuests.sort()) !==
-      JSON.stringify(state.selectedQuests.sort())
+    JSON.stringify(state.selectedQuests.sort())
   );
 });
 

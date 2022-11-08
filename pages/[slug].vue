@@ -8,7 +8,7 @@
       v-model:show-missing-items="state.showOnlyMissingItems"
       @close="state.modalOpen = false"
     />
-    <app-confirmation-dialog
+    <confirmation-dialog
       :open="state.confirmDialogOpen"
       @close="state.confirmDialogOpen = false"
       @yes="resetCollection"
@@ -25,11 +25,11 @@
         <div class="mt-4 mx-auto text-error text-4xl" v-else-if="error">
           An error ocurred.
         </div>
-        <div class="display-contents" v-else>
+        <div class="contents" v-else>
           <items-type-tab />
           <div class="flex-center" v-if="profile">
             <div v-if="state.editingUsername">
-              <app-custom-input
+              <custom-input
                 placeholder="New username"
                 :loading="loading"
                 :error="error"
@@ -40,7 +40,7 @@
             <span class="text-2xl md:text-4xl" v-else>
               {{ profile.username }}'s Loot
             </span>
-            <app-icon-button
+            <icon-button
               v-if="isCurrentUser"
               class="ml-4"
               :tooltip="state.editingUsername ? 'Confirm' : 'Change username'"
@@ -53,7 +53,7 @@
             >
               <CheckmarkIcon v-if="state.editingUsername" />
               <PencilIcon v-else />
-            </app-icon-button>
+            </icon-button>
           </div>
           <div
             class="row my-5 px-5 md:px-3 items-center"
@@ -62,7 +62,7 @@
             <div
               class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
             >
-              <items-instructions v-if="isCurrentUser" />
+              <instructions v-if="isCurrentUser" />
             </div>
             <div
               class="col-span-12 md:col-span-6 mt-4 md:mt-0 flex-center"
@@ -70,14 +70,14 @@
                 'md:col-span-12 justify-center': !isCurrentUser
               }"
             >
-              <app-custom-input
+              <custom-input
                 placeholder="Search items"
                 dense
                 :loading="loading"
                 :error="error"
                 v-model="state.searchText"
               />
-              <app-icon-button
+              <icon-button
                 class="mx-2 relative"
                 tooltip="Filter"
                 background-color="dark"
@@ -87,8 +87,8 @@
                 }"
               >
                 <FilterIcon />
-              </app-icon-button>
-              <app-icon-button
+              </icon-button>
+              <icon-button
                 tooltip="Export"
                 icon-color="green-vue"
                 background-color="dark"
@@ -97,8 +97,8 @@
                 @on-click="actionsDisabled ? null : exportAsScreenshot()"
               >
                 <CameraIcon />
-              </app-icon-button>
-              <app-icon-button
+              </icon-button>
+              <icon-button
                 v-if="isCurrentUser"
                 class="ml-2"
                 tooltip="Reset"
@@ -110,20 +110,20 @@
                 background-color="dark"
               >
                 <ResetIcon />
-              </app-icon-button>
+              </icon-button>
             </div>
             <div
               v-if="isCurrentUser"
               class="col-span-12 md:col-span-3 flex md:justify-end fixed md:relative z-5 right-10 md:right-0 bottom-5 md:bottom-0 h-min"
             >
-              <app-text-button
+              <text-button
                 background-color="error"
                 text="Cancel"
                 class="ml-2"
                 :disabled="!pendingChanges"
                 @on-click="cancelChanges"
               />
-              <app-text-button
+              <text-button
                 background-color="green-vue"
                 text="Save"
                 class="ml-2"

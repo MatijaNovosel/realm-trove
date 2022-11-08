@@ -7,25 +7,25 @@
       @close-btn="$emit('close')"
     >
       <div class="py-2">
-        <items-three-state-checkbox
+        <three-state-checkbox
           v-model="showVanity"
           label="Show vanity and/or limited items"
           @on-selected="$emit('update:show-vanity', showVanity)"
         />
-        <items-three-state-checkbox
+        <three-state-checkbox
           class="my-3"
           v-model="showMissingItems"
           label="Show unobtained items"
           @on-selected="$emit('update:show-missing-items', showMissingItems)"
         />
-        <app-custom-select
+        <custom-select
           placeholder="Loot source"
           :options="optionsLootSource"
           v-model="selectedLootSource"
           @on-selected="$emit('update:loot-source', selectedLootSource)"
         />
         <template v-if="selectedTab !== TAB.BP">
-          <app-custom-select
+          <custom-select
             class="mt-4"
             placeholder="Item type"
             :options="optionsItemType"

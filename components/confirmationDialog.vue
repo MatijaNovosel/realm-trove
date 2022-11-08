@@ -2,13 +2,13 @@
   <transition name="modal">
     <app-modal title="Are you sure?" v-show="open" @close="$emit('close')">
       <div class="flex justify-center py-3">
-        <app-text-button
+        <text-button
           class="mr-2"
           background-color="green-vue"
           text="Yes"
           @on-click="$emit('yes')"
         />
-        <app-text-button
+        <text-button
           background-color="error"
           text="No"
           @on-click="$emit('no')"
