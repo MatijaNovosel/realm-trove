@@ -2228,7 +2228,7 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.BAZAAR
   },
   {
-    id: 3095,
+    id: 3173,
     name: "Coral Ring",
     bp: {
       quality: BP_QUALITY.GREATER,
@@ -2242,7 +2242,7 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.BAZAAR
   },
   {
-    id: 3096,
+    id: 3172,
     name: "Spirit Staff",
     bp: {
       quality: BP_QUALITY.GREATER,
@@ -2256,7 +2256,7 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.BAZAAR
   },
   {
-    id: 3097,
+    id: 3174,
     name: "Captain's Ring",
     bp: {
       quality: BP_QUALITY.GREATER,
@@ -2270,7 +2270,7 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.BAZAAR
   },
   {
-    id: 3098,
+    id: 3175,
     name: "Staff of Extreme Prejudice",
     bp: {
       quality: BP_QUALITY.GREATER,
@@ -2284,7 +2284,7 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.BAZAAR
   },
   {
-    id: 3099,
+    id: 3176,
     name: "Wand of the Bulwark",
     bp: {
       quality: BP_QUALITY.GREATER,
@@ -2298,7 +2298,7 @@ export const ITEMS_BP: ItemInfo[] = [
     source: SOURCE.BAZAAR
   },
   {
-    id: 3100,
+    id: 3177,
     name: "Experimental Ring",
     bp: {
       quality: BP_QUALITY.GREATER,
