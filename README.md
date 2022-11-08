@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/36193643/195388540-602d59d2-a30f-4756-ad1c-f4b8918c6347.png" />
+  <img src="https://user-images.githubusercontent.com/36193643/200554001-c98e1bbe-8aa2-4d7f-ac01-f9b3252cc94b.png" />
 </div>
 
 <h1 align=center>Realm trove</h1>
@@ -7,7 +7,7 @@
   A web app for checking off Realm of the mad god loot items.
 </p>
 
-## Features
+## 🚀 Features
 
 - Loot tracking for UT & ST items and blueprints
 - Export your loot via generated screenshot
@@ -21,7 +21,7 @@
 - [WindiCSS](https://windicss.org/)
 - [Vercel](https://vercel.com/)
 
-## Setup
+## ⚙️ Setup
 
 Make sure to install the dependencies:
 
