@@ -240,3 +240,29 @@ export const QUEST_QUALITY_NAME = {
   [QUEST_QUALITY.MIGHTY]: "Mighty",
   [QUEST_QUALITY.EPIC]: "Epic"
 };
+
+export enum LOOT_BAG_QUALITY {
+  BROWN = 1,
+  PINK,
+  PURPLE,
+  EGG,
+  CYAN,
+  BLUE,
+  GOLDEN,
+  ORANGE,
+  RED,
+  WHITE
+}
+
+export const LOOT_BAG_QUALITY_NAME = {
+  [LOOT_BAG_QUALITY.BROWN]: "Brown Bag",
+  [LOOT_BAG_QUALITY.PINK]: "Pink Bag",
+  [LOOT_BAG_QUALITY.PURPLE]: "Purple Bag",
+  [LOOT_BAG_QUALITY.EGG]: "Egg Basket",
+  [LOOT_BAG_QUALITY.CYAN]: "Cyan Bag",
+  [LOOT_BAG_QUALITY.BLUE]: "Blue Bag",
+  [LOOT_BAG_QUALITY.GOLDEN]: "Golden Bag",
+  [LOOT_BAG_QUALITY.ORANGE]: "Orange Bag",
+  [LOOT_BAG_QUALITY.RED]: "Red Bag",
+  [LOOT_BAG_QUALITY.WHITE]: "White Bag"
+};

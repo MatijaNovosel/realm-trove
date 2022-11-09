@@ -1893,6 +1893,26 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 447,
+    name: "Cocoon Quiver",
+    source: SOURCE.FOREST_MAZE,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -21390
+    }
+  },
+  {
+    id: 448,
+    name: "Bramble Bow",
+    source: SOURCE.FOREST_MAZE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -21344
+    }
+  },
+  {
     id: 346,
     name: "Staff of the Crystal Serpent",
     source: SOURCE.FORBIDDEN_JUNGLE,
