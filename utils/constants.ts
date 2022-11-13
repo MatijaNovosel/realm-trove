@@ -13,12 +13,6 @@ export enum ITEM_QUALITY {
   D
 }
 
-export enum CHECKBOX_STATE {
-  EMPTY = 1,
-  INDETERMINATE,
-  CHECKED
-}
-
 export enum ITEM_TYPE {
   WEAPON = 1,
   ABILITY,

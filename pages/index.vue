@@ -4,7 +4,7 @@
       <spinner class="mt-4 mx-auto" v-if="loginTrigger" />
       <div
         v-else
-        class="z-2 flex flex-col items-center justify-center user-select-none mx-auto text-center"
+        class="z-2 flex flex-col items-center justify-center mx-auto text-center"
       >
         <img width="86" height="86" src="/whiteBag.png" class="mb-3 border-0" />
         <span class="text-3xl md:text-7xl mt-4">Realm trove</span>

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-full flex items-center justify-between z-2 md:pb-5 pt-7 md:px-0 user-select-none pr-4 pl-6 md:pr-0 md:pl-2"
+    class="w-full flex items-center justify-between z-2 md:pb-5 pt-7 md:px-0 pr-4 pl-6 md:pr-0 md:pl-2"
   >
     <div class="flex-center">
       <NuxtLink to="https://github.com/MatijaNovosel/realm-trove">

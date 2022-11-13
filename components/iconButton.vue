@@ -1,7 +1,7 @@
 <template>
   <button
     @click="disabled ? null : $emit('on-click')"
-    class="p-1.5 flex-center rounded text-sm user-select-none"
+    class="p-1.5 flex-center rounded text-sm"
     :class="buttonClass"
     v-tooltip="{
       content: tooltip,

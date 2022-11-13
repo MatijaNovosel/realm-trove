@@ -58,7 +58,7 @@
             <hr class="divider" />
           </div>
           <div
-            class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
+            class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start"
           >
             <instructions />
           </div>

@@ -44,8 +44,7 @@ import {
   SOURCE_NAMES,
   ITEM_TYPE,
   ITEM_TYPE_NAMES,
-  TAB,
-  CHECKBOX_STATE
+  TAB
 } from "~/utils/constants";
 import { SelectItem } from "~/models";
 
@@ -75,14 +74,20 @@ const props = defineProps<{
   lootSource: number[];
   itemType: number[];
   open: boolean;
-  showVanity: CHECKBOX_STATE;
-  showMissingItems: CHECKBOX_STATE;
+  showVanity?: boolean;
+  showMissingItems?: boolean;
 }>();
 
 const selectedLootSource = ref<number[]>(props.lootSource);
 const selectedItemType = ref<number[]>(props.itemType);
-const showVanity = ref<CHECKBOX_STATE>(props.showVanity);
-const showMissingItems = ref<CHECKBOX_STATE>(props.showMissingItems);
+const showVanity = ref<boolean | undefined>(props.showVanity);
+const showMissingItems = ref<boolean | undefined>(props.showMissingItems);
 
-defineEmits(["close", "update:loot-source", "update:item-type"]);
+defineEmits([
+  "close",
+  "update:loot-source",
+  "update:item-type",
+  "update:show-missing-items",
+  "update:show-vanity"
+]);
 </script>

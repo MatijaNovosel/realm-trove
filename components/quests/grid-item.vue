@@ -8,7 +8,7 @@
     @click="$emit('lclick', id)"
     @contextmenu.prevent="$emit('rclick', id)"
   >
-    <div class="badge user-select-none" :class="statusClass">
+    <div class="badge" :class="statusClass">
       {{ count !== 0 ? count : "" }}
     </div>
   </div>

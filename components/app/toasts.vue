@@ -1,7 +1,7 @@
 <template>
   <TransitionGroup
     name="list"
-    class="toast-container top-5 md:bottom-5 md:top-auto flex flex-col fixed text-white z-5 text-center text-sm items-center user-select-none"
+    class="toast-container top-5 md:bottom-5 md:top-auto flex flex-col fixed text-white z-5 text-center text-sm items-center"
     tag="div"
   >
     <div

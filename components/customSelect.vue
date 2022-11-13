@@ -14,7 +14,7 @@
   >
     <template #default>
       <button
-        class="px-3 py-1 bg-dark rounded hover:bg-dark-100 transition duration-150 ease-in-out w-full text-left user-select-none no-highlight"
+        class="px-3 py-1 bg-dark rounded hover:bg-dark-100 transition duration-150 ease-in-out w-full text-left no-highlight"
       >
         <div class="flex flex-wrap" v-if="selectedItems.size !== 0">
           <div

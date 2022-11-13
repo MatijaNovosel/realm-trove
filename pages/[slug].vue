@@ -60,7 +60,7 @@
             :class="{ 'mt-0 md:mt-5': !isCurrentUser }"
           >
             <div
-              class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start user-select-none"
+              class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start"
             >
               <instructions v-if="isCurrentUser" />
             </div>
@@ -144,10 +144,7 @@
                 'pb-1': state.screenshotLoading
               }"
             >
-              <progress-bar
-                :progress="itemCollectionPercentage"
-                class="mb-5 user-select-none"
-              >
+              <progress-bar :progress="itemCollectionPercentage" class="mb-5">
                 <span>
                   {{ itemsCollected[selectedTab] }} /
                   {{ items[selectedTab].length }} ({{
@@ -173,7 +170,7 @@
 
 <script setup lang="ts">
 import { ItemInfo, Profile } from "~/models";
-import { CHECKBOX_STATE, TAB } from "~/utils/constants";
+import { TAB } from "~/utils/constants";
 import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import { useDebounceFn } from "@vueuse/core";
 import FilterIcon from "~icons/material-symbols/filter-list";
@@ -199,8 +196,8 @@ const state = reactive({
   usernameEditText: "",
   lootSource: [],
   itemType: [],
-  showVanity: CHECKBOX_STATE.INDETERMINATE,
-  showOnlyMissingItems: CHECKBOX_STATE.INDETERMINATE,
+  showVanity: undefined,
+  showOnlyMissingItems: undefined,
   modalOpen: false,
   confirmDialogOpen: false,
   screenshotLoading: false,
@@ -230,10 +227,10 @@ const filterActive = computed(() => {
   return (
     state.lootSource.length !== 0 ||
     state.itemType.length !== 0 ||
-    state.showVanity === CHECKBOX_STATE.CHECKED ||
-    state.showVanity === CHECKBOX_STATE.EMPTY ||
-    state.showOnlyMissingItems === CHECKBOX_STATE.CHECKED ||
-    state.showOnlyMissingItems === CHECKBOX_STATE.EMPTY
+    state.showVanity === true ||
+    state.showVanity === false ||
+    state.showOnlyMissingItems === true ||
+    state.showOnlyMissingItems === false
   );
 });
 
@@ -385,18 +382,18 @@ const searchItems = useDebounceFn(() => {
   }
 
   // Vanity items
-  if (state.showVanity === CHECKBOX_STATE.EMPTY) {
+  if (state.showVanity === false) {
     filterConditions.push((item) => item.vanity !== true);
-  } else if (state.showVanity === CHECKBOX_STATE.CHECKED) {
+  } else if (state.showVanity === true) {
     filterConditions.push((item) => item.vanity === true);
   }
 
   // Missing items
-  if (state.showOnlyMissingItems === CHECKBOX_STATE.CHECKED) {
+  if (state.showOnlyMissingItems === true) {
     filterConditions.push(
       (item) => !(item.id in profile.value.collection[selectedTab.value])
     );
-  } else if (state.showOnlyMissingItems === CHECKBOX_STATE.EMPTY) {
+  } else if (state.showOnlyMissingItems === false) {
     filterConditions.push(
       (item) => item.id in profile.value.collection[selectedTab.value]
     );

@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="text-2xl md:text-4xl font-bold mb-2 mt-6 flex-center user-select-none"
-  >
+  <div class="text-2xl md:text-4xl font-bold mb-2 mt-6 flex-center">
     <div class="contents" v-for="(tab, i) in tabs" :key="i">
       <div
         @click="selectedTab = tab[1]"

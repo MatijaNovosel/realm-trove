@@ -11,7 +11,7 @@
     @click="disabled ? null : $emit('lclick', id)"
     @contextmenu.prevent="disabled ? null : $emit('rclick', id)"
   >
-    <div class="badge user-select-none" :class="statusClass">
+    <div class="badge" :class="statusClass">
       {{ count !== 0 ? count : "" }}
     </div>
     <template v-if="bp">
