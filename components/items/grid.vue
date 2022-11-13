@@ -27,7 +27,7 @@
             <hr class="divider my-1.5" />
             <span class="mb-1"> 🌍 {{ SOURCE_NAMES[source] }} </span>
             <span v-if="type">
-              {{ formatItemTypeIcon(type) }} {{ ITEM_TYPE_NAMES[type] }}
+              {{ ITEM_TYPE_ICON[type] }} {{ ITEM_TYPE_NAMES[type] }}
             </span>
             <span class="mt-1.5" v-if="vanity">
               🎭 Limited edition / Vanity
@@ -48,9 +48,9 @@ import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
 import {
   SOURCE_NAMES,
   ITEM_TYPE_NAMES,
-  BP_QUALITY_POS
+  BP_QUALITY_POS,
+  ITEM_TYPE_ICON
 } from "~/utils/constants";
-import { formatItemTypeIcon } from "~/utils/helpers";
 
 const props = defineProps<{
   collection: PlayerCollection;

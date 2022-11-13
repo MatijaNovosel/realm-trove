@@ -40,18 +40,3 @@ export const generateShortId = () => {
 export const generateRandomUsername = () => {
   return (Math.random() + 1).toString(36).substring(2, 15).toUpperCase();
 };
-
-export const formatItemTypeIcon = (type?: ITEM_TYPE) => {
-  switch (type) {
-    case ITEM_TYPE.ABILITY:
-      return "📚";
-    case ITEM_TYPE.ARMOR:
-      return "🦺";
-    case ITEM_TYPE.RING:
-      return "💍";
-    case ITEM_TYPE.WEAPON:
-      return "🗡️";
-    default:
-      return "📦";
-  }
-};

@@ -260,3 +260,10 @@ export const LOOT_BAG_QUALITY_NAME = {
   [LOOT_BAG_QUALITY.RED]: "Red Bag",
   [LOOT_BAG_QUALITY.WHITE]: "White Bag"
 };
+
+export const ITEM_TYPE_ICON = {
+  [ITEM_TYPE.ABILITY]: "📚",
+  [ITEM_TYPE.ARMOR]: "🦺",
+  [ITEM_TYPE.RING]: "💍",
+  [ITEM_TYPE.WEAPON]: "🗡️"
+};
