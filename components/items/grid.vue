@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-wrap justify-center md:justify-start no-highlight gap-1"
+    class="flex flex-wrap justify-center md:justify-start no-highlight gap-3"
     v-if="items[selectedTab].length > 0"
   >
     <div

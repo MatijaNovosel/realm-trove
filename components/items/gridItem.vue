@@ -1,6 +1,6 @@
 <template>
   <div
-    class="item p-3 text-center m-1 relative"
+    class="item p-3 text-center relative"
     :style="{
       backgroundPosition: `${x}px ${y}px`,
       filter: `grayscale(${count ? 0 : 100}%)`

@@ -56,7 +56,7 @@
             </icon-button>
           </div>
           <div
-            class="row my-5 px-5 md:px-3 items-center"
+            class="row my-5 px-5 md:px-2 items-center"
             :class="{ 'mt-0 md:mt-5': !isCurrentUser }"
           >
             <div
@@ -139,7 +139,7 @@
             }"
           >
             <div
-              class="px-5 md:px-3"
+              class="px-5 md:px-1"
               :class="{
                 'pb-1': state.screenshotLoading
               }"
