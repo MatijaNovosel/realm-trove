@@ -223,16 +223,15 @@ const {
   key: `/api/${route.params.slug}?property=shortId`
 });
 
-const filterActive = computed(() => {
-  return (
+const filterActive = computed(
+  () =>
     state.lootSource.length !== 0 ||
     state.itemType.length !== 0 ||
     state.showVanity === true ||
     state.showVanity === false ||
     state.showOnlyMissingItems === true ||
     state.showOnlyMissingItems === false
-  );
-});
+);
 
 const isCurrentUser = computed(() => {
   if (user.value) {
@@ -249,21 +248,19 @@ const itemsCollected = computed(() => {
   };
 });
 
-const itemCollectionPercentage = computed(() => {
-  return (
+const itemCollectionPercentage = computed(
+  () =>
     (itemsCollected.value[selectedTab.value] /
       items[selectedTab.value].length) *
     100
-  );
-});
+);
 
-const pendingChanges = computed(() => {
-  return (
+const pendingChanges = computed(
+  () =>
     state.initialCollection !== undefined &&
     JSON.stringify(state.initialCollection) !==
       JSON.stringify(profile.value.collection)
-  );
-});
+);
 
 const actionsDisabled = computed(
   () => pendingChanges.value || state.screenshotLoading
@@ -445,7 +442,7 @@ watch(
     state.showOnlyMissingItems,
     state.showVanity
   ],
-  () => searchItems()
+  searchItems
 );
 
 watch(pendingChanges, (val) => {

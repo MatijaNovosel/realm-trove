@@ -8,36 +8,22 @@
     <spinner class="mt-4 mx-auto" v-if="loading" />
     <div v-else>
       <div class="text-xl md:text-3xl mt-5 mb-3">Changes</div>
-      <div class="flex flex-col pl-2">
-        <changes-item
-          v-for="(item, i) in changes"
-          :data="item"
-          :key="i"
-          :class="{
-            'mt-4': i !== 0
-          }"
-        />
+      <div class="flex flex-col pl-2 gap-3">
+        <changes-item v-for="(change, i) in changes" :data="change" :key="i" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const { createToast } = useToast();
+import { ChangeModel } from "~/models";
 
-const loading = ref(true);
-const error = ref(false);
-const changes = ref();
-
-onMounted(async () => {
-  try {
-    changes.value = await $fetch("/api/changes");
-  } catch (e) {
-    createToast(e.message, "error");
-    error.value = true;
-  } finally {
-    loading.value = false;
-  }
+const {
+  data: changes,
+  pending: loading,
+  error
+} = await useLazyFetch<ChangeModel[]>("/api/changes", {
+  key: "/api/changes"
 });
 
 const { setMeta } = useMetadata();

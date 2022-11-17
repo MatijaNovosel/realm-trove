@@ -12,30 +12,28 @@
     :flip="false"
     @hide="onHide"
   >
-    <template #default>
-      <button
-        class="px-3 py-1 bg-dark rounded hover:bg-dark-100 transition duration-150 ease-in-out w-full text-left no-highlight"
-      >
-        <div class="flex flex-wrap" v-if="selectedItems.size !== 0">
+    <button
+      class="px-3 py-1 bg-dark rounded hover:bg-dark-100 transition duration-150 ease-in-out w-full text-left no-highlight"
+    >
+      <div class="flex flex-wrap" v-if="selectedItems.size !== 0">
+        <div
+          class="my-1 mr-3 rounded text-sm flex"
+          v-for="item in selectedItems"
+          :key="item"
+        >
+          <div class="bg-green-vue px-3 rounded-l">
+            {{ options.find((opt) => opt.value === item).text }}
+          </div>
           <div
-            class="my-1 mr-3 rounded text-sm flex"
-            v-for="item in selectedItems"
-            :key="item"
+            @click.stop="selectedItems.delete(item)"
+            class="flex-center bg-dark-800 rounded-r px-1 ripple"
           >
-            <div class="bg-green-vue px-3 rounded-l">
-              {{ options.find((opt) => opt.value === item).text }}
-            </div>
-            <div
-              @click.stop="selectedItems.delete(item)"
-              class="flex-center bg-dark-800 rounded-r px-1 ripple"
-            >
-              <CloseIcon />
-            </div>
+            <CloseIcon />
           </div>
         </div>
-        <span v-else> {{ placeholder }} </span>
-      </button>
-    </template>
+      </div>
+      <span v-else> {{ placeholder }} </span>
+    </button>
     <template #popper>
       <ul class="py-1 bg-dark-300 text-white rounded">
         <li
