@@ -7,7 +7,7 @@
       v-for="{ pos, id, name, source, type, bp, vanity } in items[selectedTab]"
       :key="id"
     >
-      <Tooltip theme="info-tooltip">
+      <tooltip theme="info-tooltip">
         <items-grid-item
           :bp="bp"
           :x="bp ? BP_QUALITY_POS[bp.quality].x : pos.x"
@@ -34,7 +34,7 @@
             </span>
           </div>
         </template>
-      </Tooltip>
+      </tooltip>
     </div>
   </div>
   <div class="text-center pt-3" v-else>
@@ -44,20 +44,21 @@
 
 <script lang="ts" setup>
 import { Tooltip } from "floating-vue";
+import { PropType } from "vue";
 import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
 import {
-  SOURCE_NAMES,
-  ITEM_TYPE_NAMES,
   BP_QUALITY_POS,
-  ITEM_TYPE_ICON
+  ITEM_TYPE_ICON,
+  ITEM_TYPE_NAMES,
+  SOURCE_NAMES
 } from "~/utils/constants";
 
-const props = defineProps<{
-  collection: PlayerCollection;
-  initial: PlayerCollection | undefined;
-  items: IDictionary<ItemInfo[]>;
-  disabled: boolean;
-}>();
+const props = defineProps({
+  collection: Object as PropType<PlayerCollection>,
+  initial: Object as PropType<PlayerCollection>,
+  items: Object as PropType<IDictionary<ItemInfo[]>>,
+  disabled: Boolean
+});
 
 const selectedTab = useSelectedTab();
 

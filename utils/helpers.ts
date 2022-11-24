@@ -1,8 +1,7 @@
 import type { DecodedIdToken } from "firebase-admin/auth";
 import type { User } from "firebase/auth";
 import type { User as CustomUser } from "~/composables/useUser";
-import { IDictionary } from "~/models";
-import { ITEM_TYPE } from "./constants";
+import { IDictionary, SelectItem } from "~/models";
 
 export const randInt = (min: number, max: number) => {
   min = Math.ceil(min);
@@ -39,4 +38,17 @@ export const generateShortId = () => {
 
 export const generateRandomUsername = () => {
   return (Math.random() + 1).toString(36).substring(2, 15).toUpperCase();
+};
+
+export const selectItemFromEnum = (
+  val: object,
+  textSrc: IDictionary<string>
+): SelectItem<number>[] => {
+  return Object.entries(val)
+    .filter((value) => typeof value[1] === "string")
+    .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))
+    .map((x) => ({
+      value: parseInt(x[0]),
+      text: textSrc[x[0]]
+    }));
 };

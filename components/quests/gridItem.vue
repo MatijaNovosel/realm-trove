@@ -15,13 +15,13 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  x: number;
-  y: number;
-  count: number;
-  id: number;
-  statusClass: string;
-}>();
+defineProps({
+  x: Number,
+  y: Number,
+  count: Number,
+  id: Number,
+  statusClass: String
+});
 
 defineEmits(["lclick", "rclick"]);
 </script>

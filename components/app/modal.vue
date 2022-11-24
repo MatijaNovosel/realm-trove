@@ -19,7 +19,7 @@
               background-color="dark"
               @on-click="$emit('close-btn')"
             >
-              <CloseIcon />
+              <close-icon />
             </icon-button>
           </div>
           <hr class="divider" />
@@ -45,11 +45,11 @@ import CloseIcon from "~icons/material-symbols/close";
 const modal = ref(null);
 const emit = defineEmits(["close", "close-btn"]);
 
-defineProps<{
-  title: string;
-  hasCloseBtn?: boolean;
-  maxWidth?: string;
-}>();
+defineProps({
+  title: String,
+  hasCloseBtn: Boolean,
+  maxWidth: String
+});
 
 onClickOutside(modal, () => {
   emit("close");

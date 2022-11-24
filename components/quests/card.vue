@@ -45,26 +45,27 @@
         :background-color="active ? 'green-vue-100' : undefined"
         @on-click="$emit('on-click', quest.id)"
       >
-        <CheckIcon v-if="active || preview" />
-        <PlusIcon v-else />
+        <check-icon v-if="active || preview" />
+        <plus-icon v-else />
       </icon-button>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import { QuestInfo } from "~/models";
 import { QUEST_QUALITY_COLOR, QUEST_QUALITY_NAME } from "~/utils/constants";
 import { MARK_POS } from "~/utils/marks";
 import CheckIcon from "~icons/ic/baseline-check";
 import PlusIcon from "~icons/mdi/plus";
 
-defineProps<{
-  quest: QuestInfo;
-  showSubtitle?: boolean;
-  active?: boolean;
-  preview?: boolean;
-}>();
+defineProps({
+  quest: Object as PropType<QuestInfo>,
+  showSubtitle: Boolean,
+  active: Boolean,
+  preview: Boolean,
+});
 
 defineEmits(["remove", "on-click"]);
 </script>

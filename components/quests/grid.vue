@@ -4,7 +4,7 @@
     v-if="marks.length > 0"
   >
     <div v-for="{ pos, id, name } in marks" :key="id">
-      <Tooltip theme="info-tooltip">
+      <tooltip theme="info-tooltip">
         <quests-grid-item
           :x="pos.x"
           :y="pos.y"
@@ -17,7 +17,7 @@
         <template #popper>
           {{ name }}
         </template>
-      </Tooltip>
+      </tooltip>
     </div>
   </div>
   <div class="text-center pt-3" v-else>
@@ -27,13 +27,14 @@
 
 <script lang="ts" setup>
 import { Tooltip } from "floating-vue";
+import { PropType } from "vue";
 import { IDictionary, MarkInfo } from "~/models";
 
-const props = defineProps<{
-  collection: IDictionary<number>;
-  initial: IDictionary<number> | undefined;
-  marks: MarkInfo[];
-}>();
+const props = defineProps({
+  collection: Object as PropType<IDictionary<number>>,
+  initial: Object as PropType<IDictionary<number>>,
+  marks: Array as PropType<MarkInfo[]>
+});
 
 const badgeClass = (id: number) => {
   if (props.initial) {

@@ -20,7 +20,7 @@
         />
         <custom-select
           placeholder="Loot source"
-          :options="optionsLootSource"
+          :options="selectItemFromEnum(SOURCE, SOURCE_NAMES)"
           v-model="selectedLootSource"
           @on-selected="$emit('update:loot-source', selectedLootSource)"
         />
@@ -28,7 +28,7 @@
           <custom-select
             class="mt-4"
             placeholder="Item type"
-            :options="optionsItemType"
+            :options="selectItemFromEnum(ITEM_TYPE, ITEM_TYPE_NAMES)"
             v-model="selectedItemType"
             @on-selected="$emit('update:item-type', selectedItemType)"
           />
@@ -39,44 +39,25 @@
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import {
-  SOURCE,
-  SOURCE_NAMES,
   ITEM_TYPE,
   ITEM_TYPE_NAMES,
+  SOURCE,
+  SOURCE_NAMES,
   TAB
 } from "~/utils/constants";
-import { SelectItem } from "~/models";
+import { selectItemFromEnum } from "~/utils/helpers";
 
 const selectedTab = useSelectedTab();
 
-const optionsLootSource = computed<SelectItem<number>[]>(() => {
-  return Object.entries(SOURCE)
-    .filter((value) => typeof value[1] === "string")
-    .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))
-    .map((x) => ({
-      value: parseInt(x[0]),
-      text: SOURCE_NAMES[x[0]]
-    }));
+const props = defineProps({
+  lootSource: Array as PropType<number[]>,
+  itemType: Array as PropType<number[]>,
+  open: Boolean,
+  showVanity: Boolean,
+  showMissingItems: Boolean
 });
-
-const optionsItemType = computed<SelectItem<number>[]>(() => {
-  return Object.entries(ITEM_TYPE)
-    .filter((value) => typeof value[1] === "string")
-    .sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0))
-    .map((x) => ({
-      value: parseInt(x[0]),
-      text: ITEM_TYPE_NAMES[x[0]]
-    }));
-});
-
-const props = defineProps<{
-  lootSource: number[];
-  itemType: number[];
-  open: boolean;
-  showVanity?: boolean;
-  showMissingItems?: boolean;
-}>();
 
 const selectedLootSource = ref<number[]>(props.lootSource);
 const selectedItemType = ref<number[]>(props.itemType);

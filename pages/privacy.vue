@@ -456,10 +456,10 @@ onMounted(() => {
 });
 
 watch(
-  () => userData.value,
+  userData,
   (val) => {
     if (val.shortId) {
-      state.docRef = doc($firebaseFirestore, "profile", userData.value.shortId);
+      state.docRef = doc($firebaseFirestore, "profile", val.shortId);
     }
   }
 );

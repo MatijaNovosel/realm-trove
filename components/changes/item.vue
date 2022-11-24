@@ -13,9 +13,13 @@
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import { ChangeModel } from "~/models";
 
-defineProps<{
-  data: ChangeModel;
-}>();
+defineProps({
+  data: {
+    type: Object as PropType<ChangeModel>,
+    required: true
+  }
+});
 </script>

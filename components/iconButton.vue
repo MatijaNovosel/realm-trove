@@ -14,16 +14,17 @@
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import LoadingIcon from "~icons/eos-icons/loading";
 
-const props = defineProps<{
-  loading?: boolean;
-  disabled?: boolean;
-  backgroundColor?: string;
-  iconColor?: string;
-  tooltip?: string;
-  onClick?: () => void;
-}>();
+const props = defineProps({
+  loading: Boolean,
+  disabled: Boolean,
+  backgroundColor: String,
+  iconColor: String,
+  tooltip: String,
+  onClick: Function as PropType<() => void>
+});
 
 defineEmits(["on-click"]);
 

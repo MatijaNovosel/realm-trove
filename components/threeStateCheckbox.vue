@@ -4,9 +4,9 @@
       class="flex items-center ripple cursor-pointer p-1 rounded text-green-vue"
       @click="changeState"
     >
-      <CheckIcon v-if="selected === true" />
-      <CheckIconIndeterminate v-else-if="selected === undefined" />
-      <CheckIconEmpty v-else />
+      <check-icon v-if="selected === true" />
+      <check-icon-indeterminate v-else-if="selected === undefined" />
+      <check-icon-empty v-else />
     </div>
     <div class="ml-2 flex items-center">
       {{ label }}
@@ -16,13 +16,13 @@
 
 <script lang="ts" setup>
 import CheckIcon from "~icons/material-symbols/check-box";
-import CheckIconIndeterminate from "~icons/material-symbols/indeterminate-check-box";
 import CheckIconEmpty from "~icons/material-symbols/check-box-outline-blank";
+import CheckIconIndeterminate from "~icons/material-symbols/indeterminate-check-box";
 
-const props = defineProps<{
-  modelValue?: boolean;
-  label: string;
-}>();
+const props = defineProps({
+  modelValue: Boolean,
+  label: String
+});
 
 const selected = ref<boolean | undefined>(props.modelValue);
 

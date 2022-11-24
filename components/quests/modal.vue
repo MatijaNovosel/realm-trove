@@ -72,16 +72,17 @@
 </template>
 
 <script lang="ts" setup>
+import { useDebounceFn } from "@vueuse/core";
+import { PropType } from "vue";
+import { QuestInfo } from "~/models";
+import { QUEST_QUALITY_COLOR, QUEST_QUALITY_NAME } from "~/utils/constants";
 import { groupBy } from "~/utils/helpers";
 import { QUESTS } from "~/utils/quests";
-import { QUEST_QUALITY_NAME, QUEST_QUALITY_COLOR } from "~/utils/constants";
-import { QuestInfo } from "~/models";
-import { useDebounceFn } from "@vueuse/core";
 
-const props = defineProps<{
-  open: boolean;
-  activeQuests: number[];
-}>();
+const props = defineProps({
+  open: Boolean,
+  activeQuests: Array as PropType<number[]>
+});
 
 const emit = defineEmits(["close", "confirm-changes"]);
 

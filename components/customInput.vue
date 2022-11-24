@@ -42,17 +42,18 @@
 </template>
 
 <script lang="ts" setup>
-import IconSearch from "~icons/material-symbols/search";
+import { PropType } from "vue";
 import IconClear from "~icons/ic/round-clear";
+import IconSearch from "~icons/material-symbols/search";
 
-defineProps<{
-  modelValue: string;
-  placeholder?: string;
-  loading?: boolean;
-  error?: boolean | Error;
-  dense?: boolean;
-  hideClear?: boolean;
-}>();
+defineProps({
+  modelValue: String,
+  placeholder: String,
+  loading: Boolean,
+  error: Object as PropType<Error | boolean>,
+  dense: Boolean,
+  hideClear: Boolean
+});
 
 const emit = defineEmits(["update:modelValue"]);
 

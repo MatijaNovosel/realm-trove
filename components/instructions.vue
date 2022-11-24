@@ -1,8 +1,8 @@
 <template>
   <div class="contents">
-    <MouseButtonLeftIcon class="mr-1" />
+    <mouse-button-left-icon class="mr-1" />
     <span class="mr-3"> Increase </span>
-    <MouseButtonRightIcon class="mr-1" />
+    <mouse-button-right-icon class="mr-1" />
     <span> Decrease </span>
   </div>
 </template>

@@ -32,17 +32,18 @@
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import { BpData } from "~/models";
 
-defineProps<{
-  bp?: BpData;
-  disabled: boolean;
-  x: number;
-  y: number;
-  count: number;
-  id: number;
-  statusClass: string;
-}>();
+defineProps({
+  bp: Object as PropType<BpData>,
+  disabled: Boolean,
+  x: Number,
+  y: Number,
+  count: Number,
+  id: Number,
+  statusClass: String
+});
 
 defineEmits(["lclick", "rclick"]);
 </script>

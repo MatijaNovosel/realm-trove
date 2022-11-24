@@ -9,12 +9,12 @@
         <img width="86" height="86" src="/whiteBag.png" class="mb-3 border-0" />
         <span class="text-3xl md:text-7xl mt-4">Realm trove</span>
         <span class="md:text-lg mt-4 text-gray-400 mb-6">Track your loot!</span>
-        <NuxtLink :to="userData.shortId" v-if="user">
+        <nuxt-link :to="userData.shortId" v-if="user">
           <text-button
             background-color="green-vue"
             text="Go to your collection"
           />
-        </NuxtLink>
+        </nuxt-link>
         <text-button
           v-else
           background-color="green-vue"

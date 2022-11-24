@@ -17,29 +17,23 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
-  progress: number;
-}>();
-
-const style = computed(() => {
-  return {
-    width: `${props.progress}%`
-  };
+const props = defineProps({
+  progress: Number
 });
 
-const clsShade = computed(() => {
-  return {
-    "rounded-bl-lg": props.progress < 100,
-    "rounded-b-lg": props.progress === 100
-  };
-});
+const style = computed(() => ({
+  width: `${props.progress}%`
+}));
 
-const clsMain = computed(() => {
-  return {
-    "rounded-l-lg": props.progress < 100,
-    "rounded-lg": props.progress === 100
-  };
-});
+const clsShade = computed(() => ({
+  "rounded-bl-lg": props.progress < 100,
+  "rounded-b-lg": props.progress === 100
+}));
+
+const clsMain = computed(() => ({
+  "rounded-l-lg": props.progress < 100,
+  "rounded-lg": props.progress === 100
+}));
 </script>
 
 <style scoped>

@@ -114,9 +114,9 @@
 
 <script lang="ts" setup>
 import { useDebounceFn } from "@vueuse/core";
+import { doc, setDoc } from "firebase/firestore";
 import { MarkInfo, Profile } from "~/models";
 import { MARKS } from "~/utils/marks";
-import { doc, setDoc } from "firebase/firestore";
 import { QUESTS } from "~/utils/quests";
 import ResetIcon from "~icons/carbon/reset";
 
@@ -262,10 +262,10 @@ watch(pendingChanges, (val) => {
 });
 
 watch(
-  pending,
-  () => {
-    if (data.value) {
-      state.docRef = doc($firebaseFirestore, "profile", userData.value.shortId);
+  data,
+  (val) => {
+    if (val) {
+      state.docRef = doc($firebaseFirestore, "profile", val.shortId);
       setMeta("Realm trove | Quests");
     } else {
       setMeta("Loading ...");

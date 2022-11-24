@@ -19,9 +19,9 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  open: boolean;
-}>();
+defineProps({
+  open: Boolean
+});
 
 defineEmits(["close", "yes", "no"]);
 </script>

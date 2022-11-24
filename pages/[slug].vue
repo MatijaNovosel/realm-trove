@@ -51,8 +51,8 @@
               "
               :background-color="state.editingUsername ? 'green-vue' : 'dark'"
             >
-              <CheckmarkIcon v-if="state.editingUsername" />
-              <PencilIcon v-else />
+              <checkmark-icon v-if="state.editingUsername" />
+              <pencil-icon v-else />
             </icon-button>
           </div>
           <div
@@ -86,7 +86,7 @@
                   badge: filterActive
                 }"
               >
-                <FilterIcon />
+                <filter-icon />
               </icon-button>
               <icon-button
                 tooltip="Export"
@@ -96,7 +96,7 @@
                 :loading="state.screenshotLoading"
                 @on-click="actionsDisabled ? null : exportAsScreenshot()"
               >
-                <CameraIcon />
+                <camera-icon />
               </icon-button>
               <icon-button
                 v-if="isCurrentUser"
@@ -109,7 +109,7 @@
                 "
                 background-color="dark"
               >
-                <ResetIcon />
+                <reset-icon />
               </icon-button>
             </div>
             <div
@@ -169,17 +169,17 @@
 </template>
 
 <script setup lang="ts">
+import { useDebounceFn } from "@vueuse/core";
+import domtoimage from "dom-to-image";
+import { doc, onSnapshot, setDoc } from "firebase/firestore";
+import JSConfetti from "js-confetti";
 import { ItemInfo, Profile } from "~/models";
 import { TAB } from "~/utils/constants";
-import { doc, onSnapshot, setDoc } from "firebase/firestore";
-import { useDebounceFn } from "@vueuse/core";
-import FilterIcon from "~icons/material-symbols/filter-list";
 import ResetIcon from "~icons/carbon/reset";
+import CheckmarkIcon from "~icons/ic/baseline-check";
+import FilterIcon from "~icons/material-symbols/filter-list";
 import CameraIcon from "~icons/mdi/camera";
 import PencilIcon from "~icons/mdi/grease-pencil";
-import CheckmarkIcon from "~icons/ic/baseline-check";
-import domtoimage from "dom-to-image";
-import JSConfetti from "js-confetti";
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();
@@ -452,24 +452,21 @@ watch(pendingChanges, (val) => {
   }
 });
 
-watch(
-  () => logoutTrigger.value,
-  (val) => {
-    if (val) {
-      if (state.initialCollection) {
-        profile.value.collection = state.initialCollection;
-      }
-      state.initialCollection = undefined;
+watch(logoutTrigger, (val) => {
+  if (val) {
+    if (state.initialCollection) {
+      profile.value.collection = state.initialCollection;
     }
+    state.initialCollection = undefined;
   }
-);
+});
 
 watch(
-  loading,
-  () => {
-    if (profile.value) {
-      setMeta(`Realm trove | ${profile.value.username}'s Items`);
-      state.usernameEditText = profile.value.username;
+  profile,
+  (val) => {
+    if (val) {
+      setMeta(`Realm trove | ${val.username}'s Items`);
+      state.usernameEditText = val.username;
 
       state.docRef = doc(
         $firebaseFirestore,

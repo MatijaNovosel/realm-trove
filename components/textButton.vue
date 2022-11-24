@@ -8,32 +8,31 @@
       theme: 'info-tooltip'
     }"
   >
-    <LoadingIcon class="my-0.5 mx-3" v-if="loading" />
+    <loading-icon class="my-0.5 mx-3" v-if="loading" />
     <span v-else> {{ text }} </span>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import LoadingIcon from "~icons/eos-icons/loading";
 
-const props = defineProps<{
-  loading?: boolean;
-  disabled?: boolean;
-  backgroundColor?: string;
-  textColor?: string;
-  tooltip?: string;
-  text: string;
-  onClick?: () => void;
-}>();
+const props = defineProps({
+  loading: Boolean,
+  disabled: Boolean,
+  backgroundColor: String,
+  textColor: String,
+  tooltip: String,
+  text: String,
+  onClick: Function as PropType<() => void>
+});
 
 defineEmits(["on-click"]);
 
-const buttonClass = computed(() => {
-  return {
-    [`ripple bg-${props.backgroundColor || "dark-500"} text-${
-      props.textColor || "white"
-    }`]: !props.disabled,
-    "cursor-not-allowed bg-dark-500": props.disabled
-  };
-});
+const buttonClass = computed(() => ({
+  [`ripple bg-${props.backgroundColor || "dark-500"} text-${
+    props.textColor || "white"
+  }`]: !props.disabled,
+  "cursor-not-allowed bg-dark-500": props.disabled
+}));
 </script>

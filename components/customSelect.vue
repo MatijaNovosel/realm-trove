@@ -1,5 +1,5 @@
 <template>
-  <FloatingVueDropdown
+  <floating-vue-dropdown
     ref="popoverRef"
     :distance="5"
     :triggers="['click']"
@@ -53,22 +53,23 @@
         </li>
       </ul>
     </template>
-  </FloatingVueDropdown>
+  </floating-vue-dropdown>
 </template>
 
 <script lang="ts" setup>
 import { Dropdown as FloatingVueDropdown } from "floating-vue";
+import { PropType } from "vue";
 import { SelectItem } from "~/models";
 import CloseIcon from "~icons/material-symbols/close";
 
 const popoverRef = ref(null);
 const selectedItems = ref<Set<number>>(new Set());
 
-defineProps<{
-  modelValue: number[];
-  placeholder: string;
-  options: SelectItem<number>[];
-}>();
+defineProps({
+  modelValue: Array as PropType<number[]>,
+  placeholder: String,
+  options: Array as PropType<SelectItem<number>[]>
+});
 
 const onHide = () => {
   const popover = popoverRef.value;
@@ -79,8 +80,8 @@ const emit = defineEmits(["update:modelValue", "on-selected"]);
 
 watch(
   () => selectedItems.value.values(),
-  () => {
-    emit("update:modelValue", [...selectedItems.value]);
+  (val) => {
+    emit("update:modelValue", [...val]);
     emit("on-selected");
   }
 );
