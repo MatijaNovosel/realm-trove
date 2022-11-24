@@ -1075,7 +1075,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 405,
     name: "Sandstone Seal",
-    source: SOURCE.EVENT,
+    source: SOURCE.ANCIENT_RUINS,
     type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
@@ -1085,7 +1085,7 @@ export const ITEMS_UT: ItemInfo[] = [
   {
     id: 406,
     name: "Amber Encrusted Helmet",
-    source: SOURCE.EVENT,
+    source: SOURCE.ANCIENT_RUINS,
     type: ITEM_TYPE.ABILITY,
     pos: {
       y: 0,
