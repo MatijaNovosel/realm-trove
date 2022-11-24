@@ -262,10 +262,10 @@ watch(pendingChanges, (val) => {
 });
 
 watch(
-  data,
-  (val) => {
-    if (val) {
-      state.docRef = doc($firebaseFirestore, "profile", val.shortId);
+  pending,
+  () => {
+    if (data.value) {
+      state.docRef = doc($firebaseFirestore, "profile", data.value.shortId);
       setMeta("Realm trove | Quests");
     } else {
       setMeta("Loading ...");

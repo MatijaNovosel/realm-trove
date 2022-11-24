@@ -462,11 +462,11 @@ watch(logoutTrigger, (val) => {
 });
 
 watch(
-  profile,
-  (val) => {
-    if (val) {
-      setMeta(`Realm trove | ${val.username}'s Items`);
-      state.usernameEditText = val.username;
+  loading,
+  () => {
+    if (profile.value) {
+      setMeta(`Realm trove | ${profile.value.username}'s Items`);
+      state.usernameEditText = profile.value.username;
 
       state.docRef = doc(
         $firebaseFirestore,
