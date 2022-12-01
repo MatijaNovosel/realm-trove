@@ -13,6 +13,7 @@
 
 - Loot tracking for UT & ST items and blueprints
 - Export your loot via generated screenshot
+- Quest and quest mark tracking
 - Share your loot profile with a unique link
 
 ## 🔨 Built With
