@@ -4,7 +4,7 @@
 
 <h1 align=center>Realm trove</h1>
 <p align=center>
-  A web app for checking off Realm of the mad god loot items.
+  A web app for tracking Realm of Mad God loot items and quests.
 </p>
 
 ![image](https://user-images.githubusercontent.com/36193643/200687060-7e52c4d7-e4e6-4dbc-b29a-7a7d2150fa77.png)
