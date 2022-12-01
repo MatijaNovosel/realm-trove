@@ -693,6 +693,36 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 449,
+    name: "Yellow Beehemoth Armor",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -21436
+    }
+  },
+  {
+    id: 450,
+    name: "Red Beehemoth Quiver",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -21482
+    }
+  },
+  {
+    id: 451,
+    name: "Blue Beehemoth Quiver",
+    source: SOURCE.THE_NEST,
+    type: ITEM_TYPE.ARMOR,
+    pos: {
+      y: 0,
+      x: -21528
+    }
+  },
+  {
     id: 24,
     name: "Trap of the Vile Spirit",
     source: SOURCE.REALM_EVENT_BOSS,
