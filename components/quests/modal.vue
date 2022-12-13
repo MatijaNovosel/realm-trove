@@ -73,10 +73,10 @@
 
 <script lang="ts" setup>
 import { useDebounceFn } from "@vueuse/core";
+import { groupBy } from "matija-utils";
 import { PropType } from "vue";
 import { QuestInfo } from "~/models";
 import { QUEST_QUALITY_COLOR, QUEST_QUALITY_NAME } from "~/utils/constants";
-import { groupBy } from "~/utils/helpers";
 import { QUESTS } from "~/utils/quests";
 
 const props = defineProps({

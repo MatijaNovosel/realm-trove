@@ -20,7 +20,7 @@ import {
   signInWithPopup
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { generateShortId, generateRandomUsername } from "~/utils/helpers";
+import { generateRandomString } from "matija-utils";
 
 const router = useRouter();
 const route = useRoute();
@@ -36,9 +36,9 @@ const signIn = async () => {
     const { isNewUser } = getAdditionalUserInfo(result);
 
     if (isNewUser) {
-      const shortId = generateShortId();
+      const shortId = generateRandomString(6);
       const docRef = doc($firebaseFirestore, "profile", shortId);
-      const username = generateRandomUsername();
+      const username = generateRandomString(11);
 
       await setDoc(docRef, {
         username,
@@ -83,9 +83,7 @@ const signIn = async () => {
 };
 
 watch(loginTrigger, (val) => {
-  if (val) {
-    signIn();
-  }
+  if (val) signIn();
 });
 
 const { setMeta } = useMetadata();

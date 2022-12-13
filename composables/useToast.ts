@@ -1,4 +1,4 @@
-import { randInt } from "~~/utils/helpers";
+import { randInt } from "matija-utils";
 
 interface Toast {
   id: number;

@@ -20,6 +20,7 @@
     "firebase-admin": "^11.1.0",
     "floating-vue": "^2.0.0-beta.19",
     "js-confetti": "^0.11.0",
+    "matija-utils": "^1.0.20",
     "node-fetch-native": "^0.1.8",
     "octokit": "^2.0.9"
   }
