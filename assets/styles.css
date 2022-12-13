@@ -18,6 +18,10 @@
 
 html {
   scroll-behavior: smooth;
+  background: radial-gradient(4px 4px at 50% 50%, #0f0d0e 50%, #0000 50%) top /
+      40px 40px repeat,
+    radial-gradient(8px 8px at 50% 50%, #ffffff1a 50%, #0000 50%) top / 40px
+      40px repeat;
 }
 
 body {
