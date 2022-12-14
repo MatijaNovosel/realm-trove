@@ -37,9 +37,15 @@
                 v-model="state.usernameEditText"
               />
             </div>
-            <span class="text-2xl md:text-4xl" v-else>
+            <div class="text-2xl md:text-4xl flex-center" v-else>
+              <nuxt-link
+                :to="`https://www.realmeye.com/player/${profile.username}`"
+                class="mr-2 text-2xl flex-center"
+              >
+                <eye-icon />
+              </nuxt-link>
               {{ profile.username }}'s Loot
-            </span>
+            </div>
             <icon-button
               v-if="isCurrentUser"
               class="ml-4"
@@ -180,6 +186,7 @@ import CheckmarkIcon from "~icons/ic/baseline-check";
 import FilterIcon from "~icons/material-symbols/filter-list";
 import CameraIcon from "~icons/mdi/camera";
 import PencilIcon from "~icons/mdi/grease-pencil";
+import EyeIcon from "~icons/ri/eye-2-fill";
 
 const { $firebaseFirestore } = useNuxtApp();
 const { items } = useItems();

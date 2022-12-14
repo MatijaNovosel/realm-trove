@@ -4,10 +4,10 @@
   >
     <div class="flex-center">
       <nuxt-link to="https://github.com/MatijaNovosel/realm-trove">
-        <icon-github :style="{ fontSize: '1.3em' }" />
+        <github-icon :style="{ fontSize: '1.3em' }" />
       </nuxt-link>
       <nuxt-link class="mx-2" to="https://www.realmeye.com/player/CrabFeeder">
-        <icon-eye :style="{ fontSize: '1.3em' }" />
+        <eye-icon :style="{ fontSize: '1.3em' }" />
       </nuxt-link>
       <nuxt-link to="/changes" class="text-sm md:text-base ripple px-2 rounded">
         v{{ $config.CLIENT_VERSION }}
@@ -23,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import IconGithub from "~icons/mdi/github";
-import IconEye from "~icons/ri/eye-2-fill";
+import GithubIcon from "~icons/mdi/github";
+import EyeIcon from "~icons/ri/eye-2-fill";
 </script>
 
 <style scoped>
