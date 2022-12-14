@@ -7,7 +7,7 @@
   A web app for tracking Realm of Mad God loot items and quests.
 </p>
 
-![image](https://user-images.githubusercontent.com/36193643/200687060-7e52c4d7-e4e6-4dbc-b29a-7a7d2150fa77.png)
+![image](https://user-images.githubusercontent.com/36193643/207730672-63258d46-3dfe-48ae-83a5-40d7f1b1b560.png)
 
 ## 🚀 Features
 
