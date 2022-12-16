@@ -653,6 +653,126 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 452,
+    name: "Steam Pipe",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -21574
+    }
+  },
+  {
+    id: 453,
+    name: "Kogbold Cower Shield",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -21620
+    }
+  },
+  {
+    id: 454,
+    name: "Scepter of Rust",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -21666
+    }
+  },
+  {
+    id: 455,
+    name: "Brain Cube",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -21712
+    }
+  },
+  {
+    id: 456,
+    name: "Chain Dagger",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -21758
+    }
+  },
+  {
+    id: 457,
+    name: "Laser Pointer",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -21804
+    }
+  },
+  {
+    id: 458,
+    name: "Clockwork Repeater",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -21850
+    }
+  },
+  {
+    id: 459,
+    name: "Mechanical Kogbold Limb",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -21896
+    }
+  },
+  {
+    id: 460,
+    name: "Atavistic Soul Sabre",
+    source: SOURCE.FORGE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -21942
+    }
+  },
+  {
+    id: 461,
+    name: "Socket Blade",
+    source: SOURCE.FORGE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -21988
+    }
+  },
+  {
+    id: 462,
+    name: "Kogbold Multitool",
+    source: SOURCE.FORGE,
+    type: ITEM_TYPE.WEAPON,
+    pos: {
+      y: 0,
+      x: -22034
+    }
+  },
+  {
+    id: 463,
+    name: "Overclocking Amulet",
+    source: SOURCE.KOGBOLD_STEAMWORKS,
+    type: ITEM_TYPE.RING,
+    pos: {
+      y: 0,
+      x: -22080
+    }
+  },
+  {
     id: 65,
     name: "Queen's Stinger",
     source: SOURCE.THE_NEST,

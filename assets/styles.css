@@ -4,6 +4,9 @@
   --error: #de4747;
   --dark: #302a2a;
   --blue: #3b82f6;
+  --ut: #7a2fe9;
+  --st: #ff8b03;
+  --bp: #59a8d8;
 }
 
 @font-face {
@@ -92,6 +95,18 @@ html {
   background-color: #dee2e582;
   background-size: 100%;
   transition: background 0s;
+}
+
+.text-ut {
+  color: var(--ut);
+}
+
+.text-st {
+  color: var(--st);
+}
+
+.text-bp {
+  color: var(--bp);
 }
 
 .text-green-vue {

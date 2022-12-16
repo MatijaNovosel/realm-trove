@@ -40,7 +40,8 @@ export enum MARK_ENUM {
   EXALTED,
   CRYSTAL_ENTITY,
   SANDSTONE,
-  INTERREGNUM
+  INTERREGNUM,
+  KOGBOLD
 }
 
 export const MARK_POS: IDictionary<ItemCoordinate> = {
@@ -202,6 +203,10 @@ export const MARK_POS: IDictionary<ItemCoordinate> = {
   },
   [MARK_ENUM.JUNGLE]: {
     x: -1564,
+    y: -138
+  },
+  [MARK_ENUM.KOGBOLD]: {
+    x: -1840,
     y: -138
   }
 };
@@ -406,5 +411,10 @@ export const MARKS: MarkInfo[] = [
     id: MARK_ENUM.JUNGLE,
     name: "Mark of Mixcoatl",
     pos: MARK_POS[MARK_ENUM.JUNGLE]
+  },
+  {
+    id: MARK_ENUM.KOGBOLD,
+    name: "Mark of the Control Core",
+    pos: MARK_POS[MARK_ENUM.KOGBOLD]
   }
 ];

@@ -99,7 +99,8 @@ export enum SOURCE {
   BLUEPRINT_ROTATION,
   BAZAAR,
   GODLANDS_DUNGEONS,
-  TINKERER
+  TINKERER,
+  KOGBOLD_STEAMWORKS
 }
 
 export const ITEM_DIMENSION = 46;
@@ -211,7 +212,8 @@ export const SOURCE_NAMES = {
   [SOURCE.BLUEPRINT_ROTATION]: "Blueprint Rotation",
   [SOURCE.BAZAAR]: "Bazaar",
   [SOURCE.GODLANDS_DUNGEONS]: "Godlands Dungeons",
-  [SOURCE.TINKERER]: "Tinkerer"
+  [SOURCE.TINKERER]: "Tinkerer",
+  [SOURCE.KOGBOLD_STEAMWORKS]: "Kogbold Steamworks"
 };
 
 export enum QUEST_QUALITY {
