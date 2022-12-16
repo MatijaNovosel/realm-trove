@@ -2994,7 +2994,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 297,
-    name: "Demon Lord’s Skull",
+    name: "Demon Lord's Skull",
     source: SOURCE.TINKERER,
     type: ITEM_TYPE.ABILITY,
     pos: {
@@ -3044,7 +3044,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 302,
-    name: "Chief’s War Horn",
+    name: "Chief's War Horn",
     source: SOURCE.TINKERER,
     type: ITEM_TYPE.ABILITY,
     pos: {
@@ -3094,7 +3094,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 307,
-    name: "Tyrant’s Toxin",
+    name: "Tyrant's Toxin",
     source: SOURCE.TINKERER,
     type: ITEM_TYPE.ABILITY,
     pos: {
@@ -3103,8 +3103,28 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 464,
+    name: "Mechanical Mace",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -22126
+    }
+  },
+  {
+    id: 465,
+    name: "Blitz Sheath",
+    source: SOURCE.TINKERER,
+    type: ITEM_TYPE.ABILITY,
+    pos: {
+      y: 0,
+      x: -22172
+    }
+  },
+  {
     id: 308,
-    name: "Henchman’s Claymore",
+    name: "Henchman's Claymore",
     source: SOURCE.TINKERER,
     type: ITEM_TYPE.WEAPON,
     pos: {
@@ -3114,7 +3134,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 309,
-    name: "Tyrant’s Wand",
+    name: "Tyrant's Wand",
     source: SOURCE.TINKERER,
     type: ITEM_TYPE.WEAPON,
     pos: {
@@ -3134,7 +3154,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 311,
-    name: "Bounty Hunter’s Dagger",
+    name: "Bounty Hunter's Dagger",
     source: SOURCE.TINKERER,
     type: ITEM_TYPE.WEAPON,
     pos: {
@@ -3144,7 +3164,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 312,
-    name: "Oppressor’s Staff",
+    name: "Oppressor's Staff",
     source: SOURCE.TINKERER,
     type: ITEM_TYPE.WEAPON,
     pos: {
@@ -3743,7 +3763,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 342,
-    name: "Frosty’s Walking Stick",
+    name: "Frosty's Walking Stick",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
     vanity: true,
@@ -3754,7 +3774,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 343,
-    name: "Winter’s Breath Wand",
+    name: "Winter's Breath Wand",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
     vanity: true,
@@ -3765,7 +3785,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 344,
-    name: "Saint Nicolas’ Blade",
+    name: "Saint Nicolas' Blade",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
     vanity: true,
@@ -3963,7 +3983,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 385,
-    name: "Pathfinder’s Helm",
+    name: "Pathfinder's Helm",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
     vanity: true,
@@ -4106,7 +4126,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 398,
-    name: "Snowman’s Sheath",
+    name: "Snowman's Sheath",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.ABILITY,
     vanity: true,
@@ -4480,7 +4500,7 @@ export const ITEMS_UT: ItemInfo[] = [
   },
   {
     id: 412,
-    name: "Bow of the Sky’s Glory",
+    name: "Bow of the Sky's Glory",
     source: SOURCE.EVENT,
     type: ITEM_TYPE.WEAPON,
     vanity: true,
