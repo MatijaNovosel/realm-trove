@@ -228,6 +228,11 @@ export const MARKS: MarkInfo[] = [
     pos: MARK_POS[MARK_ENUM.INTERREGNUM]
   },
   {
+    id: MARK_ENUM.KOGBOLD,
+    name: "Mark of the Control Core",
+    pos: MARK_POS[MARK_ENUM.KOGBOLD]
+  },
+  {
     id: MARK_ENUM.FORGOTTEN_KING,
     name: "Mark of the Forgotten King",
     pos: MARK_POS[MARK_ENUM.FORGOTTEN_KING]
@@ -266,6 +271,11 @@ export const MARKS: MarkInfo[] = [
     id: MARK_ENUM.TREASURE,
     name: "Mark of the Effigy",
     pos: MARK_POS[MARK_ENUM.TREASURE]
+  },
+  {
+    id: MARK_ENUM.WETLANDS,
+    name: "Mark of the Wetlands",
+    pos: MARK_POS[MARK_ENUM.WETLANDS]
   },
   {
     id: MARK_ENUM.PARASITIC_HORRORS,
@@ -416,15 +426,5 @@ export const MARKS: MarkInfo[] = [
     id: MARK_ENUM.JUNGLE,
     name: "Mark of Mixcoatl",
     pos: MARK_POS[MARK_ENUM.JUNGLE]
-  },
-  {
-    id: MARK_ENUM.KOGBOLD,
-    name: "Mark of the Control Core",
-    pos: MARK_POS[MARK_ENUM.KOGBOLD]
-  },
-  {
-    id: MARK_ENUM.WETLANDS,
-    name: "Mark of the Wetlands",
-    pos: MARK_POS[MARK_ENUM.WETLANDS]
   }
 ];
