@@ -100,7 +100,8 @@ export enum SOURCE {
   BAZAAR,
   GODLANDS_DUNGEONS,
   TINKERER,
-  KOGBOLD_STEAMWORKS
+  KOGBOLD_STEAMWORKS,
+  BATTLEPASS
 }
 
 export const ITEM_DIMENSION = 46;
@@ -213,7 +214,8 @@ export const SOURCE_NAMES = {
   [SOURCE.BAZAAR]: "Bazaar",
   [SOURCE.GODLANDS_DUNGEONS]: "Godlands Dungeons",
   [SOURCE.TINKERER]: "Tinkerer",
-  [SOURCE.KOGBOLD_STEAMWORKS]: "Kogbold Steamworks"
+  [SOURCE.KOGBOLD_STEAMWORKS]: "Kogbold Steamworks",
+  [SOURCE.BATTLEPASS]: "Battlepass"
 };
 
 export enum QUEST_QUALITY {

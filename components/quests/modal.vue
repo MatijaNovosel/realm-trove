@@ -96,18 +96,17 @@ const state = reactive({
 const questsGroupedByQuality = computed(() => {
   return Object.entries(
     groupBy<QuestInfo>(state.filteredQuests, "quality")
-  ).map((e) => ({
-    quality: e[0],
-    quests: e[1]
+  ).map(([quality, quests]) => ({
+    quality,
+    quests
   }));
 });
 
-const pendingChanges = computed(() => {
-  return (
+const pendingChanges = computed(
+  () =>
     JSON.stringify(state.initialSelectedQuests.sort()) !==
     JSON.stringify(state.selectedQuests.sort())
-  );
-});
+);
 
 const searchQuests = useDebounceFn(() => {
   state.filteredQuests = QUESTS.filter((item) =>
@@ -134,10 +133,7 @@ const confirmChanges = () => {
   emit("close");
 };
 
-watch(
-  () => state.searchText,
-  () => searchQuests()
-);
+watch(() => state.searchText, searchQuests);
 
 watch(
   () => props.open,

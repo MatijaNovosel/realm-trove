@@ -4554,6 +4554,61 @@ export const ITEMS_UT: ItemInfo[] = [
     }
   },
   {
+    id: 466,
+    name: "Hookblade Tachi",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22218
+    }
+  },
+  {
+    id: 471,
+    name: "Acidic Aspergillum",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22448
+    }
+  },
+  {
+    id: 472,
+    name: "Harpoon Longbow",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22494
+    }
+  },
+  {
+    id: 473,
+    name: "Boomerang Blades",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22540
+    }
+  },
+  {
+    id: 474,
+    name: "Hovering Spellblade",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22586
+    }
+  },
+  {
     id: 417,
     name: "Mask of Anubis",
     source: SOURCE.EVENT,
@@ -4694,6 +4749,50 @@ export const ITEMS_UT: ItemInfo[] = [
     pos: {
       y: 0,
       x: -20792
+    }
+  },
+  {
+    id: 467,
+    name: "Tsunami",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22264
+    }
+  },
+  {
+    id: 468,
+    name: "Arashi",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22310
+    }
+  },
+  {
+    id: 469,
+    name: "Ignis",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22356
+    }
+  },
+  {
+    id: 470,
+    name: "Tectonus",
+    source: SOURCE.EVENT,
+    type: ITEM_TYPE.WEAPON,
+    vanity: true,
+    pos: {
+      y: 0,
+      x: -22402
     }
   },
   {
