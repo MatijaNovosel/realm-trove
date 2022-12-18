@@ -54,8 +54,8 @@
           </div>
         </div>
         <div class="row my-5 md:px-0 items-center">
-          <div class="col-span-12 mb-5">
-            <hr class="divider" />
+          <div class="col-span-12 mt-3 mb-10">
+            <div class="division div-transparent div-dot" />
           </div>
           <div
             class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start"
@@ -285,5 +285,39 @@ onBeforeUnmount(() => {
 <style scoped>
 h1 {
   @apply text-xl md:text-3xl mt-5 text-center;
+}
+
+.div-transparent:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(137, 140, 146),
+    transparent
+  );
+}
+
+.division {
+  position: relative;
+  height: 1px;
+}
+
+.div-dot:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -9px;
+  left: calc(50% - 9px);
+  width: 18px;
+  height: 18px;
+  background-color: var(--vue-green);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
 }
 </style>
