@@ -1,4 +1,4 @@
-import { IDictionary, ItemCoordinate, MarkInfo } from "~/models";
+import { ItemCoordinate, MarkInfo } from "~/models";
 
 export enum MARK_ENUM {
   SEPTAVIUS = 1,
@@ -45,7 +45,7 @@ export enum MARK_ENUM {
   WETLANDS
 }
 
-export const MARK_POS: IDictionary<ItemCoordinate> = {
+export const MARK_POS: Record<string, ItemCoordinate> = {
   [MARK_ENUM.SEPTAVIUS]: {
     x: 0,
     y: -138

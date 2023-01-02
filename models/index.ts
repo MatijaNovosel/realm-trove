@@ -23,19 +23,15 @@ export interface ItemInfo {
   id: number;
 }
 
-export interface IDictionary<T> {
-  [index: string]: T;
-}
-
 export interface PlayerCollection {
-  ut: IDictionary<number>;
-  st: IDictionary<number>;
-  bp: IDictionary<number>;
+  ut: Record<string, number>;
+  st: Record<string, number>;
+  bp: Record<string, number>;
 }
 
 export interface ProfileQuests {
   activeQuests: number[];
-  marks: IDictionary<number>;
+  marks: Record<string, number>;
 }
 
 export interface Profile {

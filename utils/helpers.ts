@@ -1,7 +1,7 @@
 import type { DecodedIdToken } from "firebase-admin/auth";
 import type { User } from "firebase/auth";
 import type { User as CustomUser } from "~/composables/useUser";
-import { IDictionary, SelectItem } from "~/models";
+import { SelectItem } from "~/models";
 
 export const formatUser = (user: User | DecodedIdToken): CustomUser => ({
   uid: user.uid,
@@ -10,7 +10,7 @@ export const formatUser = (user: User | DecodedIdToken): CustomUser => ({
 
 export const selectItemFromEnum = (
   val: object,
-  textSrc: IDictionary<string>
+  textSrc: Record<string, string>
 ): SelectItem<number>[] => {
   return Object.entries(val)
     .filter((value) => typeof value[1] === "string")

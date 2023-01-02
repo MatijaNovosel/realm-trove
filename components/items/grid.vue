@@ -45,7 +45,7 @@
 <script lang="ts" setup>
 import { Tooltip } from "floating-vue";
 import { PropType } from "vue";
-import { IDictionary, ItemInfo, PlayerCollection } from "~/models";
+import { ItemInfo, PlayerCollection } from "~/models";
 import {
   BP_QUALITY_POS,
   ITEM_TYPE_ICON,
@@ -56,7 +56,7 @@ import {
 const props = defineProps({
   collection: Object as PropType<PlayerCollection>,
   initial: Object as PropType<PlayerCollection>,
-  items: Object as PropType<IDictionary<ItemInfo[]>>,
+  items: Object as PropType<Record<string, ItemInfo[]>>,
   disabled: Boolean
 });
 

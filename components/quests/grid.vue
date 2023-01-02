@@ -28,11 +28,11 @@
 <script lang="ts" setup>
 import { Tooltip } from "floating-vue";
 import { PropType } from "vue";
-import { IDictionary, MarkInfo } from "~/models";
+import { MarkInfo } from "~/models";
 
 const props = defineProps({
-  collection: Object as PropType<IDictionary<number>>,
-  initial: Object as PropType<IDictionary<number>>,
+  collection: Object as PropType<Record<string, number>>,
+  initial: Object as PropType<Record<string, number>>,
   marks: Array as PropType<MarkInfo[]>
 });
 

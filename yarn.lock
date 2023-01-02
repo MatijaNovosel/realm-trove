@@ -4670,10 +4670,10 @@ marked@^4.0.10:
   resolved "https://registry.yarnpkg.com/marked/-/marked-4.1.1.tgz#2f709a4462abf65a283f2453dc1c42ab177d302e"
   integrity sha512-0cNMnTcUJPxbA6uWmCmjWz4NJRe/0Xfk2NhXCUHjew9qJzFN20krFnsUe7QynwqOwa5m1fZ4UDg0ycKFVC0ccw==
 
-matija-utils@^1.0.20:
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/matija-utils/-/matija-utils-1.0.20.tgz#a7a66a29cee04ca94ae35c20a4ff5e24bde1a5f1"
-  integrity sha512-c60YLAvzBhYpyncwQzmZVkafVg/YUbusmU5TKtvokrNH0uo9wHA3QDsT6Qi6hEUh8BjoVRuLb4jwxoIAB66iYQ==
+matija-utils@^1.0.27:
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/matija-utils/-/matija-utils-1.0.27.tgz#1abd9dd1d46ec0acdb0326950f38fe10fa65cb4b"
+  integrity sha512-1k4tga5apSzHox0AU2gm3e7fwPr/tUBoW4mDQ2qFw2JjvscyKcscyiezNRhjcR5zBljXFluzINKtgYjYOI3wCg==
 
 mdn-data@2.0.14:
   version "2.0.14"
