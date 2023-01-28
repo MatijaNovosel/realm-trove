@@ -1,5 +1,5 @@
-import { QUEST_QUALITY } from "~/utils/constants";
 import { QuestInfo } from "~/models";
+import { QUEST_QUALITY } from "~/utils/constants";
 import { MARK_ENUM } from "./marks";
 
 export const QUESTS: QuestInfo[] = [
@@ -451,6 +451,12 @@ export const QUESTS: QuestInfo[] = [
     id: 58,
     name: "The Killer Queen",
     marks: [...new Array(3)].map(() => MARK_ENUM.BEE_QUEEN),
+    quality: QUEST_QUALITY.EPIC
+  },
+  {
+    id: 59,
+    name: "Kogboldian Treasure",
+    marks: [...new Array(3)].map(() => MARK_ENUM.KOGBOLD),
     quality: QUEST_QUALITY.EPIC
   }
 ];
